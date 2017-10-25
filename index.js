@@ -27,9 +27,14 @@ someData.forEach(course =>
         console.log(course.name);
         $('ul.course_info').find('li').each((i, info) => {
             if ($(info).children('b').text().toLowerCase() === 'osoite') {
-                console.log($(info).children('p').text());
+                console.log('Osoite: ', $(info).children('p').text());
+            } else if ($(info).children('b').text().toLowerCase() === 'väylien määrä') {
+                console.log('Väylien määrä: ', $(info).children('p').text());
+            } else if ($(info).children('b').text().toLowerCase() === 'pinnanmuodot') {
+                console.log('Pinnanmuodot: ', $(info).children('p').text());
             }
         });
         // console.log($('span.caption').text());
         // console.log($('span.description').text());
+        console.log('\n\n');
     }));
