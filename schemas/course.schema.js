@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const {Schema} = mongoose;
 
 // * pdgaID (TODO: is there thing like this?)
-export default () =>
+// eslint-disable-next-line import/prefer-default-export
+export const courseSchema = () =>
     new Schema({
         description: {
             type: String,
@@ -22,8 +23,10 @@ export default () =>
                 currency: String,
                 value: String,
             },
+            founded: String,
             infoSignType: String,
             maintenanceCycle: String,
+            mapUrl: String,
             rangeMaster: String,
             ranking: String,
             surfaceShapeTypes: Array,
@@ -34,10 +37,10 @@ export default () =>
             default: Date.now,
         },
         holes: [{
-            bars: Array,
-            lengths: {
-                foot: String,
-                meter: String,
+            bar: Number,
+            length: {
+                foot: Number,
+                meter: Number,
             },
         }],
         holeCount: {
@@ -54,6 +57,8 @@ export default () =>
         },
         name: {
             type: String,
+            required: true,
+            unique: true,
         },
         updatedAt: {
             type: Date,
