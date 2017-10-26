@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
-import CourseSchema from '../schemas/course.schema';
+import {courseSchema} from '../schemas/course.schema';
 
-CourseSchema.pre('update', () => CourseSchema.update({}, {
+const courseModel = courseSchema();
+courseModel.pre('update', () => courseModel.update({}, {
     $set: {
         updatedAt: new Date(),
     },
 }));
 
-export default mongoose.model('Course', CourseSchema);
+export default mongoose.model('Course', courseModel);
