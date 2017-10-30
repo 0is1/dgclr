@@ -22,63 +22,115 @@ require('./db');
 //     //     console.log('The file has been saved!');
 //     // });
 // });
-const someData = take(data, 9).slice(8);
-someData.forEach(course =>
+const someData = take(data, 30).slice(28);
+someData.forEach((course) => {
     request(course.url, (error, response, body) => {
         const $ = cheerio.load(body);
-        console.log(course.name);
+        // console.log(course.name);
+        const dataObject = {
+            events: [],
+            courseInfo: {
+                fee: {},
+            },
+            holes: [],
+            locationInfo: {
+                coordinates: {},
+            },
+            name: course.name,
+        };
         $('ul.course_info').find('li').each((i, info) => {
             if ($(info).children('b').text().toLowerCase() === 'osoite') {
                 const d = $(info).children('p').text().trim()
                     .split('\n');
-                console.log('Osoite: ');
-                d.forEach((part, ind) => {
+                // console.log('Osoite: ');
+                dataObject.locationInfo = d.map((part, ind) => {
                     if (ind === 1) {
-                        console.log(part.trim().split(' '));
-                    } else {
-                        console.log(part);
+                        const zipAndCity = part.trim().split(' ');
+                        // console.log(zipAndCity);
+                        return zipAndCity.length === 2 ?
+                            {city: zipAndCity[1], zip: zipAndCity[0]} : {};
                     }
+                    // console.log(part);
+                    return {address: part};
                 });
             } else if ($(info).children('b').text().toLowerCase() === 'väylien määrä') {
-                console.log('Väylien määrä: ', $(info).children('p').text());
+                // console.log('Väylien määrä: ', $(info).children('p').text());
+                dataObject.holeCount = parseInt($(info).children('p').text(), 10);
             } else if ($(info).children('b').text().toLowerCase() === 'pinnanmuodot') {
-                console.log('Pinnanmuodot: ', $(info).children('p').text());
+                // console.log('Pinnanmuodot: ', $(info).children('p').text());
+                dataObject.courseInfo.surfaceShapeTypes = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'perustettu') {
-                console.log('Perustettu: ', $(info).children('p').text());
+                // console.log('Perustettu: ', $(info).children('p').text());
+                dataObject.courseInfo.founded = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'korit') {
-                console.log('korit: ', $(info).children('p').text());
+                // console.log('korit: ', $(info).children('p').text());
+                dataObject.courseInfo.basketType = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'heittopaikat') {
-                console.log('Heittopaikat: ', $(info).children('p').text());
+                // console.log('Heittopaikat: ', $(info).children('p').text());
+                dataObject.courseInfo.teeType = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'opasteet') {
-                console.log('Opasteet: ', $(info).children('p').text());
+                // console.log('Opasteet: ', $(info).children('p').text());
+                dataObject.courseInfo.infoSignType = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'ratatyyppi') {
-                console.log('Ratatyyppi: ', $(info).children('p').text());
+                // console.log('Ratatyyppi: ', $(info).children('p').text());
+                dataObject.courseInfo.courseType = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'ylläpito') {
-                console.log('Ylläpito: ', $(info).children('p').text());
+                // console.log('Ylläpito: ', $(info).children('p').text());
+                dataObject.courseInfo.maintenanceCycle = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'ratamestari') {
-                console.log('ratamestari: ', $(info).children('p').text());
+                // console.log('ratamestari: ', $(info).children('p').text());
+                dataObject.courseInfo.rangeMaster = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'suunnittelija') {
-                console.log('suunnittelija: ', $(info).children('p').text());
+                // console.log('suunnittelija: ', $(info).children('p').text());
+                dataObject.courseInfo.courseDesigner = $(info).children('p').text();
             } else if ($(info).children('b').text().toLowerCase() === 'ilmainen/maksullinen') {
-                console.log('Ilmainen/maksullinen: ', $(info).children('p').text());
+                // console.log('Ilmainen/maksullinen: ', $(info).children('p').text());
+                dataObject.courseInfo.fee.value = $(info).children('p').text();
             }
+            return dataObject;
         });
         if ($('a[href*="maps.google"]').length) {
             const coordinates = $('a[href*="maps.google"]').attr('href').replace(/^(https?):\/\/maps.google.com\/\?q=/, '').split(',');
-            console.log('coordinates: ', coordinates);
+            // console.log('coordinates: ', coordinates);
+            if (coordinates && coordinates.length === 2 && coordinates[0] !== 'NULL') {
+                dataObject.locationInfo.coordinates = {
+                    lat: coordinates[0],
+                    long: coordinates[1],
+                };
+            }
         }
-        if ($('.sidebar_map a').length) console.log('Kartta: ', $('.sidebar_map a').attr('href'));
+        if ($('.sidebar_map a').length) {
+            // console.log('Kartta: ', $('.sidebar_map a').attr('href'));
+            dataObject.courseInfo.mapUrl = $('.sidebar_map a').attr('href');
+        }
         // $('.fairway h4').each((i, item) => console.log('Väylä: ', $(item).text()));
         $('.fairway p').each((i, item) => {
             if (!(i % 2)) {
                 const lengthAndPar = $(item).text().replace(/[A-Öa-ö ]/g, '').split('.');
-                console.log(lengthAndPar);
+                // console.log(lengthAndPar);
+                if (lengthAndPar && lengthAndPar.length === 2) {
+                    const meter = parseInt(lengthAndPar[0], 10) || 0;
+                    const foot = parseInt(3.28 * meter, 10);
+                    dataObject.holes.push({
+                        bar: lengthAndPar[1],
+                        length: {
+                            foot,
+                            meter,
+                        },
+                    });
+                }
             }
         });
         // console.log('Caption: ', $('span.caption').text());
         // console.log('Description', $('span.description').text());
+        dataObject.description = $('span.description').text().replace(/\n\t/g, '').trim();
         console.log('\n\n');
-    }));
+        console.log('Course data: ', dataObject);
+        if (dataObject.holes.length) {
+            console.log(dataObject.holes[0].length);
+        }
+    });
+});
 
 /*
 const testData = {
