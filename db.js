@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/dgclr-dev', {useMongoClient: true});
-mongoose.connection.on('connected', () => console.log('Mongoose default connection open'));
-mongoose.Promise = global.Promise;
+const connectToMongo = async () => {
+  await mongoose.connect(
+    'mongodb://localhost/dgclr-dev',
+    { useNewUrlParser: true },
+  );
+  mongoose.connection.on('connected', () => console.log('Mongoose default connection open'));
+};
+
+export default connectToMongo;

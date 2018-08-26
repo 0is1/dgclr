@@ -1,4 +1,3 @@
-import Promise from 'bluebird';
 import CourseModel from '../models/course.model';
 
 /**
@@ -8,10 +7,12 @@ import CourseModel from '../models/course.model';
  */
 
 // eslint-disable-next-line import/prefer-default-export
-export const createCourse = (data) => {
-    const course = new CourseModel(data);
-    return Promise.resolve(course)
-        .then(newCourse => newCourse.save())
-        .then(result => result)
-        .catch(err => Promise.reject(err));
+export const createCourse = async (data) => {
+  try {
+    const course = await new CourseModel(data);
+    const result = await course.save();
+    return result;
+  } catch (e) {
+    throw new Error(e);
+  }
 };
