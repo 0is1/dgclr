@@ -1,1843 +1,2643 @@
-[{
+[
+  {
+    "name": "44200 Suolahti",
+    "url": "https://frisbeegolfradat.fi/rata/44200-suolahti/"
+  },
+  {
     "name": "Aakonvuoren frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/aakonvuoren-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ahlainen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ahlainen_dgp/"
-}, {
+  },
+  {
     "name": "Ahmo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ahmo_discgolfpark/"
-}, {
+  },
+  {
     "name": "Aholahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/aholahden_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ahtela",
     "url": "https://frisbeegolfradat.fi/rata/ahtela_sauvo/"
-}, {
+  },
+  {
     "name": "Ahvenlampi frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/ahvenlampi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Aitoon Koulutuskeskus",
     "url": "https://frisbeegolfradat.fi/rata/aitoon_koulutuskeskus/"
-}, {
+  },
+  {
     "name": "Akustinpuisto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/akustinpuisto-discgolfpark/"
-}, {
+  },
+  {
     "name": "Alajärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/alajarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Alavetelin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/alavetelin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "AMEXPO Frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/amexpo-frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Amospuiston frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/amospuisto_kemio/"
-}, {
+  },
+  {
+    "name": "Aninkainen frisbeegolfpuisto",
+    "url": "https://frisbeegolfradat.fi/rata/aninkainen-frisbeegolfpuisto/"
+  },
+  {
     "name": "Anttilanrannan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/anttilanrannan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Anttilanvuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/anttilanvuori-discgolfpark/"
-}, {
+  },
+  {
     "name": "Arboretum, Hietalahti",
     "url": "https://frisbeegolfradat.fi/rata/arboretum_hietalahti_vaasa/"
-}, {
+  },
+  {
     "name": "Aronahde",
     "url": "https://frisbeegolfradat.fi/rata/aronahde_rauma/"
-}, {
+  },
+  {
     "name": "Aronpuiston frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/aronpuisto_kalajoki/"
-}, {
+  },
+  {
     "name": "Asikkala DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/asikkala_discgolfpark/"
-}, {
+  },
+  {
+    "name": "Askaisten koulun frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/askaisten-koulun-frisbeegolfrata/"
+  },
+  {
+    "name": "Askola Disc Golf Park",
+    "url": "https://frisbeegolfradat.fi/rata/askola-disc-golf-park/"
+  },
+  {
+    "name": "Atrain Disc Golf",
+    "url": "https://frisbeegolfradat.fi/rata/atrain-disc-golf/"
+  },
+  {
     "name": "Autionranta DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/autionranta_discgolfpark/"
-}, {
+  },
+  {
     "name": "Auttin Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/auttin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Bomban Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/bomban_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Bromarv",
     "url": "https://frisbeegolfradat.fi/rata/bromarv_tammisaari/"
-}, {
+  },
+  {
     "name": "Camping Nyyssänniemi",
     "url": "https://frisbeegolfradat.fi/rata/camping-nyyssanniemi/"
-}, {
+  },
+  {
     "name": "DeliGood Vuokatti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/deligood-vuokatti-discgolfpark/"
-}, {
+  },
+  {
     "name": "DiscGolf Bjurs",
     "url": "https://frisbeegolfradat.fi/rata/discgolf-bjurs/"
-}, {
+  },
+  {
     "name": "DiscGolf Sähköpari Partaharju",
     "url": "https://frisbeegolfradat.fi/rata/discgolf-sahkoparri-partaharju/"
-}, {
+  },
+  {
     "name": "Eenokki Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/eenokki_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Eerikkilän urheiluopisto",
     "url": "https://frisbeegolfradat.fi/rata/urheiluopisto_eerikkila/"
-}, {
+  },
+  {
     "name": "Eerola DGP",
     "url": "https://frisbeegolfradat.fi/rata/eerola-dgp/"
-}, {
+  },
+  {
     "name": "Elisenvaaran frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/elisenvaaran_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ellivuori",
     "url": "https://frisbeegolfradat.fi/rata/ellivuori_vammala/"
-}, {
+  },
+  {
     "name": "Enonkoski DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/enonkoski-discgolfpark/"
-}, {
+  },
+  {
     "name": "Epilän Frisbeepuisto",
     "url": "https://frisbeegolfradat.fi/rata/epila_tampere/"
-}, {
+  },
+  {
+    "name": "Evon Frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/evon-frisbeegolfrata/"
+  },
+  {
     "name": "Feffe Park Hanko",
     "url": "https://frisbeegolfradat.fi/rata/hanko_keskusta/"
-}, {
+  },
+  {
     "name": "FG-SALLA",
     "url": "https://frisbeegolfradat.fi/rata/fg-salla/"
-}, {
+  },
+  {
     "name": "Finby DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/finby-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Ford DiscGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/ford-discgolfpark/"
+  },
+  {
     "name": "Forssan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/talsoila_forssa/"
-}, {
+  },
+  {
     "name": "Frisbee Päiväranta",
     "url": "https://frisbeegolfradat.fi/rata/frisbee-paivaranta/"
-}, {
+  },
+  {
     "name": "FrisbeeGO DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/frisbeego-discgolfpark/"
-}, {
+  },
+  {
     "name": "Frisbeegolf Hevonlinna",
     "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-hevonlinna/"
-}, {
+  },
+  {
     "name": "Frisbeegolf Kalkkinen",
     "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-kalkkinen/"
-}, {
+  },
+  {
     "name": "Frisbeegolf Pahkalanniemi",
     "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-pahkalanniemi/"
-}, {
+  },
+  {
     "name": "Frisbeegolf Simpsiö",
     "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-simpsio-2/"
-}, {
+  },
+  {
     "name": "Frisbeegolf Urheilupuisto",
-    "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-urheilupuisto-koski-tl/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/frisbeegolf-urheilupuisto-koski-tl/"
+  },
+  {
+    "name": "Frisbeegolf Virtasalmi",
+    "url": "https://frisbeegolfradat.fi/rata/frisbeegolf-virtasalmi/"
+  },
+  {
     "name": "Frisbeegolfrata Eura",
     "url": "https://frisbeegolfradat.fi/rata/frisbeegolfrata-eura/"
-}, {
+  },
+  {
     "name": "Frosteruksen koulun frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/frosteruksen-koulun-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/frosteruksen-koulun-frisbeegolfrata/"
+  },
+  {
     "name": "Gerby",
     "url": "https://frisbeegolfradat.fi/rata/gerby_vaasa/"
-}, {
+  },
+  {
     "name": "Haaga DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/haaga-discgolfpark/"
-}, {
+  },
+  {
     "name": "Haagan lähiliikuntapaikka",
-    "url": "https://frisbeegolfradat.fi/rata/haaganpuiston_lahiliikuntapaikka_helsinki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/haaganpuiston_lahiliikuntapaikka_helsinki/"
+  },
+  {
     "name": "Haijainen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/haijainen-discgolfpark/"
-}, {
+  },
+  {
     "name": "Haikarankoulun Frisbeerata",
     "url": "https://frisbeegolfradat.fi/rata/haikarankoulun-frisbeerata/"
-}, {
+  },
+  {
     "name": "Hakkari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/hakkari-discgolfpark/"
-}, {
+  },
+  {
     "name": "Hakoniemen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hakoniemen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Halli Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/halli-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Halsua DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/halsua-discgolfpark/"
-}, {
+  },
+  {
     "name": "Hammaslahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hammaslahti-joensuu/"
-}, {
+  },
+  {
     "name": "Hankasalmen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hankasalmen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hanko Lillmärssan",
     "url": "https://frisbeegolfradat.fi/rata/lillmarssanin_metsa_a-18_hanko/"
-}, {
+  },
+  {
     "name": "Harjattula",
     "url": "https://frisbeegolfradat.fi/rata/harjattula_turku/"
-}, {
+  },
+  {
     "name": "Harjavalta DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/harjavalta_discgolfpark_harjavalta/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/harjavalta_discgolfpark_harjavalta/"
+  },
+  {
     "name": "Harju School DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/harju_jyvaskyla/"
-}, {
+  },
+  {
     "name": "Harjumajan Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/harjumajan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Harjunmäen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/valkealan-harjunmaen-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/valkealan-harjunmaen-frisbeegolfrata/"
+  },
+  {
     "name": "Harrinivan lomakeskus",
     "url": "https://frisbeegolfradat.fi/rata/harrinivan-lomakeskus/"
-}, {
+  },
+  {
     "name": "Hartola DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/hartola-discgolfpark/"
-}, {
+  },
+  {
     "name": "Hattula DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/hattula/"
-}, {
+  },
+  {
     "name": "Haukkavuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/haukkavuori-discgolfpark/"
-}, {
+  },
+  {
     "name": "Haunisten frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/haunisten-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Heinämäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/heinamaki_discgolfpark_sotkamo/"
-}, {
+  },
+  {
     "name": "Heinävesi Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/heinavesi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Herttuan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/herttuan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hervanta",
     "url": "https://frisbeegolfradat.fi/rata/hervanta_tampere/"
-}, {
+  },
+  {
     "name": "Hetan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hetan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hiekanpää DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/hiekanpaa_discgolfpark/"
-}, {
+  },
+  {
     "name": "Hiekkasärkät Frisbeegolf (Seikkailupuisto Pakka)",
     "url": "https://frisbeegolfradat.fi/rata/hiekkasarkat_kalajoki/"
-}, {
+  },
+  {
     "name": "Hietamaan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/hietamaan_frisbeegolfrata_siikajoki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/hietamaan_frisbeegolfrata_siikajoki/"
+  },
+  {
     "name": "Hietaniemen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hietaniemen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hiironen",
     "url": "https://frisbeegolfradat.fi/rata/hiironen_oulu/"
-}, {
+  },
+  {
     "name": "Hiiska DG",
     "url": "https://frisbeegolfradat.fi/rata/hiiska-dg/"
-}, {
+  },
+  {
     "name": "Himangan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/himangan-frisbeegolfrata/"
-}, {
-    "name": "Himos frisbeegolf",
-    "url": "https://frisbeegolfradat.fi/rata/himos_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Hirsikankaan Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hirsikankaan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hirvasen koulun frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/hirvasen_koulun_frisbeegolfrata_uurainen/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/hirvasen_koulun_frisbeegolfrata_uurainen/"
+  },
+  {
     "name": "Hirvensalmen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hirvensalmen-frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Hirvijärven frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/hirvijarven-frisbeegolfrata/"
+  },
+  {
     "name": "Hirvijärven leirikeskus",
     "url": "https://frisbeegolfradat.fi/rata/hirvijarven_leirikeskus_kuopio/"
-}, {
+  },
+  {
     "name": "Hoikan Opisto",
     "url": "https://frisbeegolfradat.fi/rata/hoikan_opisto_karkku_vammala/"
-}, {
+  },
+  {
     "name": "Hoiskon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hoiskon_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hollolan Hirven Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hollolan-hirven-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Honkakylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/honkakylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Honkavuori frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/honkavuori_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Honkilahti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/honkilahti-discgolfpark/"
-}, {
+  },
+  {
     "name": "Honkimaan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/honkimaa_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Honkiniemen leirikeskus",
     "url": "https://frisbeegolfradat.fi/rata/honkiniemen_leirikeskus_ahtari/"
-}, {
+  },
+  {
     "name": "Hopun puisto",
     "url": "https://frisbeegolfradat.fi/rata/hoppu/"
-}, {
+  },
+  {
     "name": "Hornhattulan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hornhattulan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hotelli Haikon kartano",
     "url": "https://frisbeegolfradat.fi/rata/hotelli_haikon_kartano_porvoo/"
-}, {
+  },
+  {
     "name": "Hotelli Nuuksio",
     "url": "https://frisbeegolfradat.fi/rata/hotelli-nuuksio/"
-}, {
+  },
+  {
     "name": "Hotelli Pyhätunturi",
     "url": "https://frisbeegolfradat.fi/rata/pyhatunturi/"
-}, {
+  },
+  {
+    "name": "Huhmarkallio DiscGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/huhmarkallio-discgolfpark/"
+  },
+  {
     "name": "Huhtasuo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/huhtasuo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Huhtiniemen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/huhtiniemen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Huittisten frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/huittisten-frisbeegolfrata/"
-}, {
-    "name": "Humppilan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/humppilan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hunnari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/hunnari-discgolfpark/"
-}, {
+  },
+  {
     "name": "Hutsin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hutsin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Huttula frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/huttula_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Huuhanmetsä DiscGolfPark ",
     "url": "https://frisbeegolfradat.fi/rata/huuhanmetsa-discgolfpark/"
-}, {
+  },
+  {
     "name": "Huuhkaala frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/huuhkaala-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Huutjärven frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/huutjarven_frisbeegolfrata_pyhtaa/"
-}, {
+  },
+  {
     "name": "Hyrylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tuusula_discgolfpark/"
-}, {
+  },
+  {
     "name": "Hyrynsalmen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hyrynsalmen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Hämeenlinnan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/hameenlinnan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Häntyrinkankaan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/hantyrinkankaan_frisbeegolfrata_sastamala/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/hantyrinkankaan_frisbeegolfrata_sastamala/"
+  },
+  {
     "name": "Härkälinnan Frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/harkalinnan_frisbeegolfrata_hameenlinna/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/harkalinnan_frisbeegolfrata_hameenlinna/"
+  },
+  {
     "name": "Härmä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/harma_discgolfpark_harma/"
-}, {
+  },
+  {
     "name": "Iitti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/iitti-discgolfpark/"
-}, {
+  },
+  {
     "name": "Ikaalinen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ikaalinen-discgolfpark/"
-}, {
+  },
+  {
     "name": "Ikaalisten kylpylä",
     "url": "https://frisbeegolfradat.fi/rata/ikaalisten_kylpyla_ikaalinen/"
-}, {
+  },
+  {
     "name": "Illinsaari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/illinsaari-discgolfpark/"
-}, {
+  },
+  {
     "name": "Ilmajoen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ilmajoen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ilmaristen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ilmaristen_frisbeegolfrata_lieto/"
-}, {
+  },
+  {
     "name": "Inkoon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/inkoo/"
-}, {
+  },
+  {
     "name": "Iso Kirja, \"Iso Heitto\"",
     "url": "https://frisbeegolfradat.fi/rata/isoheitto/"
-}, {
+  },
+  {
     "name": "Iso Kirja, \"Pikku Putti\"",
     "url": "https://frisbeegolfradat.fi/rata/isokirja/"
-}, {
+  },
+  {
     "name": "Iso Maisaari",
     "url": "https://frisbeegolfradat.fi/rata/iso_maisaari_rymattyla/"
-}, {
+  },
+  {
     "name": "Iso Vasikkasaari",
     "url": "https://frisbeegolfradat.fi/rata/iso-vasikkasaari/"
-}, {
+  },
+  {
     "name": "Isojoen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/isojoen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Isosaari",
     "url": "https://frisbeegolfradat.fi/rata/isosaari_tampere/"
-}, {
+  },
+  {
     "name": "Itä-Suomen koulu DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ita-suomen-koulu-discgolfpark/"
-}, {
+  },
+  {
     "name": "Itäkylän Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/itakylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Itäpuolen urheilukeskus",
-    "url": "https://frisbeegolfradat.fi/rata/itapuolen_urheilukeskus_kristiinankaupunki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/itapuolen_urheilukeskus_kristiinankaupunki/"
+  },
+  {
     "name": "Ivalon Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ivalon_frisbeegolfrata_ivalo/"
-}, {
+  },
+  {
     "name": "Jaalan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/jaala_kouvola/"
-}, {
+  },
+  {
     "name": "Jalasjärven koulukeskus",
     "url": "https://frisbeegolfradat.fi/rata/kirkonkylan_koulu_jalasjarvi/"
-}, {
+  },
+  {
     "name": "Jokelan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/jokela_tuusula/"
-}, {
+  },
+  {
     "name": "Jokioinen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/jokioinen-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Jokipuiston koulun frisbeegolfrata",
+    "url":
+      "https://frisbeegolfradat.fi/rata/jokipuiston-koulun-frisbeegolfrata/"
+  },
+  {
     "name": "Joutsan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/joutsan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Juankosken frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/juankosken_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Julkujärvi DGP-amatöörirata",
     "url": "https://frisbeegolfradat.fi/rata/julkujarvi-dgp-amatoorirata/"
-}, {
+  },
+  {
     "name": "Julkujärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/julkujarvi_discgolfpark_ylojarvi/"
-}, {
+  },
+  {
     "name": "Junttilankoulun Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/junttilankoulun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Jussinmäen urheilukeskus",
     "url": "https://frisbeegolfradat.fi/rata/jussinmaen_urheilukeskus_sievi/"
-}, {
+  },
+  {
     "name": "Juupajoki School DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/juupajoki-school-discgolfpark/"
-}, {
-    "name": "Juupavaara DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/juupavaara-discgolfpark/"
-}, {
+  },
+  {
     "name": "Juutuanvaara Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/juutuanvaara_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Juvan frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/juvan-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Jytinä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/jytina-discgolfpark/"
-}, {
-    "name": "Jämi",
+  },
+  {
+    "name": "Jämikeskus frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/jami_jamijarvi/"
-}, {
+  },
+  {
     "name": "Järvelä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/jarvela_discgolfpark/"
-}, {
+  },
+  {
     "name": "Järvenpää DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/jarvenpaa_discgolfpark/"
-}, {
+  },
+  {
     "name": "Jätkänpuisto DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/jatkanpuisto_discgolfpark_suomussalmi/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/jatkanpuisto_discgolfpark_suomussalmi/"
+  },
+  {
     "name": "Kaartin Jääkärirykmentti",
     "url": "https://frisbeegolfradat.fi/rata/kaartin_jaakarirykmentti_helsinki/"
-}, {
+  },
+  {
     "name": "Kaatis",
     "url": "https://frisbeegolfradat.fi/rata/kaatis_vihti/"
-}, {
+  },
+  {
+    "name": "Kaavi DiscGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/kaavi-discgolfpark/"
+  },
+  {
     "name": "Kaihun frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/kaihun-frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Kainuun Prikaati",
     "url": "https://frisbeegolfradat.fi/rata/kainuun_prikaati/"
-}, {
+  },
+  {
     "name": "Kaitaisten frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/kaitaisten-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Kalastajakylän frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kalastajakylan_frisbeegolfrata_savonlinna/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kalastajakylan_frisbeegolfrata_savonlinna/"
+  },
+  {
     "name": "Kalevalan liikuntakeskuksen rata",
     "url": "https://frisbeegolfradat.fi/rata/kalevalan-liikuntakeskuksen-rata/"
-}, {
+  },
+  {
     "name": "Kallin laskettelukeskus",
     "url": "https://frisbeegolfradat.fi/rata/kalli_keminmaa/"
-}, {
-    "name": "Kalliosaaren frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kalliosaaren_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kalmarin Nahjuksen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kalmarin-nahjuksen-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kalmarin-nahjuksen-frisbeegolfrata/"
+  },
+  {
     "name": "Kalpakan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kalpakan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kangasniemen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kangasniemen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kansanpuisto",
     "url": "https://frisbeegolfradat.fi/rata/kansanpuisto/"
-}, {
+  },
+  {
     "name": "Karemajojen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/karemajojen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Karhumäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/karhumaki_discgolfpark_imatra/"
-}, {
+  },
+  {
     "name": "Karhunmaa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/karhunmaa_discgolfpark/"
-}, {
+  },
+  {
     "name": "Karijoen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/karijoen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Karkkilan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/karkkilan_frisbeegolfrata_karkkila/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/karkkilan_frisbeegolfrata_karkkila/"
+  },
+  {
     "name": "Karsikon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/karsikko/"
-}, {
+  },
+  {
     "name": "Karstula Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/karstula_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Karvian frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/karvian-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Kaskisten frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kaskisten_frisbeegolfrata_kaskinen/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kaskisten_frisbeegolfrata_kaskinen/"
+  },
+  {
     "name": "Katinkulta",
     "url": "https://frisbeegolfradat.fi/rata/sotkamo_katinkulta/"
-}, {
+  },
+  {
     "name": "Kauvatsa Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/kauvatsa-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Kauvonniemen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kauvonniemen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Keinukallio",
     "url": "https://frisbeegolfradat.fi/rata/keinukallio_kerava/"
-}, {
+  },
+  {
     "name": "Keljonkankaan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/keljonkangas-discgolfpark/"
-}, {
+  },
+  {
     "name": "Kellokosken frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kellokosken-frisbeegolfrata/"
-}, {
-    "name": "Kemi DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/kemi_discgolfpark/"
-}, {
+  },
+  {
     "name": "Kemin frisbeegolfrata Ajos",
     "url": "https://frisbeegolfradat.fi/rata/kemin-frisbeegolfrata-ajos/"
-}, {
+  },
+  {
     "name": "Keskuskenttä",
     "url": "https://frisbeegolfradat.fi/rata/keskuskentta_kurikka/"
-}, {
+  },
+  {
     "name": "Keskuskoulun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/keskuskoulun_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Keskusliikuntapuisto",
     "url": "https://frisbeegolfradat.fi/rata/keskusliikuntapuisto_kaarina/"
-}, {
+  },
+  {
     "name": "Kesälahden Urheilukenttä",
     "url": "https://frisbeegolfradat.fi/rata/kesalahden-urheilukentta/"
-}, {
+  },
+  {
     "name": "Kesälahti frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kesalahti-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kettulanvuori, Petäjävesi",
     "url": "https://frisbeegolfradat.fi/rata/petajaveden_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Keurusselän Liikuntapuisto",
     "url": "https://frisbeegolfradat.fi/rata/kerusselan_liikuntapuisto/"
-}, {
+  },
+  {
     "name": "Kiilopää",
     "url": "https://frisbeegolfradat.fi/rata/kiilopaa_saariselka_ivalo/"
-}, {
+  },
+  {
     "name": "Kiipula",
     "url": "https://frisbeegolfradat.fi/rata/kiipula_turenki/"
-}, {
+  },
+  {
     "name": "Kiljavan Opisto",
     "url": "https://frisbeegolfradat.fi/rata/kiljavan_opisto_nurmijarvi/"
-}, {
+  },
+  {
     "name": "Kilpijärven koulu",
     "url": "https://frisbeegolfradat.fi/rata/kilpijarven-koulu/"
-}, {
+  },
+  {
     "name": "Kinnulan frisbeegolf",
-    "url": "https://frisbeegolfradat.fi/rata/ulkoilualueen_frisbeegolfrata_kinnula/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/ulkoilualueen_frisbeegolfrata_kinnula/"
+  },
+  {
     "name": "Kiperin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kiperin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kippasuo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kippasuo_heinola/"
-}, {
+  },
+  {
     "name": "Kirikallio DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kirikallio_discgolfpark/"
-}, {
+  },
+  {
     "name": "Kirintövaaran frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kirintovaaran-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kirjurinluodon frisbeegolfpuisto",
-    "url": "https://frisbeegolfradat.fi/rata/kirjurinluodon_frisbeegolfpuisto_pori/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kirjurinluodon_frisbeegolfpuisto_pori/"
+  },
+  {
     "name": "Kirkko-/Koivuniemenpuisto",
     "url": "https://frisbeegolfradat.fi/rata/koivuniemenpuisto-joensuu/"
-}, {
+  },
+  {
     "name": "Kirkkonummen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kirkkonummen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kirkonkylän koulu",
     "url": "https://frisbeegolfradat.fi/rata/kirkonkylan_koulu_luopioinen/"
-}, {
+  },
+  {
     "name": "Kirkonmäen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kirkonmaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kisakallio",
     "url": "https://frisbeegolfradat.fi/rata/kisakallio_lohja/"
-}, {
+  },
+  {
     "name": "Kitinkangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kitinkangas-discgolfpark/"
-}, {
+  },
+  {
     "name": "Kitkan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kitkan_ulkoilukeskus/"
-}, {
+  },
+  {
+    "name": "Kittilä FrisbeeGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/kittila-frisbeegolfpark/"
+  },
+  {
     "name": "Kivijärven leirikeskus",
     "url": "https://frisbeegolfradat.fi/rata/kivijarven_leirikeskus_ylojarvi/"
-}, {
+  },
+  {
     "name": "Kivikon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kivikon_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Klamilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/klamilan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Koivusaari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/koivusaari_discgolfpark/"
-}, {
+  },
+  {
     "name": "Kokemäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kokemaki_discgolfpark/"
-}, {
+  },
+  {
     "name": "Kokkokangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kokkokangas-discgolfpark/"
-}, {
+  },
+  {
     "name": "Kolin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kolin_frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Kolin kylän frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/kolin-kylan-frisbeegolfrata/"
+  },
+  {
     "name": "Kommatti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kommatti-discgolfpark/"
-}, {
+  },
+  {
     "name": "Konkarin loma",
     "url": "https://frisbeegolfradat.fi/rata/konkarin_loma_isojoki/"
-}, {
+  },
+  {
     "name": "Kontiorannan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kontiorannan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Korkeakangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/korkeakangas-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Korpilahden frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/korpilahden-frisbeegolfrata/"
+  },
+  {
     "name": "Kotalahden kylätalo",
     "url": "https://frisbeegolfradat.fi/rata/kotalahden-kylatalo/"
-}, {
+  },
+  {
     "name": "Kotkatharjun ulkoilualue",
     "url": "https://frisbeegolfradat.fi/rata/kotkatharjun-ulkoilualue/"
-}, {
+  },
+  {
     "name": "Koukkarin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/koukkarin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kr. kansanopiston frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kr_kansanopiston_frisbeegolfrata_ranua/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kr_kansanopiston_frisbeegolfrata_ranua/"
+  },
+  {
     "name": "Kruunupuiston frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kruunupuiston-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kuhmoisten DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kuhmoinen/"
-}, {
+  },
+  {
+    "name": "Kukonkoivu frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/kukonkoivu-frisbeegolf/"
+  },
+  {
     "name": "Kultahiekat, Manamansalo",
     "url": "https://frisbeegolfradat.fi/rata/kultahiekat-manamansalo/"
-}, {
+  },
+  {
     "name": "Kultahiekka Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/kultahiekka-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Kumparepuiston frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kumparepuiston_frisbeegolfrata_kotka/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kumparepuiston_frisbeegolfrata_kotka/"
+  },
+  {
     "name": "Kunnonpaikka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kunnonpaikka/"
-}, {
+  },
+  {
     "name": "Kuntoutuskeskus Apila",
     "url": "https://frisbeegolfradat.fi/rata/kuntoutuskeskus_apila_kangasala/"
-}, {
+  },
+  {
     "name": "Kuokkalan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kuokkalan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kuorevirran frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kuorevirran-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kuortane DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kuortane_dgp/"
-}, {
+  },
+  {
     "name": "Kuortti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kuortti-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Kurun frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/kurun-frisbeegolfrata/"
+  },
+  {
     "name": "Kusiaismäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kusiaismaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kustavin Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kustavin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kuusamon Tropiikki",
     "url": "https://frisbeegolfradat.fi/rata/holidayclub_kuusamo/"
-}, {
+  },
+  {
     "name": "Kuvansi frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/kuvansi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Kylmäkoski DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kylmakoski_discgolfpark_akaa/"
-}, {
+  },
+  {
+    "name": "Kylmäluoman retkeilykeskus",
+    "url": "https://frisbeegolfradat.fi/rata/kylmaluoman-retkeilykeskus/"
+  },
+  {
     "name": "Kylpylähotelli Kuntoranta",
     "url": "https://frisbeegolfradat.fi/rata/kylpylahotelli_kuntoranta_varkaus/"
-}, {
+  },
+  {
     "name": "Kylpylähotelli Summassaari",
     "url": "https://frisbeegolfradat.fi/rata/kylpylahotelli_summassaari/"
-}, {
+  },
+  {
     "name": "Kyrön koulun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kyron-koulun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kyyjärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kyyjarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Käenkosken Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/kaenkosken-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Kähtävän frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/kahtavan_frisbeegolfrata_alavieska/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kahtavan_frisbeegolfrata_alavieska/"
+  },
+  {
+    "name": "Käpälikön frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/kapalikon-frisbeegolf/"
+  },
+  {
     "name": "Kätönlahti School DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/katonlahti_schooldiscgolfpark/"
-}, {
+  },
+  {
     "name": "Käyrälampi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/kayralampi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Köykkyri DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/koykkyri_dgp/"
-}, {
+  },
+  {
     "name": "Köykärinmäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/koykarinmaki_dgp/"
-}, {
+  },
+  {
     "name": "Laajavuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/laajavuori_jyvaskyla/"
-}, {
+  },
+  {
     "name": "Laakspohja Disc Golf Course",
     "url": "https://frisbeegolfradat.fi/rata/laakspohja-disc-golf-course/"
-}, {
+  },
+  {
     "name": "Ladun maja",
     "url": "https://frisbeegolfradat.fi/rata/ladun-maja/"
-}, {
+  },
+  {
     "name": "Lahdenperän frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/lahdenperan_frisbeegolfrata_eurajoki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/lahdenperan_frisbeegolfrata_eurajoki/"
+  },
+  {
     "name": "Laihian frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/laihian-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Laitakallion frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/laitakallion_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lakis frisbee",
     "url": "https://frisbeegolfradat.fi/rata/lakis-frisbee/"
-}, {
+  },
+  {
     "name": "Lammiharju DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lammiharju_discgolfpark/"
-}, {
+  },
+  {
     "name": "Lamminmäen tilat",
     "url": "https://frisbeegolfradat.fi/rata/lamminmaen_tilat/"
-}, {
+  },
+  {
     "name": "Lamminsuo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lamminsuo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Landsbron puistoalue",
     "url": "https://frisbeegolfradat.fi/rata/landsbron_puistoalue_karjaa/"
-}, {
+  },
+  {
     "name": "Lapin urheiluopisto",
     "url": "https://frisbeegolfradat.fi/rata/lapin_urheiluopisto_rovaniemi/"
-}, {
+  },
+  {
     "name": "Lapinlahti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lapinlahti-discgolfpark/"
-}, {
+  },
+  {
     "name": "Lappo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lappo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Lappohja",
     "url": "https://frisbeegolfradat.fi/rata/lappohja_hanko/"
-}, {
+  },
+  {
     "name": "Lassilanranta",
     "url": "https://frisbeegolfradat.fi/rata/lassilanranta/"
-}, {
+  },
+  {
     "name": "Lastumäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lastumaki_akaa/"
-}, {
+  },
+  {
+    "name": "Lastusten koulun frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/lastusten-koulun-frisbeegolfrata/"
+  },
+  {
     "name": "Lattomeren Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lattomeren-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Latumajan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/latumajan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Laukaa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/laukaa-discgolfpark/"
-}, {
+  },
+  {
     "name": "Launeen keskuspuisto",
     "url": "https://frisbeegolfradat.fi/rata/launeen_keskuspuisto_lahti/"
-}, {
+  },
+  {
     "name": "Laurikkala",
     "url": "https://frisbeegolfradat.fi/rata/laurikkala_haapajarvi/"
-}, {
+  },
+  {
     "name": "Laurinkylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/laurinkylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lauritsalan frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/lauritsalan-frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Lausteen frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/lausteen_frisbeegolfpuisto_turku/"
-}, {
+  },
+  {
+    "name": "Lehmonkärki frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/lehmonkarki-frisbeegolf/"
+  },
+  {
     "name": "Lehtikangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lehtikangas_discgolfpark_kajaani/"
-}, {
+  },
+  {
     "name": "Lehtomäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lehtomaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Leineperin Ruukin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/leineperi_ruukki/"
-}, {
+  },
+  {
     "name": "Lemmenlaakson frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lemmenlaakson-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lemmensillanpuisto",
     "url": "https://frisbeegolfradat.fi/rata/lemmensillanpuisto_varkaus/"
-}, {
+  },
+  {
     "name": "Lepaan Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lepaan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lestijärven frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lestijarvi/"
-}, {
+  },
+  {
     "name": "Levi Black DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/levi-black-discgolfpark/"
-}, {
+  },
+  {
     "name": "Levi Green DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/levi_discgolfpark/"
-}, {
+  },
+  {
     "name": "Levi Red DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/levi-red-discgolfpark/"
-}, {
+  },
+  {
     "name": "Liedon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/liedon-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lieksa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lieksa_dgp/"
-}, {
+  },
+  {
     "name": "Liikunta-alueen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tyrnava/"
-}, {
+  },
+  {
     "name": "Liikuntahallin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/liikuntahalli_tohmajarvi/"
-}, {
+  },
+  {
     "name": "Liikuntapuisto",
     "url": "https://frisbeegolfradat.fi/rata/liikuntapuisto_ylivieska/"
-}, {
+  },
+  {
     "name": "Liikuntapuiston frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/aanekosken_liikuntapuisto/"
-}, {
+  },
+  {
     "name": "Liperin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/liperin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lokalahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lokalahden-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lomakeskuksen Frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/lomakeskuksen_frisbeegolfrata_punkaharju/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/lomakeskuksen_frisbeegolfrata_punkaharju/"
+  },
+  {
     "name": "Lomakeskus Huhmarin frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/lomakeskus-huhmarin-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/lomakeskus-huhmarin-frisbeegolfrata/"
+  },
+  {
     "name": "Lomakeskus Päiväkumpu",
     "url": "https://frisbeegolfradat.fi/rata/lomakeskus_paivakumpu_karjalohja/"
-}, {
+  },
+  {
     "name": "Lomakeskus Revontuli",
     "url": "https://frisbeegolfradat.fi/rata/lomakeskus_revontuli_hankasalmi/"
-}, {
+  },
+  {
     "name": "Lootholma DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lootholma_discgolfpark/"
-}, {
+  },
+  {
     "name": "Loppi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/loppi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Lossisaari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lossisaari-discgolfpark/"
-}, {
+  },
+  {
     "name": "Loviisan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/loviisan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lumijoki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/lumijoki-discgolfpark/"
-}, {
+  },
+  {
     "name": "Luopioisten frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/luopioisten-dg/"
-}, {
+  },
+  {
     "name": "Luosto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/luosto-discgolfpark/"
-}, {
+  },
+  {
     "name": "Luumäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/luumaki-discgolfpark/"
-}, {
+  },
+  {
     "name": "Luvia Frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/luvia-frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Lykynlammen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lykynlammen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Lyytikkälä frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/lyytikkala-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "M-Real",
     "url": "https://frisbeegolfradat.fi/rata/m-real_kyroskoski/"
-}, {
-    "name": "Maaniittu-Ihantola",
-    "url": "https://frisbeegolfradat.fi/rata/maaniittu-ihantola_nurmijarvi/"
-}, {
+  },
+  {
     "name": "Maaninka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/maaninka-discgolfpark/"
-}, {
+  },
+  {
     "name": "Maksinharjun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/maksinharjun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Malminiityn frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/malminiityn-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Mammankaivon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/mammankaivon_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Mankolan koulun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/mankolan-koulun-frisbeegolfrata/"
-}, {
-    "name": "Mannilanniemi DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/mannilanniemi-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Mansikannokan frisbeegolfpuisto",
+    "url": "https://frisbeegolfradat.fi/rata/mansikannokan-frisbeegolfpuisto/"
+  },
+  {
     "name": "Marttila DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/marttila_discgolfpark/"
-}, {
+  },
+  {
     "name": "Masku Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/masku_frisbeegolf_masku/"
-}, {
+  },
+  {
     "name": "Maunun koulu",
     "url": "https://frisbeegolfradat.fi/rata/maunun_koulu_rusko/"
-}, {
+  },
+  {
     "name": "Meilahti",
     "url": "https://frisbeegolfradat.fi/rata/meilahti_helsinki/"
-}, {
+  },
+  {
     "name": "Mellilänjärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mellilanjarvi_discgolfpark/"
-}, {
+  },
+  {
     "name": "Mellonmäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/mellonmaen-frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Merenlahden frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/merenlahden-frisbeegolfrata/"
+  },
+  {
     "name": "Meri-Toppila DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/meri-toppila_oulu/"
-}, {
+  },
+  {
     "name": "Merikaarron frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/merikaarron-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Meripuiston Frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/meripuiston_frisbeegolfrata_kokkola/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/meripuiston_frisbeegolfrata_kokkola/"
+  },
+  {
     "name": "Metelin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/metelin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Metsäkartano",
     "url": "https://frisbeegolfradat.fi/rata/metsakartano_rautavaara/"
-}, {
+  },
+  {
     "name": "Metsämaa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/metsamaa-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Miehikkälän frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/miehikkalan-frisbeegolfrata/"
+  },
+  {
     "name": "Mikkalan maalaistalo",
     "url": "https://frisbeegolfradat.fi/rata/mikkalan-maalaistalo/"
-}, {
+  },
+  {
     "name": "Mikkelin frisbeegolfpuisto, Siekkilä",
     "url": "https://frisbeegolfradat.fi/rata/mikkelin_frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Mikkelin kampuksen frisbeegolfpuisto",
-    "url": "https://frisbeegolfradat.fi/rata/mikkelin-kampuksen-frisbeegolfpuisto/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/mikkelin-kampuksen-frisbeegolfpuisto/"
+  },
+  {
     "name": "Mikko Rantasen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/mikko-rantasen-frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Mikkolan Nuorisotila",
+    "url": "https://frisbeegolfradat.fi/rata/mikkolan-nuorisotila/"
+  },
+  {
     "name": "Mikonpuisto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mikonpuisto_dgp/"
-}, {
+  },
+  {
     "name": "Mossala Island Resort DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mossala-island-resort/"
-}, {
+  },
+  {
     "name": "Mouhi FG",
     "url": "https://frisbeegolfradat.fi/rata/mouhifg/"
-}, {
+  },
+  {
     "name": "Muhos",
     "url": "https://frisbeegolfradat.fi/rata/muhos/"
-}, {
+  },
+  {
     "name": "Muhos DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/muhos-discgolfpark/"
-}, {
+  },
+  {
     "name": "Muijala",
     "url": "https://frisbeegolfradat.fi/rata/muijala/"
-}, {
+  },
+  {
     "name": "Mukkula DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mukkula_discgolfpark_lahti/"
-}, {
-    "name": "Multamäen leirikeskus",
-    "url": "https://frisbeegolfradat.fi/rata/multamaki_laukaa/"
-}, {
+  },
+  {
     "name": "Multia DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/multia-discgolfpark/"
-}, {
+  },
+  {
     "name": "Munkkiniemi",
     "url": "https://frisbeegolfradat.fi/rata/munkkiniemi_helsinki/"
-}, {
+  },
+  {
     "name": "Murron frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/murron-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Mustikkavuoren kisarata",
     "url": "https://frisbeegolfradat.fi/rata/mustikkavuoren-kisarata/"
-}, {
+  },
+  {
     "name": "Mustikkavuoren perherata",
     "url": "https://frisbeegolfradat.fi/rata/mustikkavuoren-perherata/"
-}, {
+  },
+  {
     "name": "Myllymäen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/myllymaen_frisbeegolfrata_kankapaa/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/myllymaen_frisbeegolfrata_kankapaa/"
+  },
+  {
     "name": "Myllymäen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/myllymaen_frisbeegolfrata_lappeenranta/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/myllymaen_frisbeegolfrata_lappeenranta/"
+  },
+  {
     "name": "Myllymäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/myllymaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Mynämäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mynamaki_discgolfpark_mynamaki/"
-}, {
+  },
+  {
     "name": "Myrkyn frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/myrkyn_vapaa-ajankeskuksen_frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/myrkyn_vapaa-ajankeskuksen_frisbeegolfrata/"
+  },
+  {
     "name": "Mäntsälä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mantsala_discgolfpark/"
-}, {
+  },
+  {
     "name": "Mäntyharju DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mantyharju/"
-}, {
+  },
+  {
     "name": "Mäntän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/mantta/"
-}, {
+  },
+  {
     "name": "Märynummen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/marynummen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Mäyriä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/mayria-discgolfpark/"
-}, {
+  },
+  {
     "name": "Naamivaaran Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/naamivaara/"
-}, {
+  },
+  {
     "name": "Naissaaren frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/naissaaren-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Nakertajan lähiliikuntapaikka",
-    "url": "https://frisbeegolfradat.fi/rata/nakertajan_lahiliikuntapaikka_kajaani/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/nakertajan_lahiliikuntapaikka_kajaani/"
+  },
+  {
     "name": "Nakkilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/nakkilan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Nastola DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nastola-discgolfpark/"
-}, {
+  },
+  {
     "name": "Nellimin kerhotalo",
     "url": "https://frisbeegolfradat.fi/rata/nellimin_kerhotalo/"
-}, {
+  },
+  {
     "name": "Nerkoo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nerkoo_discgolfpark_lapinlahti/"
-}, {
+  },
+  {
     "name": "Neuskin Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/neuskin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Niittylahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/niittylahden-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Nikkilä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nikkila_dgp/"
-}, {
+  },
+  {
+    "name": "Nilsiä",
+    "url": "https://frisbeegolfradat.fi/rata/nilsia/"
+  },
+  {
+    "name": "Nisinkankaan frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/nisinkankaan-frisbeegolf/"
+  },
+  {
+    "name": "Nivalan frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/nivalan_frisbeegolfrata/"
+  },
+  {
     "name": "Nokia DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nokia_discgolfpark_nokia/"
-}, {
+  },
+  {
     "name": "NORA-frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/nora-frisbeegolf_haapavesi/"
-}, {
+  },
+  {
+    "name": "Norra Vallgrund frisbeegolfbana",
+    "url": "https://frisbeegolfradat.fi/rata/norra-vallgrund-frisbeegolfbana/"
+  },
+  {
     "name": "Norssin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/norssin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Nousiainen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nousiainen_dgp/"
-}, {
+  },
+  {
     "name": "Nummelanharjun frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/nummelanharjun_frisbeegolfrata_vihti/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/nummelanharjun_frisbeegolfrata_vihti/"
+  },
+  {
     "name": "Nummen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/nummen_frisbeegolfrata_nummi-pusula/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/nummen_frisbeegolfrata_nummi-pusula/"
+  },
+  {
     "name": "Nummenmäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/nummenmaki-discgolfpark/"
-}, {
+  },
+  {
     "name": "Nummijärvi Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/nummijarvi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Nuorisokeskus Marttinen",
     "url": "https://frisbeegolfradat.fi/rata/nuorisokeskus-marttinen/"
-}, {
+  },
+  {
     "name": "Nuorisokeskus Oivanki",
     "url": "https://frisbeegolfradat.fi/rata/nuorisokeskus_oivanki_kuusamo/"
-}, {
+  },
+  {
+    "name": "Nurmijärven frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/maaniittu-ihantola_nurmijarvi/"
+  },
+  {
     "name": "Nurmijärvi Golf",
     "url": "https://frisbeegolfradat.fi/rata/nurmijarvi_golf/"
-}, {
+  },
+  {
     "name": "Oittaan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/oittaan_ulkoilualue_espoo/"
-}, {
+  },
+  {
     "name": "Ollilan Tuvan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ollilan-tuvan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Orimattilan kiekkopuisto",
     "url": "https://frisbeegolfradat.fi/rata/orimattilan_kiekkopuisto/"
-}, {
+  },
+  {
     "name": "Oripään frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/oripaan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Otalampi",
     "url": "https://frisbeegolfradat.fi/rata/otalampi/"
-}, {
+  },
+  {
     "name": "Oulunsalo",
     "url": "https://frisbeegolfradat.fi/rata/oulunsalo/"
-}, {
+  },
+  {
     "name": "Ounasvaaran frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ounasvaaran-frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Paajalanmäki",
+    "url": "https://frisbeegolfradat.fi/rata/paajalanmaki/"
+  },
+  {
     "name": "Paavonkallio",
     "url": "https://frisbeegolfradat.fi/rata/paavonkallio_perho/"
-}, {
+  },
+  {
     "name": "Padasjoki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/padasjoki_discgolfpark/"
-}, {
+  },
+  {
     "name": "Pahkamäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pahkamaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pahkavuori",
     "url": "https://frisbeegolfradat.fi/rata/pahkavuori_salo/"
-}, {
+  },
+  {
     "name": "Paimio DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/kiusala-hanhijoki_puistoalue_paimio/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/kiusala-hanhijoki_puistoalue_paimio/"
+  },
+  {
     "name": "Pajulahti",
     "url": "https://frisbeegolfradat.fi/rata/pajulahti_nastola/"
-}, {
+  },
+  {
     "name": "Pajuniitty",
     "url": "https://frisbeegolfradat.fi/rata/pajuniitty_vihti/"
-}, {
+  },
+  {
     "name": "Paljakka frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/paljakka_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Palmusen puisto",
     "url": "https://frisbeegolfradat.fi/rata/palmusen_puiston_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Paloisvuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/paloisvuori_discgolfpark/"
-}, {
+  },
+  {
     "name": "Palomiehen puisto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/palomiehen-puisto-discgolfpark/"
-}, {
+  },
+  {
     "name": "Panelian frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/panelian_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pansio DiscGolfPark, Turku",
     "url": "https://frisbeegolfradat.fi/rata/pansio_discgolfpark/"
-}, {
+  },
+  {
     "name": "Pappilan frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/pappilan-frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Pappilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pirkkalan-pappila/"
-}, {
+  },
+  {
     "name": "Pappilanmetsän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pappilanmetsa_hameenkyro/"
-}, {
+  },
+  {
     "name": "Pargas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/parainen_disc_golf_park_parainen/"
-}, {
+  },
+  {
     "name": "Parikkala DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/parikkala_discgolfpark/"
-}, {
+  },
+  {
     "name": "Parkkivuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/parkkivuori-discgolfpark/"
-}, {
+  },
+  {
     "name": "Parolannummen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/parolannummen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Parppein liikuntakeskus",
     "url": "https://frisbeegolfradat.fi/rata/parppein_liikuntakeskus_ilomantsi/"
-}, {
+  },
+  {
     "name": "Patanan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/patanan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Patokosken Frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/patokosken_frisbeegolfrata_rovaniemi/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/patokosken_frisbeegolfrata_rovaniemi/"
+  },
+  {
     "name": "Pedersöre DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pedersore_discgolfpark/"
-}, {
+  },
+  {
     "name": "Peikkometsän Frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/peikkometsan_frisbeegolfrata_kuopio/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/peikkometsan_frisbeegolfrata_kuopio/"
+  },
+  {
     "name": "Pelkosenniemi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pelkosenniemi_dgp/"
-}, {
+  },
+  {
     "name": "Peltokankaan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/peltokankaan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Peltolammi Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/peltolammi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Peltosalmen urheilupuisto",
     "url": "https://frisbeegolfradat.fi/rata/peltosalmen_urheilupuisto_iisalmi/"
-}, {
+  },
+  {
     "name": "Perniön frisbeegolfrata, Salo",
     "url": "https://frisbeegolfradat.fi/rata/pernion_frisbeegolfrata_salo/"
-}, {
+  },
+  {
     "name": "Pernun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pernun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pernå Discgolf",
     "url": "https://frisbeegolfradat.fi/rata/perna-discgolf/"
-}, {
+  },
+  {
     "name": "Petäjämäen urheilukeskus",
-    "url": "https://frisbeegolfradat.fi/rata/petajamaen_urheilukeskus_reisjarvi/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/petajamaen_urheilukeskus_reisjarvi/"
+  },
+  {
     "name": "Petäjäsuon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/petajasuon-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Petäys Resort",
     "url": "https://frisbeegolfradat.fi/rata/petays-resort/"
-}, {
+  },
+  {
     "name": "Peuhu DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/peuhu-discgolfpark/"
-}, {
+  },
+  {
     "name": "Peurunka, Laukaa",
     "url": "https://frisbeegolfradat.fi/rata/peurunka_laukaa/"
-}, {
+  },
+  {
     "name": "Pieksämäki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pieksamaki-discgolfpark/"
-}, {
+  },
+  {
     "name": "Pielavesi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pielavesi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Pietarsaaren frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pietarsaaren_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pihtipudas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pihtipudas_discgolfpark/"
-}, {
+  },
+  {
     "name": "Piispalan matkailukeskus",
-    "url": "https://frisbeegolfradat.fi/rata/piispalan_matkailukeskus_kannonkoski/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/piispalan_matkailukeskus_kannonkoski/"
+  },
+  {
     "name": "Pikkarala Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/pikkarala-frisbeegolf/"
-}, {
+  },
+  {
+    "name": "Pikku-Syöte Frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/pikku-syote-frisbeegolf/"
+  },
+  {
     "name": "Pirkkala DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pirkkala-discgolfpark/"
-}, {
+  },
+  {
     "name": "Pirskerin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pirskerin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pitkäjärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pitkajarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Pomarkun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pomarkun-frisbeegolfrata/"
-}, {
-    "name": "Pornainen DiscGolfPark",
+  },
+  {
+    "name": "Pornaisten frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pornainen_discgolfpark/"
-}, {
+  },
+  {
     "name": "Porttikallion frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/porttikallio_punkalaidun/"
-}, {
+  },
+  {
     "name": "PowerPark Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/powerpark-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Puijo DiscGolf",
     "url": "https://frisbeegolfradat.fi/rata/puijo-discgolf/"
-}, {
+  },
+  {
     "name": "Pukkila Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/pukkila-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Puolanka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/puolanka-discgolfpark/"
-}, {
+  },
+  {
     "name": "Puolarmaarin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/puolarmaarin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Puumila",
     "url": "https://frisbeegolfradat.fi/rata/puumila/"
-}, {
+  },
+  {
     "name": "Pyhäjoen frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/pyhajoen_frisbeegolfpuisto/"
-}, {
+  },
+  {
     "name": "Pyhäjärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pyhajarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Pyhämaa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pyhamaa-discgolfpark/"
-}, {
-    "name": "Pyhäniemi",
+  },
+  {
+    "name": "Pyhäniemi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pyhaniemi_kihnio/"
-}, {
+  },
+  {
     "name": "Pyhäntä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/pyhanta_discgolfpark/"
-}, {
+  },
+  {
     "name": "Pylkönmäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pylkonmaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Pyssymäen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/pyssymaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Päiväkumpu",
     "url": "https://frisbeegolfradat.fi/rata/paivakumpu_vantaa/"
-}, {
+  },
+  {
+    "name": "Pälli frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/palli-frisbeegolf/"
+  },
+  {
     "name": "Päällistönmäen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/paallistonmaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Raahe DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/raahe-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Raanujärven frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/raanujarven-frisbeegolfrata/"
+  },
+  {
     "name": "Rajamaanrannan liikuntapaikka",
     "url": "https://frisbeegolfradat.fi/rata/rajamaanranta_pudasjarvi/"
-}, {
-    "name": "Rajamäen liikuntapuisto",
-    "url": "https://frisbeegolfradat.fi/rata/rajamaen_liikuntapuisto_nurmijarvi/"
-}, {
+  },
+  {
+    "name": "Rajamäen frisbeegolfrata",
+    "url":
+      "https://frisbeegolfradat.fi/rata/rajamaen_liikuntapuisto_nurmijarvi/"
+  },
+  {
     "name": "Ranta-Koivisto DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/ranta-koivisto_discgolfpark_kangasala/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/ranta-koivisto_discgolfpark_kangasala/"
+  },
+  {
     "name": "Rantakylän virkistysalue",
     "url": "https://frisbeegolfradat.fi/rata/rantakylan_virkistysalue_liminka/"
-}, {
+  },
+  {
     "name": "Rantapirtti",
     "url": "https://frisbeegolfradat.fi/rata/rantapirtti_koskenpaa/"
-}, {
+  },
+  {
     "name": "Rantasalmen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/rantasalmen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Rantasipi Aulanko",
     "url": "https://frisbeegolfradat.fi/rata/rantasipi-aulanko/"
-}, {
+  },
+  {
     "name": "Rantasipi Eden",
     "url": "https://frisbeegolfradat.fi/rata/rantasipi_eden/"
-}, {
+  },
+  {
     "name": "Rantsilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/rantsilan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ranua DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ranua_dgp/"
-}, {
+  },
+  {
     "name": "Rapilan puisto",
     "url": "https://frisbeegolfradat.fi/rata/rapilan-puistorata/"
-}, {
+  },
+  {
     "name": "Raudaskylä",
     "url": "https://frisbeegolfradat.fi/rata/raudaskyla_ylivieska/"
-}, {
+  },
+  {
     "name": "Rautalammin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/rautalammin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Rautavaara DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/rautavaara-discgolfpark/"
-}, {
+  },
+  {
     "name": "Ravikangas Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/ravikangas-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Rekikoski DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/rekikoski_discgolfpark_huittinen/"
-}, {
+  },
+  {
     "name": "Riemurinteen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/riemurinteen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Rissala Disc Golf",
     "url": "https://frisbeegolfradat.fi/rata/rissala-disc-golf/"
-}, {
+  },
+  {
     "name": "Ristijärvi DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/ristijarvi_discgolfpark_ristijarvi/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/ristijarvi_discgolfpark_ristijarvi/"
+  },
+  {
     "name": "Ristikiven Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/ristikiven_frisbeegolf/"
-}, {
+  },
+  {
     "name": "Ristinummen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ristinummen_frisbeegolfrata_vaasa/"
-}, {
+  },
+  {
     "name": "Riutta DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/riutta_discgolfpark/"
-}, {
+  },
+  {
     "name": "Roution frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/roution-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Rovastinkangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/rovastinkangas_discgolfpark/"
-}, {
+  },
+  {
     "name": "Ruissalon Frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/hamina/"
-}, {
+  },
+  {
     "name": "Ruka Adventures",
     "url": "https://frisbeegolfradat.fi/rata/ruka_adventures_kuusamo/"
-}, {
+  },
+  {
     "name": "Ruka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ruka_discgolfpark/"
-}, {
+  },
+  {
     "name": "Ruokojärvi",
     "url": "https://frisbeegolfradat.fi/rata/ruokojarvi_savonlinna/"
-}, {
+  },
+  {
     "name": "Räisälänmäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/raisalanmaen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Rääkkylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/raakkylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Saamelaisalueen koulutuskeskus",
     "url": "https://frisbeegolfradat.fi/rata/saamelaisalueen_koulutuskeskus/"
-}, {
+  },
+  {
     "name": "Saari DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/saari-discgolfpark/"
-}, {
+  },
+  {
     "name": "Saariselkä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/saariselka-discgolfpark/"
-}, {
+  },
+  {
     "name": "Sahanmäki DiscGolfPark (ex. Hyvinkää DGP)",
     "url": "https://frisbeegolfradat.fi/rata/hyvinkaa_discgolfpark/"
-}, {
+  },
+  {
     "name": "SaimaaHoliday DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/saimaaholiday-discgolfpark/"
-}, {
+  },
+  {
     "name": "Sallatunturi frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/sallatunturi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Salmela DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/salmela_sotkamo/"
-}, {
+  },
+  {
     "name": "Salokylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/salokylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Salpakangas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/salpakangas-discgolfpark/"
-}, {
+  },
+  {
     "name": "Sammonlahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/sammonlahden-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Sappee DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/sappee_discgolfpark_palkane/"
-}, {
+  },
+  {
     "name": "Satamanpuisto",
     "url": "https://frisbeegolfradat.fi/rata/satamanpuisto_laukaa/"
-}, {
+  },
+  {
     "name": "Savela DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/savela-discgolfpark/"
-}, {
+  },
+  {
     "name": "Savelanpuisto",
     "url": "https://frisbeegolfradat.fi/rata/savelanpuisto_helsinki/"
-}, {
+  },
+  {
     "name": "Savitaipaleen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/savitaipaleen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Savivuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/savivuori_dgp/"
-}, {
+  },
+  {
     "name": "Savonranta",
     "url": "https://frisbeegolfradat.fi/rata/savonranta_savonlinna/"
-}, {
+  },
+  {
     "name": "Selänpään Jäykät frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/selanpaan-jaykat-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Sepänkylän frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/sepankylan_frisbeegolfrata_mustasaari/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/sepankylan_frisbeegolfrata_mustasaari/"
+  },
+  {
     "name": "Sibbe Disc Golf (ent. Joensuun Tila)",
     "url": "https://frisbeegolfradat.fi/rata/sibbe-disc-golf/"
-}, {
+  },
+  {
     "name": "Sieravuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/sieravuori/"
-}, {
+  },
+  {
     "name": "Sievin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/sievin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Siikaisten frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/siikaisten_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Siilinlahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/siilinjarvi/"
-}, {
+  },
+  {
     "name": "Siltamäen frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/siltamaen_frisbeegolfrata_helsinki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/siltamaen_frisbeegolfrata_helsinki/"
+  },
+  {
     "name": "Simon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/simon_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Simonmetsä",
     "url": "https://frisbeegolfradat.fi/rata/simonmetsa_vantaa/"
-}, {
+  },
+  {
     "name": "Simpeleen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/simpeleen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Siuntion frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/siuntion_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Skogby",
     "url": "https://frisbeegolfradat.fi/rata/skogby_tammisaari/"
-}, {
+  },
+  {
     "name": "Soinin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/soinin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Sonkajärven frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/sonkajarven-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Sotkuman frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/sotkuman-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Sport Resort Ylläs",
     "url": "https://frisbeegolfradat.fi/rata/fontana_yllas_saaga_yllas/"
-}, {
+  },
+  {
     "name": "Sulkavan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/sulkavan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Suomen Frisbeegolfkeskus",
     "url": "https://frisbeegolfradat.fi/rata/suomen_frisbeegolfkeskus/"
-}, {
+  },
+  {
+    "name": "Suomenniemen Frisbeegolfpuisto",
+    "url": "https://frisbeegolfradat.fi/rata/suomenniemen-frisbeegolfpuisto/"
+  },
+  {
     "name": "Suonenjoki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/suonenjoki/"
-}, {
+  },
+  {
     "name": "Suopelto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/suopelto-discgolfpark/"
-}, {
+  },
+  {
     "name": "Suvilahti",
     "url": "https://frisbeegolfradat.fi/rata/suvilahti_vaasa/"
-}, {
+  },
+  {
     "name": "Suvituuli",
     "url": "https://frisbeegolfradat.fi/rata/suvituuli_hirvensalo_turku/"
-}, {
+  },
+  {
     "name": "Syöte DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/syote_discgolfpark/"
-}, {
+  },
+  {
     "name": "Säkylän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/sakylan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Säläisjärvi",
     "url": "https://frisbeegolfradat.fi/rata/salaisjarvi_jurva/"
-}, {
-    "name": "Söderkulla DiscGolfPark",
+  },
+  {
+    "name": "Söderkullan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/soderkulla_discgolfpark_sipoo/"
-}, {
+  },
+  {
     "name": "Söderkullan Kartanon frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/soderkullan-kartanon-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/soderkullan-kartanon-frisbeegolfrata/"
+  },
+  {
     "name": "Taalintehdas DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/taalintehdas-discgolfpark/"
-}, {
+  },
+  {
     "name": "Taavinkylä School DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/taavinkyla-school-discgolfpark/"
-}, {
+  },
+  {
     "name": "Tahko DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tahko-discgolfpark/"
-}, {
+  },
+  {
+    "name": "Tahkovuori DiscGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/tahkovuori-discgolfpark/"
+  },
+  {
     "name": "Taivaanpankon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/taivaanpankon-frisbeegolfrata/"
-}, {
-    "name": "Taivaanvalkeat",
-    "url": "https://frisbeegolfradat.fi/rata/taivaanvalkeat/"
-}, {
+  },
+  {
     "name": "Taivalvaara DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/taivalvaara_discgolfpark/"
-}, {
+  },
+  {
     "name": "Taivassalo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/taivassalo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Talin frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/talin_frisbeegolfpuisto_helsinki/"
-}, {
-    "name": "Talma Disc Golf Park",
-    "url": "https://frisbeegolfradat.fi/rata/talma-disc-golf-park/"
-}, {
+  },
+  {
     "name": "Tammela DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tammela_discgolfpark/"
-}, {
+  },
+  {
+    "name": "Tampereen frisbeegolfkeskus",
+    "url": "https://frisbeegolfradat.fi/rata/tampereen-frisbeegolfkeskus/"
+  },
+  {
     "name": "Tanhuvaara DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tanhuvaara_discgolfpark/"
-}, {
+  },
+  {
     "name": "Tarinalaakso Disc Golf",
     "url": "https://frisbeegolfradat.fi/rata/tarinalaakso-disc-golf/"
-}, {
+  },
+  {
+    "name": "Tarvasjoki DiscGolfPark",
+    "url": "https://frisbeegolfradat.fi/rata/tarvasjoki-discgolfpark/"
+  },
+  {
     "name": "Terjärv DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tervjarv-discgolfpark/"
-}, {
+  },
+  {
     "name": "Tervakoski Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/tervakoski-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Tervalammen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tervalammen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Tervaslahden frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tervaslahden_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Tervo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tervo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Tervola DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tervola-discgolfpark/"
-}, {
+  },
+  {
     "name": "Tietäväisen koulutuskeskus",
     "url": "https://frisbeegolfradat.fi/rata/tietavaisen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Tippsundin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tippsundin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Toholammin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/toholammin_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Toivakka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/toivakka-discgolfpark/"
-}, {
+  },
+  {
     "name": "Toramon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/toramon_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Tornio DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tornio_discgolfpark/"
-}, {
+  },
+  {
     "name": "Torpanmäki",
     "url": "https://frisbeegolfradat.fi/rata/torpanmaki_haukipudas/"
-}, {
+  },
+  {
     "name": "Toukolan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/toukolan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Tuomiojärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/tuomiojarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Tutkatalon frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/tutkatalon_frisbeegolfrata_lempaala/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/tutkatalon_frisbeegolfrata_lempaala/"
+  },
+  {
     "name": "Tuurin Koulu Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/tuurin-koulu-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Törnävän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/tornavan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Uimahallin frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/uimahallin_frisbeegolfrata_uusikaupunki/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/uimahallin_frisbeegolfrata_uusikaupunki/"
+  },
+  {
     "name": "Uimaharjun Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/uimaharjun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Ukkohalla DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ukkohalla_discgolfpark/"
-}, {
+  },
+  {
     "name": "Ulvilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ulvilan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Uotilan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/uotilan_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Urheilukeskus, Asikkala",
     "url": "https://frisbeegolfradat.fi/rata/urheilukeskus_asikkala/"
-}, {
+  },
+  {
     "name": "Urheiluopisto, Vierumäki",
     "url": "https://frisbeegolfradat.fi/rata/urheiluopisto_vierumaki/"
-}, {
+  },
+  {
     "name": "Urheilupuisto",
     "url": "https://frisbeegolfradat.fi/rata/urheilupuisto_turku/"
-}, {
+  },
+  {
     "name": "Urheilupuiston frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/urheilupuiston_frisbeegolfrata_kouvola/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/urheilupuiston_frisbeegolfrata_kouvola/"
+  },
+  {
     "name": "Urheilupuiston frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/urheilupuiston_frisbeegolfrata_kauhava/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/urheilupuiston_frisbeegolfrata_kauhava/"
+  },
+  {
     "name": "Urheilutalo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/urheilutalo_discgolfpark_imatra/"
-}, {
+  },
+  {
     "name": "Utajärven frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/utajarven_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Utran frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/utra_joensuu/"
-}, {
+  },
+  {
     "name": "Utsjoki DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/utsjoki-discgolfpark/"
-}, {
+  },
+  {
     "name": "Uurainen DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/uurainen-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vaala DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vaala_discgolfpark_vaala/"
-}, {
+  },
+  {
+    "name": "Vaalajärven frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/vaalajarven-frisbeegolfrata/"
+  },
+  {
     "name": "Valkeakoski DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/valkeakoski_discgolfpark/"
-}, {
+  },
+  {
     "name": "Valkeisjärven leirikeskus",
-    "url": "https://frisbeegolfradat.fi/rata/valkeisjarven_leirikeskus_lestijarvi/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/valkeisjarven_leirikeskus_lestijarvi/"
+  },
+  {
     "name": "Valorannan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/oulaisten_keskustan_frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/oulaisten_keskustan_frisbeegolfrata/"
+  },
+  {
     "name": "Valtimo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/valtimo-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vampulan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vampula_sakyla/"
-}, {
+  },
+  {
     "name": "Vanhan Kaivoksen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vanhan_kaivoksen_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vapaa-ajankeskus Parra",
     "url": "https://frisbeegolfradat.fi/rata/vapaa-ajankeskus_parra_teuva/"
-}, {
+  },
+  {
+    "name": "Varistonniityn Frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/varistonniityn-frisbeegolfrata/"
+  },
+  {
     "name": "Varpaisjärvi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/varpaisjarvi-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vartiolan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/vartiolan_frisbeegolfrata_punkalaidun/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/vartiolan_frisbeegolfrata_punkalaidun/"
+  },
+  {
     "name": "Vattuvuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vattuvuori-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vehmaa DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vehmaa_discgolfpark/"
-}, {
+  },
+  {
+    "name": "Vehmersalmen frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/vehmersalmen-frisbeegolfrata/"
+  },
+  {
     "name": "Veikkolan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/veikkolan_frisbeegolfrata_veikkola/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/veikkolan_frisbeegolfrata_veikkola/"
+  },
+  {
     "name": "Venetpalon hiihtomajan frisbeegolfrata",
-    "url": "https://frisbeegolfradat.fi/rata/venetpalon-hiihtomajan-frisbeegolfrata/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/venetpalon-hiihtomajan-frisbeegolfrata/"
+  },
+  {
     "name": "Vepsän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vepsan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vesanka DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vesanka-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vesanto DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vesanto-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vesilahti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vesilahti-discgolfpark/"
-}, {
+  },
+  {
     "name": "Vesileppis DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/leppavirta_discgolfpark/"
-}, {
+  },
+  {
     "name": "Vienolan frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vienolan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vieremä DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vierema_dgp/"
-}, {
+  },
+  {
     "name": "Vierevänniemi Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/vierevanniemi-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Vihiluodon frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vihiluodon-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vihioja DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vihioja_tampere/"
-}, {
-    "name": "Vihtavuori, Laukaa",
+  },
+  {
+    "name": "Vihtavuori DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vihtavuori_laukaa/"
-}, {
+  },
+  {
     "name": "Viidentienristeys",
     "url": "https://frisbeegolfradat.fi/rata/viidentienristeys_kankaanpaa/"
-}, {
+  },
+  {
+    "name": "Viksbergin frisbeegolfrata",
+    "url": "https://frisbeegolfradat.fi/rata/viksbergin-frisbeegolfrata/"
+  },
+  {
     "name": "Vilppulan Satama",
     "url": "https://frisbeegolfradat.fi/rata/vilppulan-satama/"
-}, {
+  },
+  {
     "name": "Vimpelin frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vimpelin-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vimpelinvaara DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vimpelinvaara_discgolfpark/"
-}, {
+  },
+  {
     "name": "Virojoen Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/virojoen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Virpiniemi DiscGolfPark",
-    "url": "https://frisbeegolfradat.fi/rata/virpiniemen_liikuntaopisto_haukipudas/"
-}, {
+    "url":
+      "https://frisbeegolfradat.fi/rata/virpiniemen_liikuntaopisto_haukipudas/"
+  },
+  {
     "name": "Virtain frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/virtain_frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Virvik Frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/virvik-frisbeegolf/"
-}, {
+  },
+  {
     "name": "Vitapolis",
     "url": "https://frisbeegolfradat.fi/rata/vitapolis/"
-}, {
+  },
+  {
     "name": "Vuokatti DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/vuokatti_discgolfpark/"
-}, {
+  },
+  {
     "name": "Vuorelan frisbeegolfkenttä",
     "url": "https://frisbeegolfradat.fi/rata/vuorelan-frisbeegolfkentta/"
-}, {
+  },
+  {
     "name": "Vuorilammen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vuorilammen-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Vähämäen frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vahamaen-frisbeegolfrata/"
-}, {
+  },
+  {
+    "name": "Vänö Frisbeegolf",
+    "url": "https://frisbeegolfradat.fi/rata/vano-frisbeegolf/"
+  },
+  {
     "name": "Värtsilän Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/vartsilan-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Västerby",
     "url": "https://frisbeegolfradat.fi/rata/vasterby_a-rata_tammisaari/"
-}, {
+  },
+  {
     "name": "WHD Gård DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/whd-gard-discgolfpark/"
-}, {
+  },
+  {
     "name": "Wuolteen kartano",
     "url": "https://frisbeegolfradat.fi/rata/wuolteen_kartano_hauho/"
-}, {
+  },
+  {
     "name": "Ykslammi DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ykslammi_dgp/"
-}, {
+  },
+  {
     "name": "Ylipään Frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ylipaan_frisbeegolfrata_isokyro/"
-}, {
+  },
+  {
     "name": "Ylitornio DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/ylitornio-discgolfpark/"
-}, {
+  },
+  {
     "name": "Ylämyllyn koulun frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/ylamyllyn-koulun-frisbeegolfrata/"
-}, {
+  },
+  {
     "name": "Yläneen frisbeegolfpuisto",
     "url": "https://frisbeegolfradat.fi/rata/ylaneen-yhtenaiskoulu/"
-}, {
+  },
+  {
     "name": "Yyteri",
     "url": "https://frisbeegolfradat.fi/rata/yyteri_pori/"
-}, {
+  },
+  {
     "name": "Äetsän frisbeegolfrata",
     "url": "https://frisbeegolfradat.fi/rata/aetsa_sastamala/"
-}, {
+  },
+  {
     "name": "Äkäslompolo DiscGolfPark",
     "url": "https://frisbeegolfradat.fi/rata/akaslompolo_dgp/"
-}, {
+  },
+  {
     "name": "Öjskogen frisbeegolf",
     "url": "https://frisbeegolfradat.fi/rata/ojskogen-frisbeegolf/"
-}]
+  }
+]
