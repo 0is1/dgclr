@@ -1,8 +1,9 @@
 import App, { Container } from 'next/app';
 import Link from 'next/link';
 import React from 'react';
+import withReduxSaga from 'lib/withReduxSaga';
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -33,3 +34,5 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default withReduxSaga(MyApp);
