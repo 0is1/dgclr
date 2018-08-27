@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import withApollo from 'lib/withApollo';
 import SearchContainer from 'components/SearchContainer';
 
 type Props = {};
@@ -14,4 +15,4 @@ class Index extends Component<Props> {
   }
 }
 
-export default Index;
+export default withApollo(Index);
