@@ -65,7 +65,7 @@ export const courseSchema = () => new Schema({
       holes: [
         {
           _id: false,
-          bar: Number,
+          par: Number,
           length: {
             foot: Number,
             meter: Number,
@@ -82,7 +82,7 @@ export const courseSchema = () => new Schema({
   ],
   locationInfo: {
     address: String,
-    zip: Number,
+    zip: String,
     city: String,
     location: {
       type: pointSchema,
