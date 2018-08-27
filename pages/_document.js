@@ -52,6 +52,10 @@ export default class extends Document {
         <Head>
           {this.helmetJsx}
           {this.helmetHeadComponents}
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+          />
           {this.props.styleTags}
         </Head>
         <body {...this.helmetBodyAttrComponents}>
