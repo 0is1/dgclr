@@ -66,6 +66,9 @@ module.exports = {
       'module-resolver',
       {
         root: ['./'],
+        alias: {
+          components: ['./components'],
+        },
       },
     ],
     ['transform-define', env],
