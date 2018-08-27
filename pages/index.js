@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import Container from 'components/Container';
 
 type Props = {};
 class Index extends Component<Props> {
@@ -9,7 +10,7 @@ class Index extends Component<Props> {
   }
 
   render() {
-    return <div>This is next.js! </div>;
+    return <Container>This is next.js! </Container>;
   }
 }
 
