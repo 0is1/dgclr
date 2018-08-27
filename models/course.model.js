@@ -13,7 +13,7 @@ courseModel.pre('update', () => courseModel.update(
 ));
 courseModel.index(
   {
-    name: 'text',
+    name: 1,
     'locationInfo.city': 'text',
   },
   { default_language: 'finnish' },
