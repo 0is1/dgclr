@@ -4,6 +4,7 @@ import Styles from './Input.styles';
 
 type Props = {
   onChange: Function,
+  value: String,
 };
 
 type Event = {
@@ -21,7 +22,8 @@ class InputComponent extends Component<Props> {
   };
 
   render() {
-    return <Input onChange={this.onChange} />;
+    const { value } = this.props;
+    return <Input value={value} onChange={this.onChange} />;
   }
 }
 
