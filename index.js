@@ -33,7 +33,7 @@ import { createCourse } from './controllers/course';
 //   });
 // };
 
-const maybeCreateCourse = async (courseData) => {
+export const maybeCreateCourse = async (courseData) => {
   try {
     await createCourse(courseData);
     // console.log('maybeCreateCourse: ', result);
@@ -42,7 +42,7 @@ const maybeCreateCourse = async (courseData) => {
   }
 };
 
-const scrapeData = async () => {
+export const scrapeData = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   // const someData = take(data, 5);
@@ -86,9 +86,7 @@ const scrapeData = async () => {
               if (ind === 1) {
                 const zipAndCity = part.trim().split(' ');
                 // console.log('zipAndCity: ', zipAndCity);
-                return zipAndCity.length === 2
-                  ? { city: zipAndCity[1], zip: zipAndCity[0] }
-                  : {};
+                return zipAndCity.length === 2 ? { city: zipAndCity[1], zip: zipAndCity[0] } : {};
               }
               // console.log('address: ', part);
               return { address: part };
@@ -221,11 +219,7 @@ const scrapeData = async () => {
         .replace(/^(https?):\/\/maps.google.com\/\?q=/, '')
         .split(',');
       // console.log('coordinates: ', coordinates);
-      if (
-        coordinates
-        && coordinates.length === 2
-        && coordinates[0] !== 'NULL'
-      ) {
+      if (coordinates && coordinates.length === 2 && coordinates[0] !== 'NULL') {
         dataObject.locationInfo.location = {
           type: 'Point',
           coordinates: [parseFloat(coordinates[0]), parseFloat(coordinates[1])],
@@ -282,7 +276,7 @@ const scrapeData = async () => {
               const meter = parseInt(lengthAndPar[0], 10) || 0;
               const foot = parseInt(3.28 * meter, 10);
               dataObject.layouts[layoutIndex].holes.push({
-                bar: lengthAndPar[1],
+                par: lengthAndPar[1],
                 length: {
                   foot,
                   meter,
@@ -324,7 +318,7 @@ const scrapeData = async () => {
             const meter = parseInt(lengthAndPar[0], 10) || 0;
             const foot = parseInt(3.28 * meter, 10);
             dataObject.layouts[0].holes.push({
-              bar: lengthAndPar[1],
+              par: lengthAndPar[1],
               length: {
                 foot,
                 meter,
@@ -380,126 +374,126 @@ const testData = {
       name: 'Aakonvuoren frisbeegolfrata',
       holes: [
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 345,
             meter: 105,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 295,
             meter: 90,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 400,
             meter: 122,
           },
         },
         {
-          bar: 4,
+          par: 4,
           length: {
             foot: 433,
             meter: 132,
           },
         },
         {
-          bar: 4,
+          par: 4,
           length: {
             foot: 466,
             meter: 142,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 328,
             meter: 100,
           },
         },
         {
-          bar: 4,
+          par: 4,
           length: {
             foot: 495,
             meter: 151,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 371,
             meter: 113,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 450,
             meter: 137,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 312,
             meter: 95,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 246,
             meter: 75,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 325,
             meter: 99,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 377,
             meter: 115,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 253,
             meter: 77,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 344,
             meter: 105,
           },
         },
         {
-          bar: 4,
+          par: 4,
           length: {
             foot: 443,
             meter: 135,
           },
         },
         {
-          bar: 3,
+          par: 3,
           length: {
             foot: 400,
             meter: 122,
           },
         },
         {
-          bar: 4,
+          par: 4,
           length: {
             foot: 476,
             meter: 145,
@@ -531,7 +525,7 @@ const init = async () => {
   console.log('before db');
   await connectDb();
   console.log('after db');
-  scrapeData();
+  // scrapeData();
   // maybeCreateCourse(testData);
 };
 
