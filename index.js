@@ -262,16 +262,18 @@ export const scrapeData = async () => {
         const holes = $(layout)
           .siblings('span')
           .children('.fairway')
-          .children('p');
+          .children('h4');
         let dynamicHoleCount = 0;
         holes.each((index, hole) => {
           if (!(index % 2)) {
             dynamicHoleCount += 1;
             const lengthAndPar = $(hole)
+              .siblings()
+              .first('p')
               .text()
               .replace(/[A-Öa-ö ]/g, '')
               .split('.');
-            // console.log('lengthAndPar: ', lengthAndPar);
+            console.log('lengthAndPar: ', lengthAndPar);
             if (lengthAndPar && lengthAndPar.length === 2) {
               const meter = parseInt(lengthAndPar[0], 10) || 0;
               const foot = parseInt(3.28 * meter, 10);
@@ -313,7 +315,7 @@ export const scrapeData = async () => {
             .text()
             .replace(/[A-Öa-ö ]/g, '')
             .split('.');
-          // console.log(lengthAndPar);
+          // console.log('lengthAndPar: ', lengthAndPar);
           if (lengthAndPar && lengthAndPar.length === 2) {
             const meter = parseInt(lengthAndPar[0], 10) || 0;
             const foot = parseInt(3.28 * meter, 10);
@@ -525,7 +527,7 @@ const init = async () => {
   console.log('before db');
   await connectDb();
   console.log('after db');
-  // scrapeData();
+  scrapeData();
   // maybeCreateCourse(testData);
 };
 
