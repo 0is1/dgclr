@@ -69,7 +69,8 @@ async function renderAndCache(req, res, pagePath, queryParams) {
   }
 }
 
-app.prepare()
+app
+  .prepare()
   .then(() => {
     const server = express();
     // The request handler must be the first middleware on the app
@@ -98,7 +99,13 @@ app.prepare()
     });
 
     server.get('/*.txt', (req, res) => res.status(200).sendFile(req.path, staticOptions));
-
+    server.get('/:slug', (req, res) => {
+      const actualPage = '/course';
+      const queryParams = {
+        slug: req.params.slug,
+      };
+      renderAndCache(req, res, actualPage, queryParams);
+    });
     // Use the `renderAndCache` utility defined below to serve pages
     server.get('/', (req, res) => {
       renderAndCache(req, res, '/');
