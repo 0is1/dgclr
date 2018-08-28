@@ -1,7 +1,10 @@
 import App, { Container } from 'next/app';
 import Link from 'next/link';
 import React from 'react';
-import withReduxSaga from 'lib/withReduxSaga';
+import { Provider } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import withReduxSaga from 'next-redux-saga';
+import { configureStore } from 'lib/withReduxSaga';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -15,7 +18,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, store } = this.props;
     return (
       <Container>
         <header>
@@ -26,13 +29,13 @@ class MyApp extends App {
             |
           </nav>
         </header>
-
-        <Component {...pageProps} />
-
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
         <footer>I`m here to stay</footer>
       </Container>
     );
   }
 }
 
-export default withReduxSaga(MyApp);
+export default withRedux(configureStore)(withReduxSaga({ async: true })(MyApp));
