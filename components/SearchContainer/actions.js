@@ -1,7 +1,8 @@
 export const actionTypes = {
-  LOAD_DATA: 'LOAD_DATA',
-  LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
-  LOAD_DATA_ERROR: 'LOAD_DATA_ERROR',
+  LOAD_DATA: 'DGCLR_LOAD_DATA',
+  LOAD_DATA_SUCCESS: 'DGCLR_LOAD_DATA_SUCCESS',
+  LOAD_DATA_ERROR: 'DGCLR_LOAD_DATA_ERROR',
+  SET_COURSES: 'DGCLR_SET_COURSES',
 };
 
 export function loadData() {
@@ -21,3 +22,5 @@ export function loadDataError(error) {
     error,
   };
 }
+
+export const setCourses = (courses = []) => ({ type: actionTypes.SET_COURSES, courses });
