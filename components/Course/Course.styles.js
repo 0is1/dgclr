@@ -11,12 +11,14 @@ const Styles = {
   `,
   Title: styled(Heading)`
     color: ${colors.text};
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
   `,
   Description: styled(Text)`
     color: ${colors.text};
+    font-size: 0.95rem;
     font-weight: 200;
-    line-height: 1.4;
+    line-height: 1.5;
   `,
   Box: styled(Box)``,
   PanelWrapper: styled(Panel)``,

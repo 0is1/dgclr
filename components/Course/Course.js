@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { size } from 'lodash';
 import ReactHtmlParser from 'react-html-parser';
 import {
-  BackgroundImage, Card, Flex, Subhead, Text,
+  Image, Card, Flex, Subhead, Text,
 } from 'rebass';
 import {
   convertLinksToHtml,
@@ -76,6 +76,7 @@ class Course extends Component<Props> {
     const {
       name, courseInfo, description, locationInfo, layouts,
     } = course;
+    const { mapUrl } = courseInfo;
     const descriptionWithLinks = convertLinksToHtml(description);
     const coordinates = convertCoordinatesToObject(
       locationInfo.location && locationInfo.location.coordinates,
@@ -83,14 +84,8 @@ class Course extends Component<Props> {
     const layoutNames = layouts.map(layout => layout.name);
     // eslint-disable-next-line no-underscore-dangle
     const layoutTabs = <Tabs tabs={layoutNames} id={course._id} />;
-    const mapElement = coordinates ? (
-      <Map coordinates={coordinates} />
-    ) : (
-      <BackgroundImage
-        ratio={1}
-        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=2048&q=20"
-      />
-    );
+    const mapElement = coordinates ? <Map coordinates={coordinates} /> : null;
+    const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
       <Wrapper>
@@ -106,26 +101,36 @@ class Course extends Component<Props> {
               <PanelWrapper mt={4}>
                 <PanelHeader>Radan lisätiedot:</PanelHeader>
                 <Box width="100%" px={1} py={2}>
-                  <Text mt=".85rem" pl={3}>
-                    <Strong>Korityyppi: </Strong>
-                    {`${courseInfo.basketType}`}
-                  </Text>
-                  <Text mt=".85rem" pl={3}>
-                    <Strong>Opastaulut: </Strong>
-                    {`${courseInfo.infoSignType}`}
-                  </Text>
-                  <Text mt=".85rem" pl={3}>
-                    <Strong>Heittoalustat: </Strong>
-                    {`${courseInfo.teeType}`}
-                  </Text>
-                  <Text mt=".85rem" pl={3}>
-                    <Strong>Ratatyypit: </Strong>
-                    {`${courseInfo.courseTypes.join(', ')}`}
-                  </Text>
-                  <Text mt=".85rem" mb=".85rem" pl={3}>
-                    <Strong>Pinnanmuodot: </Strong>
-                    {`${courseInfo.surfaceShapeTypes.join('. ')}`}
-                  </Text>
+                  {courseInfo.basketType && (
+                    <Text mt=".85rem" pl={3}>
+                      <Strong>Korityyppi: </Strong>
+                      {`${courseInfo.basketType}`}
+                    </Text>
+                  )}
+                  {courseInfo.infoSignType && (
+                    <Text mt=".85rem" pl={3}>
+                      <Strong>Opastaulut: </Strong>
+                      {`${courseInfo.infoSignType}`}
+                    </Text>
+                  )}
+                  {courseInfo.teeType && (
+                    <Text mt=".85rem" pl={3}>
+                      <Strong>Heittoalustat: </Strong>
+                      {`${courseInfo.teeType}`}
+                    </Text>
+                  )}
+                  {courseInfo.courseTypes && (
+                    <Text mt=".85rem" pl={3}>
+                      <Strong>Ratatyypit: </Strong>
+                      {`${courseInfo.courseTypes.join(', ')}`}
+                    </Text>
+                  )}
+                  {courseInfo.surfaceShapeTypes && (
+                    <Text mt=".85rem" mb=".85rem" pl={3}>
+                      <Strong>Pinnanmuodot: </Strong>
+                      {`${courseInfo.surfaceShapeTypes.join('. ')}`}
+                    </Text>
+                  )}
                 </Box>
               </PanelWrapper>
             </Box>
@@ -139,9 +144,16 @@ class Course extends Component<Props> {
             </Box>
           </Flex>
           <PanelFooter>
-            {layoutTabs}
-            {/* eslint-disable-next-line no-underscore-dangle */}
-            <Layouts id={course._id} layouts={layouts} />
+            <Flex>
+              <Box width="50%" p={2}>
+                {layoutTabs}
+                {/* eslint-disable-next-line no-underscore-dangle */}
+                <Layouts id={course._id} layouts={layouts} />
+              </Box>
+              <Box width="50%" p={2}>
+                {courseImage}
+              </Box>
+            </Flex>
           </PanelFooter>
         </PanelWrapper>
       </Wrapper>
@@ -173,6 +185,7 @@ const SEARCH_COURSE = gql`
         infoSignType
         surfaceShapeTypes
         courseTypes
+        mapUrl
       }
       locationInfo {
         address
