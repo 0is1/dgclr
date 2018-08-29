@@ -117,6 +117,7 @@ const SEARCH_COURSES = gql`
         infoSignType
         surfaceShapeTypes
         courseTypes
+        mapUrl
       }
       locationInfo {
         address
