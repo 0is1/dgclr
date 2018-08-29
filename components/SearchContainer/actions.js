@@ -1,26 +1,23 @@
 export const actionTypes = {
-  LOAD_DATA: 'DGCLR_LOAD_DATA',
-  LOAD_DATA_SUCCESS: 'DGCLR_LOAD_DATA_SUCCESS',
-  LOAD_DATA_ERROR: 'DGCLR_LOAD_DATA_ERROR',
   SET_COURSES: 'DGCLR_SET_COURSES',
+  SET_SEARCH_QUERY: 'DGCLR_SET_SEARCH_QUERY',
 };
 
-export function loadData() {
-  return { type: actionTypes.LOAD_DATA };
-}
-
-export function loadDataSuccess(data) {
-  return {
-    type: actionTypes.LOAD_DATA_SUCCESS,
-    data,
-  };
-}
-
-export function loadDataError(error) {
-  return {
-    type: actionTypes.LOAD_DATA_ERROR,
-    error,
-  };
-}
-
+/**
+ * Set courses action
+ * @param {Array} courses
+ * @return {Object} action of SET_COURSES
+ */
 export const setCourses = (courses = []) => ({ type: actionTypes.SET_COURSES, courses });
+
+/**
+ * Set search query action
+ * @param {Array} courses
+ * @param {String} query
+ * @return {Object} action of SET_SEARCH_QUERY
+ */
+export const setSearchQuery = (courses = [], query) => ({
+  type: actionTypes.SET_SEARCH_QUERY,
+  courses,
+  query,
+});
