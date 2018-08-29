@@ -1,9 +1,9 @@
 import App, { Container } from 'next/app';
-import Link from 'next/link';
 import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
+import { Provider as RebassProvider } from 'rebass';
 import { configureStore } from 'lib/withReduxSaga';
 
 class MyApp extends App {
@@ -21,18 +21,11 @@ class MyApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <Container>
-        <header>
-          <nav>
-            <Link href="/">
-              <a href="/">Home</a>
-            </Link>
-            |
-          </nav>
-        </header>
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
-        <footer>I`m here to stay</footer>
+        <RebassProvider>
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
+        </RebassProvider>
       </Container>
     );
   }
