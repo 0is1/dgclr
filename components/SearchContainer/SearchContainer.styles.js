@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from 'components/colors';
 
 const Styles = {
   Wrapper: styled.div`
@@ -8,14 +9,11 @@ const Styles = {
   SearchResultItem: styled.a`
     display: block;
     font-size: 19px;
-    color: #262626;
-    letter-spacing: 0.32px;
-    line-height: 26px;
-    font-weight: 700;
+    color: ${colors.text};
+    line-height: 1.65;
     cursor: pointer;
-    transition: all 200ms;
     &:hover {
-      transform: scale(1.01);
+      color: #544c8e;
     }
   `,
 };

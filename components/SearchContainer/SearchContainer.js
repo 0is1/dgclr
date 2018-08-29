@@ -1,7 +1,8 @@
 // @flow
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import { debounce } from 'lodash';
-import Container from 'components/Container';
+import { latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
 import SearchQuery from 'components/SearchContainer/SearchQuery';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
@@ -10,6 +11,7 @@ const { Wrapper } = Styles;
 
 type Props = {
   client: {},
+  latestQuery: string,
 };
 type State = {
   inputValue: string,
@@ -26,6 +28,13 @@ class SearchContainer extends PureComponent<Props, State> {
     this.setState({ query });
   }, 300);
 
+  componentDidMount() {
+    const { latestQuery } = this.props;
+    if (latestQuery) {
+      this.setState({ inputValue: latestQuery });
+    }
+  }
+
   onChange = (query: string) => {
     console.log('value is: ', query);
     this.setState({ inputValue: query });
@@ -35,19 +44,17 @@ class SearchContainer extends PureComponent<Props, State> {
   render() {
     const { query, inputValue } = this.state;
     return (
-      <Container>
-        <Wrapper>
-          <h1>Etsi ratoja:</h1>
-          <Input
-            placeholder="Kaupungin tai radan nimi"
-            value={inputValue}
-            onChange={this.onChange}
-          />
-          <SearchQuery query={query} />
-        </Wrapper>
-      </Container>
+      <Wrapper>
+        <h1>Etsi ratoja:</h1>
+        <Input placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onChange} />
+        <SearchQuery query={query} />
+      </Wrapper>
     );
   }
 }
 
-export default SearchContainer;
+const mapStateToProps = state => ({
+  latestQuery: latestQueryFunc(state),
+});
+
+export default connect(mapStateToProps)(SearchContainer);
