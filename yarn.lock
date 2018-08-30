@@ -4592,9 +4592,9 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-next@7.0.0-canary.6:
-  version "7.0.0-canary.5"
-  resolved "https://registry.yarnpkg.com/next/-/next-7.0.0-canary.5.tgz#eae92f1a57d50130edf9043fbf1d7c6f42668bbc"
+next@^7.0.0-canary.5:
+  version "7.0.0-canary.6"
+  resolved "https://registry.yarnpkg.com/next/-/next-7.0.0-canary.6.tgz#69c364fc161fa1cce29f8396d12aca4e7b1da701"
   dependencies:
     "@babel/core" "7.0.0"
     "@babel/plugin-proposal-class-properties" "7.0.0"
@@ -4635,7 +4635,6 @@ next@7.0.0-canary.6:
     prop-types "15.6.0"
     prop-types-exact "1.1.1"
     react-error-overlay "4.0.0"
-    react-loadable "5.4.0"
     recursive-copy "2.0.6"
     resolve "1.5.0"
     send "0.16.1"
@@ -5329,7 +5328,7 @@ prop-types@15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.5.0, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5538,12 +5537,6 @@ react-is@^16.3.1:
 react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-
-react-loadable@5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.4.0.tgz#3b6b7d51121a7868fd155be848a36e02084742c9"
-  dependencies:
-    prop-types "^15.5.0"
 
 react-redux@^5.0.7:
   version "5.0.7"
