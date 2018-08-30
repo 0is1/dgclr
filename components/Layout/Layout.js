@@ -5,12 +5,11 @@ import { Badge, Box, Flex } from 'rebass';
 import { getRandomKey } from 'helpers/utils';
 import CourseStyles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
+import type { Layout as LayoutType } from 'lib/types';
 
 type Props = {
   active: Boolean,
-  layout: {
-    name: string,
-  },
+  layout: LayoutType,
 };
 
 const { Strong } = CourseStyles;

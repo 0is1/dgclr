@@ -17,6 +17,7 @@ import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
+import type { GraphQLData } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
 
@@ -25,7 +26,7 @@ const { SearchResultItem } = Styles;
 type Props = {
   query: string,
   queryResults: [],
-  data?: {},
+  data: GraphQLData,
   latestQuery: string,
   setCourses: Function,
   setSearchQuery: Function,
@@ -91,10 +92,6 @@ class SearchQuery extends Component<Props> {
     return <UL>{results}</UL>;
   }
 }
-
-SearchQuery.defaultProps = {
-  data: {},
-};
 
 const mapStateToProps = state => ({
   latestQuery: latestQueryFunc(state),

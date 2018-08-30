@@ -25,10 +25,29 @@ import Tabs from 'components/Tabs';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
+import type { Layout, GraphQLData } from 'lib/types';
 
 type Props = {
-  course: {},
-  data?: {},
+  course: {
+    _id: string,
+    name: string,
+    locationInfo: {
+      location: {
+        coordinates: [number],
+      },
+    },
+    courseInfo: {
+      surfaceShapeTypes: [string],
+      teeType: string,
+      infoSignType: string,
+      basketType: string,
+      mapUrl: string,
+      courseTypes: [string],
+    },
+    description: string,
+    layouts: [Layout],
+  },
+  data: GraphQLData,
   setCourses: Function,
   // slug: string,
 };
@@ -92,7 +111,7 @@ class Course extends Component<Props> {
     const layoutNames = layouts.map(layout => layout.name);
     // eslint-disable-next-line no-underscore-dangle
     const layoutTabs = <Tabs tabs={layoutNames} id={course._id} />;
-    const mapElement = coordinates ? <Map coordinates={coordinates} /> : null;
+    const mapElement = coordinates ? <Map coordinates={coordinates} course={course} /> : null;
     const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
@@ -176,9 +195,6 @@ class Course extends Component<Props> {
   }
 }
 
-Course.defaultProps = {
-  data: {},
-};
 const mapStateToProps = (state, ownProps) => ({
   course: courseBySlugFromState(state, ownProps),
 });

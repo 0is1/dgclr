@@ -17,6 +17,11 @@ type Event = {
 const { Input } = Styles;
 
 class InputComponent extends Component<Props> {
+  static defaultProps = {
+    placeholder: '',
+    value: '',
+  };
+
   onChange = (event: Event) => {
     const { value } = event.target;
     const { onChange } = this.props;
@@ -38,8 +43,4 @@ class InputComponent extends Component<Props> {
   }
 }
 
-InputComponent.defaultProps = {
-  placeholder: '',
-  value: '',
-};
 export default InputComponent;

@@ -11,13 +11,20 @@ type Props = {
   activeRoute?: string,
   children: Node,
   router: {
-    events: {},
+    events: {
+      on: Function,
+      off: Function,
+    },
   },
 };
 
 const { Container, Footer, HeaderLink } = Styles;
 
 class ContainerComponent extends Component<Props> {
+  static defaultProps = {
+    activeRoute: '',
+  };
+
   componentDidMount() {
     const { router } = this.props;
     router.events.on('routeChangeComplete', this.handleRouteChange);
@@ -68,9 +75,5 @@ class ContainerComponent extends Component<Props> {
     );
   }
 }
-
-ContainerComponent.defaultProps = {
-  activeRoute: '',
-};
 
 export default withRouter(ContainerComponent);

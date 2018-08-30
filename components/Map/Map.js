@@ -28,28 +28,36 @@ const MyMapComponent = compose(
   ),
   withScriptjs,
   withGoogleMap,
-)(props => (
-  <GoogleMap defaultZoom={11} defaultCenter={props.defaultCenter}>
-    <Marker position={props.defaultCenter} onClick={props.onToggleOpen}>
-      {props.isOpen && (
-        <InfoBox
-          onCloseClick={props.onToggleOpen}
-          options={{ closeBoxURL: '', enableEventPropagation: true }}
-        >
-          <div style={{ backgroundColor: colors.info, padding: '12px' }}>
-            <div style={{ fontSize: '16px', color: '#ffffff' }}>Hello, Kaohsiung!</div>
-          </div>
-        </InfoBox>
-      )}
-    </Marker>
-  </GoogleMap>
-));
+)((props) => {
+  const { course } = props;
+  const { name } = course;
+  return (
+    <GoogleMap defaultZoom={11} defaultCenter={props.defaultCenter}>
+      <Marker position={props.defaultCenter} onClick={props.onToggleOpen}>
+        {props.isOpen && (
+          <InfoBox
+            onCloseClick={props.onToggleOpen}
+            options={{ closeBoxURL: '', enableEventPropagation: true }}
+          >
+            <div style={{ backgroundColor: colors.info, padding: '12px' }}>
+              <div style={{ fontSize: '16px', color: '#ffffff' }}>{name}</div>
+            </div>
+          </InfoBox>
+        )}
+      </Marker>
+    </GoogleMap>
+  );
+});
 
 type Props = {
   coordinates: {},
+  course: {},
+};
+type State = {
+  isMarkerShown: boolean,
 };
 
-class Map extends PureComponent<Props> {
+class Map extends PureComponent<Props, State> {
   state = {
     isMarkerShown: false,
   };
@@ -70,13 +78,14 @@ class Map extends PureComponent<Props> {
   };
 
   render() {
-    const { coordinates } = this.props;
+    const { coordinates, course } = this.props;
     const { isMarkerShown } = this.state;
     return (
       <MyMapComponent
         defaultCenter={coordinates}
         isMarkerShown={isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
+        course={course}
       />
     );
   }
