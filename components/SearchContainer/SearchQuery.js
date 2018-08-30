@@ -67,7 +67,7 @@ class SearchQuery extends Component<Props> {
   };
 
   render() {
-    const { query, queryResults, data } = this.props;
+    const { query, queryResults, data = {} } = this.props;
     if (!query && !queryResults.length) return null;
     if (data && data.loading) {
       return <h1>Loading...</h1>;
