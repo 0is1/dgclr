@@ -23,7 +23,7 @@ const Layout = ({ active, layout }: Props) => {
     <LI key={getRandomKey()}>
       <Flex>
         <Box width="65px">
-          {hole.par && (
+          {!!hole.par && (
             <BaseText>
               <Strong>Par: </Strong>
               {` ${hole.par}`}
@@ -31,7 +31,7 @@ const Layout = ({ active, layout }: Props) => {
           )}
         </Box>
         <Box width="120px">
-          {hole.length.meter && (
+          {!!hole.length.meter && (
             <BaseText>
               <Strong>Pituus: </Strong>
               {` ${hole.length.meter}m`}
