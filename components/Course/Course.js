@@ -34,7 +34,7 @@ type Props = {
 };
 
 const {
-  Box, Description, PanelWrapper, PanelHeader, PanelFooter, Strong, Title, Wrapper,
+  Box, Description, PanelWrapper, PanelHeader, PanelFooter, Strong, Title,
 } = Styles;
 
 const { BaseText } = BaseStyles;
@@ -92,7 +92,16 @@ class Course extends Component<Props> {
     const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
-      <Wrapper>
+      <Box
+        width={[
+          1, // 100% width at the smallest breakpoint
+          1, // 100% width at the smallest breakpoint
+          1, // 100% width at the smallest breakpoint
+          '90%', // 50% width at the next
+        ]}
+        p={[0, 0, '0.5rem', '2rem 1rem']}
+        m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}
+      >
         <Helmet>
           <title>{getTitle(name)}</title>
         </Helmet>
@@ -106,7 +115,7 @@ class Course extends Component<Props> {
                 1, // 100% width at the smallest breakpoint
                 1 / 2, // 50% width at the next
               ]}
-              p={4}
+              p={[2, 2, null, 4]}
             >
               <Title>
                 {name}
@@ -156,7 +165,7 @@ class Course extends Component<Props> {
                 1, // 100% width at the smallest breakpoint
                 1 / 2, // 50% width at the next
               ]}
-              p={4}
+              p={[2, 2, null, 4]}
             >
               <Card width="100%">
                 {mapElement}
@@ -195,7 +204,7 @@ class Course extends Component<Props> {
             </Flex>
           </PanelFooter>
         </PanelWrapper>
-      </Wrapper>
+      </Box>
     );
   }
 }

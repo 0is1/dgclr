@@ -13,6 +13,7 @@ const Styles = {
     color: ${colors.text};
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    margin-left: 0.5rem;
   `,
   Description: styled(Text)`
     color: ${colors.text};
