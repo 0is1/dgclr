@@ -46,3 +46,11 @@ export const getRandomKey = () => Math.random()
   + Math.random()
     .toString(36)
     .substring(2, 15);
+
+/**
+ * Get page title
+ * @param {String} text
+ * @return {String} title
+ */
+
+export const getTitle = (text = false) => (text ? `DGCLR - ${text}` : 'DGCLR - Disc Golf Course Lists and Results');
