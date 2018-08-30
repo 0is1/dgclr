@@ -1,8 +1,10 @@
 // @flow
 
 import React from 'react';
-import { Badge, Box, Text } from 'rebass';
+import { Badge, Box, Flex } from 'rebass';
+import { getRandomKey } from 'helpers/utils';
 import CourseStyles from 'components/Course/Course.styles';
+import BaseStyles from 'components/Container/Container.styles';
 
 type Props = {
   active: Boolean,
@@ -12,23 +14,56 @@ type Props = {
 };
 
 const { Strong } = CourseStyles;
+const { BaseText, OL, LI } = BaseStyles;
+
 const Layout = ({ active, layout }: Props) => {
   if (!active) return null;
-  console.log('layout: ', layout);
+  const { holes } = layout;
+  const holeData = holes.map(hole => (
+    <LI key={getRandomKey()}>
+      <Flex>
+        <Box width="65px">
+          {hole.par && (
+            <BaseText>
+              <Strong>Par: </Strong>
+              {` ${hole.par}`}
+            </BaseText>
+          )}
+        </Box>
+        <Box width="120px">
+          {hole.length.meter && (
+            <BaseText>
+              <Strong>Pituus: </Strong>
+              {` ${hole.length.meter}m`}
+            </BaseText>
+          )}
+        </Box>
+      </Flex>
+    </LI>
+  ));
   return (
     <Box width="100%" mt={2} p={2}>
-      {layout.rating && <Badge ml={0}>{layout.rating}</Badge>}
+      {layout.rating && <Badge mx="1rem">{layout.rating}</Badge>}
       {layout.holeCount && (
-        <Text my=".85rem" mx=".25rem">
+        <BaseText mt={0}>
           <Strong>Väylien määrä: </Strong>
           {`${layout.holeCount}`}
-        </Text>
+        </BaseText>
       )}
       {layout.totalPar && (
-        <Text my=".85rem" mx=".25rem">
+        <BaseText>
           <Strong>Radan par: </Strong>
           {`${layout.totalPar}`}
-        </Text>
+        </BaseText>
+      )}
+      {holeData
+        && holeData.length > 0 && (
+          <React.Fragment>
+            <BaseText>
+              <Strong>Radan väylät: </Strong>
+            </BaseText>
+            <OL>{holeData}</OL>
+          </React.Fragment>
       )}
     </Box>
   );

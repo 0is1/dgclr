@@ -1,19 +1,35 @@
 import styled from 'styled-components';
+import { Text } from 'rebass';
+import colors from 'components/colors';
 
 const Styles = {
   Container: styled.div`
-    background-color: rgb(233, 233, 233);
+    background-color: ${colors.lightGray};
     color: rgb(43, 43, 43);
-    display: flex;
-    flex-direction: column;
     width: 100%;
   `,
   HeaderLink: styled.span`
     display: block;
     font-size: 1rem;
-    color: #262626;
+    color: ${colors.text};
     line-height: 1.5;
     cursor: pointer;
+  `,
+  BaseText: styled(Text)`
+    margin-top: 0.85rem;
+    padding-left: 1rem;
+  `,
+  Footer: styled.footer`
+    padding: 1rem 0;
+  `,
+  UL: styled.ul`
+    padding: 0.5rem 2rem;
+  `,
+  OL: styled.ol`
+    padding: 0 2rem;
+  `,
+  LI: styled.li`
+    line-height: 1.35;
   `,
 };
 

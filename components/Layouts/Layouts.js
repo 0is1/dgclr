@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import Layout from 'components/Layout';
+import { getRandomKey } from 'helpers/utils';
 
 type Props = {
   activeIndex: number | Boolean,
@@ -13,7 +14,7 @@ type Props = {
 
 const Layouts = ({ activeIndex, layouts }: Props) => {
   const layoutData = layouts.map((layout, index) => (
-    <Layout layout={layout} active={index === activeIndex} />
+    <Layout key={getRandomKey()} layout={layout} active={index === activeIndex} />
   ));
   return layoutData;
 };

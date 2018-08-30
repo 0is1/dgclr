@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Tabs } from 'rebass';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import { setTabs as setTabsFunc } from 'components/Tabs/actions';
+import { getRandomKey } from 'helpers/utils';
 import Tab from './Tab';
 
 type Props = {
@@ -24,11 +25,11 @@ class TabsComponent extends PureComponent<Props> {
 
   render() {
     const { activeIndex, id, tabs } = this.props;
-    console.log('activeIndex: ', activeIndex);
-    console.log(typeof activeIndex);
     if (typeof activeIndex !== 'number') return null;
     const props = { activeIndex, id };
-    const tabData = tabs.map((name, index) => <Tab {...props} index={index} name={name} />);
+    const tabData = tabs.map((name, index) => (
+      <Tab {...props} key={getRandomKey()} index={index} name={name} />
+    ));
     return <Tabs>{tabData}</Tabs>;
   }
 }

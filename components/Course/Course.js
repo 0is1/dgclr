@@ -5,15 +5,17 @@ import { graphql } from 'react-apollo';
 import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import { size } from 'lodash';
+import { Helmet } from 'react-helmet';
 import ReactHtmlParser from 'react-html-parser';
 import {
-  Image, Card, Flex, Subhead, Text,
+  Image, Card, Flex, Subhead,
 } from 'rebass';
 import {
   convertLinksToHtml,
   convertCoordinatesToObject,
   courseAddressDetails,
   uniqueLayoutRatings,
+  getTitle,
 } from 'helpers/utils';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import { setCourses as setCoursesFunc } from 'components/SearchContainer/actions';
@@ -22,6 +24,7 @@ import Layouts from 'components/Layouts';
 import Tabs from 'components/Tabs';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import Styles from 'components/Course/Course.styles';
+import BaseStyles from 'components/Container/Container.styles';
 
 type Props = {
   course: {},
@@ -33,6 +36,8 @@ type Props = {
 const {
   Box, Description, PanelWrapper, PanelHeader, PanelFooter, Strong, Title, Wrapper,
 } = Styles;
+
+const { BaseText } = BaseStyles;
 
 class Course extends Component<Props> {
   componentDidMount() {
@@ -89,10 +94,21 @@ class Course extends Component<Props> {
     const ratings = uniqueLayoutRatings(layouts);
     return (
       <Wrapper>
+        <Helmet>
+          <title>{getTitle(name)}</title>
+        </Helmet>
         <PanelWrapper>
           <PanelHeader>Radan tiedot</PanelHeader>
-          <Flex>
-            <Box width="50%" p={4}>
+          <Flex flexWrap="wrap">
+            <Box
+              width={[
+                1, // 100% width at the smallest breakpoint
+                1, // 100% width at the smallest breakpoint
+                1, // 100% width at the smallest breakpoint
+                1 / 2, // 50% width at the next
+              ]}
+              p={4}
+            >
               <Title>
                 {name}
                 <LayoutRatingBadges ratings={ratings} />
@@ -100,41 +116,49 @@ class Course extends Component<Props> {
               <Description>{ReactHtmlParser(descriptionWithLinks)}</Description>
               <PanelWrapper mt={4}>
                 <PanelHeader>Radan lisätiedot:</PanelHeader>
-                <Box width="100%" px={1} py={2}>
+                <Box width="100%" px={1} pt={2} pb="1rem">
                   {courseInfo.basketType && (
-                    <Text mt=".85rem" pl={3}>
+                    <BaseText>
                       <Strong>Korityyppi: </Strong>
                       {`${courseInfo.basketType}`}
-                    </Text>
+                    </BaseText>
                   )}
                   {courseInfo.infoSignType && (
-                    <Text mt=".85rem" pl={3}>
+                    <BaseText>
                       <Strong>Opastaulut: </Strong>
                       {`${courseInfo.infoSignType}`}
-                    </Text>
+                    </BaseText>
                   )}
                   {courseInfo.teeType && (
-                    <Text mt=".85rem" pl={3}>
+                    <BaseText>
                       <Strong>Heittoalustat: </Strong>
                       {`${courseInfo.teeType}`}
-                    </Text>
+                    </BaseText>
                   )}
                   {courseInfo.courseTypes && (
-                    <Text mt=".85rem" pl={3}>
+                    <BaseText>
                       <Strong>Ratatyypit: </Strong>
                       {`${courseInfo.courseTypes.join(', ')}`}
-                    </Text>
+                    </BaseText>
                   )}
                   {courseInfo.surfaceShapeTypes && (
-                    <Text mt=".85rem" mb=".85rem" pl={3}>
+                    <BaseText>
                       <Strong>Pinnanmuodot: </Strong>
                       {`${courseInfo.surfaceShapeTypes.join('. ')}`}
-                    </Text>
+                    </BaseText>
                   )}
                 </Box>
               </PanelWrapper>
             </Box>
-            <Box width="50%" p={4}>
+            <Box
+              width={[
+                1, // 100% width at the smallest breakpoint
+                1, // 100% width at the smallest breakpoint
+                1, // 100% width at the smallest breakpoint
+                1 / 2, // 50% width at the next
+              ]}
+              p={4}
+            >
               <Card width="100%">
                 {mapElement}
                 <Subhead mt={2} p={2}>
@@ -144,13 +168,29 @@ class Course extends Component<Props> {
             </Box>
           </Flex>
           <PanelFooter>
-            <Flex>
-              <Box width="50%" p={2}>
+            <Flex flexWrap="wrap">
+              <Box
+                width={[
+                  1, // 100% width at the smallest breakpoint
+                  1, // 100% width at the smallest breakpoint
+                  1, // 100% width at the smallest breakpoint
+                  1 / 2, // 50% width at the next
+                ]}
+                p={2}
+              >
                 {layoutTabs}
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <Layouts id={course._id} layouts={layouts} />
               </Box>
-              <Box width="50%" p={2}>
+              <Box
+                width={[
+                  1, // 100% width at the smallest breakpoint
+                  1, // 100% width at the smallest breakpoint
+                  1, // 100% width at the smallest breakpoint
+                  1 / 2, // 50% width at the next
+                ]}
+                p={2}
+              >
                 {courseImage}
               </Box>
             </Flex>

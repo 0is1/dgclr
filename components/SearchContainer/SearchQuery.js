@@ -13,9 +13,12 @@ import {
   latestQuery as latestQueryFunc,
   queryResultsFromState as queryResultsFromStateFunc,
 } from 'components/SearchContainer/selectors';
-import { uniqueLayoutRatings } from 'helpers/utils';
+import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
+import BaseStyles from 'components/Container/Container.styles';
+
+const { UL, LI } = BaseStyles;
 
 const { SearchResultItem } = Styles;
 
@@ -74,19 +77,18 @@ class SearchQuery extends Component<Props> {
       results = courses.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
         return (
-          // eslint-disable-next-line no-underscore-dangle
-          <li key={course._id}>
+          <LI key={getRandomKey()}>
             <Link as={`/${course.slug}`} href={`/course?slug=${course.slug}`}>
               <SearchResultItem>
                 {course.name}
                 <LayoutRatingBadges tiny ratings={ratings} />
               </SearchResultItem>
             </Link>
-          </li>
+          </LI>
         );
       });
     }
-    return <ul>{results}</ul>;
+    return <UL>{results}</UL>;
   }
 }
 

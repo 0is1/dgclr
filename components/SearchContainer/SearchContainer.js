@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { debounce } from 'lodash';
+import { Box } from 'rebass';
 import { latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
 import SearchQuery from 'components/SearchContainer/SearchQuery';
@@ -36,7 +37,6 @@ class SearchContainer extends PureComponent<Props, State> {
   }
 
   onChange = (query: string) => {
-    console.log('value is: ', query);
     this.setState({ inputValue: query });
     this.changeQueryValue(query);
   };
@@ -45,9 +45,24 @@ class SearchContainer extends PureComponent<Props, State> {
     const { query, inputValue } = this.state;
     return (
       <Wrapper>
-        <h1>Etsi ratoja:</h1>
-        <Input placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onChange} />
-        <SearchQuery query={query} />
+        <Box
+          m="1rem auto"
+          p="1rem 2rem"
+          width={[
+            1, // 100% width at the smallest breakpoint
+            1, // 100% width at the smallest breakpoint
+            1, // 100% width at the smallest breakpoint
+            1 / 2, // 50% width at the next
+          ]}
+        >
+          <h1>Etsi ratoja:</h1>
+          <Input
+            placeholder="Kaupungin tai radan nimi"
+            value={inputValue}
+            onChange={this.onChange}
+          />
+          <SearchQuery query={query} />
+        </Box>
       </Wrapper>
     );
   }

@@ -29,6 +29,7 @@ const Styles = {
   PanelFooter: styled(Panel.Footer)``,
   Strong: styled.span`
     font-weight: 700;
+    margin-right: 0.25rem;
   `,
 };
 
