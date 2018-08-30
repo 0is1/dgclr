@@ -6,6 +6,8 @@ const next = require('next');
 // const Raven = require("raven");
 const faviconShortCircuit = require('express-favicon-short-circuit');
 const LRUCache = require('lru-cache');
+const favicon = require('serve-favicon');
+const path = require('path');
 
 // Must configure Raven before doing anything else with it
 // Raven.config(process.env.RAVEN_URL).install();
@@ -90,6 +92,8 @@ app
         }, // configure when sessions expires (24h)
       }),
     );
+    server.use(express.static('static'));
+    server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
     server.get('/health-check', (req, res) => {
       res.status(200);
       res.json({ result: true });
