@@ -97,12 +97,7 @@ class Course extends Component<Props> {
     const ratings = uniqueLayoutRatings(layouts);
     return (
       <Box
-        width={[
-          1, // 100% width at the smallest breakpoint
-          1, // 100% width at the smallest breakpoint
-          1, // 100% width at the smallest breakpoint
-          '90%', // 50% width at the next
-        ]}
+        width={[1, 1, 1, '90%']}
         p={[0, 0, '0.5rem', '2rem 1rem']}
         m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}
       >
@@ -112,15 +107,7 @@ class Course extends Component<Props> {
         <PanelWrapper>
           <PanelHeader>Radan tiedot</PanelHeader>
           <Flex flexWrap="wrap">
-            <Box
-              width={[
-                1, // 100% width at the smallest breakpoint
-                1, // 100% width at the smallest breakpoint
-                1, // 100% width at the smallest breakpoint
-                1 / 2, // 50% width at the next
-              ]}
-              p={[2, 2, null, 4]}
-            >
+            <Box width={[1, 1, 1, 1 / 2]} p={[2, 2, null, 4]}>
               <Title>
                 {name}
                 <LayoutRatingBadges ratings={ratings} />
@@ -162,15 +149,7 @@ class Course extends Component<Props> {
                 </Box>
               </PanelWrapper>
             </Box>
-            <Box
-              width={[
-                1, // 100% width at the smallest breakpoint
-                1, // 100% width at the smallest breakpoint
-                1, // 100% width at the smallest breakpoint
-                1 / 2, // 50% width at the next
-              ]}
-              p={[2, 2, null, 4]}
-            >
+            <Box width={[1, 1, 1, 1 / 2]} p={[2, 2, null, 4]}>
               <Card width="100%">
                 {mapElement}
                 <Subhead mt={2} p={2}>
@@ -181,28 +160,12 @@ class Course extends Component<Props> {
           </Flex>
           <PanelFooter>
             <Flex flexWrap="wrap">
-              <Box
-                width={[
-                  1, // 100% width at the smallest breakpoint
-                  1, // 100% width at the smallest breakpoint
-                  1, // 100% width at the smallest breakpoint
-                  1 / 2, // 50% width at the next
-                ]}
-                p={2}
-              >
+              <Box width={[1, 1, 1, 1 / 2]} p={2}>
                 {layoutTabs}
                 {/* eslint-disable-next-line no-underscore-dangle */}
                 <Layouts id={course._id} layouts={layouts} />
               </Box>
-              <Box
-                width={[
-                  1, // 100% width at the smallest breakpoint
-                  1, // 100% width at the smallest breakpoint
-                  1, // 100% width at the smallest breakpoint
-                  1 / 2, // 50% width at the next
-                ]}
-                p={2}
-              >
+              <Box width={[1, 1, 1, 1 / 2]} p={2}>
                 {courseImage}
               </Box>
             </Flex>
