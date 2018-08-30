@@ -4,14 +4,11 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const next = require('next');
 // const Raven = require("raven");
-// const RedisStore = require("connect-redis")(session);
 const faviconShortCircuit = require('express-favicon-short-circuit');
 const LRUCache = require('lru-cache');
 
 // Must configure Raven before doing anything else with it
-// Raven.config(process.env.RAVEN_URL, {
-//   ignoreErrors: ["ResizeObserver loop limit exceeded"]
-// }).install();
+// Raven.config(process.env.RAVEN_URL).install();
 
 if (!process.env.PORT) {
   process.env.PORT = process.env.NODE_ENV !== 'production' ? 3000 : 8081;
