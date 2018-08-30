@@ -55,7 +55,7 @@ class SearchContainer extends PureComponent<Props, State> {
             1 / 2, // 50% width at the next
           ]}
         >
-          <h1>Etsi ratoja:</h1>
+          <h1>Etsi frisbeegolfratoja:</h1>
           <Input
             placeholder="Kaupungin tai radan nimi"
             value={inputValue}
