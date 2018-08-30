@@ -75,7 +75,11 @@ class Course extends Component<Props> {
   render() {
     const { course, data } = this.props;
     if (size(course) < 1 || (data && data.loading)) {
-      return <h1>Loading...</h1>;
+      return (
+        <Box width="100%" p="2.5rem 0 1rem">
+          <Title textAlign="center">Loading...</Title>
+        </Box>
+      );
     }
     const {
       name, courseInfo, description, locationInfo, layouts,

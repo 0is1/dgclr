@@ -20,6 +20,7 @@ const Styles = {
     font-size: 0.95rem;
     font-weight: 200;
     line-height: 1.5;
+    margin-left: 0.5rem;
   `,
   Box: styled(Box)``,
   PanelWrapper: styled(Panel)``,
