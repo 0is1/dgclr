@@ -35,7 +35,7 @@ type Props = {
 class SearchQuery extends Component<Props> {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot !== null) {
-      const { data } = this.props;
+      const { data = {} } = this.props;
       const { courseByName = [] } = data;
       if (courseByName) {
         this.setCourses(courseByName);
@@ -44,7 +44,7 @@ class SearchQuery extends Component<Props> {
   }
 
   getSnapshotBeforeUpdate(prevProps) {
-    const { data, latestQuery, query } = this.props;
+    const { data = {}, latestQuery, query } = this.props;
     const { courseByName = [] } = data;
     const prevCourseData = prevProps.data;
     const prevCourseArr = prevCourseData && prevProps.data.courseByName;
