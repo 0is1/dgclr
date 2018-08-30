@@ -8,9 +8,9 @@
 
 [options]
 module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=lib
-module.system.node.resolve_dirname=components
-module.system.node.resolve_dirname=pages
+module.name_mapper='^lib\(.*\)$' -> '<PROJECT_ROOT>/lib/\1'
+module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/components/\1'
+module.name_mapper='^helpers\(.*\)$' -> '<PROJECT_ROOT>/helpers/\1'
 
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
