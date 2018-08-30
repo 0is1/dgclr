@@ -99,6 +99,9 @@ app
     });
 
     server.get('/*.txt', (req, res) => res.status(200).sendFile(req.path, staticOptions));
+    server.get('/info', (req, res) => {
+      renderAndCache(req, res, '/info');
+    });
     server.get('/:slug', (req, res) => {
       const actualPage = '/course';
       const queryParams = {
