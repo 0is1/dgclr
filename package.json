@@ -95,5 +95,9 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "engines": {
+    "node": "^8.11.4",
+    "yarn": "^1.9.4"
   }
 }
