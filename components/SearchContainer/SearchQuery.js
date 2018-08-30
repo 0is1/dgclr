@@ -46,7 +46,8 @@ class SearchQuery extends Component<Props> {
   getSnapshotBeforeUpdate(prevProps) {
     const { data, latestQuery, query } = this.props;
     const { courseByName = [] } = data;
-    const prevCourseArr = prevProps.data.courseByName;
+    const prevCourseData = prevProps.data;
+    const prevCourseArr = prevCourseData && prevProps.data.courseByName;
     const prevCourses = prevCourseArr && prevCourseArr.length ? prevCourseArr : [];
     if (
       (courseByName

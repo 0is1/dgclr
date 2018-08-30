@@ -60,7 +60,7 @@ const { BaseText } = BaseStyles;
 
 class Course extends Component<Props> {
   componentDidMount() {
-    const { course, data } = this.props;
+    const { course, data = {} } = this.props;
     const { courseBySlug } = data;
     if (size(course) < 1 && courseBySlug && courseBySlug.length) {
       this.setCourses(courseBySlug);
@@ -78,7 +78,7 @@ class Course extends Component<Props> {
   }
 
   getSnapshotBeforeUpdate(prevProps) {
-    const { data } = this.props;
+    const { data = {} } = this.props;
     const { courseBySlug } = data;
     if (size(prevProps.course) < 1 && courseBySlug && courseBySlug.length) {
       return true;
