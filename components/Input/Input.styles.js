@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import { Input } from 'rebass';
 
 const Styles = {
-  Input: styled.input`
+  Input: styled(Input)`
     line-height: 1.25;
-    padding: 0.5rem;
     width: 100%;
   `,
 };

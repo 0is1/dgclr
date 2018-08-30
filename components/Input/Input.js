@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import colors from 'components/colors';
 import Styles from './Input.styles';
 
 type Props = {
@@ -24,7 +25,16 @@ class InputComponent extends Component<Props> {
 
   render() {
     const { placeholder, value } = this.props;
-    return <Input placeholder={placeholder} value={value} onChange={this.onChange} />;
+    return (
+      <Input
+        px=".75rem"
+        py=".75rem"
+        bg={colors.white}
+        placeholder={placeholder}
+        value={value}
+        onChange={this.onChange}
+      />
+    );
   }
 }
 
