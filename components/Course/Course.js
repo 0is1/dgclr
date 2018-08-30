@@ -77,7 +77,6 @@ class Course extends Component<Props> {
     if (size(course) < 1 || (data && data.loading)) {
       return <h1>Loading...</h1>;
     }
-    console.log('course: ', course);
     const {
       name, courseInfo, description, locationInfo, layouts,
     } = course;
