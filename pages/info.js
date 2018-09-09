@@ -18,7 +18,7 @@ const InfoPage = () => (
         Info
       </Heading>
       <BaseText>
-        Sivusto on harrasteluprojekti ja varhaisessa kehitysvaiheessa. dgclr.fi:n ideana on auttaa
+        Sivusto on harrasteluprojekti ja varhaisessa kehitysvaiheessa. DGCLR.fi:n ideana on auttaa
         frisbeegolfin ystäviä löytämään mahdollisimman helposti mielekkäitä ratoja.
       </BaseText>
       <BaseText pt={2} mb={-2}>
