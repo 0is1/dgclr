@@ -8,6 +8,7 @@ const faviconShortCircuit = require('express-favicon-short-circuit');
 const LRUCache = require('lru-cache');
 const favicon = require('serve-favicon');
 const path = require('path');
+const secure = require('ssl-express-www');
 
 // Must configure Raven before doing anything else with it
 // Raven.config(process.env.RAVEN_URL).install();
@@ -76,6 +77,10 @@ app
     // server.use(Raven.requestHandler());
     if (process.env.NODE_ENV !== 'production') {
       server.use(faviconShortCircuit);
+    }
+    // Use force https in production
+    if (process.env.NODE_ENV === 'production') {
+      server.use(secure);
     }
     // disable 'X-Powered-By' header in response
     server.disable('x-powered-by');
