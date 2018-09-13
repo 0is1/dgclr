@@ -118,6 +118,15 @@ const SEARCH_COURSES = gql`
         surfaceShapeTypes
         courseTypes
         mapUrl
+        founded
+        maintenanceCycle
+        rangeMaster
+        courseDesigner
+        fee {
+          amount
+          currency
+          value
+        }
       }
       locationInfo {
         address

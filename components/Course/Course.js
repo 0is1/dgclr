@@ -25,7 +25,7 @@ import Tabs from 'components/Tabs';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { Layout, GraphQLData } from 'lib/types';
+import type { CourseInfo, Layout, GraphQLData } from 'lib/types';
 
 type Props = {
   course: {
@@ -36,14 +36,7 @@ type Props = {
         coordinates: [number],
       },
     },
-    courseInfo: {
-      surfaceShapeTypes: [string],
-      teeType: string,
-      infoSignType: string,
-      basketType: string,
-      mapUrl: string,
-      courseTypes: [string],
-    },
+    courseInfo: CourseInfo,
     description: string,
     layouts: [Layout],
   },
@@ -93,6 +86,7 @@ class Course extends Component<Props> {
 
   render() {
     const { course, data } = this.props;
+    console.log(course);
     if (size(course) < 1 || (data && data.loading)) {
       return (
         <Box width="100%" p="2.5rem 0 1rem">
@@ -135,6 +129,24 @@ class Course extends Component<Props> {
               <PanelWrapper mt={4}>
                 <PanelHeader>Radan lisätiedot:</PanelHeader>
                 <Box width="100%" px={1} pt={2} pb="1rem">
+                  {courseInfo.founded && (
+                    <BaseText>
+                      <Strong>Perustettu: </Strong>
+                      {`${courseInfo.founded}`}
+                    </BaseText>
+                  )}
+                  {courseInfo.courseDesigner && (
+                    <BaseText>
+                      <Strong>Suunnittelija: </Strong>
+                      {`${courseInfo.courseDesigner}`}
+                    </BaseText>
+                  )}
+                  {courseInfo.rangeMaster && (
+                    <BaseText>
+                      <Strong>Ratamestari: </Strong>
+                      {`${courseInfo.rangeMaster}`}
+                    </BaseText>
+                  )}
                   {courseInfo.basketType && (
                     <BaseText>
                       <Strong>Korityyppi: </Strong>
@@ -164,6 +176,13 @@ class Course extends Component<Props> {
                       <Strong>Pinnanmuodot: </Strong>
                       {`${courseInfo.surfaceShapeTypes.join('. ')}`}
                     </BaseText>
+                  )}
+                  {courseInfo.fee
+                    && courseInfo.fee.value && (
+                      <BaseText>
+                        <Strong>Maksullinen / Ilmainen: </Strong>
+                        {`${courseInfo.fee.value}`}
+                      </BaseText>
                   )}
                 </Box>
               </PanelWrapper>
@@ -217,6 +236,15 @@ const SEARCH_COURSE = gql`
         surfaceShapeTypes
         courseTypes
         mapUrl
+        founded
+        maintenanceCycle
+        rangeMaster
+        courseDesigner
+        fee {
+          amount
+          currency
+          value
+        }
       }
       locationInfo {
         address
