@@ -6,13 +6,18 @@ import {
   withScriptjs, withGoogleMap, GoogleMap, Marker,
 } from 'react-google-maps';
 import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
+import { BarLoader } from 'components/Spinners';
 import colors from 'components/colors';
 
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
       'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing&key=AIzaSyCgbVaENPZQ1wOhdIyCok5yJTSVKBa6gYQ',
-    loadingElement: <div style={{ height: '100%' }} />,
+    loadingElement: (
+      <div style={{ height: '400px' }}>
+        <BarLoader />
+      </div>
+    ),
     containerElement: <div style={{ height: '400px' }} />,
     mapElement: <div style={{ height: '100%' }} />,
   }),
