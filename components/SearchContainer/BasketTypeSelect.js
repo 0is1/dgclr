@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Label } from 'rebass';
 import Select from 'react-select';
-import { setBasketTypeFilter } from 'components/SearchContainer/actions';
-import { getBasketTypeFilter } from 'components/SearchContainer/selectors';
+import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
+import { getFilterTypeData } from 'components/SearchContainer/selectors';
 import type { OptionsType } from 'react-select/src/types';
 
 const basketTypeOptions = [
@@ -27,7 +27,7 @@ class BasketTypeSelect extends Component<Props> {
     const valueData = values ? [].concat(values) : '';
     const value = values && values.value ? values.value : '';
     onChange(value);
-    setFilter(valueData);
+    setFilter('basketType', valueData);
   };
 
   render() {
@@ -48,10 +48,10 @@ class BasketTypeSelect extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  defaultValue: getBasketTypeFilter(state),
+  defaultValue: getFilterTypeData(state, 'basketType'),
 });
 const mapDispatchToProps = dispatch => ({
-  setFilter: values => dispatch(setBasketTypeFilter(values)),
+  setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
 export default connect(
   mapStateToProps,

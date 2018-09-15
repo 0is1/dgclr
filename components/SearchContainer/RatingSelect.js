@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Label } from 'rebass';
 import Select from 'react-select';
-import { setRatingFilter } from 'components/SearchContainer/actions';
-import { getRatingFilter } from 'components/SearchContainer/selectors';
+import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
+import { getFilterTypeData } from 'components/SearchContainer/selectors';
 import type { OptionsType } from 'react-select/src/types';
 
 const ratingOptions = [
@@ -35,7 +35,7 @@ class RatingSelect extends Component<Props> {
     const { onChange, setFilter } = this.props;
     const rating = values.map(item => item.value);
     onChange(rating);
-    setFilter(values);
+    setFilter('rating', values);
   };
 
   render() {
@@ -56,10 +56,10 @@ class RatingSelect extends Component<Props> {
 }
 
 const mapStateToProps = state => ({
-  defaultValue: getRatingFilter(state),
+  defaultValue: getFilterTypeData(state, 'rating'),
 });
 const mapDispatchToProps = dispatch => ({
-  setFilter: values => dispatch(setRatingFilter(values)),
+  setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
 export default connect(
   mapStateToProps,
