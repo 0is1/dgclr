@@ -10,6 +10,6 @@ export const latestQueryLike = (state, query) => get(['search', 'queryHistory', 
 
 export const isAdvancedSearchOpen = state => get(['search', 'advancedSearchOpen'], state);
 
-export const getRatingFilter = state => get(['search', 'advancedQueries', 'rating'], state) || [];
+export const getFilterTypeData = (state, filterName) => get(['search', 'advancedQueries', filterName], state) || [];
 
-export const getBasketTypeFilter = state => get(['search', 'advancedQueries', 'basketType'], state) || [];
+export const getCurrentAdvancedFilter = state => get(['search', 'currentAdvancedFilter'], state) || '{}';

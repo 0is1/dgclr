@@ -2,9 +2,9 @@ export const actionTypes = {
   SET_COURSES: 'DGCLR_SET_COURSES',
   SET_SEARCH_QUERY: 'DGCLR_SET_SEARCH_QUERY',
   TOGGLE_ADVANCED_SEARCH: 'DGCLR_TOGGLE_ADVANCED_SEARCH',
-  SET_ADVANCED_RATING_FILTER: 'DGCLR_SET_ADVANCED_RATING_FILTER',
-  SET_ADVANCED_BASKET_TYPE_FILTER: 'DGCLR_SET_ADVANCED_BASKET_TYPE_FILTER',
   SET_ADVANCED_SEARCH_QUERY: 'DGCLR_SET_ADVANCED_SEARCH_QUERY',
+  SET_ADVANCED_FILTER_TYPE: 'DGCLR_SET_ADVANCED_FILTER_TYPE',
+  SET_CURRENT_ADVANCED_FILTER: 'DGCLR_SET_CURRENT_ADVANCED_FILTER',
 };
 
 /**
@@ -37,22 +37,15 @@ export const toggleAdvancedSearch = (open = false) => ({
 });
 
 /**
- * Set rating filter
- * @param {Array} rating
- * @return {Object} action of SET_ADVANCED_RATING_FILTER
- */
-export const setRatingFilter = (rating = []) => ({
-  type: actionTypes.SET_ADVANCED_RATING_FILTER,
-  rating,
-});
-/**
- * Set basketType filter
- * @param {Array} basketType
+ * Set filter data to store
+ * @param {string} filterName
+ * @param {Array} data
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
-export const setBasketTypeFilter = (basketType = []) => ({
-  type: actionTypes.SET_ADVANCED_BASKET_TYPE_FILTER,
-  basketType,
+export const setFilter = (filterName = '', data = []) => ({
+  type: actionTypes.SET_ADVANCED_FILTER_TYPE,
+  filterName,
+  data,
 });
 
 /**
@@ -65,4 +58,14 @@ export const setAdvancedSearchQuery = (courses = [], query) => ({
   type: actionTypes.SET_ADVANCED_SEARCH_QUERY,
   courses,
   query,
+});
+
+/**
+ * Set current advanced search filters
+ * @param {String} filter stringified JSON
+ * @return {Object} action of SET_CURRENT_ADVANCED_FILTER
+ */
+export const setCurrentAdvancedSearchFilter = (filter = '') => ({
+  type: actionTypes.SET_CURRENT_ADVANCED_FILTER,
+  filter,
 });

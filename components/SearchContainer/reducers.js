@@ -9,6 +9,7 @@ export const initialState = {
     rating: [],
   },
   advancedQueryHistory: [],
+  currentAdvancedFilter: '{}',
   courses: {},
   queries: {},
   queryHistory: [],
@@ -43,13 +44,13 @@ const reducer = createReducer({
     const { open } = action;
     return { ...state, advancedSearchOpen: open };
   },
-  [actionTypes.SET_ADVANCED_RATING_FILTER]: (state, action) => {
-    const { rating } = action;
-    return updateIn(['advancedQueries', 'rating'], rating);
+  [actionTypes.SET_ADVANCED_FILTER_TYPE]: (state, action) => {
+    const { filterName, data } = action;
+    return updateIn(['advancedQueries', filterName], data);
   },
-  [actionTypes.SET_ADVANCED_BASKET_TYPE_FILTER]: (state, action) => {
-    const { basketType } = action;
-    return updateIn(['advancedQueries', 'basketType'], basketType);
+  [actionTypes.SET_CURRENT_ADVANCED_FILTER]: (state, action) => {
+    const { filter } = action;
+    return { ...state, currentAdvancedFilter: filter };
   },
 });
 
