@@ -3,24 +3,32 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { debounce } from 'lodash';
 import { Box, Lead } from 'rebass';
-import { latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
+import {
+  isAdvancedSearchOpen,
+  latestQuery as latestQueryFunc,
+} from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
 import SearchQuery from 'components/SearchContainer/SearchQuery';
+import AdvancedSearchQuery from 'components/SearchContainer/AdvancedSearchQuery';
+import AdvancedSearchContainer from 'components/SearchContainer/AdvancedSearchContainer';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 
 const { Wrapper } = Styles;
 
 type Props = {
+  advancedSearchOpen: boolean,
   client: {},
   latestQuery: string,
 };
 type State = {
+  filter: {},
   inputValue: string,
   query: string,
 };
 
 class SearchContainer extends PureComponent<Props, State> {
   state = {
+    filter: {},
     inputValue: '',
     query: '',
   };
@@ -30,29 +38,46 @@ class SearchContainer extends PureComponent<Props, State> {
   }, 300);
 
   componentDidMount() {
-    const { latestQuery } = this.props;
-    if (latestQuery) {
+    const { advancedSearchOpen, latestQuery } = this.props;
+    if (!advancedSearchOpen && latestQuery) {
       this.setState({ inputValue: latestQuery });
     }
   }
 
-  onChange = (query: string) => {
+  onSearchQueryChange = (query: string) => {
     this.setState({ inputValue: query });
     this.changeQueryValue(query);
   };
 
+  onAdvancedFilterChange = (filter: {}) => {
+    console.log('filter: ', filter);
+    this.setState({ filter });
+  };
+
   render() {
-    const { query, inputValue } = this.state;
+    const { filter, query, inputValue } = this.state;
+    console.log('query: ', query);
+    const { advancedSearchOpen } = this.props;
+    const basicSearch = !advancedSearchOpen ? (
+      <React.Fragment>
+        <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
+        <Input
+          placeholder="Kaupungin tai radan nimi"
+          value={inputValue}
+          onChange={this.onSearchQueryChange}
+        />
+        <SearchQuery query={query} />
+      </React.Fragment>
+    ) : null;
+    const advancedSearchResults = advancedSearchOpen ? (
+      <AdvancedSearchQuery filter={filter} />
+    ) : null;
     return (
       <Wrapper>
-        <Box m="1rem auto" p="1rem 2rem" width={[1, 1, 1, 1 / 2]}>
-          <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
-          <Input
-            placeholder="Kaupungin tai radan nimi"
-            value={inputValue}
-            onChange={this.onChange}
-          />
-          <SearchQuery query={query} />
+        <Box m="1rem auto" px="2rem" width={[1, 1, 1, 1 / 2]}>
+          <AdvancedSearchContainer onFilterChange={this.onAdvancedFilterChange} />
+          {advancedSearchResults}
+          {basicSearch}
         </Box>
       </Wrapper>
     );
@@ -60,6 +85,7 @@ class SearchContainer extends PureComponent<Props, State> {
 }
 
 const mapStateToProps = state => ({
+  advancedSearchOpen: isAdvancedSearchOpen(state),
   latestQuery: latestQueryFunc(state),
 });
 

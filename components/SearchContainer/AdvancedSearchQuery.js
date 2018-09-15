@@ -4,13 +4,13 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { differenceBy } from 'lodash';
+import { differenceBy, size } from 'lodash';
 import {
   setCourses as setCoursesFunc,
-  setSearchQuery as setSearchQueryFunc,
+  setAdvancedSearchQuery,
 } from 'components/SearchContainer/actions';
 import {
-  latestQuery as latestQueryFunc,
+  latestAdvancedQuery as latestQueryFunc,
   queryResultsFromState as queryResultsFromStateFunc,
 } from 'components/SearchContainer/selectors';
 import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
@@ -25,7 +25,7 @@ const { UL, LI } = BaseStyles;
 const { SearchResultItem } = Styles;
 
 type Props = {
-  query: string,
+  filter: {},
   queryResults: [],
   data: GraphQLData,
   latestQuery: string,
@@ -33,28 +33,30 @@ type Props = {
   setSearchQuery: Function,
 };
 
-class SearchQuery extends Component<Props> {
+class AdvancedSearchQuery extends Component<Props> {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot !== null) {
       const { data = {} } = this.props;
-      const { courseByName = [] } = data;
-      if (courseByName) {
-        this.setCourses(courseByName);
+      const { courses = [] } = data;
+      if (courses) {
+        this.setCourses(courses);
       }
     }
   }
 
   getSnapshotBeforeUpdate(prevProps) {
-    const { data = {}, latestQuery, query } = this.props;
-    const { courseByName = [] } = data;
+    const { data = {}, latestQuery, filter } = this.props;
+    const { courses = [] } = data;
     const prevCourseData = prevProps.data;
-    const prevCourseArr = prevCourseData && prevProps.data.courseByName;
+    const prevCourseArr = prevCourseData && prevProps.data.courses;
     const prevCourses = prevCourseArr && prevCourseArr.length ? prevCourseArr : [];
+    const stringifyFilter = JSON.stringify(filter);
+    // console.log('courses: ', courses);
+    // console.log('prevCourses: ', prevCourses);
     if (
-      (courseByName
-        && courseByName.length
-        && differenceBy(courseByName, prevCourses, '_id').length > 0)
-      || (!courseByName.length && query !== latestQuery)
+      (courses && courses.length && differenceBy(courses, prevCourses, '_id').length > 0)
+      || (!courses.length && stringifyFilter !== latestQuery)
+      || (courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
     ) {
       return true;
     }
@@ -62,22 +64,22 @@ class SearchQuery extends Component<Props> {
   }
 
   setCourses = (courses) => {
-    const { setCourses, setSearchQuery, query } = this.props;
+    const { setCourses, setSearchQuery, filter } = this.props;
     setCourses(courses);
-    setSearchQuery(courses, query);
+    setSearchQuery(courses, JSON.stringify(filter));
   };
 
   render() {
-    const { query, queryResults, data = {} } = this.props;
-    if (!query && !queryResults.length) return null;
+    const { filter, queryResults, data = {} } = this.props;
+    if (size(filter) < 1 && !queryResults.length) return null;
     if (data && data.loading) {
       return <ClipLoader />;
     }
-    const { courseByName } = data;
-    const courses = queryResults.length ? queryResults : courseByName;
+    const { courses } = data;
+    const courseData = queryResults.length ? queryResults : courses;
     let results = <li>Ei hakutuloksia!</li>;
-    if (courses && courses.length) {
-      results = courses.map((course) => {
+    if (courseData && courseData.length) {
+      results = courseData.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
         return (
           <LI key={getRandomKey()}>
@@ -102,12 +104,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),
-  setSearchQuery: (courses, query) => dispatch(setSearchQueryFunc(courses, query)),
+  setSearchQuery: (courses, query) => dispatch(setAdvancedSearchQuery(courses, query)),
 });
 
 const SEARCH_COURSES = gql`
-  query CoursesQuery($query: String!) {
-    courseByName(query: $query) {
+  query AdvancedCoursesQuery($filter: CourseQueryFilterInput!) {
+    courses(filter: $filter) {
       _id
       name
       description
@@ -157,16 +159,16 @@ const SEARCH_COURSES = gql`
 // The `graphql` wrapper executes a GraphQL query and makes the results
 // available on the `data` prop of the wrapped component (PostList)
 const ComponentWithMutation = graphql(SEARCH_COURSES, {
-  options: ({ query }) => ({
+  options: ({ filter }) => ({
     variables: {
-      query,
+      filter,
     },
   }),
   props: ({ data }) => ({
     data,
   }),
-  skip: ({ query }) => !query || query.length < 2,
-})(SearchQuery);
+  skip: ({ filter }) => !filter || size(filter) < 1,
+})(AdvancedSearchQuery);
 
 export default connect(
   mapStateToProps,
