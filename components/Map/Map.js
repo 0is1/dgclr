@@ -67,12 +67,18 @@ class Map extends PureComponent<Props, State> {
     isMarkerShown: false,
   };
 
+  timeOut = null;
+
   componentDidMount() {
     this.delayedShowMarker();
   }
 
+  componentWillUnmount() {
+    if (this.timeOut) clearTimeout(this.timeOut);
+  }
+
   delayedShowMarker = () => {
-    setTimeout(() => {
+    this.timeOut = setTimeout(() => {
       this.setState({ isMarkerShown: true });
     }, 3000);
   };
