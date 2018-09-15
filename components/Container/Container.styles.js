@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Text } from 'rebass';
+import { Box, Text } from 'rebass';
 import colors from 'components/colors';
 
 const Styles = {
-  Container: styled.div`
+  Container: styled(Box)`
     background-color: ${colors.lightGray};
     color: rgb(43, 43, 43);
     width: 100%;
