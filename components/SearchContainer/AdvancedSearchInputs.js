@@ -21,7 +21,7 @@ class AdvancedSearchInputs extends Component<Props> {
 
   setFilterData = (newFilter) => {
     const { setFilter } = this.props;
-    console.log('newFilter: ', this.cleanCourseInfo(newFilter));
+    // console.log('newFilter: ', this.cleanCourseInfo(newFilter));
     setFilter(JSON.stringify(this.cleanCourseInfo(newFilter)));
   };
 
@@ -40,7 +40,7 @@ class AdvancedSearchInputs extends Component<Props> {
 
   onBasketTypeChange = (basketType: string) => {
     const filter = this.getParsedFilter();
-    console.log('onBasketTypeChange filter: ', filter);
+    // console.log('onBasketTypeChange filter: ', filter);
     const newFilter = basketType.length > 0
       ? update({ courseInfo: { basketType } }, filter)
       : { ...filter, courseInfo: omit(filter.courseInfo, ['basketType']) };
@@ -72,32 +72,16 @@ class AdvancedSearchInputs extends Component<Props> {
           Edistynyt haku (erittäin varhaisessa kehitysvaiheessa)
         </Text>
         <Flex flexWrap="wrap">
-          <Box
-            pr={[0, 0, '.5rem', '.5rem']}
-            mb={['.75rem', '.75rem', 0, 0]}
-            width={[1, 1, 1 / 2, 1 / 2]}
-          >
+          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <RatingSelect onChange={this.onRatingChange} />
           </Box>
-          <Box
-            pl={[0, 0, '.5rem', '.5rem']}
-            mb={['.75rem', '.75rem', 0, 0]}
-            width={[1, 1, 1 / 2, 1 / 2]}
-          >
+          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <BasketTypeSelect onChange={this.onBasketTypeChange} />
           </Box>
-          <Box
-            pr={[0, 0, '.5rem', '.5rem']}
-            mb={['.75rem', '.75rem', 0, 0]}
-            width={[1, 1, 1 / 2, 1 / 2]}
-          >
+          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <TeeTypeSelect onChange={this.onTeeTypeChange} />
           </Box>
-          <Box
-            pl={[0, 0, '.5rem', '.5rem']}
-            mb={['.75rem', '.75rem', 0, 0]}
-            width={[1, 1, 1 / 2, 1 / 2]}
-          >
+          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
           </Box>
         </Flex>
