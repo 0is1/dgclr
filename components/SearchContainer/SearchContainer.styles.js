@@ -4,6 +4,7 @@ import colors from 'components/colors';
 const Styles = {
   Wrapper: styled.div`
     margin: 0 auto;
+    padding-top: 1rem;
   `,
   SearchResultItem: styled.a`
     display: block;

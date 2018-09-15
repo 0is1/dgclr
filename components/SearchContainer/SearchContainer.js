@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { debounce } from 'lodash';
 import { Box, Lead } from 'rebass';
 import {
+  getCurrentAdvancedFilter,
   isAdvancedSearchOpen,
   latestQuery as latestQueryFunc,
 } from 'components/SearchContainer/selectors';
@@ -18,17 +19,16 @@ const { Wrapper } = Styles;
 type Props = {
   advancedSearchOpen: boolean,
   client: {},
+  filter: string,
   latestQuery: string,
 };
 type State = {
-  filter: {},
   inputValue: string,
   query: string,
 };
 
 class SearchContainer extends PureComponent<Props, State> {
   state = {
-    filter: {},
     inputValue: '',
     query: '',
   };
@@ -49,13 +49,9 @@ class SearchContainer extends PureComponent<Props, State> {
     this.changeQueryValue(query);
   };
 
-  onAdvancedFilterChange = (filter: {}) => {
-    this.setState({ filter });
-  };
-
   render() {
-    const { filter, query, inputValue } = this.state;
-    const { advancedSearchOpen } = this.props;
+    const { query, inputValue } = this.state;
+    const { advancedSearchOpen, filter } = this.props;
     const basicSearch = !advancedSearchOpen ? (
       <React.Fragment>
         <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
@@ -68,12 +64,12 @@ class SearchContainer extends PureComponent<Props, State> {
       </React.Fragment>
     ) : null;
     const advancedSearchResults = advancedSearchOpen ? (
-      <AdvancedSearchQuery filter={filter} />
+      <AdvancedSearchQuery filter={JSON.parse(filter)} />
     ) : null;
     return (
       <Wrapper>
         <Box m="1rem auto" px="2rem" width={[1, 1, 1, 1 / 2]}>
-          <AdvancedSearchContainer onFilterChange={this.onAdvancedFilterChange} />
+          <AdvancedSearchContainer />
           {advancedSearchResults}
           {basicSearch}
         </Box>
@@ -83,6 +79,7 @@ class SearchContainer extends PureComponent<Props, State> {
 }
 
 const mapStateToProps = state => ({
+  filter: getCurrentAdvancedFilter(state),
   advancedSearchOpen: isAdvancedSearchOpen(state),
   latestQuery: latestQueryFunc(state),
 });

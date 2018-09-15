@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Flex } from 'rebass';
+import { Box } from 'rebass';
 import { GoSettings } from 'react-icons/go';
 import { toggleAdvancedSearch as toggleAdvancedSearchFunc } from 'components/SearchContainer/actions';
 import { isAdvancedSearchOpen } from 'components/SearchContainer/selectors';
@@ -11,7 +11,7 @@ import colors from 'components/colors';
 
 const { ToggleButtonWrapper } = Styles;
 
-type Props = { open: boolean, onFilterChange: Function, toggleAdvancedSearch: Function };
+type Props = { open: boolean, toggleAdvancedSearch: Function };
 
 class AdvancedSearchContainer extends Component<Props> {
   toggleOpen = () => {
@@ -21,17 +21,12 @@ class AdvancedSearchContainer extends Component<Props> {
 
   handleKeyPress = () => {};
 
-  onChange = (filter: {}) => {
-    const { onFilterChange } = this.props;
-    onFilterChange(filter);
-  };
-
   render() {
     const { open } = this.props;
-    const inputs = open ? <AdvancedSearchInputs onChange={this.onChange} /> : null;
+    const inputs = open ? <AdvancedSearchInputs /> : null;
     const settingsColor = open ? colors.info : colors.text;
     return (
-      <Flex style={{ position: 'relative' }}>
+      <Box style={{ position: 'relative' }}>
         {inputs}
         <ToggleButtonWrapper
           onClick={this.toggleOpen}
@@ -41,7 +36,7 @@ class AdvancedSearchContainer extends Component<Props> {
         >
           <GoSettings size="1.5rem" color={settingsColor} />
         </ToggleButtonWrapper>
-      </Flex>
+      </Box>
     );
   }
 }
