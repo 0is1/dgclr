@@ -1,8 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import { size } from 'lodash';
 import { Helmet } from 'react-helmet';
@@ -23,23 +20,13 @@ import Map from 'components/Map';
 import Layouts from 'components/Layouts';
 import Tabs from 'components/Tabs';
 import LayoutRatingBadges from 'components/Layout/Badges';
+import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { CourseInfo, Layout, GraphQLData } from 'lib/types';
+import type { Course as CourseType, GraphQLData } from 'lib/types';
 
 type Props = {
-  course: {
-    _id: string,
-    name: string,
-    locationInfo: {
-      location: {
-        coordinates: [number],
-      },
-    },
-    courseInfo: CourseInfo,
-    description: string,
-    layouts: [Layout],
-  },
+  course: CourseType,
   data: GraphQLData,
   setCourses: Function,
   // slug: string,
@@ -85,18 +72,16 @@ class Course extends Component<Props> {
   };
 
   render() {
-    const { course, data } = this.props;
+    const { course, data = {} } = this.props;
     console.log(course);
-    if (size(course) < 1 || (data && data.loading)) {
-      return (
-        <Box width="100%" p="2.5rem 0 1rem">
-          <Title textAlign="center">Loading...</Title>
-        </Box>
-      );
+    const { courseBySlug = [] } = data;
+    if ((size(course) < 1 && size(courseBySlug) < 1) || (data && data.loading)) {
+      return <ClipLoader />;
     }
+    const courseData = size(course) > 0 ? course : courseBySlug[0];
     const {
       name, courseInfo, description, locationInfo, layouts,
-    } = course;
+    } = courseData;
     const { mapUrl } = courseInfo;
     const descriptionWithLinks = convertLinksToHtml(description);
     const coordinates = convertCoordinatesToObject(
@@ -111,7 +96,7 @@ class Course extends Component<Props> {
     return (
       <Box
         width={[1, 1, 1, '90%']}
-        p={[0, 0, '0.5rem', '2rem 1rem']}
+        p={[0, 0, '0 0.5rem', '0 1rem']}
         m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}
       >
         <Helmet>
@@ -222,70 +207,7 @@ const mapDispatchToProps = dispatch => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),
 });
 
-const SEARCH_COURSE = gql`
-  query CourseBySlugQuery($slug: String!) {
-    courseBySlug(slug: $slug) {
-      _id
-      name
-      description
-      slug
-      courseInfo {
-        basketType
-        teeType
-        infoSignType
-        surfaceShapeTypes
-        courseTypes
-        mapUrl
-        founded
-        maintenanceCycle
-        rangeMaster
-        courseDesigner
-        fee {
-          amount
-          currency
-          value
-        }
-      }
-      locationInfo {
-        address
-        city
-        zip
-        location {
-          coordinates
-        }
-      }
-      layouts {
-        name
-        rating
-        holes {
-          par
-          length {
-            foot
-            meter
-          }
-        }
-        holeCount
-        totalPar
-      }
-    }
-  }
-`;
-
-// The `graphql` wrapper executes a GraphQL query and makes the results
-// available on the `data` prop of the wrapped component (PostList)
-const ComponentWithMutation = graphql(SEARCH_COURSE, {
-  options: ({ router: { query } }) => ({
-    variables: {
-      slug: query.slug,
-    },
-  }),
-  props: ({ data }) => ({
-    data,
-  }),
-  skip: ({ course }) => size(course) > 0,
-})(Course);
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(withRouter(ComponentWithMutation));
+)(Course);
