@@ -20,7 +20,7 @@ const Styles = {
     padding-left: 1rem;
   `,
   Footer: styled.footer`
-    padding: 1rem 0;
+    padding: 1rem;
   `,
   UL: styled.ul`
     padding: 0.5rem 2rem;
