@@ -14,12 +14,12 @@ class AdvancedSearchInputs extends Component<Props, State> {
   };
 
   onRatingChange = (rating: []) => {
-    console.log('onRatingChange: ', rating);
+    // console.log('onRatingChange: ', rating);
     const { onChange } = this.props;
     const { filter } = this.state;
-    console.log('onRatingChange filter: ', filter);
+    // console.log('onRatingChange filter: ', filter);
     const newFilter = rating.length > 0 ? { ...filter, rating } : omit(filter, ['rating']);
-    console.log('newFilter: ', newFilter);
+    // console.log('newFilter: ', newFilter);
     onChange(newFilter);
     this.setState({ filter: newFilter });
   };
@@ -27,9 +27,11 @@ class AdvancedSearchInputs extends Component<Props, State> {
   onBasketTypeChange = (basketType: string) => {
     const { onChange } = this.props;
     const { filter } = this.state;
-    console.log('onBasketTypeChange filter: ', filter);
-    const newFilter = { ...filter, courseInfo: { basketType } };
-    console.log('newFilter: ', newFilter);
+    // console.log('onBasketTypeChange filter: ', filter);
+    const newFilter = basketType.length > 0
+      ? { ...filter, courseInfo: { basketType } }
+      : omit(filter, ['courseInfo', 'basketType']);
+    // console.log('newFilter: ', newFilter);
     onChange(newFilter);
     this.setState({ filter: newFilter });
   };
@@ -37,11 +39,15 @@ class AdvancedSearchInputs extends Component<Props, State> {
   render() {
     return (
       <Box width={['100%', '100%', '100%', '50%']}>
-        <Text fontWeight="700" mb={2}>
-          Edistynyt haku
+        <Text fontWeight="700" my={2}>
+          Edistynyt haku (erittäin varhaisessa kehitysvaiheessa)
         </Text>
-        <RatingSelect onChange={this.onRatingChange} />
-        <BasketTypeSelect onChange={this.onBasketTypeChange} />
+        <Box mb=".75rem">
+          <RatingSelect onChange={this.onRatingChange} />
+        </Box>
+        <Box mb=".75rem">
+          <BasketTypeSelect onChange={this.onBasketTypeChange} />
+        </Box>
       </Box>
     );
   }

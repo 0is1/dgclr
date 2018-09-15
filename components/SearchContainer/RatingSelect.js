@@ -31,7 +31,7 @@ type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Functio
 
 class RatingSelect extends Component<Props> {
   onRatingChange = (values: []) => {
-    console.log('onRatingChange values. ', values);
+    // console.log('onRatingChange values. ', values);
     const { onChange, setFilter } = this.props;
     const rating = values.map(item => item.value);
     onChange(rating);

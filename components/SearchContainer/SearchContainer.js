@@ -50,13 +50,11 @@ class SearchContainer extends PureComponent<Props, State> {
   };
 
   onAdvancedFilterChange = (filter: {}) => {
-    console.log('filter: ', filter);
     this.setState({ filter });
   };
 
   render() {
     const { filter, query, inputValue } = this.state;
-    console.log('query: ', query);
     const { advancedSearchOpen } = this.props;
     const basicSearch = !advancedSearchOpen ? (
       <React.Fragment>

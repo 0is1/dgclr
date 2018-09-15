@@ -8,25 +8,25 @@ import { getBasketTypeFilter } from 'components/SearchContainer/selectors';
 import type { OptionsType } from 'react-select/src/types';
 
 const basketTypeOptions = [
-  { value: 'Prodiscus', label: 'Prodiscus' },
-  { value: 'DiscGolfPark-maalikori', label: 'DiscGolfPark-maalikori' },
-  { value: 'Muu', label: 'Muu' },
-  { value: 'Prodigy', label: 'Prodigy' },
   { value: 'Amexpo', label: 'Amexpo' },
+  { value: 'DiscGolfPark-maalikori', label: 'DiscGolfPark-maalikori' },
   { value: 'Knickarp', label: 'Knickarp' },
   { value: 'Latitude64', label: 'Latitude64' },
-  { value: 'Obsidian Discs', label: 'Obsidian Discs' },
   { value: 'M-Stone', label: 'M-Stone' },
+  { value: 'Muu', label: 'Muu' },
+  { value: 'Obsidian Discs', label: 'Obsidian Discs' },
+  { value: 'Prodigy', label: 'Prodigy' },
+  { value: 'Prodiscus', label: 'Prodiscus' },
 ];
 
 type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Function };
 
 class BasketTypeSelect extends Component<Props> {
   onBasketTypeChange = (values: { value: string }) => {
-    console.log(values);
     const { onChange, setFilter } = this.props;
-    const valueData = [].concat(values);
-    onChange(values.value);
+    const valueData = values ? [].concat(values) : '';
+    const value = values && values.value ? values.value : '';
+    onChange(value);
     setFilter(valueData);
   };
 
@@ -40,6 +40,7 @@ class BasketTypeSelect extends Component<Props> {
           options={basketTypeOptions}
           onChange={this.onBasketTypeChange}
           placeholder="Korityyppi"
+          isClearable
         />
       </React.Fragment>
     );
