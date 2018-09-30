@@ -1,0 +1,694 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component Match snapshot 1`] = `
+<div
+  className="sc-bdVaJa NiZGm"
+>
+  <div
+    className="sc-fAjcbJ iZNVYN"
+  >
+    AA1
+  </div>
+  <div
+    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU jTjJUk"
+  >
+    <span
+      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+    >
+      Väylien määrä: 
+    </span>
+    18
+  </div>
+  <div
+    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+  >
+    <span
+      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+    >
+      Radan par: 
+    </span>
+    57
+  </div>
+  <div
+    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+  >
+    <span
+      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+    >
+      Radan väylät: 
+    </span>
+  </div>
+  <ol
+    className="Containerstyles__OL-sc-1kiz1wt-5 hBppxg"
+  >
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             132m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             56m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             4
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             180m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             74m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             4
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             162m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             84m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             94m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             90m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             77m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             120m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             4
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             213m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             95m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             94m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             123m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             102m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             100m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             124m
+          </div>
+        </div>
+      </div>
+    </li>
+    <li
+      className="Containerstyles__LI-sc-1kiz1wt-6 iqdLEq"
+    >
+      <div
+        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      >
+        <div
+          className="sc-bdVaJa bopFKC"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Par: 
+            </span>
+             3
+          </div>
+        </div>
+        <div
+          className="sc-bdVaJa dYmHol"
+        >
+          <div
+            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+          >
+            <span
+              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
+            >
+              Pituus: 
+            </span>
+             99m
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component Match snapshot 1`] = `
+<div
+  className="sc-bwzfXH dbiuev sc-bdVaJa enBfDC"
+>
+  <div
+    className="sc-bdVaJa iHZvIS"
+  >
+    <div
+      className="css-jtojcd"
+    />
+  </div>
+</div>
+`;
