@@ -73,7 +73,6 @@ class Course extends Component<Props> {
 
   render() {
     const { course, data = {} } = this.props;
-    console.log(course);
     const { courseBySlug = [] } = data;
     if ((size(course) < 1 && size(courseBySlug) < 1) || (data && data.loading)) {
       return <ClipLoader />;
@@ -88,9 +87,8 @@ class Course extends Component<Props> {
       locationInfo.location && locationInfo.location.coordinates,
     );
     const layoutNames = layouts.map(layout => layout.name);
-    // eslint-disable-next-line no-underscore-dangle
-    const layoutTabs = <Tabs tabs={layoutNames} id={course._id} />;
-    const mapElement = coordinates ? <Map coordinates={coordinates} course={course} /> : null;
+    const layoutTabs = <Tabs tabs={layoutNames} id={courseData._id} />;
+    const mapElement = coordinates ? <Map coordinates={coordinates} course={courseData} /> : null;
     const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
