@@ -6,6 +6,7 @@ import Select from 'react-select';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import { getFilterTypeData } from 'components/SearchContainer/selectors';
 import type { OptionsType } from 'react-select/src/types';
+import type { State } from 'lib/types';
 
 const basketTypeOptions = [
   { value: 'Amexpo', label: 'Amexpo' },
@@ -22,7 +23,7 @@ const basketTypeOptions = [
 type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Function };
 
 class BasketTypeSelect extends Component<Props> {
-  onBasketTypeChange = (values: { value: string }) => {
+  onBasketTypeChange = (values: { value: string }): void => {
     const { onChange, setFilter } = this.props;
     const valueData = values ? [].concat(values) : '';
     const value = values && values.value ? values.value : '';
@@ -47,7 +48,7 @@ class BasketTypeSelect extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   defaultValue: getFilterTypeData(state, 'basketType'),
 });
 const mapDispatchToProps = dispatch => ({

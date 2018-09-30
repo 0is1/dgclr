@@ -6,6 +6,7 @@ import Select from 'react-select';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import { getFilterTypeData } from 'components/SearchContainer/selectors';
 import type { OptionsType } from 'react-select/src/types';
+import type { State } from 'lib/types';
 
 const ratingOptions = [
   { value: 'AAA1', label: 'AAA1' },
@@ -55,7 +56,7 @@ class RatingSelect extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   defaultValue: getFilterTypeData(state, 'rating'),
 });
 const mapDispatchToProps = dispatch => ({
