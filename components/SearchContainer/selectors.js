@@ -8,8 +8,6 @@ export const latestQuery = (state: State) => get(['search', 'queryHistory'], sta
 
 export const latestAdvancedQuery = (state: State) => get(['search', 'advancedQueryHistory'], state)[0] || '';
 
-export const latestQueryLike = (state: State, query: string) => get(['search', 'queryHistory', query], state) || '';
-
 export const isAdvancedSearchOpen = (state: State) => get(['search', 'advancedSearchOpen'], state);
 
 export const getFilterTypeData = (state: State, filterName: string) => get(['search', 'advancedQueries', filterName], state) || [];
