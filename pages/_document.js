@@ -44,9 +44,7 @@ export default class extends Document {
 
   // eslint-disable-next-line class-methods-use-this
   get helmetJsx() {
-    return (
-      <Helmet htmlAttributes={{ lang: 'fi' }} title="DGCLR - Disc Golf Course Lists and Results" />
-    );
+    return <Helmet htmlAttributes={{ lang: 'fi' }} />;
   }
 
   render() {
