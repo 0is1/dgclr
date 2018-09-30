@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import Layout from 'components/Layout';
 import { getRandomKey } from 'helpers/utils';
+import type { State } from 'lib/types';
 
 type Props = {
   activeIndex: number | Boolean,
@@ -19,7 +20,7 @@ const Layouts = ({ activeIndex, layouts }: Props) => {
   return layoutData;
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state: State, ownProps) => ({
   activeIndex: getActiveIndex(state, ownProps),
 });
 

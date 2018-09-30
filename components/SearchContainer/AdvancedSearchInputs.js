@@ -6,10 +6,11 @@ import update from 'updeep';
 import { omit, size } from 'lodash';
 import { getCurrentAdvancedFilter } from 'components/SearchContainer/selectors';
 import { setCurrentAdvancedSearchFilter } from 'components/SearchContainer/actions';
-import RatingSelect from 'components/SearchContainer/RatingSelect';
-import BasketTypeSelect from 'components/SearchContainer/BasketTypeSelect';
-import TeeTypeSelect from 'components/SearchContainer/TeeTypeSelect';
-import SurfaceTypeSelect from 'components/SearchContainer/SurfaceTypeSelect';
+import RatingSelect from 'components/Select/RatingSelect';
+import BasketTypeSelect from 'components/Select/BasketTypeSelect';
+import TeeTypeSelect from 'components/Select/TeeTypeSelect';
+import SurfaceTypeSelect from 'components/Select/SurfaceTypeSelect';
+import type { State } from 'lib/types';
 
 type Props = { filter: string, setFilter: Function };
 
@@ -90,7 +91,7 @@ class AdvancedSearchInputs extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   filter: getCurrentAdvancedFilter(state),
 });
 const mapDispatchToProps = dispatch => ({

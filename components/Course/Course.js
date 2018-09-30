@@ -23,7 +23,7 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { Course as CourseType, GraphQLData } from 'lib/types';
+import type { Course as CourseType, GraphQLData, State } from 'lib/types';
 
 type Props = {
   course: CourseType,
@@ -199,7 +199,7 @@ class Course extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state: State, ownProps) => ({
   course: courseBySlugFromState(state, ownProps),
 });
 

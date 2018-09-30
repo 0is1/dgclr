@@ -6,6 +6,7 @@ import { Tabs } from 'rebass';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import { setTabs as setTabsFunc } from 'components/Tabs/actions';
 import { getRandomKey } from 'helpers/utils';
+import type { State } from 'lib/types';
 import Tab from './Tab';
 
 type Props = {
@@ -34,7 +35,7 @@ class TabsComponent extends PureComponent<Props> {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state: State, ownProps) => ({
   activeIndex: getActiveIndex(state, ownProps),
 });
 

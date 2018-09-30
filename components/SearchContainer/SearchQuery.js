@@ -18,7 +18,7 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { GraphQLData } from 'lib/types';
+import type { GraphQLData, State } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
 
@@ -95,7 +95,7 @@ class SearchQuery extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   latestQuery: latestQueryFunc(state),
   queryResults: queryResultsFromStateFunc(state, latestQueryFunc(state)),
 });

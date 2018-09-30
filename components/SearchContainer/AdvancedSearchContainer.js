@@ -8,6 +8,7 @@ import { isAdvancedSearchOpen } from 'components/SearchContainer/selectors';
 import AdvancedSearchInputs from 'components/SearchContainer/AdvancedSearchInputs';
 import Styles from 'components/SearchContainer/AdvancedSearchContainer.styles';
 import colors from 'components/colors';
+import type { State } from 'lib/types';
 
 const { ToggleButtonWrapper } = Styles;
 
@@ -41,7 +42,7 @@ class AdvancedSearchContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   open: isAdvancedSearchOpen(state),
 });
 

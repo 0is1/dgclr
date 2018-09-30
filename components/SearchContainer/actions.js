@@ -1,3 +1,6 @@
+// @flow
+import type { Course, FilterData } from 'lib/types';
+
 export const actionTypes = {
   SET_COURSES: 'DGCLR_SET_COURSES',
   SET_SEARCH_QUERY: 'DGCLR_SET_SEARCH_QUERY',
@@ -12,7 +15,10 @@ export const actionTypes = {
  * @param {Array} courses
  * @return {Object} action of SET_COURSES
  */
-export const setCourses = (courses = []) => ({ type: actionTypes.SET_COURSES, courses });
+export const setCourses = (courses: Array<Course> = []) => ({
+  type: actionTypes.SET_COURSES,
+  courses,
+});
 
 /**
  * Set search query action
@@ -20,7 +26,7 @@ export const setCourses = (courses = []) => ({ type: actionTypes.SET_COURSES, co
  * @param {String} query
  * @return {Object} action of SET_SEARCH_QUERY
  */
-export const setSearchQuery = (courses = [], query) => ({
+export const setSearchQuery = (courses: Array<Course> = [], query: string) => ({
   type: actionTypes.SET_SEARCH_QUERY,
   courses,
   query,
@@ -31,7 +37,7 @@ export const setSearchQuery = (courses = [], query) => ({
  * @param {boolean} open
  * @return {Object} action of TOGGLE_ADVANCED_SEARCH
  */
-export const toggleAdvancedSearch = (open = false) => ({
+export const toggleAdvancedSearch = (open: boolean = false) => ({
   type: actionTypes.TOGGLE_ADVANCED_SEARCH,
   open,
 });
@@ -42,7 +48,7 @@ export const toggleAdvancedSearch = (open = false) => ({
  * @param {Array} data
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
-export const setFilter = (filterName = '', data = []) => ({
+export const setFilter = (filterName: string = '', data: FilterData) => ({
   type: actionTypes.SET_ADVANCED_FILTER_TYPE,
   filterName,
   data,
@@ -54,7 +60,7 @@ export const setFilter = (filterName = '', data = []) => ({
  * @param {String} query
  * @return {Object} action of SET_ADVANCED_SEARCH_QUERY
  */
-export const setAdvancedSearchQuery = (courses = [], query) => ({
+export const setAdvancedSearchQuery = (courses: Array<Course> = [], query: string) => ({
   type: actionTypes.SET_ADVANCED_SEARCH_QUERY,
   courses,
   query,
@@ -65,7 +71,7 @@ export const setAdvancedSearchQuery = (courses = [], query) => ({
  * @param {String} filter stringified JSON
  * @return {Object} action of SET_CURRENT_ADVANCED_FILTER
  */
-export const setCurrentAdvancedSearchFilter = (filter = '') => ({
+export const setCurrentAdvancedSearchFilter = (filter: string = '') => ({
   type: actionTypes.SET_CURRENT_ADVANCED_FILTER,
   filter,
 });

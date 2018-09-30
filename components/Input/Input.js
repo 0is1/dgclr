@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import colors from 'components/colors';
 import Styles from './Input.styles';
 
@@ -16,7 +16,7 @@ type Event = {
 };
 const { Input } = Styles;
 
-class InputComponent extends Component<Props> {
+class InputComponent extends PureComponent<Props> {
   static defaultProps = {
     placeholder: '',
     value: '',

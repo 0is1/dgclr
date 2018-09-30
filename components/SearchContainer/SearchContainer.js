@@ -13,6 +13,7 @@ import SearchQuery from 'components/SearchContainer/SearchQuery';
 import AdvancedSearchQuery from 'components/SearchContainer/AdvancedSearchQuery';
 import AdvancedSearchContainer from 'components/SearchContainer/AdvancedSearchContainer';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
+import type { State as ReduxState } from 'lib/types';
 
 const { Wrapper } = Styles;
 
@@ -78,7 +79,7 @@ class SearchContainer extends PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ReduxState) => ({
   filter: getCurrentAdvancedFilter(state),
   advancedSearchOpen: isAdvancedSearchOpen(state),
   latestQuery: latestQueryFunc(state),
