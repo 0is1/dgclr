@@ -183,7 +183,6 @@ class Course extends Component<Props> {
             <Flex flexWrap="wrap">
               <Box width={[1, 1, 1, 1 / 2]} p={2}>
                 {layoutTabs}
-                {/* eslint-disable-next-line no-underscore-dangle */}
                 <Layouts id={course._id} layouts={layouts} />
               </Box>
               <Box width={[1, 1, 1, 1 / 2]} p={2}>
