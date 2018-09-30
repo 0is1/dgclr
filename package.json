@@ -18,7 +18,8 @@
     "lint:fix": "eslint . --fix",
     "validate": "npm ls",
     "flow": "flow",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "prepush": "yarn test"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
