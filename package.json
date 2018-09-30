@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "postinstall": "yarn build",
+    "postinstall": "if [ $RUN_BUILD ]; then yarn build; fi",
     "prebuild": "rimraf ./dist/*",
     "start-data-fetching": "nodemon index.js --exec babel-node",
     "dev": "NODE_ENV=development node server.js",
@@ -17,19 +17,23 @@
     "lint:staged": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "validate": "npm ls",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "NODE_ENV=test jest"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
+    "@babel/cli": "^7.1.2",
     "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-eslint": "^9.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-styled-components": "^1.7.1",
     "babel-plugin-transform-define": "^1.3.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.0.1",
@@ -39,6 +43,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.81.0",
+    "jest": "^23.6.0",
     "lint-staged": "^7.2.2",
     "nodemon": "^1.18.4",
     "precommit-hook": "^3.0.0",
@@ -60,7 +65,7 @@
     "graphql": "^14.0.2",
     "graphql-anywhere": "^4.1.19",
     "graphql-tag": "^2.9.2",
-    "isomorphic-unfetch": "^2.1.1",
+    "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.11",
     "lru-cache": "^4.1.3",
     "next": "^7.0.0-canary.16",
@@ -102,5 +107,15 @@
   "engines": {
     "node": "^8.11.4",
     "yarn": "^1.9.4"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "<rootDir>/jest/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ]
   }
 }
