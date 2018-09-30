@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Tabs } from 'rebass';
 import { getActiveIndex } from 'components/Tabs/selectors';
@@ -16,7 +16,7 @@ type Props = {
   tabs: [String],
 };
 
-class TabsComponent extends PureComponent<Props> {
+class TabsComponent extends Component<Props> {
   componentDidMount() {
     const { activeIndex, id, setTabs } = this.props;
     if (!activeIndex) {

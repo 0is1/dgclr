@@ -2,6 +2,7 @@
 import React from 'react';
 import { Badge } from 'rebass';
 import { getRandomKey } from 'helpers/utils';
+import type { Node } from 'react';
 
 type Props = {
   ratings: [string],
@@ -9,7 +10,7 @@ type Props = {
 };
 
 const LayoutRatingBadges = ({ ratings, tiny }: Props) => {
-  const badges: any[] = ratings.map((rating) => {
+  const badges: ?Array<Node> = ratings.map((rating) => {
     if (rating) {
       return tiny ? (
         <Badge mx="8px" py={0} key={getRandomKey()}>

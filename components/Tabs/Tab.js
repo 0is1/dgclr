@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setTabs as setTabsFunc } from 'components/Tabs/actions';
 import Styles from './Tabs.styles';
@@ -14,7 +14,7 @@ type Props = {
 };
 const { Tab } = Styles;
 
-class TabComponent extends PureComponent<Props> {
+class TabComponent extends Component<Props> {
   changeActiveIndex = () => {
     const { index, id, setTabs } = this.props;
     setTabs(id, index);
