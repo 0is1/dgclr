@@ -5,6 +5,8 @@ import { graphql } from 'react-apollo';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import { differenceBy } from 'lodash';
+import { Box } from 'rebass';
+import { GoChevronRight } from 'react-icons/go';
 import {
   setCourses as setCoursesFunc,
   setSearchQuery as setSearchQueryFunc,
@@ -22,7 +24,7 @@ import type { GraphQLData, State } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
 
-const { SearchResultItem } = Styles;
+const { SearchResultItem, SearchResultIcon } = Styles;
 
 type Props = {
   query: string,
@@ -80,18 +82,25 @@ class SearchQuery extends Component<Props> {
       results = courses.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
         return (
-          <LI key={getRandomKey()}>
+          <LI key={getRandomKey()} listStyle="none">
             <Link as={`/${course.slug}`} href={`/course?slug=${course.slug}`}>
               <SearchResultItem>
                 {course.name}
                 <LayoutRatingBadges tiny ratings={ratings} />
+                <SearchResultIcon>
+                  <GoChevronRight size="1.5rem" color="#0067ee" />
+                </SearchResultIcon>
               </SearchResultItem>
             </Link>
           </LI>
         );
       });
     }
-    return <UL>{results}</UL>;
+    return (
+      <Box p={[0, '0.5rem 2rem']}>
+        <UL>{results}</UL>
+      </Box>
+    );
   }
 }
 

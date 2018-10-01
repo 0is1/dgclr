@@ -23,13 +23,14 @@ const Styles = {
     padding: 1rem;
   `,
   UL: styled.ul`
-    padding: 0.5rem 2rem;
+    padding: 0;
   `,
   OL: styled.ol`
     padding: 0 2rem;
   `,
   LI: styled.li`
     line-height: 1.35;
+    list-style: ${props => (props.listStyle ? props.listStyle : 'inherit')};
   `,
 };
 
