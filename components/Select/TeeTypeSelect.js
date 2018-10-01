@@ -1,11 +1,6 @@
 // @flow
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Label } from 'rebass';
-import Select from 'react-select';
-import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
-import { getFilterTypeData } from 'components/SearchContainer/selectors';
-import type { OptionsType } from 'react-select/src/types';
+import React from 'react';
+import Select from 'components/Select';
 
 const teeTypeOptions = [
   { value: 'Tekonurmi', label: 'Tekonurmi' },
@@ -19,41 +14,19 @@ const teeTypeOptions = [
   { value: 'Betoni', label: 'Betoni' },
 ];
 
-type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Function };
+type Props = { onChange: Function };
 
-class TeeTypeSelect extends Component<Props> {
-  onTeeTypeChange = (values: { value: string }) => {
-    const { onChange, setFilter } = this.props;
-    const valueData = values ? [].concat(values) : '';
-    const value = values && values.value ? values.value : '';
-    onChange(value);
-    setFilter('teeType', valueData);
-  };
+const TeeTypeSelect = (props: Props) => {
+  const { onChange } = props;
+  return (
+    <Select
+      options={teeTypeOptions}
+      onChange={onChange}
+      placeholder="Heittopaikan tyyppi"
+      label="Heittopaikan tyyppi:"
+      filterName="teeType"
+    />
+  );
+};
 
-  render() {
-    const { defaultValue } = this.props;
-    return (
-      <React.Fragment>
-        <Label>Heittopaikan tyyppi:</Label>
-        <Select
-          defaultValue={defaultValue}
-          options={teeTypeOptions}
-          onChange={this.onTeeTypeChange}
-          placeholder="Heittopaikan tyyppi"
-          isClearable
-        />
-      </React.Fragment>
-    );
-  }
-}
-
-const mapStateToProps = state => ({
-  defaultValue: getFilterTypeData(state, 'teeType'),
-});
-const mapDispatchToProps = dispatch => ({
-  setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
-});
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TeeTypeSelect);
+export default TeeTypeSelect;
