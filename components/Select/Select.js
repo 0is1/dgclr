@@ -27,7 +27,9 @@ class Select extends Component<Props> {
   };
 
   render() {
-    const { defaultValue, label, options, placeholder } = this.props;
+    const {
+      defaultValue, label, options, placeholder,
+    } = this.props;
     return (
       <React.Fragment>
         <Label>{label}</Label>
@@ -51,5 +53,5 @@ const mapDispatchToProps = dispatch => ({
 });
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Select);

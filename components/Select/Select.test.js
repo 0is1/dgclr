@@ -40,7 +40,7 @@ describe('Select component', () => {
     const component = renderer.create(
       <TestStoreProvider storeData={DEFAULT_STATE}>
         <Select {...defaultProps} />
-      </TestStoreProvider>
+      </TestStoreProvider>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -50,12 +50,8 @@ describe('Select component', () => {
     expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(SelectInput).length).toEqual(1);
     expect(enzymeWrapper.find(SelectInput).prop('defaultValue')).toEqual([]);
-    expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(
-      surfaceTypeOptions
-    );
-    expect(enzymeWrapper.props().children.props.filterName).toEqual(
-      'filterName'
-    );
+    expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(surfaceTypeOptions);
+    expect(enzymeWrapper.props().children.props.filterName).toEqual('filterName');
     expect(enzymeWrapper.props().children.props.label).toEqual('label');
     expect(enzymeWrapper.find(Label).length).toEqual(1);
     expect(enzymeWrapper.find(Label).text()).toEqual('label');
@@ -67,15 +63,9 @@ describe('Select component', () => {
     const { enzymeWrapper } = setup(advancedQueries);
     expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(SelectInput).length).toEqual(1);
-    expect(enzymeWrapper.find(SelectInput).prop('defaultValue')).toEqual([
-      surfaceTypeOptions[0],
-    ]);
-    expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(
-      surfaceTypeOptions
-    );
-    expect(enzymeWrapper.props().children.props.filterName).toEqual(
-      'filterName'
-    );
+    expect(enzymeWrapper.find(SelectInput).prop('defaultValue')).toEqual([surfaceTypeOptions[0]]);
+    expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(surfaceTypeOptions);
+    expect(enzymeWrapper.props().children.props.filterName).toEqual('filterName');
     expect(enzymeWrapper.props().children.props.label).toEqual('label');
     expect(enzymeWrapper.find(Label).length).toEqual(1);
     expect(enzymeWrapper.find(Label).text()).toEqual('label');
