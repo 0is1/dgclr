@@ -23,7 +23,7 @@ const Styles = {
     padding: 1rem;
   `,
   UL: styled.ul`
-    padding: 0;
+    padding: ${props => (props.padding ? props.padding : 0)};
   `,
   OL: styled.ol`
     padding: 0 2rem;

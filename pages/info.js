@@ -24,16 +24,18 @@ const InfoPage = () => (
       <BaseText pt={2} mb={-2}>
         Lisää (haku)toimintoja on tulossa, kuten:
       </BaseText>
-      <UL>
-        <LI>Kehittynyt haku, jossa voi etsiä ratoja mm.</LI>
+      <Box p="0.5rem 2rem">
         <UL>
-          <LI>Ratingin</LI>
-          <LI>Pinnanmuotojen (paljon korkeuseroja, tasainen, jne.)</LI>
-          <LI>Ratatyyppien (metsä- , pelto-, puistorata, jne.)</LI>
-          <LI>Etäisyyden mukaan (esim. 30 km määritellystä pisteestä)</LI>
+          <LI>Kehittynyt haku, jossa voi etsiä ratoja mm.</LI>
+          <UL padding="0 0 0 1rem">
+            <LI>Ratingin</LI>
+            <LI>Pinnanmuotojen (paljon korkeuseroja, tasainen, jne.)</LI>
+            <LI>Ratatyyppien (metsä- , pelto-, puistorata, jne.)</LI>
+            <LI>Etäisyyden mukaan (esim. 30 km määritellystä pisteestä)</LI>
+          </UL>
+          <LI>Tietoja ratojen kilpailuista ja tapahtumista (ehkä tuloksiakin?)</LI>
         </UL>
-        <LI>Tietoja ratojen kilpailuista ja tapahtumista (ehkä tuloksiakin?)</LI>
-      </UL>
+      </Box>
       <BaseText>
         Jos mieleesi tulee kehitysideoita, heitä ne sähköpostiin: janne.juhani [AT] gmail DOT com
         tai tykitä viestiä Twitterissä
