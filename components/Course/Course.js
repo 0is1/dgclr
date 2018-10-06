@@ -8,11 +8,7 @@ import {
   Image, Card, Flex, Subhead,
 } from 'rebass';
 import {
-  convertLinksToHtml,
-  convertCoordinatesToObject,
-  courseAddressDetails,
-  uniqueLayoutRatings,
-  getTitle,
+  convertCoordinatesToObject, convertLinksToHtml, courseAddressDetails, getTitle, uniqueLayoutRatings,
 } from 'helpers/utils';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import { setCourses as setCoursesFunc } from 'components/SearchContainer/actions';
@@ -83,20 +79,15 @@ class Course extends Component<Props> {
     } = courseData;
     const { mapUrl } = courseInfo;
     const descriptionWithLinks = convertLinksToHtml(description);
-    const coordinates = convertCoordinatesToObject(
-      locationInfo.location && locationInfo.location.coordinates,
-    );
+    const { location } = locationInfo;
+    const coordinates = location && convertCoordinatesToObject(location.coordinates);
     const layoutNames = layouts.map(layout => layout.name);
     const layoutTabs = <Tabs tabs={layoutNames} id={courseData._id} />;
     const mapElement = coordinates ? <Map coordinates={coordinates} course={courseData} /> : null;
     const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
-      <Box
-        width={[1, 1, 1, '90%']}
-        p={[0, 0, '0 0.5rem', '0 1rem']}
-        m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}
-      >
+      <Box width={[1, 1, 1, '90%']} p={[0, 0, '0 0.5rem', '0 1rem']} m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}>
         <Helmet>
           <title>{getTitle(name)}</title>
         </Helmet>

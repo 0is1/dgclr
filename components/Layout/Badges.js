@@ -5,7 +5,7 @@ import { getRandomKey } from 'helpers/utils';
 import type { Node } from 'react';
 
 type Props = {
-  ratings: [string],
+  ratings: Array<string>,
   tiny?: boolean,
 };
 
