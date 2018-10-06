@@ -15,7 +15,7 @@ export const convertLinksToHtml = (string: string): string => string.replace(/((
  */
 export const convertCoordinatesToObject = (coordinates: Array<number> = []): ?{ lat: number, lng: number } => {
   const [lat, lng] = coordinates;
-  return lat && lng ? { lat, lng } : null;
+  return parseFloat(lat) && parseFloat(lng) ? { lat, lng } : null;
 };
 
 /**
@@ -35,7 +35,8 @@ export const courseAddressDetails = (locationInfo: LocationInfo) => {
  * @param {Array} layouts
  * @return {Array} ratings as strings
  */
-export const uniqueLayoutRatings = (layouts: Array<Layout> = []): Array<string> => uniq(layouts.map(layout => layout.rating));
+// eslint-disable-next-line max-len
+export const uniqueLayoutRatings = (layouts: Array<Layout> = []): Array<string> => uniq(layouts.filter(layout => layout && layout.rating).map(layout => layout.rating));
 
 /**
  * Get unique key id
