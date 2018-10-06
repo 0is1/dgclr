@@ -9,7 +9,8 @@
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-underscore-dangle": ["error", { "allow": ["_id"] }]
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "max-len": ["error", { "code": 140, "ignoreStrings": true, "ignoreComments": true }]
   },
   "settings": {
     "import/resolver": {
