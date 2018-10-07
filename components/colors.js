@@ -1,9 +1,11 @@
 export default {
   border: '#c84b57',
-  info: '#6173fb',
-  text: '#262626',
+  green: '#44f46c',
+  greenAlpha: 'rgba(68, 244, 108, .25)',
   hover: '#544c8e',
-  white: '#ffffff',
-  lightGray: '#e7e6e6',
+  info: '#6173fb',
   lighterGray: '#ececec',
+  lightGray: '#e7e6e6',
+  text: '#262626',
+  white: '#ffffff',
 };
