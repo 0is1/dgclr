@@ -10,6 +10,7 @@ import {
 import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
 import { BarLoader } from 'components/Spinners';
 import colors from 'components/colors';
+import type { CoordinatesObject } from 'lib/types';
 
 const MyMapComponent = compose(
   withProps({
@@ -40,8 +41,11 @@ const MyMapComponent = compose(
         onCircleMounted: (ref) => {
           refs.circle = ref;
         },
-        onCenterChanged: () => {
-          this.props.onCenterChanged(refs.circle.getCenter());
+        onCircleCenterChanged: () => {
+          if (refs.circle) {
+            console.log(refs.circle.getBounds());
+            this.props.onCenterChanged(refs.circle.getCenter());
+          }
         },
       });
     },
@@ -50,52 +54,73 @@ const MyMapComponent = compose(
   withGoogleMap,
 )((props) => {
   const {
-    course, defaultCenter, isOpen, onCenterChanged, onCircleMounted, onDragEnd, onToggleOpen, radius,
+    advancedSearch,
+    defaultCenter,
+    defaultZoom,
+    isOpen,
+    markerName,
+    onCircleCenterChanged,
+    onCircleMounted,
+    onDragEnd,
+    onToggleOpen,
+    radius,
   } = props;
-  const { name } = course;
+  console.log('props: ', props);
   return (
-    <GoogleMap defaultZoom={11} defaultCenter={defaultCenter}>
+    <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
       <Marker position={defaultCenter} onClick={onToggleOpen}>
         {isOpen && (
           <InfoBox onCloseClick={onToggleOpen} options={{ closeBoxURL: '', enableEventPropagation: true }}>
             <div style={{ backgroundColor: colors.info, padding: '12px' }}>
-              <div style={{ fontSize: '16px', color: '#ffffff' }}>{name}</div>
+              <div style={{ fontSize: '16px', color: '#ffffff' }}>{markerName}</div>
             </div>
           </InfoBox>
         )}
       </Marker>
-      <Circle
-        ref={onCircleMounted}
-        defaultCenter={defaultCenter}
-        defaultDraggable
-        defaultRadius={10000}
-        onDragEnd={onDragEnd}
-        radius={radius}
-        onCenterChanged={onCenterChanged}
-      />
+      {advancedSearch && (
+        <Circle
+          ref={onCircleMounted}
+          defaultCenter={defaultCenter}
+          defaultDraggable
+          defaultRadius={20000}
+          onDragEnd={onDragEnd}
+          radius={parseInt(radius, 10)}
+          onCenterChanged={onCircleCenterChanged}
+          options={{ fillColor: colors.green, strokeColor: colors.green }}
+        />
+      )}
     </GoogleMap>
   );
 });
 
 type Props = {
-  coordinates: { lat: number, lng: number },
-  course: {},
+  advancedSearch?: boolean,
+  coordinates: CoordinatesObject,
+  data: { name: string },
+  onDragEnd?: Function,
+  radius?: string,
+  zoom?: number,
 };
 type State = {
-  coordinates: ?{ lat: number, lng: number },
+  coordinates: ?CoordinatesObject,
   isMarkerShown: boolean,
-  radius: number,
 };
 
 class Map extends PureComponent<Props, State> {
   timeOut = null;
 
+  static defaultProps = {
+    advancedSearch: false,
+    onDragEnd: () => {},
+    radius: 10000,
+    zoom: 11,
+  };
+
   constructor(props: Props) {
     super(props);
     this.state = {
-      coordinates: props.coordinates,
+      coordinates: null,
       isMarkerShown: false,
-      radius: 10000,
     };
   }
 
@@ -119,25 +144,27 @@ class Map extends PureComponent<Props, State> {
   };
 
   handleOnCircleDragEnd = () => {
-    console.log('onDragEnd');
+    const { onDragEnd } = this.props;
+    const { coordinates } = this.state;
+    console.log('onDragEnd: ', coordinates);
+    if (onDragEnd && coordinates) onDragEnd(coordinates);
   };
 
   onCircleCenterChanged = (coords: { lat: Function, lng: Function }) => {
     this.setState({ coordinates: { lat: coords.lat(), lng: coords.lng() } });
   };
 
-  onRadiusChange = (e: { target: { value: number } }) => {
-    this.setState({ radius: parseInt(e.target.value, 10) });
-  };
-
   render() {
-    const { course } = this.props;
-    const { coordinates, isMarkerShown, radius } = this.state;
-    // console.log('this.state: ', this.state);
+    const {
+      advancedSearch, coordinates, data, radius, zoom,
+    } = this.props;
+    const { isMarkerShown } = this.state;
     const props = {
-      course,
+      advancedSearch,
       defaultCenter: coordinates,
+      defaultZoom: zoom,
       isMarkerShown,
+      markerName: data.name,
       onCenterChanged: this.onCircleCenterChanged,
       onDragEnd: this.handleOnCircleDragEnd,
       onMarkerClick: this.handleMarkerClick,
@@ -146,7 +173,6 @@ class Map extends PureComponent<Props, State> {
     return (
       <React.Fragment>
         <MyMapComponent {...props} />
-        <input value={radius} type="range" name="radius" min="1000" max="50000" onChange={this.onRadiusChange} />
       </React.Fragment>
     );
   }

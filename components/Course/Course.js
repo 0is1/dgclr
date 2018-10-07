@@ -83,7 +83,7 @@ class Course extends Component<Props> {
     const coordinates = location && convertCoordinatesToObject(location.coordinates);
     const layoutNames = layouts.map(layout => layout.name);
     const layoutTabs = <Tabs tabs={layoutNames} id={courseData._id} />;
-    const mapElement = coordinates ? <Map coordinates={coordinates} course={courseData} /> : null;
+    const mapElement = coordinates ? <Map coordinates={coordinates} data={courseData} /> : null;
     const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
