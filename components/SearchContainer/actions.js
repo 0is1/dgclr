@@ -1,5 +1,5 @@
 // @flow
-import type { Course, FilterData } from 'lib/types';
+import type { Course, FilterData, MapFilterData } from 'lib/types';
 
 export const actionTypes = {
   SET_COURSES: 'DGCLR_SET_COURSES',
@@ -48,7 +48,7 @@ export const toggleAdvancedSearch = (open: boolean = false) => ({
  * @param {Array} data
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
-export const setFilter = (filterName: string = '', data: FilterData) => ({
+export const setFilter = (filterName: string = '', data: FilterData | MapFilterData) => ({
   type: actionTypes.SET_ADVANCED_FILTER_TYPE,
   filterName,
   data,

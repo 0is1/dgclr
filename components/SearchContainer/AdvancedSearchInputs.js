@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Box, Flex, Text } from 'rebass';
+import {
+  Box, Flex, Divider, Text,
+} from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
 import { getCurrentAdvancedFilter } from 'components/SearchContainer/selectors';
@@ -10,7 +12,17 @@ import RatingSelect from 'components/Select/RatingSelect';
 import BasketTypeSelect from 'components/Select/BasketTypeSelect';
 import TeeTypeSelect from 'components/Select/TeeTypeSelect';
 import SurfaceTypeSelect from 'components/Select/SurfaceTypeSelect';
-import type { State } from 'lib/types';
+import AdvancedSearchMap from 'components/Map/AdvancedSearchMap';
+import colors from 'components/colors';
+import type { CoordinatesObject, State } from 'lib/types';
+import {
+  ADVANCED_RATING,
+  ADVANCED_NEARBY,
+  ADVANCED_TEE_TYPE,
+  ADVANCED_BASKET_TYPE,
+  ADVANCED_COURSE_INFO,
+  ADVANCED_SURFACE_SHAPE_TYPES,
+} from 'lib/constants';
 
 type Props = { filter: string, setFilter: Function };
 
@@ -27,7 +39,7 @@ class AdvancedSearchInputs extends Component<Props> {
   };
 
   cleanCourseInfo = (newFilter) => {
-    if (newFilter.courseInfo && size(newFilter.courseInfo) === 0) return omit(newFilter, ['courseInfo']);
+    if (newFilter.courseInfo && size(newFilter.courseInfo) === 0) return omit(newFilter, [ADVANCED_COURSE_INFO]);
     return newFilter;
   };
 
@@ -35,7 +47,7 @@ class AdvancedSearchInputs extends Component<Props> {
     // console.log('onRatingChange: ', rating);
     const filter = this.getParsedFilter();
     // console.log('onRatingChange filter: ', filterData);
-    const newFilter = rating.length > 0 ? update({ rating }, filter) : omit(filter, ['rating']);
+    const newFilter = rating.length > 0 ? update({ rating }, filter) : omit(filter, [ADVANCED_RATING]);
     this.setFilterData(newFilter);
   };
 
@@ -44,7 +56,7 @@ class AdvancedSearchInputs extends Component<Props> {
     // console.log('onBasketTypeChange filter: ', filter);
     const newFilter = basketType.length > 0
       ? update({ courseInfo: { basketType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, ['basketType']) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_BASKET_TYPE]) };
     this.setFilterData(newFilter);
   };
 
@@ -53,7 +65,7 @@ class AdvancedSearchInputs extends Component<Props> {
     // console.log('onTeeTypeChange filter: ', filter);
     const newFilter = teeType.length > 0
       ? update({ courseInfo: { teeType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, ['teeType']) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_TEE_TYPE]) };
     this.setFilterData(newFilter);
   };
 
@@ -62,7 +74,15 @@ class AdvancedSearchInputs extends Component<Props> {
     // console.log('surfaceType filter: ', filter);
     const newFilter = surfaceShapeTypes.length > 0
       ? update({ courseInfo: { surfaceShapeTypes } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, ['surfaceShapeTypes']) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_SURFACE_SHAPE_TYPES]) };
+    this.setFilterData(newFilter);
+  };
+
+  onMapSearchChange = (data: { coordinates: CoordinatesObject, radius: number }) => {
+    const filter = this.getParsedFilter();
+    const nearby = data.coordinates
+      && data.radius && { maxDistance: parseInt(data.radius, 10), coordinates: [data.coordinates.lat, data.coordinates.lng] };
+    const newFilter = nearby ? update({ nearby }, filter) : { ...filter, nearby: omit(filter, [ADVANCED_NEARBY]) };
     this.setFilterData(newFilter);
   };
 
@@ -85,7 +105,11 @@ class AdvancedSearchInputs extends Component<Props> {
           <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
           </Box>
+          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1]}>
+            <AdvancedSearchMap onChange={this.onMapSearchChange} />
+          </Box>
         </Flex>
+        <Divider w={1} borderColor={colors.info} />
       </Box>
     );
   }
