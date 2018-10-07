@@ -28,12 +28,13 @@ const Styles = {
     }
   `,
   SearchResultIcon: styled.span`
-    height: 1.5rem;
+    height: 30px;
     padding-right: 0.5rem;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    width: 25px;
   `,
 };
 
