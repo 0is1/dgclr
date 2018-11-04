@@ -146,7 +146,6 @@ class Map extends PureComponent<Props, State> {
   handleOnCircleDragEnd = () => {
     const { onDragEnd } = this.props;
     const { coordinates } = this.state;
-    console.log('onDragEnd: ', coordinates);
     if (onDragEnd && coordinates) onDragEnd(coordinates);
   };
 

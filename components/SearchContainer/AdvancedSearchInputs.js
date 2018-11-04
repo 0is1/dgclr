@@ -15,6 +15,7 @@ import SurfaceTypeSelect from 'components/Select/SurfaceTypeSelect';
 import AdvancedSearchMap from 'components/Map/AdvancedSearchMap';
 import colors from 'components/colors';
 import type { CoordinatesObject, State } from 'lib/types';
+import { convertMetersToKilometers } from 'helpers/utils';
 import {
   ADVANCED_RATING,
   ADVANCED_NEARBY,
@@ -81,7 +82,10 @@ class AdvancedSearchInputs extends Component<Props> {
   onMapSearchChange = (data: { coordinates: CoordinatesObject, radius: number }) => {
     const filter = this.getParsedFilter();
     const nearby = data.coordinates
-      && data.radius && { maxDistance: parseInt(data.radius, 10), coordinates: [data.coordinates.lat, data.coordinates.lng] };
+      && data.radius && {
+      maxDistance: convertMetersToKilometers(parseInt(data.radius, 10)),
+      coordinates: [data.coordinates.lat, data.coordinates.lng],
+    };
     const newFilter = nearby ? update({ nearby }, filter) : { ...filter, nearby: omit(filter, [ADVANCED_NEARBY]) };
     this.setFilterData(newFilter);
   };

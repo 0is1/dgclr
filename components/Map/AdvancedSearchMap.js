@@ -10,6 +10,7 @@ import Map from 'components/Map';
 import Input from 'components/Input';
 import type { CoordinatesObject, State as ReduxState } from 'lib/types';
 import { ADVANCED_NEARBY } from 'lib/constants';
+import { convertMetersToKilometers } from 'helpers/utils';
 
 type Props = {
   defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
@@ -123,7 +124,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     return (
       <React.Fragment>
         <Map {...props} />
-        <Label>{`Maksimietäisyys (${parseInt(radius, 10) / 1000}km): `}</Label>
+        <Label>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
         <Input value={radius} options={inputOptions} onChange={this.onRadiusChange} />
       </React.Fragment>
     );
