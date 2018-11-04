@@ -5,17 +5,26 @@ import { connect } from 'react-redux';
 import { Label } from 'rebass';
 import { debounce } from 'lodash';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
-import { getFilterTypeData } from 'components/SearchContainer/selectors';
+import {
+  getFilterTypeData,
+  queryResultsFromState,
+  latestAdvancedQuery as latestAdvancedQueryFunc,
+} from 'components/SearchContainer/selectors';
 import Map from 'components/Map';
 import Input from 'components/Input';
-import type { CoordinatesObject, State as ReduxState } from 'lib/types';
+import { ClipLoader } from 'components/Spinners';
 import { ADVANCED_NEARBY } from 'lib/constants';
-import { convertMetersToKilometers } from 'helpers/utils';
+import { convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails } from 'helpers/utils';
+
+import type {
+  Course, CoordinatesObject, CourseForMap, State as ReduxState,
+} from 'lib/types';
 
 type Props = {
   defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
   onChange: Function,
   setFilter: Function,
+  queryResults: Array<?Course>,
 };
 type State = {
   coordinates: CoordinatesObject,
@@ -23,6 +32,7 @@ type State = {
   zoom: number,
   waitingLocation: boolean,
 };
+
 const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
 
 class AdvancedSearchMap extends Component<Props, State> {
@@ -101,21 +111,40 @@ class AdvancedSearchMap extends Component<Props, State> {
     this.debounceRadius(radius);
   };
 
+  filterQueryResultsForMap = (): Array<CourseForMap> => {
+    const { queryResults } = this.props;
+    return queryResults.map((result: ?Course) => {
+      const {
+        _id, name, locationInfo, slug,
+      } = result || {};
+      return {
+        name,
+        id: _id,
+        address: courseAddressDetails(locationInfo),
+        coordinates: convertCoordinatesToObject(locationInfo.location.coordinates),
+        slug,
+      };
+    });
+  };
+
   render() {
     const {
       coordinates, radius, zoom, waitingLocation,
     } = this.state;
-    if (waitingLocation) return null;
+    if (waitingLocation) {
+      return <ClipLoader />;
+    }
+    const filteredResults = this.filterQueryResultsForMap();
     const props = {
       advancedSearch: true,
       coordinates,
-      data: { name: `${coordinates.lat}, ${coordinates.lng}` },
+      data: { name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`, queryResults: filteredResults },
       onDragEnd: this.onCircleDragEnd,
       radius,
       zoom,
     };
     const inputOptions = {
-      max: '100000',
+      max: '150000',
       min: '1000',
       name: 'radius',
       step: '1000',
@@ -131,9 +160,13 @@ class AdvancedSearchMap extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: ReduxState) => ({
-  defaultValue: getFilterTypeData(state, ADVANCED_NEARBY),
-});
+const mapStateToProps = (state: ReduxState) => {
+  const latestQuery = latestAdvancedQueryFunc(state);
+  return {
+    defaultValue: getFilterTypeData(state, ADVANCED_NEARBY),
+    queryResults: queryResultsFromState(state, latestQuery),
+  };
+};
 const mapDispatchToProps = dispatch => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
