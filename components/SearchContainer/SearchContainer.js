@@ -3,11 +3,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { debounce } from 'lodash';
 import { Box, Lead } from 'rebass';
-import {
-  getCurrentAdvancedFilter,
-  isAdvancedSearchOpen,
-  latestQuery as latestQueryFunc,
-} from 'components/SearchContainer/selectors';
+import { getCurrentAdvancedFilter, isAdvancedSearchOpen, latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
 import SearchQuery from 'components/SearchContainer/SearchQuery';
 import AdvancedSearchQuery from 'components/SearchContainer/AdvancedSearchQuery';
@@ -56,20 +52,14 @@ class SearchContainer extends PureComponent<Props, State> {
     const basicSearch = !advancedSearchOpen ? (
       <React.Fragment>
         <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
-        <Input
-          placeholder="Kaupungin tai radan nimi"
-          value={inputValue}
-          onChange={this.onSearchQueryChange}
-        />
+        <Input placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onSearchQueryChange} />
         <SearchQuery query={query} />
       </React.Fragment>
     ) : null;
-    const advancedSearchResults = advancedSearchOpen ? (
-      <AdvancedSearchQuery filter={JSON.parse(filter)} />
-    ) : null;
+    const advancedSearchResults = advancedSearchOpen ? <AdvancedSearchQuery filter={JSON.parse(filter)} /> : null;
     return (
       <Wrapper>
-        <Box m="1rem auto" px="2rem" width={[1, 1, 1, 1 / 2]}>
+        <Box m="1rem auto" px="2rem" width={[1, 1, 1, 0.7]}>
           <AdvancedSearchContainer />
           {advancedSearchResults}
           {basicSearch}
