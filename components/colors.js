@@ -6,6 +6,7 @@ export default {
   info: '#6173fb',
   lighterGray: '#ececec',
   lightGray: '#e7e6e6',
+  red: '#c62736',
   text: '#262626',
   white: '#ffffff',
 };
