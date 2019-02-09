@@ -7,10 +7,7 @@ import { connect } from 'react-redux';
 import { differenceBy, size } from 'lodash';
 import { Box } from 'rebass';
 import { GoChevronRight } from 'react-icons/go';
-import {
-  setCourses as setCoursesFunc,
-  setAdvancedSearchQuery,
-} from 'components/SearchContainer/actions';
+import { setCourses as setCoursesFunc, setAdvancedSearchQuery } from 'components/SearchContainer/actions';
 import {
   latestAdvancedQuery as latestQueryFunc,
   queryResultsFromState as queryResultsFromStateFunc,
@@ -67,6 +64,7 @@ class AdvancedSearchQuery extends Component<Props> {
 
   setCourses = (courses) => {
     const { setCourses, setSearchQuery, filter } = this.props;
+    console.log('courses: ', courses);
     setCourses(courses);
     setSearchQuery(courses, JSON.stringify(filter));
   };

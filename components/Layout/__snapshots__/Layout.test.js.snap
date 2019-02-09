@@ -10,7 +10,7 @@ exports[`Layout component Match snapshot 1`] = `
     AA1
   </div>
   <div
-    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU jTjJUk"
+    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 ggwXLa"
   >
     <span
       className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -20,7 +20,7 @@ exports[`Layout component Match snapshot 1`] = `
     18
   </div>
   <div
-    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
   >
     <span
       className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -30,7 +30,7 @@ exports[`Layout component Match snapshot 1`] = `
     57
   </div>
   <div
-    className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
   >
     <span
       className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -51,7 +51,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -65,7 +65,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -87,7 +87,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -101,7 +101,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -123,7 +123,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -137,7 +137,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -159,7 +159,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -173,7 +173,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -195,7 +195,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -209,7 +209,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -231,7 +231,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -245,7 +245,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -267,7 +267,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -281,7 +281,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -303,7 +303,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -317,7 +317,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -339,7 +339,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -353,7 +353,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -375,7 +375,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -389,7 +389,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -411,7 +411,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -425,7 +425,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -447,7 +447,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -461,7 +461,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -483,7 +483,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -497,7 +497,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -519,7 +519,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -533,7 +533,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -555,7 +555,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -569,7 +569,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -591,7 +591,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -605,7 +605,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -627,7 +627,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -641,7 +641,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -663,7 +663,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa bopFKC"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
@@ -677,7 +677,7 @@ exports[`Layout component Match snapshot 1`] = `
           className="sc-bdVaJa dYmHol"
         >
           <div
-            className="Containerstyles__BaseText-sc-1kiz1wt-2 fsmOwH sc-gqjmRU kKsieB"
+            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
           >
             <span
               className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"

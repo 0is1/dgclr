@@ -7,14 +7,8 @@ import { connect } from 'react-redux';
 import { differenceBy } from 'lodash';
 import { Box } from 'rebass';
 import { GoChevronRight } from 'react-icons/go';
-import {
-  setCourses as setCoursesFunc,
-  setSearchQuery as setSearchQueryFunc,
-} from 'components/SearchContainer/actions';
-import {
-  latestQuery as latestQueryFunc,
-  queryResultsFromState as queryResultsFromStateFunc,
-} from 'components/SearchContainer/selectors';
+import { setCourses as setCoursesFunc, setSearchQuery as setSearchQueryFunc } from 'components/SearchContainer/actions';
+import { latestQuery as latestQueryFunc, queryResultsFromState as queryResultsFromStateFunc } from 'components/SearchContainer/selectors';
 import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
@@ -53,9 +47,7 @@ class SearchQuery extends Component<Props> {
     const prevCourseArr = prevCourseData && prevProps.data.courseByName;
     const prevCourses = prevCourseArr && prevCourseArr.length ? prevCourseArr : [];
     if (
-      (courseByName
-        && courseByName.length
-        && differenceBy(courseByName, prevCourses, '_id').length > 0)
+      (courseByName && courseByName.length && differenceBy(courseByName, prevCourses, '_id').length > 0)
       || (!courseByName.length && query !== latestQuery)
     ) {
       return true;
@@ -65,6 +57,7 @@ class SearchQuery extends Component<Props> {
 
   setCourses = (courses) => {
     const { setCourses, setSearchQuery, query } = this.props;
+    console.log('courses: ', courses);
     setCourses(courses);
     setSearchQuery(courses, query);
   };
