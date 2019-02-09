@@ -17,12 +17,12 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
+import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
 import type { GraphQLData, State } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
-
 const { SearchResultItem, SearchResultIcon } = Styles;
-
+const { NoResults } = AdvancedSearchQueryStyles;
 type Props = {
   filter: {},
   queryResults: [],
@@ -64,7 +64,6 @@ class AdvancedSearchQuery extends Component<Props> {
 
   setCourses = (courses) => {
     const { setCourses, setSearchQuery, filter } = this.props;
-    console.log('courses: ', courses);
     setCourses(courses);
     setSearchQuery(courses, JSON.stringify(filter));
   };
@@ -77,7 +76,7 @@ class AdvancedSearchQuery extends Component<Props> {
     }
     const { courses } = data;
     const courseData = queryResults.length ? queryResults : courses;
-    let results = <li>Ei hakutuloksia!</li>;
+    let results = false;
     if (courseData && courseData.length) {
       results = courseData.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
@@ -95,6 +94,13 @@ class AdvancedSearchQuery extends Component<Props> {
           </LI>
         );
       });
+    }
+    if (!results) {
+      return (
+        <Box p={[0, '0.5rem 2rem']}>
+          <NoResults>Ei hakutuloksia!</NoResults>
+        </Box>
+      );
     }
     return (
       <Box p={[0, '0.5rem 2rem']}>
