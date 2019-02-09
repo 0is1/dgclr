@@ -78,7 +78,7 @@ const MyMapComponent = compose(
     radius,
     markers,
   } = props;
-  console.log('props: ', props);
+  // console.log('props: ', props);
   return (
     <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
       {!advancedSearch && (
@@ -210,9 +210,8 @@ class Map extends PureComponent<Props, State> {
 
   handleMarkerClick = (markerId: string) => {
     const { markers } = this.state;
-    const updatedMarkers = markers.map(
-      marker => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }),
-    );
+    // eslint-disable-next-line max-len
+    const updatedMarkers = markers.map(marker => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }));
     this.setState({ markers: updatedMarkers });
     // this.delayedShowMarker();
   };

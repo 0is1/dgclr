@@ -57,7 +57,6 @@ class SearchQuery extends Component<Props> {
 
   setCourses = (courses) => {
     const { setCourses, setSearchQuery, query } = this.props;
-    console.log('courses: ', courses);
     setCourses(courses);
     setSearchQuery(courses, query);
   };
