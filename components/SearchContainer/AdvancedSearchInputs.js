@@ -1,9 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Box, Flex, Divider, Text,
-} from 'rebass';
+import { Box, Flex, Text } from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
 import { getCurrentAdvancedFilter } from 'components/SearchContainer/selectors';
@@ -24,7 +22,9 @@ import {
   ADVANCED_COURSE_INFO,
   ADVANCED_SURFACE_SHAPE_TYPES,
 } from 'lib/constants';
+import RebassComponents from 'components/RebassComponents';
 
+const { Divider } = RebassComponents;
 type Props = { filter: string, setFilter: Function };
 
 class AdvancedSearchInputs extends Component<Props> {

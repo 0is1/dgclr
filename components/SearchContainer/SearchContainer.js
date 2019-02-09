@@ -2,15 +2,17 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { debounce } from 'lodash';
-import { Box, Lead } from 'rebass';
+import { Box } from 'rebass';
 import { getCurrentAdvancedFilter, isAdvancedSearchOpen, latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
 import SearchQuery from 'components/SearchContainer/SearchQuery';
 import AdvancedSearchQuery from 'components/SearchContainer/AdvancedSearchQuery';
 import AdvancedSearchContainer from 'components/SearchContainer/AdvancedSearchContainer';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
+import RebassComponents from 'components/RebassComponents';
 import type { State as ReduxState } from 'lib/types';
 
+const { Lead } = RebassComponents;
 const { Wrapper } = Styles;
 
 type Props = {
