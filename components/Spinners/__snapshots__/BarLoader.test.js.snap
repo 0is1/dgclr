@@ -8,13 +8,13 @@ exports[`Layout component Match snapshot 1`] = `
     className="sc-bdVaJa iHZvIS"
   >
     <div
-      className="css-11qqru1"
+      className="css-qydcuo-wrapper"
     >
       <div
-        className="css-1qgjozh"
+        className="css-15zzetn-style"
       />
       <div
-        className="css-19dzc70"
+        className="css-fvcvnq-style"
       />
     </div>
   </div>

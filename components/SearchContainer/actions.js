@@ -1,5 +1,5 @@
 // @flow
-import type { Course, FilterData } from 'lib/types';
+import type { Course, FilterData, MapFilterData } from 'lib/types';
 
 export const actionTypes = {
   SET_COURSES: 'DGCLR_SET_COURSES',
@@ -8,6 +8,7 @@ export const actionTypes = {
   SET_ADVANCED_SEARCH_QUERY: 'DGCLR_SET_ADVANCED_SEARCH_QUERY',
   SET_ADVANCED_FILTER_TYPE: 'DGCLR_SET_ADVANCED_FILTER_TYPE',
   SET_CURRENT_ADVANCED_FILTER: 'DGCLR_SET_CURRENT_ADVANCED_FILTER',
+  TOGGLE_ADVANCED_SEARCH_MAP: 'DGCLR_TOGGLE_ADVANCED_SEARCH_MAP',
 };
 
 /**
@@ -48,7 +49,7 @@ export const toggleAdvancedSearch = (open: boolean = false) => ({
  * @param {Array} data
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
-export const setFilter = (filterName: string = '', data: FilterData) => ({
+export const setFilter = (filterName: string = '', data: FilterData | MapFilterData) => ({
   type: actionTypes.SET_ADVANCED_FILTER_TYPE,
   filterName,
   data,
@@ -57,7 +58,7 @@ export const setFilter = (filterName: string = '', data: FilterData) => ({
 /**
  * Set advanced search query action
  * @param {Array} courses
- * @param {String} query
+ * @param {string} query
  * @return {Object} action of SET_ADVANCED_SEARCH_QUERY
  */
 export const setAdvancedSearchQuery = (courses: Array<Course> = [], query: string) => ({
@@ -68,10 +69,20 @@ export const setAdvancedSearchQuery = (courses: Array<Course> = [], query: strin
 
 /**
  * Set current advanced search filters
- * @param {String} filter stringified JSON
+ * @param {string} filter stringified JSON
  * @return {Object} action of SET_CURRENT_ADVANCED_FILTER
  */
 export const setCurrentAdvancedSearchFilter = (filter: string = '') => ({
   type: actionTypes.SET_CURRENT_ADVANCED_FILTER,
   filter,
+});
+
+/**
+ * Toggle advanced search map visibility
+ * @param {boolean} visible
+ * @return {Object} action of TOGGLE_ADVANCED_SEARCH_MAP
+ */
+export const toggleAdvancedSearchMap = (visible: boolean) => ({
+  type: actionTypes.TOGGLE_ADVANCED_SEARCH_MAP,
+  visible,
 });

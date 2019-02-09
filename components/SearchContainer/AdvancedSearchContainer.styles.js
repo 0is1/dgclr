@@ -6,6 +6,7 @@ const Styles = {
     position: absolute;
     right: 0;
     top: 0;
+    width: 30px;
     &:hover {
       cursor: pointer;
     }

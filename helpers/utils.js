@@ -70,3 +70,10 @@ export const isBrowser = typeof window !== 'undefined';
  * @return {boolean}
  */
 export const isArrayWithLength = (array?: Array<any>): boolean => Array.isArray(array) && array.length > 0;
+
+/**
+ * Convert meters to kilometers
+ * @param {meters} integer
+ * @return {interger}
+ */
+export const convertMetersToKilometers = (meters: number): number => parseInt(meters / 1000, 10) || 0;

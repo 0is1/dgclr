@@ -12,29 +12,24 @@ import type { State } from 'lib/types';
 
 const { ToggleButtonWrapper } = Styles;
 
-type Props = { open: boolean, toggleAdvancedSearch: Function };
+type Props = { isOpen: boolean, toggleAdvancedSearch: Function };
 
 class AdvancedSearchContainer extends Component<Props> {
   toggleOpen = () => {
-    const { open, toggleAdvancedSearch } = this.props;
-    toggleAdvancedSearch(!open);
+    const { isOpen, toggleAdvancedSearch } = this.props;
+    toggleAdvancedSearch(!isOpen);
   };
 
   handleKeyPress = () => {};
 
   render() {
-    const { open } = this.props;
-    const inputs = open ? <AdvancedSearchInputs /> : null;
-    const settingsColor = open ? colors.info : colors.text;
+    const { isOpen } = this.props;
+    const inputs = isOpen ? <AdvancedSearchInputs /> : null;
+    const settingsColor = isOpen ? colors.info : colors.text;
     return (
       <Box style={{ position: 'relative' }}>
         {inputs}
-        <ToggleButtonWrapper
-          onClick={this.toggleOpen}
-          onKeyPress={this.handleKeyPress}
-          role="button"
-          tabIndex="0"
-        >
+        <ToggleButtonWrapper onClick={this.toggleOpen} onKeyPress={this.handleKeyPress} role="button" tabIndex="0">
           <GoSettings size="1.5rem" color={settingsColor} />
         </ToggleButtonWrapper>
       </Box>
@@ -43,11 +38,11 @@ class AdvancedSearchContainer extends Component<Props> {
 }
 
 const mapStateToProps = (state: State) => ({
-  open: isAdvancedSearchOpen(state),
+  isOpen: isAdvancedSearchOpen(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleAdvancedSearch: (open = false) => dispatch(toggleAdvancedSearchFunc(open)),
+  toggleAdvancedSearch: (isOpen = false) => dispatch(toggleAdvancedSearchFunc(isOpen)),
 });
 
 export default connect(

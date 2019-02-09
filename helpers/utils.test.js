@@ -8,6 +8,7 @@ import {
   getTitle,
   isArrayWithLength,
   uniqueLayoutRatings,
+  convertMetersToKilometers,
 } from './utils';
 
 describe('Utils', () => {
@@ -113,6 +114,16 @@ describe('Utils', () => {
     it('return false', () => {
       const result = isArrayWithLength();
       expect(result).toEqual(false);
+    });
+  });
+  describe('convertMetersToKilometers', () => {
+    it('return positive integer', () => {
+      const result = convertMetersToKilometers(2000);
+      expect(result).toEqual(2);
+    });
+    it('return zero', () => {
+      const result = convertMetersToKilometers([]);
+      expect(result).toEqual(0);
     });
   });
 });
