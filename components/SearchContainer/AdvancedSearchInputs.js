@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import { Box, Flex, Text } from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
-import { getCurrentAdvancedFilter } from 'components/SearchContainer/selectors';
-import { setCurrentAdvancedSearchFilter } from 'components/SearchContainer/actions';
+import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from 'components/SearchContainer/selectors';
+import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/SearchContainer/actions';
 import RatingSelect from 'components/Select/RatingSelect';
 import BasketTypeSelect from 'components/Select/BasketTypeSelect';
 import TeeTypeSelect from 'components/Select/TeeTypeSelect';
 import SurfaceTypeSelect from 'components/Select/SurfaceTypeSelect';
 import AdvancedSearchMap from 'components/Map/AdvancedSearchMap';
+import Toggle from 'components/Toggle';
 import colors from 'components/colors';
 import type { CoordinatesObject, State } from 'lib/types';
 import { convertMetersToKilometers } from 'helpers/utils';
@@ -25,7 +26,7 @@ import {
 import RebassComponents from 'components/RebassComponents';
 
 const { Divider } = RebassComponents;
-type Props = { filter: string, setFilter: Function };
+type Props = { filter: string, mapChecked: boolean, setFilter: Function, toggleMapVisibility: Function };
 
 class AdvancedSearchInputs extends Component<Props> {
   getParsedFilter = () => {
@@ -86,11 +87,23 @@ class AdvancedSearchInputs extends Component<Props> {
       maxDistance: convertMetersToKilometers(parseInt(data.radius, 10)),
       coordinates: [data.coordinates.lat, data.coordinates.lng],
     };
-    const newFilter = nearby ? update({ nearby }, filter) : { ...filter, nearby: omit(filter, [ADVANCED_NEARBY]) };
+    const newFilter = nearby ? update({ nearby }, filter) : this.omitMapFilter();
     this.setFilterData(newFilter);
   };
 
+  omitMapFilter = () => {
+    const filter = this.getParsedFilter();
+    this.setFilterData(omit(filter, [ADVANCED_NEARBY]));
+  };
+
+  handleMapToggle = (mapChecked: boolean) => {
+    if (!mapChecked) this.omitMapFilter();
+    const { toggleMapVisibility } = this.props;
+    toggleMapVisibility(mapChecked);
+  };
+
   render() {
+    const { mapChecked } = this.props;
     return (
       <Box>
         <Text fontWeight="700" my={2} width="100%">
@@ -110,7 +123,8 @@ class AdvancedSearchInputs extends Component<Props> {
             <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
           </Box>
           <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1]}>
-            <AdvancedSearchMap onChange={this.onMapSearchChange} />
+            <Toggle label="Käytä karttahakua" checked={mapChecked} handleOnChange={this.handleMapToggle} />
+            <AdvancedSearchMap mapVisible={mapChecked} handleChange={this.onMapSearchChange} />
           </Box>
         </Flex>
         <Divider w={1} borderColor={colors.info} />
@@ -121,9 +135,11 @@ class AdvancedSearchInputs extends Component<Props> {
 
 const mapStateToProps = (state: State) => ({
   filter: getCurrentAdvancedFilter(state),
+  mapChecked: isAdvancedSearchMapVisible(state),
 });
 const mapDispatchToProps = dispatch => ({
   setFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
+  toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
 });
 
 export default connect(
