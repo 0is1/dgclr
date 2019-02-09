@@ -86,6 +86,7 @@
     "react-redux": "^5.0.7",
     "react-select": "^2.0.0",
     "react-spinners": "^0.5.1",
+    "react-switch": "^4.0.1",
     "rebass": "2.3.4",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
