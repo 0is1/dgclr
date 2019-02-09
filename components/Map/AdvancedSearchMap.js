@@ -22,7 +22,8 @@ import type {
 
 type Props = {
   defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
-  onChange: Function,
+  handleChange: Function,
+  mapVisible: boolean,
   setFilter: Function,
   queryResults: Array<?Course>,
 };
@@ -92,13 +93,22 @@ class AdvancedSearchMap extends Component<Props, State> {
     }
   }
 
+  componentDidUpdate(prevProps: Props) {
+    const { mapVisible } = this.props;
+    console.log('prevProps.mapVisible_: ', prevProps.mapVisible);
+    console.log('mapVisible: ', mapVisible);
+    if (mapVisible && !prevProps.mapVisible) {
+      this.updateFilter();
+    }
+  }
+
   updateFilter = (data: {}) => {
-    const { defaultValue, onChange, setFilter } = this.props;
+    const { defaultValue, handleChange, setFilter } = this.props;
     const { coordinates, radius } = this.state;
     const [currentData = { coordinates, radius }] = defaultValue;
     const updatedFilter = { ...currentData, ...data };
     setFilter(ADVANCED_NEARBY, [updatedFilter]);
-    onChange(updatedFilter);
+    handleChange(updatedFilter);
   };
 
   onCircleDragEnd = (coordinates: CoordinatesObject) => {
@@ -128,6 +138,8 @@ class AdvancedSearchMap extends Component<Props, State> {
   };
 
   render() {
+    const { mapVisible } = this.props;
+    if (!mapVisible) return null;
     const {
       coordinates, radius, zoom, waitingLocation,
     } = this.state;
