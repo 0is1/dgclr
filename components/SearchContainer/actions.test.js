@@ -8,6 +8,7 @@ import {
   setFilter,
   setAdvancedSearchQuery,
   setCurrentAdvancedSearchFilter,
+  toggleAdvancedSearchMap,
 } from './actions';
 
 describe('SearchContainer actions', () => {
@@ -46,5 +47,10 @@ describe('SearchContainer actions', () => {
     const filter = 'filter';
     const expected = { type: actionTypes.SET_CURRENT_ADVANCED_FILTER, filter };
     expect(setCurrentAdvancedSearchFilter(filter)).toEqual(expected);
+  });
+  it('Return valid action from toggleAdvancedSearchMap', () => {
+    const visible = false;
+    const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_MAP, visible };
+    expect(toggleAdvancedSearchMap(visible)).toEqual(expected);
   });
 });

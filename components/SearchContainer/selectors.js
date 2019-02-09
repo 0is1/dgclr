@@ -13,3 +13,5 @@ export const isAdvancedSearchOpen = (state: State) => get(['search', 'advancedSe
 export const getFilterTypeData = (state: State, filterName: string) => get(['search', 'advancedQueries', filterName], state) || [];
 
 export const getCurrentAdvancedFilter = (state: State) => get(['search', 'currentAdvancedFilter'], state) || '{}';
+
+export const isAdvancedSearchMapVisible = (state: State) => get(['search', 'advancedSearchMapVisible'], state);

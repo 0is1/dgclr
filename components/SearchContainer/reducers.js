@@ -10,6 +10,7 @@ export const initialState = {
   },
   advancedQueryHistory: [],
   currentAdvancedFilter: '{}',
+  advancedSearchMapVisible: true,
   courses: {},
   queries: {},
   queryHistory: [],
@@ -25,10 +26,7 @@ const reducer = createReducer({
   },
   [actionTypes.SET_SEARCH_QUERY]: (state, action) => {
     const { courses, query } = action;
-    return update(
-      { queries: { [query]: courses }, queryHistory: addQueryHistory(state.queryHistory, query) },
-      state,
-    );
+    return update({ queries: { [query]: courses }, queryHistory: addQueryHistory(state.queryHistory, query) }, state);
   },
   [actionTypes.SET_ADVANCED_SEARCH_QUERY]: (state, action) => {
     const { courses, query } = action;
@@ -51,6 +49,10 @@ const reducer = createReducer({
   [actionTypes.SET_CURRENT_ADVANCED_FILTER]: (state, action) => {
     const { filter } = action;
     return { ...state, currentAdvancedFilter: filter };
+  },
+  [actionTypes.TOGGLE_ADVANCED_SEARCH_MAP]: (state, action) => {
+    const { visible } = action;
+    return { ...state, advancedSearchMapVisible: visible };
   },
 });
 

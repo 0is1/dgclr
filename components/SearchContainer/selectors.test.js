@@ -8,6 +8,7 @@ import {
   isAdvancedSearchOpen,
   getFilterTypeData,
   getCurrentAdvancedFilter,
+  isAdvancedSearchMapVisible,
 } from './selectors';
 
 describe('SearchContainer selectors', () => {
@@ -17,10 +18,7 @@ describe('SearchContainer selectors', () => {
   });
   it('Select query result with return value', () => {
     const query = 'query';
-    const result = queryResultsFromState(
-      { ...DEFAULT_STATE, search: { queries: { [query]: mockCoursesData } } },
-      query,
-    );
+    const result = queryResultsFromState({ ...DEFAULT_STATE, search: { queries: { [query]: mockCoursesData } } }, query);
     expect(result).toEqual(mockCoursesData);
   });
   it('Select latestQuery result with initialState', () => {
@@ -95,5 +93,13 @@ describe('SearchContainer selectors', () => {
       search: { currentAdvancedFilter: advancedFilter },
     });
     expect(result).toEqual(advancedFilter);
+  });
+  it('Select isAdvancedSearchMapVisible true', () => {
+    const result = isAdvancedSearchMapVisible(DEFAULT_STATE);
+    expect(result).toEqual(true);
+  });
+  it('Select isAdvancedSearchMapVisible false', () => {
+    const result = isAdvancedSearchMapVisible({ ...DEFAULT_STATE, search: { ...DEFAULT_STATE.search, advancedSearchMapVisible: false } });
+    expect(result).toEqual(false);
   });
 });

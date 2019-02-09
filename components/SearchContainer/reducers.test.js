@@ -80,4 +80,13 @@ describe('SearchContainer reducers', () => {
     };
     expect(reducer(initialState, action)).toEqual(expected);
   });
+  it('Return TOGGLE_ADVANCED_SEARCH_MAP', () => {
+    const visible = false;
+    const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_MAP, visible };
+    const expected = {
+      ...initialState,
+      advancedSearchMapVisible: false,
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
 });
