@@ -125,5 +125,8 @@
       "pre-push": "yarn test",
       "pre-commit": "lint-staged"
     }
+  },
+  "dependenciesComments": {
+    "rebass": "Locked to 2.3.4 for now. Version >=3.0.0 has many breaking changes SEE: https://github.com/rebassjs/rebass/releases/tag/v3.0.0."
   }
 }
