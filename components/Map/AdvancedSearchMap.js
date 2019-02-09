@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Label } from 'rebass';
+import { Box, Label } from 'rebass';
 import { debounce } from 'lodash';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import {
@@ -15,10 +15,13 @@ import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
 import { ADVANCED_NEARBY } from 'lib/constants';
 import { convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails } from 'helpers/utils';
+import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
 
 import type {
   Course, CoordinatesObject, CourseForMap, State as ReduxState,
 } from 'lib/types';
+
+const { NoResults } = AdvancedSearchQueryStyles;
 
 type Props = {
   defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
@@ -32,6 +35,7 @@ type State = {
   radius: string,
   zoom: number,
   waitingLocation: boolean,
+  error: ?string,
 };
 
 const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
@@ -42,6 +46,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     radius: '20000',
     zoom: 9,
     waitingLocation: true,
+    error: null,
   };
 
   debounceRadius = debounce((radius) => {
@@ -80,7 +85,7 @@ class AdvancedSearchMap extends Component<Props, State> {
 
         const getCurrentPositionError = (err) => {
           console.warn(`ERROR(${err.code}): ${err.message}`);
-          this.setState({ waitingLocation: false });
+          this.setState({ waitingLocation: false, error: err.message });
         };
         navigator.geolocation.getCurrentPosition(getCurrentPositionSuccess, getCurrentPositionError, options);
       } catch (e) {
@@ -95,8 +100,6 @@ class AdvancedSearchMap extends Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     const { mapVisible } = this.props;
-    console.log('prevProps.mapVisible_: ', prevProps.mapVisible);
-    console.log('mapVisible: ', mapVisible);
     if (mapVisible && !prevProps.mapVisible) {
       this.updateFilter();
     }
@@ -141,7 +144,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     const { mapVisible } = this.props;
     if (!mapVisible) return null;
     const {
-      coordinates, radius, zoom, waitingLocation,
+      coordinates, error, radius, zoom, waitingLocation,
     } = this.state;
     if (waitingLocation) {
       return <ClipLoader />;
@@ -164,6 +167,11 @@ class AdvancedSearchMap extends Component<Props, State> {
     };
     return (
       <React.Fragment>
+        {error && (
+          <Box p={[0, '0.5rem 2rem']}>
+            <NoResults>{error}</NoResults>
+          </Box>
+        )}
         <Map {...props} />
         <Label>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
         <Input value={radius} options={inputOptions} onChange={this.onRadiusChange} />
