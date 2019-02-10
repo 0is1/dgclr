@@ -1,6 +1,6 @@
 {
   "name": "dgclr",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Disc Golf Course Lists and Results",
   "main": "server.js",
   "author": "Janne Saarela",
@@ -19,7 +19,7 @@
     "flow": "flow",
     "test": "yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
-    "patch-version": "mversion patch"
+    "patch-version": "mversion patch && git add package.json && git commit -m 'Version patch'"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
