@@ -10,7 +10,7 @@ import type { State } from 'lib/types';
 import Tab from './Tab';
 
 type Props = {
-  activeIndex: number | Boolean,
+  activeIndex: ?number,
   id: String,
   setTabs: Function,
   tabs: [String],
@@ -28,9 +28,7 @@ class TabsComponent extends Component<Props> {
     const { activeIndex, id, tabs } = this.props;
     if (typeof activeIndex !== 'number') return null;
     const props = { activeIndex, id };
-    const tabData = tabs.map((name, index) => (
-      <Tab {...props} key={getRandomKey()} index={index} name={name} />
-    ));
+    const tabData = tabs.map((name, index) => <Tab {...props} key={getRandomKey()} index={index} name={name} />);
     return <Tabs>{tabData}</Tabs>;
   }
 }

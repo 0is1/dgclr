@@ -10,7 +10,7 @@ type Props = {
 };
 
 const LayoutRatingBadges = ({ ratings, tiny }: Props) => {
-  const badges: ?Array<Node> = ratings.map((rating) => {
+  const badges: Array<?Node> = ratings.map((rating) => {
     if (rating) {
       return tiny ? (
         <Badge mx="8px" py={0} key={getRandomKey()}>

@@ -64,6 +64,7 @@ const SEARCH_COURSE = gql`
       }
       layouts {
         name
+        mapUrl
         rating
         holes {
           par

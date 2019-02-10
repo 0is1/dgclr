@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 import { size } from 'lodash';
 import { Helmet } from 'react-helmet';
 import ReactHtmlParser from 'react-html-parser';
+import { Card, Flex, Subhead } from 'rebass';
 import {
-  Image, Card, Flex, Subhead,
-} from 'rebass';
-import {
-  convertCoordinatesToObject, convertLinksToHtml, courseAddressDetails, getTitle, uniqueLayoutRatings,
+  convertCoordinatesToObject,
+  convertLinksToHtml,
+  courseAddressDetails,
+  getCourseMapUrlForLayout,
+  getTitle,
+  uniqueLayoutRatings,
 } from 'helpers/utils';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import { setCourses as setCoursesFunc } from 'components/SearchContainer/actions';
@@ -17,11 +20,14 @@ import Layouts from 'components/Layouts';
 import Tabs from 'components/Tabs';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
+import Image from 'components/Image';
+import { getActiveIndex } from 'components/Tabs/selectors';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
 import type { Course as CourseType, GraphQLData, State } from 'lib/types';
 
 type Props = {
+  activeIndex: ?number,
   course: CourseType,
   data: GraphQLData,
   setCourses: Function,
@@ -68,23 +74,24 @@ class Course extends Component<Props> {
   };
 
   render() {
-    const { course, data = {} } = this.props;
+    const { activeIndex, course, data = {} } = this.props;
     const { courseBySlug = [] } = data;
     if ((size(course) < 1 && size(courseBySlug) < 1) || (data && data.loading)) {
       return <ClipLoader />;
     }
+
     const courseData = size(course) > 0 ? course : courseBySlug[0];
     const {
       name, courseInfo, description, locationInfo, layouts,
     } = courseData;
-    const { mapUrl } = courseInfo;
+    const mapUrl = getCourseMapUrlForLayout(course.layouts, activeIndex || 0);
     const descriptionWithLinks = convertLinksToHtml(description);
     const { location } = locationInfo;
     const coordinates = location && convertCoordinatesToObject(location.coordinates);
     const layoutNames = layouts.map(layout => layout.name);
     const layoutTabs = <Tabs tabs={layoutNames} id={courseData._id} />;
     const mapElement = coordinates ? <Map coordinates={coordinates} data={courseData} /> : null;
-    const courseImage = mapUrl && mapUrl !== '#' ? <Image src={mapUrl} /> : null;
+    const courseImage = mapUrl && mapUrl !== '' ? <Image alt={name} src={mapUrl} /> : null;
     const ratings = uniqueLayoutRatings(layouts);
     return (
       <Box width={[1, 1, 1, '90%']} p={[0, 0, '0 0.5rem', '0 1rem']} m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}>
@@ -151,12 +158,11 @@ class Course extends Component<Props> {
                       {`${courseInfo.surfaceShapeTypes.join('. ')}`}
                     </BaseText>
                   )}
-                  {courseInfo.fee
-                    && courseInfo.fee.value && (
-                      <BaseText>
-                        <Strong>Maksullinen / Ilmainen: </Strong>
-                        {`${courseInfo.fee.value}`}
-                      </BaseText>
+                  {courseInfo.fee && courseInfo.fee.value && (
+                    <BaseText>
+                      <Strong>Maksullinen / Ilmainen: </Strong>
+                      {`${courseInfo.fee.value}`}
+                    </BaseText>
                   )}
                 </Box>
               </PanelWrapper>
@@ -187,9 +193,14 @@ class Course extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State, ownProps) => ({
-  course: courseBySlugFromState(state, ownProps),
-});
+const mapStateToProps = (state: State, ownProps) => {
+  const course = courseBySlugFromState(state, ownProps);
+  const id = (course && course._id) || false;
+  return {
+    activeIndex: getActiveIndex(state, { id }),
+    course,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),

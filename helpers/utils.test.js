@@ -9,6 +9,7 @@ import {
   isArrayWithLength,
   uniqueLayoutRatings,
   convertMetersToKilometers,
+  getCourseMapUrlForLayout,
 } from './utils';
 
 describe('Utils', () => {
@@ -124,6 +125,20 @@ describe('Utils', () => {
     it('return zero', () => {
       const result = convertMetersToKilometers([]);
       expect(result).toEqual(0);
+    });
+  });
+  describe('getCourseMapUrlForLayout ', () => {
+    it('return mapUrl from index 0', () => {
+      const result = getCourseMapUrlForLayout(mockCourses[0].layouts, 0);
+      expect(result).toEqual('https://frisbeegolfradat.fi/files/2017/10/puolarmaarin_espoo_ratakartta_2017.jpg');
+    });
+    it('return mapUrl from index 2', () => {
+      const result = getCourseMapUrlForLayout(mockCourses[1].layouts, 2);
+      expect(result).toEqual('https://frisbeegolfradat.fi/files/2017/10/kartanogolf_ratakartta_2017.jpg');
+    });
+    it('return empty string from undefined index', () => {
+      const result = getCourseMapUrlForLayout(mockCourses[0].layouts, 1);
+      expect(result).toEqual('');
     });
   });
 });

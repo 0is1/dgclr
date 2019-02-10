@@ -14,10 +14,11 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
+import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
 import type { GraphQLData, State } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
-
+const { NoResults } = AdvancedSearchQueryStyles;
 const { SearchResultItem, SearchResultIcon } = Styles;
 
 type Props = {
@@ -69,7 +70,7 @@ class SearchQuery extends Component<Props> {
     }
     const { courseByName } = data;
     const courses = queryResults.length ? queryResults : courseByName;
-    let results = <li>Ei hakutuloksia!</li>;
+    let results = false;
     if (courses && courses.length) {
       results = courses.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
@@ -87,6 +88,13 @@ class SearchQuery extends Component<Props> {
           </LI>
         );
       });
+    }
+    if (!results) {
+      return (
+        <Box p={[0, '0.5rem 2rem']}>
+          <NoResults>Ei hakutuloksia!</NoResults>
+        </Box>
+      );
     }
     return (
       <Box p={[0, '0.5rem 2rem']}>
@@ -140,6 +148,7 @@ const SEARCH_COURSES = gql`
       }
       layouts {
         name
+        mapUrl
         rating
         holes {
           par
