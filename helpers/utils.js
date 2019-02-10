@@ -73,7 +73,14 @@ export const isArrayWithLength = (array?: Array<any>): boolean => Array.isArray(
 
 /**
  * Convert meters to kilometers
- * @param {meters} integer
- * @return {interger}
+ * @param {meters} number
+ * @return {number}
  */
 export const convertMetersToKilometers = (meters: number): number => parseInt(meters / 1000, 10) || 0;
+
+/**
+ * Get course map url from layouts based on index
+ * @param {Array} layouts
+ * @return {string}
+ */
+export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
