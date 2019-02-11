@@ -18,27 +18,27 @@ const InfoPage = () => (
         Info
       </Heading>
       <BaseText>
-        Sivusto on harrasteluprojekti ja varhaisessa kehitysvaiheessa. DGCLR.fi:n ideana on auttaa
-        frisbeegolfin ystäviä löytämään mahdollisimman helposti mielekkäitä ratoja.
+        Sivusto on harrasteluprojekti ja varhaisessa kehitysvaiheessa. DGCLR.fi:n ideana on auttaa frisbeegolfin ystäviä löytämään
+        mahdollisimman helposti mielekkäitä ratoja.
       </BaseText>
       <BaseText pt={2} mb={-2}>
-        Lisää (haku)toimintoja on tulossa, kuten:
+        Lisää (haku)toimintoja on tulossa:
       </BaseText>
       <Box p="0.5rem 2rem">
         <UL>
-          <LI>Kehittynyt haku, jossa voi etsiä ratoja mm.</LI>
+          <LI>Lisää ominaisuuksia kehittyneeseen hakuun, kuten haku:</LI>
           <UL padding="0 0 0 1rem">
-            <LI>Ratingin</LI>
-            <LI>Pinnanmuotojen (paljon korkeuseroja, tasainen, jne.)</LI>
-            <LI>Ratatyyppien (metsä- , pelto-, puistorata, jne.)</LI>
-            <LI>Etäisyyden mukaan (esim. 30 km määritellystä pisteestä)</LI>
+            <LI>Hintatiedon</LI>
+            <LI>Ratasuunnittelijan</LI>
+            <LI>Ylläpitosyklin</LI>
+            <LI>Minkä muun mukaan?</LI>
           </UL>
           <LI>Tietoja ratojen kilpailuista ja tapahtumista (ehkä tuloksiakin?)</LI>
+          <LI>Mahdollisuus merkitä kadonneet kiekot?</LI>
         </UL>
       </Box>
       <BaseText>
-        Jos mieleesi tulee kehitysideoita, heitä ne sähköpostiin: janne.juhani [AT] gmail DOT com
-        tai tykitä viestiä Twitterissä
+        Jos mieleesi tulee kehitysideoita, heitä ne sähköpostiin: janne.juhani [AT] gmail DOT com tai tykitä viestiä Twitterissä
         {' '}
         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/0is1">
           @0is1
