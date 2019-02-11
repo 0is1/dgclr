@@ -54,10 +54,7 @@ export default class extends Document {
           {this.helmetJsx}
           {this.helmetHeadComponents}
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
-          />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
           {this.props.styleTags}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
@@ -70,6 +67,7 @@ export default class extends Document {
           `,
             }}
           />
+          <script async defer src="https://buttons.github.io/buttons.js" />
         </Head>
         <body {...this.helmetBodyAttrComponents}>
           <Main />

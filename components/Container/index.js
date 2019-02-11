@@ -45,20 +45,12 @@ class ContainerComponent extends Component<Props> {
       <React.Fragment>
         <header>
           <Tabs px={4} pt={2}>
-            <Tab
-              hover={{ borderColor: colors.border }}
-              borderColor={activeRoute === '/' ? `${colors.border}` : 'transparent'}
-              px={3}
-            >
+            <Tab hover={{ borderColor: colors.border }} borderColor={activeRoute === '/' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/">
                 <HeaderLink>Haku</HeaderLink>
               </Link>
             </Tab>
-            <Tab
-              hover={{ borderColor: colors.border }}
-              borderColor={activeRoute === 'info' ? `${colors.border}` : 'transparent'}
-              px={3}
-            >
+            <Tab hover={{ borderColor: colors.border }} borderColor={activeRoute === 'info' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/info">
                 <HeaderLink>Info</HeaderLink>
               </Link>
@@ -69,6 +61,17 @@ class ContainerComponent extends Component<Props> {
         <Footer>
           <Text mt={2} textAlign="center">
             DGCLR.fi ei vastaa sivujen sisällön oikeellisuudesta tai virheettömyydestä!
+          </Text>
+          <Text mt={2} textAlign="center">
+            <a
+              className="github-button"
+              href="https://github.com/0is1/dgclr"
+              data-size="large"
+              data-show-count="false"
+              aria-label="See 0is1/dgclr in GitHub"
+            >
+              See code in GitHub
+            </a>
           </Text>
         </Footer>
       </React.Fragment>
