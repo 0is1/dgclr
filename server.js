@@ -110,8 +110,13 @@ app
     });
 
     server.get('/*.txt', (req, res) => res.status(200).sendFile(req.path, staticOptions));
+
+    // Use the `renderAndCache` utility defined below to serve pages
     server.get('/info', (req, res) => {
       renderAndCache(req, res, '/info');
+    });
+    server.get('/course', (req, res) => {
+      res.redirect('/');
     });
     server.get('/:slug', (req, res) => {
       const actualPage = '/course';
@@ -120,7 +125,6 @@ app
       };
       renderAndCache(req, res, actualPage, queryParams);
     });
-    // Use the `renderAndCache` utility defined below to serve pages
     server.get('/', (req, res) => {
       renderAndCache(req, res, '/');
     });
