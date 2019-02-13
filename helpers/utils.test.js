@@ -31,8 +31,8 @@ describe('Utils', () => {
       const result = convertCoordinatesToObject(mockCourses[0].locationInfo.location.coordinates);
       expect(result).toBeDefined();
       const expected = {
-        lat: mockCourses[0].locationInfo.location.coordinates[0],
-        lng: mockCourses[0].locationInfo.location.coordinates[1],
+        lat: mockCourses[0].locationInfo.location.coordinates[1],
+        lng: mockCourses[0].locationInfo.location.coordinates[0],
       };
       expect(result).toEqual(expected);
     });

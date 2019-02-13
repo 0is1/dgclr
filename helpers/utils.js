@@ -14,7 +14,7 @@ export const convertLinksToHtml = (string: string): string => string.replace(/((
  * @return {Object} {lat, lng}
  */
 export const convertCoordinatesToObject = (coordinates: Array<number> = []): ?{ lat: number, lng: number } => {
-  const [lat, lng] = coordinates;
+  const [lng, lat] = coordinates;
   return parseFloat(lat) && parseFloat(lng) ? { lat, lng } : null;
 };
 
