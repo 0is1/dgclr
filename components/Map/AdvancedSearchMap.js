@@ -173,7 +173,7 @@ class AdvancedSearchMap extends Component<Props, State> {
           </Box>
         )}
         <Map {...props} />
-        <Label>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
+        <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
         <Input value={radius} options={inputOptions} onChange={this.onRadiusChange} />
       </React.Fragment>
     );
