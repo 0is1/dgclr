@@ -10,6 +10,7 @@ import RatingSelect from 'components/Select/RatingSelect';
 import BasketTypeSelect from 'components/Select/BasketTypeSelect';
 import TeeTypeSelect from 'components/Select/TeeTypeSelect';
 import SurfaceTypeSelect from 'components/Select/SurfaceTypeSelect';
+import CourseTypeSelect from 'components/Select/CourseTypeSelect';
 import AdvancedSearchMap from 'components/Map/AdvancedSearchMap';
 import Toggle from 'components/Toggle';
 import colors from 'components/colors';
@@ -22,6 +23,7 @@ import {
   ADVANCED_BASKET_TYPE,
   ADVANCED_COURSE_INFO,
   ADVANCED_SURFACE_SHAPE_TYPES,
+  ADVANCED_COURSE_SHAPE_TYPES,
 } from 'lib/constants';
 import RebassComponents from 'components/RebassComponents';
 
@@ -34,13 +36,13 @@ class AdvancedSearchInputs extends Component<Props> {
     return !filter.length ? {} : JSON.parse(filter);
   };
 
-  setFilterData = (newFilter) => {
+  setFilterData = (newFilter: {}) => {
     const { setFilter } = this.props;
     // console.log('newFilter: ', this.cleanCourseInfo(newFilter));
     setFilter(JSON.stringify(this.cleanCourseInfo(newFilter)));
   };
 
-  cleanCourseInfo = (newFilter) => {
+  cleanCourseInfo = (newFilter: {}) => {
     if (newFilter.courseInfo && size(newFilter.courseInfo) === 0) return omit(newFilter, [ADVANCED_COURSE_INFO]);
     return newFilter;
   };
@@ -80,12 +82,22 @@ class AdvancedSearchInputs extends Component<Props> {
     this.setFilterData(newFilter);
   };
 
+  onCourseTypeChange = (courseTypes: string) => {
+    const filter = this.getParsedFilter();
+    // console.log('courseTypes filter: ', filter);
+    const newFilter = courseTypes.length > 0
+      ? update({ courseInfo: { courseTypes } }, filter)
+      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_COURSE_SHAPE_TYPES]) };
+    this.setFilterData(newFilter);
+  };
+
   onMapSearchChange = (data: { coordinates: CoordinatesObject, radius: number }) => {
     const filter = this.getParsedFilter();
+    //  list the longitude first and then latitude https://docs.mongodb.com/manual/reference/geojson/#geojson-point
     const nearby = data.coordinates
       && data.radius && {
       maxDistance: convertMetersToKilometers(parseInt(data.radius, 10)),
-      coordinates: [data.coordinates.lat, data.coordinates.lng],
+      coordinates: [data.coordinates.lng, data.coordinates.lat],
     };
     const newFilter = nearby ? update({ nearby }, filter) : this.omitMapFilter();
     this.setFilterData(newFilter);
@@ -107,7 +119,7 @@ class AdvancedSearchInputs extends Component<Props> {
     return (
       <Box>
         <Text fontWeight="700" my={2} width="100%">
-          Edistynyt haku (erittäin varhaisessa kehitysvaiheessa)
+          Edistynyt haku (varhaisessa kehitysvaiheessa)
         </Text>
         <Flex flexWrap="wrap">
           <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
@@ -121,6 +133,9 @@ class AdvancedSearchInputs extends Component<Props> {
           </Box>
           <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
+          </Box>
+          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+            <CourseTypeSelect onChange={this.onCourseTypeChange} />
           </Box>
           <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1]}>
             <Toggle label="Käytä karttahakua" checked={mapChecked} handleOnChange={this.handleMapToggle} />
