@@ -20,7 +20,7 @@ export const surfaceTypeOptions = [
 
 type Props = { onChange: Function };
 
-const TeeTypeSelect = (props: Props) => {
+const SurfaceTypeSelect = (props: Props) => {
   const { onChange } = props;
   return (
     <Select
@@ -33,4 +33,4 @@ const TeeTypeSelect = (props: Props) => {
   );
 };
 
-export default TeeTypeSelect;
+export default SurfaceTypeSelect;
