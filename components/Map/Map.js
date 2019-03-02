@@ -37,6 +37,7 @@ const MyMapComponent = compose(
       onToggleOpen: ({ isOpen }) => () => ({
         isOpen: !isOpen,
       }),
+      // $FlowFixMe
       onMarkerClustererClick: () => (markerClusterer) => {
         const clickedMarkers = markerClusterer.getMarkers();
         console.log(`Current clicked markers length: ${clickedMarkers.length}`);

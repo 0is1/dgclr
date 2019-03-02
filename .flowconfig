@@ -26,4 +26,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 [strict]
 
 [version]
-^0.92.1
+^0.94.0

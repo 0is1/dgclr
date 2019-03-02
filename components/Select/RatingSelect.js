@@ -5,19 +5,21 @@ import { Label } from 'rebass';
 import Select from 'react-select';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import { getFilterTypeData } from 'components/SearchContainer/selectors';
-import type { OptionsType } from 'react-select/src/types';
+import type { OptionsType, ValueType } from 'react-select/src/types';
 import type { State } from 'lib/types';
 import { RATING_OPTIONS } from 'lib/constants';
 
 type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Function };
 
 class RatingSelect extends Component<Props> {
-  onRatingChange = (values: []) => {
-    // console.log('onRatingChange values. ', values);
-    const { onChange, setFilter } = this.props;
-    const rating = values.map(item => item.value);
-    onChange(rating);
-    setFilter('rating', values);
+  onRatingChange = (values: ValueType = []) => {
+    if (values) {
+      // console.log('onRatingChange values. ', values);
+      const { onChange, setFilter } = this.props;
+      const rating = values.map(item => item.value);
+      onChange(rating);
+      setFilter('rating', values);
+    }
   };
 
   render() {
