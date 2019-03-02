@@ -5,25 +5,27 @@ import { Label } from 'rebass';
 import SelectInput from 'react-select';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import { getFilterTypeData } from 'components/SearchContainer/selectors';
-import type { OptionsType } from 'react-select/src/types';
+import type { OptionsType, ValueType } from 'react-select/src/types';
 
 type Props = {
   defaultValue: OptionsType,
   filterName: string,
   label: string,
   onChange: Function,
-  options: {},
+  options: OptionsType,
   placeholder: string,
   setFilter: Function,
 };
 
 class Select extends Component<Props> {
-  onValueChange = (values: { value: string }) => {
-    const { filterName, onChange, setFilter } = this.props;
-    const valueData = values ? [].concat(values) : '';
-    const value = values && values.value ? values.value : '';
-    onChange(value);
-    setFilter(filterName, valueData);
+  onValueChange = (values: ValueType) => {
+    if (values) {
+      const { filterName, onChange, setFilter } = this.props;
+      const valueData = values ? [].concat(values) : '';
+      const value = values && values.value ? values.value : '';
+      onChange(value);
+      setFilter(filterName, valueData);
+    }
   };
 
   render() {
@@ -33,13 +35,7 @@ class Select extends Component<Props> {
     return (
       <React.Fragment>
         <Label>{label}</Label>
-        <SelectInput
-          defaultValue={defaultValue}
-          options={options}
-          onChange={this.onValueChange}
-          placeholder={placeholder}
-          isClearable
-        />
+        <SelectInput defaultValue={defaultValue} options={options} onChange={this.onValueChange} placeholder={placeholder} isClearable />
       </React.Fragment>
     );
   }

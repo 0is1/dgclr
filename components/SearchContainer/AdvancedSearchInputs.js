@@ -29,6 +29,7 @@ import RebassComponents from 'components/RebassComponents';
 
 const { Divider } = RebassComponents;
 type Props = { filter: string, mapChecked: boolean, setFilter: Function, toggleMapVisibility: Function };
+type FilterType = { courseInfo: {} };
 
 class AdvancedSearchInputs extends Component<Props> {
   getParsedFilter = () => {
@@ -36,13 +37,13 @@ class AdvancedSearchInputs extends Component<Props> {
     return !filter.length ? {} : JSON.parse(filter);
   };
 
-  setFilterData = (newFilter: {}) => {
+  setFilterData = (newFilter: FilterType) => {
     const { setFilter } = this.props;
     // console.log('newFilter: ', this.cleanCourseInfo(newFilter));
     setFilter(JSON.stringify(this.cleanCourseInfo(newFilter)));
   };
 
-  cleanCourseInfo = (newFilter: {}) => {
+  cleanCourseInfo = (newFilter: FilterType) => {
     if (newFilter.courseInfo && size(newFilter.courseInfo) === 0) return omit(newFilter, [ADVANCED_COURSE_INFO]);
     return newFilter;
   };
@@ -99,8 +100,11 @@ class AdvancedSearchInputs extends Component<Props> {
       maxDistance: convertMetersToKilometers(parseInt(data.radius, 10)),
       coordinates: [data.coordinates.lng, data.coordinates.lat],
     };
-    const newFilter = nearby ? update({ nearby }, filter) : this.omitMapFilter();
-    this.setFilterData(newFilter);
+    if (nearby) {
+      this.setFilterData(update({ nearby }, filter));
+      return;
+    }
+    this.omitMapFilter();
   };
 
   omitMapFilter = () => {

@@ -62,6 +62,7 @@ class AdvancedSearchMap extends Component<Props, State> {
         radius: defaultValue[0].radius,
         zoom: 9,
         waitingLocation: true,
+        error: null,
       };
     }
   }
@@ -105,7 +106,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     }
   }
 
-  updateFilter = (data: {}) => {
+  updateFilter = (data: ?{} = {}) => {
     const { defaultValue, handleChange, setFilter } = this.props;
     const { coordinates, radius } = this.state;
     const [currentData = { coordinates, radius }] = defaultValue;
