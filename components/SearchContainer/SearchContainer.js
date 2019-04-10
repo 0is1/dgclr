@@ -54,7 +54,7 @@ class SearchContainer extends PureComponent<Props, State> {
     const basicSearch = !advancedSearchOpen ? (
       <React.Fragment>
         <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
-        <Input placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onSearchQueryChange} />
+        <Input focusOnMount placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onSearchQueryChange} />
         <SearchQuery query={query} />
       </React.Fragment>
     ) : null;
