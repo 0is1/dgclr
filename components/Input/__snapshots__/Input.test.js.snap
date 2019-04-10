@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component Match snapshot with default props 1`] = `
+<input
+  className="sc-eNQAEJ Inputstyles__Input-tjx6pn-0 NvwTY"
+  onChange={[Function]}
+  placeholder=""
+  type="text"
+  value=""
+/>
+`;
