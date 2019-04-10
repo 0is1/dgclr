@@ -5,6 +5,7 @@ import type { Event } from 'lib/types';
 import Styles from './Input.styles';
 
 type Props = {
+  focusOnMount?: boolean,
   onChange: Function,
   options?: {},
   placeholder?: string,
@@ -15,10 +16,25 @@ const { Input } = Styles;
 
 class InputComponent extends PureComponent<Props> {
   static defaultProps = {
+    focusOnMount: false,
     options: { type: 'text' },
     placeholder: '',
     value: '',
   };
+
+  ref = null;
+
+  constructor(props: Props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
+  componentDidMount() {
+    const { focusOnMount } = this.props;
+    if (this.ref && focusOnMount) {
+      this.ref.current.focus();
+    }
+  }
 
   onChange = (event: Event) => {
     const { value } = event.target;
@@ -29,7 +45,16 @@ class InputComponent extends PureComponent<Props> {
   render() {
     const { options, placeholder, value } = this.props;
     return (
-      <Input {...options} px=".75rem" py=".75rem" bg={colors.white} placeholder={placeholder} value={value} onChange={this.onChange} />
+      <Input
+        {...options}
+        ref={this.ref}
+        px=".75rem"
+        py=".75rem"
+        bg={colors.white}
+        placeholder={placeholder}
+        value={value}
+        onChange={this.onChange}
+      />
     );
   }
 }
