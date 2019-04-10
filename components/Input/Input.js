@@ -22,16 +22,11 @@ class InputComponent extends PureComponent<Props> {
     value: '',
   };
 
-  ref = null;
-
-  constructor(props: Props) {
-    super(props);
-    this.ref = React.createRef();
-  }
+  ref: { current: null | HTMLInputElement } = React.createRef();
 
   componentDidMount() {
     const { focusOnMount } = this.props;
-    if (this.ref && focusOnMount) {
+    if (this.ref && this.ref.current && focusOnMount) {
       this.ref.current.focus();
     }
   }
