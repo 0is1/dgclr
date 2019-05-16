@@ -1,6 +1,6 @@
 {
   "name": "dgclr",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Disc Golf Course Lists and Results",
   "main": "server.js",
   "author": "Janne Saarela",
@@ -9,7 +9,6 @@
   "scripts": {
     "postinstall": "if [ $RUN_BUILD ]; then yarn build; fi",
     "prebuild": "rimraf ./dist/*",
-    "start-data-fetching": "nodemon index.js --exec babel-node",
     "dev": "NODE_ENV=development node server.js",
     "build": "next build",
     "start": "pm2-runtime start ecosystem.config.js --env production",
