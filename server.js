@@ -9,12 +9,24 @@ const LRUCache = require('lru-cache');
 const favicon = require('serve-favicon');
 const path = require('path');
 const forceDomain = require('forcedomain');
+const Rollbar = require('rollbar');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+if (process.env.ROLLBAR_ACCESS_TOKEN && isProduction) {
+  const rollbar = new Rollbar({
+    accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+  });
+  rollbar.log('DGCLR server up!');
+}
 
 // Must configure Raven before doing anything else with it
 // Raven.config(process.env.RAVEN_URL).install();
 
 if (!process.env.PORT) {
-  process.env.PORT = process.env.NODE_ENV !== 'production' ? 3000 : 8081;
+  process.env.PORT = !isProduction ? 3000 : 8081;
 }
 
 // This is where we cache our rendered HTML pages
