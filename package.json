@@ -18,7 +18,7 @@
     "flow": "flow",
     "test": "yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
-    "patch-version": "mversion patch && git add package.json && git commit -m 'Version patch'"
+    "patch-version": "mversion patch"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -96,7 +96,8 @@
     "rollbar": "^2.7.0",
     "serve-favicon": "^2.5.0",
     "styled-components": "^4.2.0",
-    "updeep": "^1.0.0"
+    "updeep": "^1.0.0",
+    "uuid4": "^1.1.4"
   },
   "lint-staged": {
     "*.{js,json,css}": [
