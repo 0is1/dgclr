@@ -1,12 +1,13 @@
 // @flow
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Box, Label } from 'rebass';
 import { debounce } from 'lodash';
-import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
+import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/SearchContainer/actions';
 import {
   getFilterTypeData,
+  getAdvancedMapZoom,
   queryResultsFromState,
   latestAdvancedQuery as latestAdvancedQueryFunc,
 } from 'components/SearchContainer/selectors';
@@ -28,12 +29,13 @@ type Props = {
   handleChange: Function,
   mapVisible: boolean,
   setFilter: Function,
+  setMapZoom: Function,
   queryResults: Array<?Course>,
+  zoom: number,
 };
 type State = {
   coordinates: CoordinatesObject,
   radius: string,
-  zoom: number,
   waitingLocation: boolean,
   error: ?string,
 };
@@ -44,7 +46,6 @@ class AdvancedSearchMap extends Component<Props, State> {
   state = {
     coordinates: defaultCoordinates,
     radius: '20000',
-    zoom: 9,
     waitingLocation: true,
     error: null,
   };
@@ -53,6 +54,14 @@ class AdvancedSearchMap extends Component<Props, State> {
     this.updateFilter({ radius });
   }, 300);
 
+  inputOptions = {
+    max: '150000',
+    min: '1000',
+    name: 'radius',
+    step: '1000',
+    type: 'range',
+  };
+
   constructor(props) {
     super(props);
     const { defaultValue } = props;
@@ -60,7 +69,6 @@ class AdvancedSearchMap extends Component<Props, State> {
       this.state = {
         coordinates: defaultValue[0].coordinates,
         radius: defaultValue[0].radius,
-        zoom: 9,
         waitingLocation: true,
         error: null,
       };
@@ -141,11 +149,18 @@ class AdvancedSearchMap extends Component<Props, State> {
     });
   };
 
+  handleZoomChange = (zoom: number) => {
+    const { setMapZoom } = this.props;
+    if (parseInt(zoom, 10) > 0) {
+      setMapZoom(zoom);
+    }
+  };
+
   render() {
-    const { mapVisible } = this.props;
+    const { mapVisible, zoom } = this.props;
     if (!mapVisible) return null;
     const {
-      coordinates, error, radius, zoom, waitingLocation,
+      coordinates, error, radius, waitingLocation,
     } = this.state;
     if (waitingLocation) {
       return <ClipLoader />;
@@ -156,18 +171,13 @@ class AdvancedSearchMap extends Component<Props, State> {
       coordinates,
       data: { name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`, queryResults: filteredResults },
       onDragEnd: this.onCircleDragEnd,
+      onZoomChange: this.handleZoomChange,
       radius,
       zoom,
     };
-    const inputOptions = {
-      max: '150000',
-      min: '1000',
-      name: 'radius',
-      step: '1000',
-      type: 'range',
-    };
+
     return (
-      <React.Fragment>
+      <Fragment>
         {error && (
           <Box p={[0, '0.5rem 2rem']}>
             <NoResults>{error}</NoResults>
@@ -175,8 +185,8 @@ class AdvancedSearchMap extends Component<Props, State> {
         )}
         <Map {...props} />
         <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
-        <Input value={radius} options={inputOptions} onChange={this.onRadiusChange} />
-      </React.Fragment>
+        <Input value={radius} options={this.inputOptions} onChange={this.onRadiusChange} />
+      </Fragment>
     );
   }
 }
@@ -186,10 +196,12 @@ const mapStateToProps = (state: ReduxState) => {
   return {
     defaultValue: getFilterTypeData(state, ADVANCED_NEARBY),
     queryResults: queryResultsFromState(state, latestQuery),
+    zoom: getAdvancedMapZoom(state),
   };
 };
 const mapDispatchToProps = dispatch => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
+  setMapZoom: (zoom: number) => dispatch(setAdvancedSearchMapZoom(zoom)),
 });
 export default connect(
   mapStateToProps,

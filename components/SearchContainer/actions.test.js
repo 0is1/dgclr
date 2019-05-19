@@ -2,12 +2,13 @@
 import mockCoursesData from 'components/SearchContainer/mock/courses.mock';
 import {
   actionTypes,
+  setAdvancedSearchMapZoom,
+  setAdvancedSearchQuery,
   setCourses,
+  setCurrentAdvancedSearchFilter,
+  setFilter,
   setSearchQuery,
   toggleAdvancedSearch,
-  setFilter,
-  setAdvancedSearchQuery,
-  setCurrentAdvancedSearchFilter,
   toggleAdvancedSearchMap,
 } from './actions';
 
@@ -52,5 +53,10 @@ describe('SearchContainer actions', () => {
     const visible = false;
     const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_MAP, visible };
     expect(toggleAdvancedSearchMap(visible)).toEqual(expected);
+  });
+  it('Return valid action from setAdvancedSearchMapZoom', () => {
+    const zoom = 10;
+    const expected = { type: actionTypes.SET_ADVANCED_MAP_ZOOM, zoom };
+    expect(setAdvancedSearchMapZoom(zoom)).toEqual(expected);
   });
 });

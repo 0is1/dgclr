@@ -15,6 +15,7 @@ import { BarLoader } from 'components/Spinners';
 import colors from 'components/colors';
 import { isArrayWithLength } from 'helpers/utils';
 import type { CoordinatesObject, CourseForMap } from 'lib/types';
+import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 
 const QUERY_RESULTS_CHANGED = 'QUERY_RESULTS_CHANGED';
 
@@ -47,16 +48,23 @@ const MyMapComponent = compose(
   ),
   lifecycle({
     componentWillMount() {
-      const refs = {};
+      const refs = { map: null, circle: null };
 
       this.setState({
         onCircleMounted: (ref) => {
           refs.circle = ref;
         },
+        onMapMounted: (ref) => {
+          refs.map = ref;
+        },
         onCircleCenterChanged: () => {
           if (refs.circle) {
-            console.log(refs.circle.getBounds());
             this.props.onCenterChanged(refs.circle.getCenter());
+          }
+        },
+        onZoomChanged: () => {
+          if (refs.map) {
+            this.props.onZoomChange(refs.map.getZoom());
           }
         },
       });
@@ -71,17 +79,19 @@ const MyMapComponent = compose(
     defaultZoom,
     isOpen,
     markerName,
+    markers,
     onCircleCenterChanged,
     onCircleMounted,
     onDragEnd,
-    onToggleOpen,
+    onMapMounted,
     onMarkerClick,
+    onToggleOpen,
+    onZoomChanged,
     radius,
-    markers,
   } = props;
   // console.log('props: ', props);
   return (
-    <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
+    <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter} onZoomChanged={onZoomChanged} ref={onMapMounted}>
       {!advancedSearch && (
         <Marker position={defaultCenter} onClick={onToggleOpen}>
           {isOpen && (
@@ -137,12 +147,15 @@ const MyMapComponent = compose(
     </GoogleMap>
   );
 });
+
 type MarkerData = { isOpen: boolean } & CourseForMap;
+
 type Props = {
   advancedSearch?: boolean,
   coordinates: CoordinatesObject,
   data: { name: string, queryResults?: Array<?CourseForMap> },
   onDragEnd?: Function,
+  onZoomChange?: Function,
   radius?: string,
   zoom?: number,
 };
@@ -157,9 +170,10 @@ class Map extends PureComponent<Props, State> {
 
   static defaultProps = {
     advancedSearch: false,
-    onDragEnd: () => {},
+    onDragEnd: null,
+    onZoomChange: null,
     radius: 10000,
-    zoom: 11,
+    zoom: MAP_DEFAULT_ZOOM,
   };
 
   constructor(props: Props) {
@@ -220,11 +234,20 @@ class Map extends PureComponent<Props, State> {
   handleOnCircleDragEnd = () => {
     const { onDragEnd } = this.props;
     const { coordinates } = this.state;
-    if (onDragEnd && coordinates) onDragEnd(coordinates);
+    if (typeof onDragEnd === 'function' && coordinates) {
+      onDragEnd(coordinates);
+    }
   };
 
   onCircleCenterChanged = (coords: { lat: Function, lng: Function }) => {
     this.setState({ coordinates: { lat: coords.lat(), lng: coords.lng() } });
+  };
+
+  handleZoomChange = (zoom: number) => {
+    const { onZoomChange } = this.props;
+    if (typeof onZoomChange === 'function') {
+      onZoomChange(zoom);
+    }
   };
 
   render() {
@@ -241,6 +264,7 @@ class Map extends PureComponent<Props, State> {
       onCenterChanged: this.onCircleCenterChanged,
       onDragEnd: this.handleOnCircleDragEnd,
       onMarkerClick: this.handleMarkerClick,
+      onZoomChange: this.handleZoomChange,
       radius,
       markers,
     };
