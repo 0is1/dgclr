@@ -1,6 +1,7 @@
 // @flow
 import { get } from 'lodash/fp';
 import type { State } from 'lib/types';
+import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 
 export const queryResultsFromState = (state: State, latestQuery: string) => get(['search', 'queries', latestQuery], state) || [];
 
@@ -15,3 +16,5 @@ export const getFilterTypeData = (state: State, filterName: string) => get(['sea
 export const getCurrentAdvancedFilter = (state: State) => get(['search', 'currentAdvancedFilter'], state) || '{}';
 
 export const isAdvancedSearchMapVisible = (state: State) => get(['search', 'advancedSearchMapVisible'], state);
+
+export const getAdvancedMapZoom = (state: State) => get(['search', 'advancedSearchMapZoom'], state) || MAP_DEFAULT_ZOOM;

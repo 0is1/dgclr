@@ -89,4 +89,13 @@ describe('SearchContainer reducers', () => {
     };
     expect(reducer(initialState, action)).toEqual(expected);
   });
+  it('Return SET_ADVANCED_MAP_ZOOM', () => {
+    const zoom = 10;
+    const action = { type: actionTypes.SET_ADVANCED_MAP_ZOOM, zoom };
+    const expected = {
+      ...initialState,
+      advancedSearchMapZoom: 10,
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
 });

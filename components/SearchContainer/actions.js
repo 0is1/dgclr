@@ -2,13 +2,14 @@
 import type { Course, FilterData, MapFilterData } from 'lib/types';
 
 export const actionTypes = {
-  SET_COURSES: 'DGCLR_SET_COURSES',
-  SET_SEARCH_QUERY: 'DGCLR_SET_SEARCH_QUERY',
-  TOGGLE_ADVANCED_SEARCH: 'DGCLR_TOGGLE_ADVANCED_SEARCH',
-  SET_ADVANCED_SEARCH_QUERY: 'DGCLR_SET_ADVANCED_SEARCH_QUERY',
-  SET_ADVANCED_FILTER_TYPE: 'DGCLR_SET_ADVANCED_FILTER_TYPE',
-  SET_CURRENT_ADVANCED_FILTER: 'DGCLR_SET_CURRENT_ADVANCED_FILTER',
-  TOGGLE_ADVANCED_SEARCH_MAP: 'DGCLR_TOGGLE_ADVANCED_SEARCH_MAP',
+  SET_COURSES: 'dgclr/SET_COURSES',
+  SET_SEARCH_QUERY: 'dgclr/SET_SEARCH_QUERY',
+  TOGGLE_ADVANCED_SEARCH: 'dgclr/TOGGLE_ADVANCED_SEARCH',
+  SET_ADVANCED_SEARCH_QUERY: 'dgclr/SET_ADVANCED_SEARCH_QUERY',
+  SET_ADVANCED_FILTER_TYPE: 'dgclr/SET_ADVANCED_FILTER_TYPE',
+  SET_CURRENT_ADVANCED_FILTER: 'dgclr/SET_CURRENT_ADVANCED_FILTER',
+  TOGGLE_ADVANCED_SEARCH_MAP: 'dgclr/TOGGLE_ADVANCED_SEARCH_MAP',
+  SET_ADVANCED_MAP_ZOOM: 'dgclr/SET_ADVANCED_MAP_ZOOM',
 };
 
 /**
@@ -85,4 +86,14 @@ export const setCurrentAdvancedSearchFilter = (filter: string = '') => ({
 export const toggleAdvancedSearchMap = (visible: boolean) => ({
   type: actionTypes.TOGGLE_ADVANCED_SEARCH_MAP,
   visible,
+});
+
+/**
+ * Set advanced search map zoom
+ * @param {number} zoom
+ * @return {Object} action of SET_ADVANCED_MAP_ZOOM
+ */
+export const setAdvancedSearchMapZoom = (zoom: number) => ({
+  type: actionTypes.SET_ADVANCED_MAP_ZOOM,
+  zoom,
 });

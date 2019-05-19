@@ -1,6 +1,7 @@
 import { keyBy } from 'lodash/fp';
 import update, { updateIn } from 'updeep';
 import { createReducer } from 'lib/createReducer';
+import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 import { actionTypes } from './actions';
 
 export const initialState = {
@@ -11,6 +12,7 @@ export const initialState = {
   advancedQueryHistory: [],
   currentAdvancedFilter: '{}',
   advancedSearchMapVisible: true,
+  advancedSearchMapZoom: MAP_DEFAULT_ZOOM,
   courses: {},
   queries: {},
   queryHistory: [],
@@ -53,6 +55,10 @@ const reducer = createReducer({
   [actionTypes.TOGGLE_ADVANCED_SEARCH_MAP]: (state, action) => {
     const { visible } = action;
     return { ...state, advancedSearchMapVisible: visible };
+  },
+  [actionTypes.SET_ADVANCED_MAP_ZOOM]: (state, action) => {
+    const { zoom } = action;
+    return { ...state, advancedSearchMapZoom: zoom };
   },
 });
 
