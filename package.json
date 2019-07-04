@@ -18,7 +18,9 @@
     "flow": "flow",
     "test": "yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
-    "patch-version": "mversion patch"
+    "patch-version": "mversion patch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -97,7 +99,8 @@
     "serve-favicon": "^2.5.0",
     "styled-components": "^4.2.0",
     "updeep": "^1.0.0",
-    "uuid4": "^1.1.4"
+    "uuid4": "^1.1.4",
+    "snyk": "^1.189.0"
   },
   "lint-staged": {
     "*.{js,json,css}": [
@@ -131,5 +134,6 @@
   },
   "dependenciesComments": {
     "rebass": "Locked to 2.3.4 for now. Version >=3.0.0 has many breaking changes SEE: https://github.com/rebassjs/rebass/releases/tag/v3.0.0."
-  }
+  },
+  "snyk": true
 }
