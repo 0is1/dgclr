@@ -21,13 +21,12 @@ type Props = {
 
 class Select extends Component<Props> {
   onValueChange = (values: ValueType) => {
-    if (values) {
-      const { filterName, onChange, setFilter } = this.props;
-      const valueData = values ? [].concat(values) : '';
-      const value = values && values.value ? values.value : '';
-      onChange(value);
-      setFilter(filterName, valueData);
-    }
+    // console.log('values: ', values);
+    const { filterName, onChange, setFilter } = this.props;
+    const valueData = values ? [].concat(values) : '';
+    const value = values && values.value ? values.value : '';
+    onChange(value);
+    setFilter(filterName, valueData);
   };
 
   render() {
