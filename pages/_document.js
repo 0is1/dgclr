@@ -7,22 +7,31 @@ import { GA_TRACKING_ID } from 'lib/gtag';
 export default class extends Document {
   // w/ styled componentns
   // see https://github.com/zeit/next.js/blob/canary/examples/with-styled-components/pages/_document.js
-  static async getInitialProps({ renderPage, ...args }) {
-    const documentProps = await super.getInitialProps({
-      renderPage,
-      ...args,
-    });
-    // see https://github.com/nfl/react-helmet#server-usage for more information
-    // 'head' was occupied by 'renderPage().head', we cannot use it
+  static async getInitialProps(ctx) {
+    // // see https://github.com/nfl/react-helmet#server-usage for more information
+    // // 'head' was occupied by 'renderPage().head', we cannot use it
     const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
-    const styleTags = sheet.getStyleElement();
-    const combined = { ...documentProps, ...page };
-    return {
-      ...combined,
-      helmet: Helmet.renderStatic(),
-      styleTags,
-    };
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () => originalRenderPage({
+        enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+      });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        helmet: Helmet.renderStatic(),
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   // should render on <html>
