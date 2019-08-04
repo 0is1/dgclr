@@ -19,7 +19,8 @@
     "test": "yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
     "patch-version": "mversion patch",
-    "snyk-protect": "snyk protect"
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -96,7 +97,7 @@
     "redux-saga": "^1.0.5",
     "rollbar": "^2.11.0",
     "serve-favicon": "^2.5.0",
-    "snyk": "^1.189.0",
+    "snyk": "^1.208.0",
     "styled-components": "^4.3.2",
     "updeep": "^1.0.0",
     "uuid4": "^1.1.4"
