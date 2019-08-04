@@ -60,3 +60,23 @@ patch:
         patched: '2019-07-04T00:46:35.252Z'
     - next > @babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2019-07-04T00:46:35.252Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - styled-components > @babel/traverse > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - styled-components > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - next > next-server > styled-jsx > babel-types > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - styled-components > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - react-select > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
+    - react-select > @emotion/core > @emotion/css > babel-plugin-emotion > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-08-04T11:19:42.039Z'
