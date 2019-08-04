@@ -8,19 +8,19 @@ Array [
     label
   </label>,
   <div
-    className="css-10nd86i"
+    className=" css-2b097c-container"
     onKeyDown={[Function]}
   >
     <div
-      className="css-vj8t7z"
+      className=" css-yk16xz-control"
       onMouseDown={[Function]}
       onTouchEnd={[Function]}
     >
       <div
-        className="css-1hwfws3"
+        className=" css-1hwfws3"
       >
         <div
-          className="css-1492t68"
+          className=" css-1wa3eu0-placeholder"
         >
           placeholder
         </div>
@@ -53,6 +53,7 @@ Array [
                   "boxSizing": "content-box",
                   "color": "inherit",
                   "fontSize": "inherit",
+                  "label": "input",
                   "opacity": 1,
                   "outline": 0,
                   "padding": 0,
@@ -82,14 +83,14 @@ Array [
         </div>
       </div>
       <div
-        className="css-1wy0on6"
+        className=" css-1wy0on6"
       >
         <span
-          className="css-d8oujb"
+          className=" css-1okebmr-indicatorSeparator"
         />
         <div
           aria-hidden="true"
-          className="css-1ep9fjw"
+          className=" css-tlfecz-indicatorContainer"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
