@@ -2,15 +2,15 @@
 
 exports[`Layout component Match snapshot 1`] = `
 <div
-  className="sc-bdVaJa NiZGm"
+  className="sc-bdVaJa AVsQP"
 >
   <div
-    className="sc-fAjcbJ iZNVYN"
+    className="sc-fAjcbJ xmqIb"
   >
     AA1
   </div>
   <div
-    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 ggwXLa"
+    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 bKftYv"
   >
     <span
       className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"

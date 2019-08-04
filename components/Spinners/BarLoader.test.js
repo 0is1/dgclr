@@ -2,7 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { BarLoader as BarLoaderSpinner } from 'react-spinners';
+import BarLoaderSpinner from 'react-spinners/BarLoader';
 import { Box } from 'rebass';
 import BarLoader from './BarLoader';
 

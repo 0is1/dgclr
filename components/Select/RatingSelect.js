@@ -2,14 +2,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Label } from 'rebass';
+// $FlowFixMe
 import Select from 'react-select';
 import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
 import { getFilterTypeData } from 'components/SearchContainer/selectors';
-import type { OptionsType, ValueType } from 'react-select/src/types';
+// $FlowFixMe
+import type { ValueType } from 'react-select/src/types';
 import type { State } from 'lib/types';
 import { RATING_OPTIONS } from 'lib/constants';
 
-type Props = { defaultValue: OptionsType, onChange: Function, setFilter: Function };
+type Props = { defaultValue: any, onChange: Function, setFilter: Function };
 
 class RatingSelect extends Component<Props> {
   onRatingChange = (values: ValueType = []) => {

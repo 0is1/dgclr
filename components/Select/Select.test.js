@@ -2,6 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
+// $FlowFixMe
 import SelectInput from 'react-select';
 import { Label } from 'rebass';
 import TestStoreProvider from 'jest/TestStoreProvider';
