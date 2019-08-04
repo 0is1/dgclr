@@ -15,12 +15,15 @@ type Props = { defaultValue: any, onChange: Function, setFilter: Function };
 
 class RatingSelect extends Component<Props> {
   onRatingChange = (values: ValueType = []) => {
+    const { onChange, setFilter } = this.props;
     if (values) {
       // console.log('onRatingChange values. ', values);
-      const { onChange, setFilter } = this.props;
       const rating = values.map(item => item.value);
       onChange(rating);
       setFilter('rating', values);
+    } else {
+      onChange('');
+      setFilter('rating', []);
     }
   };
 
