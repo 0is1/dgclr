@@ -68,7 +68,7 @@
     "express": "^4.17.1",
     "express-favicon-short-circuit": "^1.1.1",
     "express-session": "^1.16.2",
-    "forcedomain": "^1.0.1",
+    "forcedomain": "^2.0.0",
     "graphql": "^14.4.2",
     "graphql-anywhere": "^4.2.4",
     "graphql-tag": "^2.9.2",
@@ -97,7 +97,7 @@
     "redux-saga": "^1.0.5",
     "rollbar": "^2.11.0",
     "serve-favicon": "^2.5.0",
-    "snyk": "^1.208.0",
+    "snyk": "^1.216.0",
     "styled-components": "^4.3.2",
     "updeep": "^1.0.0",
     "uuid4": "^1.1.4"
