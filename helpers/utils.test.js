@@ -2,14 +2,15 @@
 import { mockCourses } from 'jest/mockData';
 import {
   convertCoordinatesToObject,
+  convertKilometersToMeters,
   convertLinksToHtml,
+  convertMetersToKilometers,
   courseAddressDetails,
+  getCourseMapUrlForLayout,
   getRandomKey,
   getTitle,
   isArrayWithLength,
   uniqueLayoutRatings,
-  convertMetersToKilometers,
-  getCourseMapUrlForLayout,
 } from './utils';
 
 describe('Utils', () => {
@@ -119,8 +120,8 @@ describe('Utils', () => {
   });
   describe('convertMetersToKilometers', () => {
     it('return positive integer', () => {
-      const result = convertMetersToKilometers(2000);
-      expect(result).toEqual(2);
+      expect(convertMetersToKilometers(2000)).toEqual(2);
+      expect(convertMetersToKilometers(1200.5)).toEqual(1);
     });
     it('return zero', () => {
       const result = convertMetersToKilometers([]);
@@ -139,6 +140,20 @@ describe('Utils', () => {
     it('return empty string from undefined index', () => {
       const result = getCourseMapUrlForLayout(mockCourses[0].layouts, 1);
       expect(result).toEqual('');
+    });
+  });
+  describe('convertKilometersToMeters', () => {
+    it('return positive integer', () => {
+      expect(convertKilometersToMeters(1)).toEqual(1000);
+      expect(convertKilometersToMeters(0.5)).toEqual(500);
+      expect(convertKilometersToMeters(2.5)).toEqual(2500);
+    });
+    it('return zero', () => {
+      expect(convertKilometersToMeters([])).toEqual(0);
+      expect(convertKilometersToMeters({})).toEqual(0);
+      expect(convertKilometersToMeters(null)).toEqual(0);
+      expect(convertKilometersToMeters(0)).toEqual(0);
+      expect(convertKilometersToMeters(undefined)).toEqual(0);
     });
   });
 });
