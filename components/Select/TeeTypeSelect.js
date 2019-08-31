@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import Select from 'components/Select';
+import { SELECT_FILTER_NAMES } from './constants';
 
 const teeTypeOptions = [
   { value: 'Tekonurmi', label: 'Tekonurmi' },
@@ -24,7 +25,7 @@ const TeeTypeSelect = (props: Props) => {
       onChange={onChange}
       placeholder="Heittopaikan tyyppi"
       label="Heittopaikan tyyppi:"
-      filterName="teeType"
+      filterName={SELECT_FILTER_NAMES.teeType.filterName}
     />
   );
 };

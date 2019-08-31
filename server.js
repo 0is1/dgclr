@@ -127,6 +127,9 @@ app
     server.get('/info', (req, res) => {
       renderAndCache(req, res, '/info');
     });
+    server.get('/advanced_search', (req, res) => {
+      renderAndCache(req, res, '/advanced_search');
+    });
     server.get('/course', (req, res) => {
       res.redirect('/');
     });

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { Box, Flex, Text } from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
-import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from 'components/SearchContainer/selectors';
-import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/SearchContainer/actions';
+
 import RatingSelect from 'components/Select/RatingSelect';
 import BasketTypeSelect from 'components/Select/BasketTypeSelect';
 import TeeTypeSelect from 'components/Select/TeeTypeSelect';
@@ -16,16 +15,11 @@ import Toggle from 'components/Toggle';
 import colors from 'components/colors';
 import type { CoordinatesObject, State } from 'lib/types';
 import { convertMetersToKilometers } from 'helpers/utils';
-import {
-  ADVANCED_RATING,
-  ADVANCED_NEARBY,
-  ADVANCED_TEE_TYPE,
-  ADVANCED_BASKET_TYPE,
-  ADVANCED_COURSE_INFO,
-  ADVANCED_SURFACE_SHAPE_TYPES,
-  ADVANCED_COURSE_SHAPE_TYPES,
-} from 'lib/constants';
+import { ADVANCED_NEARBY, ADVANCED_COURSE_INFO } from 'lib/constants';
+import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import RebassComponents from 'components/RebassComponents';
+import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from './selectors';
+import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from './actions';
 
 const { Divider } = RebassComponents;
 type Props = {};
@@ -57,7 +51,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onRatingChange: ', rating);
     const filter = this.getParsedFilter();
     // console.log('onRatingChange filter: ', filterData);
-    const newFilter = rating.length > 0 ? update({ rating }, filter) : omit(filter, [ADVANCED_RATING]);
+    const newFilter = rating.length > 0 ? update({ rating }, filter) : omit(filter, [SELECT_FILTER_NAMES.rating.filterName]);
     this.setFilterData(newFilter);
   };
 
@@ -66,7 +60,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onBasketTypeChange filter: ', filter);
     const newFilter = basketType.length > 0
       ? update({ courseInfo: { basketType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_BASKET_TYPE]) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.basketType.filterName]) };
     this.setFilterData(newFilter);
   };
 
@@ -75,7 +69,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onTeeTypeChange filter: ', filter);
     const newFilter = teeType.length > 0
       ? update({ courseInfo: { teeType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_TEE_TYPE]) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.teeType.filterName]) };
     this.setFilterData(newFilter);
   };
 
@@ -84,7 +78,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('surfaceType filter: ', filter);
     const newFilter = surfaceShapeTypes.length > 0
       ? update({ courseInfo: { surfaceShapeTypes } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_SURFACE_SHAPE_TYPES]) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.surfaceShapeTypes.filterName]) };
     this.setFilterData(newFilter);
   };
 
@@ -93,7 +87,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('courseTypes filter: ', filter);
     const newFilter = courseTypes.length > 0
       ? update({ courseInfo: { courseTypes } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [ADVANCED_COURSE_SHAPE_TYPES]) };
+      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.courseTypes.filterName]) };
     this.setFilterData(newFilter);
   };
 

@@ -4,23 +4,24 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Box, Label } from 'rebass';
 import { debounce } from 'lodash';
-import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/SearchContainer/actions';
+import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/AdvancedSearch/actions';
 import {
+  queryResultsFromState,
   getFilterTypeData,
   getAdvancedMapZoom,
-  queryResultsFromState,
   latestAdvancedQuery as latestAdvancedQueryFunc,
-} from 'components/SearchContainer/selectors';
+} from 'components/AdvancedSearch/selectors';
 import Map from 'components/Map';
 import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
 import { ADVANCED_NEARBY } from 'lib/constants';
 import { convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails } from 'helpers/utils';
-import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
+import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
 import type {
   Course, CoordinatesObject, CourseForMap, State as ReduxState,
 } from 'lib/types';
+import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN } from './constants';
 
 const { NoResults } = AdvancedSearchQueryStyles;
 
@@ -60,8 +61,8 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
   }, 300);
 
   inputOptions = {
-    max: '150000',
-    min: '1000',
+    max: MAP_RADIUS_DISTANCE_MAX,
+    min: MAP_RADIUS_DISTANCE_MIN,
     name: 'radius',
     step: '1000',
     type: 'range',

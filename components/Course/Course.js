@@ -14,7 +14,6 @@ import {
   uniqueLayoutRatings,
 } from 'helpers/utils';
 import { courseBySlugFromState } from 'components/Course/selectors';
-import { setCourses as setCoursesFunc } from 'components/SearchContainer/actions';
 import Map from 'components/Map';
 import Layouts from 'components/Layouts';
 import Tabs from 'components/Tabs';
@@ -25,6 +24,7 @@ import { getActiveIndex } from 'components/Tabs/selectors';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
 import type { Course as CourseType, GraphQLData, State as ReduxState } from 'lib/types';
+import { setCourses as setCoursesFunc } from './actions';
 
 type Props = {
   data: GraphQLData,

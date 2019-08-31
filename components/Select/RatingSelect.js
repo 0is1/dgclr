@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { Label } from 'rebass';
 // $FlowFixMe
 import Select from 'react-select';
-import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
-import { getFilterTypeData } from 'components/SearchContainer/selectors';
+import { setFilter as setFilterFunc } from 'components/AdvancedSearch/actions';
+import { getFilterTypeData } from 'components/AdvancedSearch/selectors';
 // $FlowFixMe
 import type { ValueType } from 'react-select/src/types';
 import type { State } from 'lib/types';
 import { RATING_OPTIONS } from 'lib/constants';
+import { SELECT_FILTER_NAMES } from './constants';
 
 type Props = { onChange: Function };
 type MapStateToProps = { defaultValue: any };
@@ -25,10 +26,10 @@ class RatingSelect extends Component<CombinedProps> {
       // console.log('onRatingChange values. ', values);
       const rating = values.map(item => item.value);
       onChange(rating);
-      setFilter('rating', values);
+      setFilter(SELECT_FILTER_NAMES.rating.filterName, values);
     } else {
       onChange('');
-      setFilter('rating', []);
+      setFilter(SELECT_FILTER_NAMES.rating.filterName, []);
     }
   };
 

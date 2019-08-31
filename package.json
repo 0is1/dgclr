@@ -20,8 +20,8 @@
     "test": "yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
     "patch-version": "mversion patch",
-    "snyk-protect": "snyk protect",
-    "prepublish": "if [ $RUN_SNYK ]; then npm run snyk-protect"
+    "prepublish": "if [ $RUN_SNYK ]; then yarn snyk-protect; fi",
+    "snyk-protect": "snyk protect"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",

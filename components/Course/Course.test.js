@@ -20,12 +20,10 @@ const defaultProps = {
 function setup() {
   const storeData = {
     ...DEFAULT_STATE,
-    search: {
-      ...DEFAULT_STATE.search,
-      courses: {
-        [mockCoursesData[0].slug]: mockCoursesData[0],
-        [mockCoursesData[1].slug]: mockCoursesData[1],
-      },
+    ...DEFAULT_STATE.search,
+    courses: {
+      [mockCoursesData[0].slug]: mockCoursesData[0],
+      [mockCoursesData[1].slug]: mockCoursesData[1],
     },
   };
   const components = (

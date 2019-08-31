@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import Select from 'components/Select';
+import { SELECT_FILTER_NAMES } from './constants';
 
 export const surfaceTypeOptions = [
   {
@@ -28,7 +29,7 @@ const SurfaceTypeSelect = (props: Props) => {
       onChange={onChange}
       placeholder="Pinnanmuodot"
       label="Pinnanmuodot:"
-      filterName="surfaceShapeTypes"
+      filterName={SELECT_FILTER_NAMES.surfaceShapeTypes.filterName}
     />
   );
 };
