@@ -424,3 +424,15 @@ patch:
         patched: '2019-08-11T07:21:22.685Z'
     - next > @babel/preset-typescript > @babel/plugin-transform-typescript > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2019-08-11T07:21:22.685Z'
+    - next > babel-plugin-transform-define > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-08-31T08:36:58.528Z'
