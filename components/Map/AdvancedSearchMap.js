@@ -16,7 +16,7 @@ import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
 import { ADVANCED_NEARBY } from 'lib/constants';
 import { convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails } from 'helpers/utils';
-import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
+import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
 import type {
   Course, CoordinatesObject, CourseForMap, State as ReduxState,

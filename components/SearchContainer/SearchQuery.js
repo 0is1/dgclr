@@ -14,7 +14,7 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import AdvancedSearchQueryStyles from 'components/SearchContainer/AdvancedSearchQuery.styles';
+import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 import type { GraphQLData, State } from 'lib/types';
 
 const { UL, LI } = BaseStyles;
