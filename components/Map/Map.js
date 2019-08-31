@@ -47,7 +47,7 @@ const MyMapComponent = compose(
     },
   ),
   lifecycle({
-    componentWillMount() {
+    componentDidMount() {
       const refs = { map: null, circle: null };
 
       this.setState({

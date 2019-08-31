@@ -1,12 +1,15 @@
 [ignore]
 .*/node_modules/@snyk/composer-lockfile-parser/test/fixtures/composer-invalid-json/composer.json
 .*/node_modules/react-select/.*
+.*/dist/.*
 
 [include]
 
 [libs]
+/flow-typed
 
 [lints]
+deprecated-utility=off
 
 [options]
 module.system.node.resolve_dirname=node_modules
@@ -28,4 +31,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 [strict]
 
 [version]
-^0.104.0
+^0.106.3

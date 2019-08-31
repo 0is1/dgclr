@@ -28,10 +28,15 @@ import {
 import RebassComponents from 'components/RebassComponents';
 
 const { Divider } = RebassComponents;
-type Props = { filter: string, mapChecked: boolean, setFilter: Function, toggleMapVisibility: Function };
+type Props = {};
+type MapStateToProps = { filter: string, mapChecked: boolean };
+
+type MapDispatchToProps = { setFilter: Function, toggleMapVisibility: Function };
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 type FilterType = { courseInfo: {} };
 
-class AdvancedSearchInputs extends Component<Props> {
+class AdvancedSearchInputs extends Component<CombinedProps> {
   getParsedFilter = () => {
     const { filter } = this.props;
     return !filter.length ? {} : JSON.parse(filter);
@@ -152,16 +157,16 @@ class AdvancedSearchInputs extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): MapStateToProps => ({
   filter: getCurrentAdvancedFilter(state),
   mapChecked: isAdvancedSearchMapVisible(state),
 });
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
   toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
 });
 
-export default connect(
+export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(AdvancedSearchInputs);

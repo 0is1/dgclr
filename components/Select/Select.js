@@ -48,7 +48,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
-export default connect(
+export default connect<any, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(Select);

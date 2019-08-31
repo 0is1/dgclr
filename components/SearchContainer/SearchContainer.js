@@ -15,24 +15,25 @@ import type { State as ReduxState } from 'lib/types';
 const { Lead } = RebassComponents;
 const { Wrapper } = Styles;
 
-type Props = {
-  advancedSearchOpen: boolean,
-  client: {},
-  filter: string,
-  latestQuery: string,
-};
+type Props = {};
+type MapStateToProps = { advancedSearchOpen: boolean, filter: string, latestQuery: string };
+
+type MapDispatchToProps = {};
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
 type State = {
   inputValue: string,
   query: string,
 };
 
-class SearchContainer extends PureComponent<Props, State> {
+class SearchContainer extends PureComponent<CombinedProps, State> {
   state = {
     inputValue: '',
     query: '',
   };
 
-  changeQueryValue = debounce((query) => {
+  changeQueryValue = debounce((query: string) => {
     this.setState({ query });
   }, 300);
 
@@ -71,10 +72,10 @@ class SearchContainer extends PureComponent<Props, State> {
   }
 }
 
-const mapStateToProps = (state: ReduxState) => ({
+const mapStateToProps = (state: ReduxState): MapStateToProps => ({
   filter: getCurrentAdvancedFilter(state),
   advancedSearchOpen: isAdvancedSearchOpen(state),
   latestQuery: latestQueryFunc(state),
 });
 
-export default connect(mapStateToProps)(SearchContainer);
+export default connect<CombinedProps, Props, any, any, any, Function>(mapStateToProps)(SearchContainer);

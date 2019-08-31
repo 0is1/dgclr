@@ -25,14 +25,19 @@ import type {
 const { NoResults } = AdvancedSearchQueryStyles;
 
 type Props = {
-  defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
   handleChange: Function,
   mapVisible: boolean,
-  setFilter: Function,
-  setMapZoom: Function,
+};
+type MapStateToProps = {
+  defaultValue: Array<{ coordinates: CoordinatesObject, radius: string }>,
   queryResults: Array<?Course>,
   zoom: number,
 };
+
+type MapDispatchToProps = { setFilter: Function, setMapZoom: Function };
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
 type State = {
   coordinates: CoordinatesObject,
   radius: string,
@@ -42,7 +47,7 @@ type State = {
 
 const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
 
-class AdvancedSearchMap extends Component<Props, State> {
+class AdvancedSearchMap extends Component<CombinedProps, State> {
   state = {
     coordinates: defaultCoordinates,
     radius: '20000',
@@ -50,7 +55,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     error: null,
   };
 
-  debounceRadius = debounce((radius) => {
+  debounceRadius = debounce((radius: string) => {
     this.updateFilter({ radius });
   }, 300);
 
@@ -62,7 +67,7 @@ class AdvancedSearchMap extends Component<Props, State> {
     type: 'range',
   };
 
-  constructor(props) {
+  constructor(props: CombinedProps) {
     super(props);
     const { defaultValue } = props;
     if (defaultValue.length && defaultValue[0].coordinates && defaultValue[0].radius) {
@@ -191,7 +196,7 @@ class AdvancedSearchMap extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: ReduxState) => {
+const mapStateToProps = (state: ReduxState): MapStateToProps => {
   const latestQuery = latestAdvancedQueryFunc(state);
   return {
     defaultValue: getFilterTypeData(state, ADVANCED_NEARBY),
@@ -199,11 +204,11 @@ const mapStateToProps = (state: ReduxState) => {
     zoom: getAdvancedMapZoom(state),
   };
 };
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
   setMapZoom: (zoom: number) => dispatch(setAdvancedSearchMapZoom(zoom)),
 });
-export default connect(
+export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(AdvancedSearchMap);

@@ -11,9 +11,14 @@ import type { ValueType } from 'react-select/src/types';
 import type { State } from 'lib/types';
 import { RATING_OPTIONS } from 'lib/constants';
 
-type Props = { defaultValue: any, onChange: Function, setFilter: Function };
+type Props = { onChange: Function };
+type MapStateToProps = { defaultValue: any };
 
-class RatingSelect extends Component<Props> {
+type MapDispatchToProps = { setFilter: Function };
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+class RatingSelect extends Component<CombinedProps> {
   onRatingChange = (values: ValueType = []) => {
     const { onChange, setFilter } = this.props;
     if (values) {
@@ -38,13 +43,13 @@ class RatingSelect extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): MapStateToProps => ({
   defaultValue: getFilterTypeData(state, 'rating'),
 });
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
-export default connect(
+export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(RatingSelect);

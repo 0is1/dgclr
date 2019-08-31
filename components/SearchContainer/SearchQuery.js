@@ -178,7 +178,7 @@ const ComponentWithMutation = graphql(SEARCH_COURSES, {
   skip: ({ query }) => !query || query.length < 2,
 })(SearchQuery);
 
-export default connect(
+export default connect<any, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(ComponentWithMutation);

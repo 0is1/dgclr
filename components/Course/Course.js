@@ -24,15 +24,15 @@ import Image from 'components/Image';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import Styles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { Course as CourseType, GraphQLData, State } from 'lib/types';
+import type { Course as CourseType, GraphQLData, State as ReduxState } from 'lib/types';
 
 type Props = {
-  activeIndex: ?number,
-  course: CourseType,
   data: GraphQLData,
-  setCourses: Function,
-  // slug: string,
 };
+type OwnProps = Props & { slug: string };
+type MapStateToProps = { activeIndex: ?number, course: CourseType };
+type MapDispatchToProps = { setCourses: Function };
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 const {
   Box, Description, PanelWrapper, PanelHeader, PanelFooter, Strong, Title,
@@ -40,7 +40,7 @@ const {
 
 const { BaseText } = BaseStyles;
 
-class Course extends Component<Props> {
+class Course extends Component<CombinedProps> {
   componentDidMount() {
     const { course, data = {} } = this.props;
     const { courseBySlug } = data;
@@ -49,7 +49,7 @@ class Course extends Component<Props> {
     }
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps: CombinedProps, prevState: any, snapshot: any) {
     if (snapshot !== null) {
       const { course, data } = this.props;
       const { courseBySlug } = data;
@@ -59,7 +59,7 @@ class Course extends Component<Props> {
     }
   }
 
-  getSnapshotBeforeUpdate(prevProps) {
+  getSnapshotBeforeUpdate(prevProps: CombinedProps) {
     const { data = {} } = this.props;
     const { courseBySlug } = data;
     if (size(prevProps.course) < 1 && courseBySlug && courseBySlug.length) {
@@ -68,7 +68,7 @@ class Course extends Component<Props> {
     return null;
   }
 
-  setCourses = (courses) => {
+  setCourses = (courses: Array<CourseType>) => {
     const { setCourses } = this.props;
     setCourses(courses);
   };
@@ -193,7 +193,7 @@ class Course extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State, ownProps) => {
+const mapStateToProps = (state: ReduxState, ownProps: OwnProps): MapStateToProps => {
   const course = courseBySlugFromState(state, ownProps);
   const id = (course && course._id) || false;
   return {
@@ -202,11 +202,11 @@ const mapStateToProps = (state: State, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),
 });
 
-export default connect(
+export default connect<CombinedProps, OwnProps, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(Course);

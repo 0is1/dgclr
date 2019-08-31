@@ -96,4 +96,4 @@ const mapStateToProps = (state, ownProps) => ({
   course: courseBySlugFromState(state, ownProps),
 });
 
-export default connect(mapStateToProps)(withApollo(withRouter(ComponentWithMutation)));
+export default connect<any, Props, any, any, any, Function>(mapStateToProps)(withApollo(withRouter(ComponentWithMutation)));
