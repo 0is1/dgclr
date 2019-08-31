@@ -40,7 +40,6 @@ const AdvancedSearchPage = (props: CombinedProps) => {
         } else if (filterName === ADVANCED_NEARBY) {
           // Special logic
           const { coordinates, maxDistance } = parsedQuery[filterName];
-          console.log('coordinates: ', coordinates);
           const radius = convertKilometersToMeters(maxDistance);
           if (isArrayWithLength(coordinates) && radius && radius >= MAP_RADIUS_DISTANCE_MIN && radius <= MAP_RADIUS_DISTANCE_MAX) {
             const [lng, lat] = coordinates;
