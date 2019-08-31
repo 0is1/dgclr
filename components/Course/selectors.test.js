@@ -13,11 +13,9 @@ describe('SearchContainer selectors', () => {
     const result = courseBySlugFromState(
       {
         ...DEFAULT_STATE,
-        search: {
-          courses: {
-            [mockCoursesData[0].slug]: mockCoursesData[0],
-            [mockCoursesData[1].slug]: mockCoursesData[1],
-          },
+        courses: {
+          [mockCoursesData[0].slug]: mockCoursesData[0],
+          [mockCoursesData[1].slug]: mockCoursesData[1],
         },
       },
       ownProps,
