@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { Label } from 'rebass';
 // $FlowFixMe
 import SelectInput from 'react-select';
-import { setFilter as setFilterFunc } from 'components/SearchContainer/actions';
-import { getFilterTypeData } from 'components/SearchContainer/selectors';
+import { setFilter as setFilterFunc } from 'components/AdvancedSearch/actions';
+import { getFilterTypeData } from 'components/AdvancedSearch/selectors';
 // $FlowFixMe
 import type { OptionsType, ValueType } from 'react-select/src/types';
 

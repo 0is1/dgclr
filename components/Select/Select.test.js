@@ -24,6 +24,9 @@ function setup(advancedQueries = {}) {
     ...DEFAULT_STATE,
     search: {
       ...DEFAULT_STATE.search,
+    },
+    advancedSearch: {
+      ...DEFAULT_STATE.advancedSearch,
       advancedQueries,
     },
   };
