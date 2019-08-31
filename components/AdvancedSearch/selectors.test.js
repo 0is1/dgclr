@@ -1,5 +1,3 @@
-/* eslint-env jest */
-import mockCoursesData from 'components/SearchContainer/mock/courses.mock';
 import { DEFAULT_STATE } from 'lib/rootReducer';
 import {
   getAdvancedMapZoom,
@@ -8,8 +6,6 @@ import {
   isAdvancedSearchMapVisible,
   isAdvancedSearchOpen,
   latestAdvancedQuery,
-  latestQuery,
-  queryResultsFromState,
 } from './selectors';
 
 describe('SearchContainer selectors', () => {
@@ -19,34 +15,12 @@ describe('SearchContainer selectors', () => {
       expect(result).toEqual(9);
     });
     it('Return default value if value undefined', () => {
-      const result = getAdvancedMapZoom({ ...DEFAULT_STATE, search: { advancedSearchMapZoom: null } });
+      const result = getAdvancedMapZoom({ ...DEFAULT_STATE, advancedSearch: { advancedSearchMapZoom: null } });
       expect(result).toEqual(9);
     });
     it('Return correct value', () => {
-      const result = getAdvancedMapZoom({ ...DEFAULT_STATE, search: { advancedSearchMapZoom: 11 } });
+      const result = getAdvancedMapZoom({ ...DEFAULT_STATE, advancedSearch: { advancedSearchMapZoom: 11 } });
       expect(result).toEqual(11);
-    });
-  });
-  describe('queryResultsFromState', () => {
-    it('Return query result with initialState', () => {
-      const result = queryResultsFromState(DEFAULT_STATE, 'query');
-      expect(result).toEqual([]);
-    });
-    it('Return query result with return value', () => {
-      const query = 'query';
-      const result = queryResultsFromState({ ...DEFAULT_STATE, search: { queries: { [query]: mockCoursesData } } }, query);
-      expect(result).toEqual(mockCoursesData);
-    });
-  });
-  describe('latestQuery', () => {
-    it('Return latestQuery result with initialState', () => {
-      const result = latestQuery(DEFAULT_STATE);
-      expect(result).toEqual('');
-    });
-    it('Return latestQuery result with return value', () => {
-      const query = 'query';
-      const result = latestQuery({ ...DEFAULT_STATE, search: { queryHistory: [query] } });
-      expect(result).toEqual(query);
     });
   });
   describe('latestAdvancedQuery', () => {
@@ -58,7 +32,7 @@ describe('SearchContainer selectors', () => {
       const query = 'advancedQuery';
       const result = latestAdvancedQuery({
         ...DEFAULT_STATE,
-        search: { advancedQueryHistory: [query] },
+        advancedSearch: { advancedQueryHistory: [query] },
       });
       expect(result).toEqual(query);
     });
@@ -72,7 +46,7 @@ describe('SearchContainer selectors', () => {
       const open = true;
       const result = isAdvancedSearchOpen({
         ...DEFAULT_STATE,
-        search: { advancedSearchOpen: open },
+        advancedSearch: { advancedSearchOpen: open },
       });
       expect(result).toEqual(open);
     });
@@ -88,7 +62,7 @@ describe('SearchContainer selectors', () => {
       const result = getFilterTypeData(
         {
           ...DEFAULT_STATE,
-          search: { advancedQueries: { [key]: data } },
+          advancedSearch: { advancedQueries: { [key]: data } },
         },
         key,
       );
@@ -104,7 +78,7 @@ describe('SearchContainer selectors', () => {
       const advancedFilter = '{filter:{}}';
       const result = getCurrentAdvancedFilter({
         ...DEFAULT_STATE,
-        search: { currentAdvancedFilter: advancedFilter },
+        advancedSearch: { currentAdvancedFilter: advancedFilter },
       });
       expect(result).toEqual(advancedFilter);
     });
@@ -115,7 +89,10 @@ describe('SearchContainer selectors', () => {
       expect(result).toEqual(true);
     });
     it('Return isAdvancedSearchMapVisible false', () => {
-      const result = isAdvancedSearchMapVisible({ ...DEFAULT_STATE, search: { ...DEFAULT_STATE.search, advancedSearchMapVisible: false } });
+      const result = isAdvancedSearchMapVisible({
+        ...DEFAULT_STATE,
+        advancedSearch: { ...DEFAULT_STATE.search, advancedSearchMapVisible: false },
+      });
       expect(result).toEqual(false);
     });
   });
