@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 const Styles = {
+  TextSearchLink: styled.a`
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+  `,
   Wrapper: styled.div`
     margin: 0 auto;
     padding-top: 1rem;
