@@ -7,15 +7,16 @@ import { connect } from 'react-redux';
 import { differenceBy } from 'lodash';
 import { Box } from 'rebass';
 import { GoChevronRight } from 'react-icons/go';
-import { setCourses as setCoursesFunc, setSearchQuery as setSearchQueryFunc } from 'components/SearchContainer/actions';
-import { latestQuery as latestQueryFunc, queryResultsFromState as queryResultsFromStateFunc } from 'components/SearchContainer/selectors';
 import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
-import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
 import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 import type { GraphQLData, State } from 'lib/types';
+import { setCourses as setCoursesFunc } from 'components/Course/actions';
+import Styles from './SearchContainer.styles';
+import { setSearchQuery as setSearchQueryFunc } from './actions';
+import { latestQuery as latestQueryFunc, queryResultsFromState as queryResultsFromStateFunc } from './selectors';
 
 const { UL, LI } = BaseStyles;
 const { NoResults } = AdvancedSearchQueryStyles;
@@ -109,7 +110,7 @@ const mapStateToProps = (state: State) => ({
   queryResults: queryResultsFromStateFunc(state, latestQueryFunc(state)),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),
   setSearchQuery: (courses, query) => dispatch(setSearchQueryFunc(courses, query)),
 });

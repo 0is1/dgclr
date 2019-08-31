@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Link from 'next/link';
 import { debounce } from 'lodash';
 import { Box } from 'rebass';
-import { latestQuery as latestQueryFunc } from 'components/SearchContainer/selectors';
 import Input from 'components/Input';
-import SearchQuery from 'components/SearchContainer/SearchQuery';
 import RebassComponents from 'components/RebassComponents';
 import type { State as ReduxState } from 'lib/types';
+import SearchQuery from './SearchQuery';
+import { latestQuery as latestQueryFunc } from './selectors';
 import Styles from './SearchContainer.styles';
 
 const { Lead } = RebassComponents;
