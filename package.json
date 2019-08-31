@@ -115,7 +115,7 @@
     "trailingComma": "es5"
   },
   "engines": {
-    "node": "^8.15.0",
+    "node": "^10.16.0",
     "yarn": "^1.13.0"
   },
   "jest": {
