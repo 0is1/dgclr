@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { Box, Flex, Text } from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
-import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from 'components/SearchContainer/selectors';
-import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/SearchContainer/actions';
+
 import RatingSelect from 'components/Select/RatingSelect';
 import BasketTypeSelect from 'components/Select/BasketTypeSelect';
 import TeeTypeSelect from 'components/Select/TeeTypeSelect';
@@ -26,6 +25,8 @@ import {
   ADVANCED_COURSE_SHAPE_TYPES,
 } from 'lib/constants';
 import RebassComponents from 'components/RebassComponents';
+import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from './selectors';
+import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from './actions';
 
 const { Divider } = RebassComponents;
 type Props = {};
