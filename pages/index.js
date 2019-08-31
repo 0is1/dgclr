@@ -8,12 +8,13 @@ import Container from 'components/Container';
 import SearchContainer from 'components/SearchContainer';
 
 type Props = {};
+
 const Index = (): Props => (
   <Container activeRoute="/">
     <Helmet>
       <title>{getTitle()}</title>
     </Helmet>
-    <SearchContainer advancedSearchOpen={false} />
+    <SearchContainer />
   </Container>
 );
 
