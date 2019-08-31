@@ -3,3 +3,4 @@ coverage
 build
 dist
 static
+flow-typed
