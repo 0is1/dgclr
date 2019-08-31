@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import colors from 'components/colors';
 
 const Styles = {
+  AdvancedSearchLink: styled.a`
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+  `,
   Wrapper: styled.div`
     margin: 0 auto;
     padding-top: 1rem;
