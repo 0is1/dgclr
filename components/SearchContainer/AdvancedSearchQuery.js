@@ -184,7 +184,7 @@ const ComponentWithMutation = graphql(SEARCH_COURSES, {
   skip: ({ filter }) => !filter || size(filter) < 1,
 })(AdvancedSearchQuery);
 
-export default connect(
+export default connect<any, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(ComponentWithMutation);

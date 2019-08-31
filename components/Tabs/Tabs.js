@@ -6,17 +6,19 @@ import { Tabs } from 'rebass';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import { setTabs as setTabsFunc } from 'components/Tabs/actions';
 import { getRandomKey } from 'helpers/utils';
-import type { State } from 'lib/types';
+import type { State as ReduxState } from 'lib/types';
 import Tab from './Tab';
 
 type Props = {
-  activeIndex: ?number,
-  id: String,
-  setTabs: Function,
-  tabs: [String],
+  id: string,
+  tabs: [string],
 };
+type MapStateToProps = { activeIndex: ?number };
+type MapDispatchToProps = { setTabs: Function };
 
-class TabsComponent extends Component<Props> {
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+class TabsComponent extends Component<CombinedProps> {
   componentDidMount() {
     const { activeIndex, id, setTabs } = this.props;
     if (!activeIndex) {
@@ -33,15 +35,15 @@ class TabsComponent extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State, ownProps) => ({
+const mapStateToProps = (state: ReduxState, ownProps: Props): MapStateToProps => ({
   activeIndex: getActiveIndex(state, ownProps),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setTabs: (id, activeIndex = 0) => dispatch(setTabsFunc(id, activeIndex)),
 });
 
-export default connect(
+export default connect<CombinedProps, Props, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(TabsComponent);

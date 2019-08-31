@@ -5,23 +5,27 @@ import { connect } from 'react-redux';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import Layout from 'components/Layout';
 import { getRandomKey } from 'helpers/utils';
-import type { State } from 'lib/types';
+import type { State as ReduxState } from 'lib/types';
 
 type Props = {
-  activeIndex: number | Boolean,
-  id: String,
+  id: string,
   layouts: [],
 };
+type MapStateToProps = { activeIndex: ?number };
 
-const Layouts = ({ activeIndex, layouts }: Props) => {
-  const layoutData = layouts.map((layout, index) => (
+type MapDispatchToProps = {};
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+const Layouts = ({ activeIndex, layouts }: CombinedProps) => {
+  const layoutData = layouts.map<any>((layout, index: number) => (
     <Layout key={getRandomKey()} layout={layout} active={index === activeIndex} />
   ));
   return layoutData;
 };
 
-const mapStateToProps = (state: State, ownProps) => ({
+const mapStateToProps = (state: ReduxState, ownProps: Props): MapStateToProps => ({
   activeIndex: getActiveIndex(state, ownProps),
 });
 
-export default connect(mapStateToProps)(Layouts);
+export default connect<CombinedProps, Props, any, any, any, Function>(mapStateToProps)(Layouts);

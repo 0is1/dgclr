@@ -13,7 +13,7 @@ const Index = (): Props => (
     <Helmet>
       <title>{getTitle()}</title>
     </Helmet>
-    <SearchContainer />
+    <SearchContainer advancedSearchOpen={false} />
   </Container>
 );
 

@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -11,7 +11,7 @@ class DGCLRApp extends App {
   render() {
     const { Component, pageProps, store } = this.props;
     return (
-      <Container>
+      <>
         <Head>
           <title>DGCLR - Disc Golf Course Lists and Results</title>
         </Head>
@@ -20,7 +20,7 @@ class DGCLRApp extends App {
             <Component {...pageProps} />
           </Provider>
         </RebassProvider>
-      </Container>
+      </>
     );
   }
 }

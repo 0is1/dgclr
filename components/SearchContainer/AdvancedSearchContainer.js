@@ -12,9 +12,13 @@ import type { State } from 'lib/types';
 
 const { ToggleButtonWrapper } = Styles;
 
-type Props = { isOpen: boolean, toggleAdvancedSearch: Function };
+type Props = {};
+type MapStateToProps = { isOpen: boolean };
+type MapDispatchToProps = { toggleAdvancedSearch: Function };
 
-class AdvancedSearchContainer extends Component<Props> {
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+class AdvancedSearchContainer extends Component<CombinedProps> {
   toggleOpen = () => {
     const { isOpen, toggleAdvancedSearch } = this.props;
     toggleAdvancedSearch(!isOpen);
@@ -37,15 +41,15 @@ class AdvancedSearchContainer extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): MapStateToProps => ({
   isOpen: isAdvancedSearchOpen(state),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   toggleAdvancedSearch: (isOpen = false) => dispatch(toggleAdvancedSearchFunc(isOpen)),
 });
 
-export default connect(
+export default connect<CombinedProps, Props, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(AdvancedSearchContainer);

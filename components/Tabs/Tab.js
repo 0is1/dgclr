@@ -10,11 +10,15 @@ type Props = {
   index: number,
   id: string,
   name: string,
-  setTabs: Function,
 };
+type MapStateToProps = {};
+type MapDispatchToProps = { setTabs: Function };
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
 const { Tab } = Styles;
 
-class TabComponent extends Component<Props> {
+class TabComponent extends Component<CombinedProps> {
   changeActiveIndex = () => {
     const { index, id, setTabs } = this.props;
     setTabs(id, index);
@@ -31,11 +35,11 @@ class TabComponent extends Component<Props> {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setTabs: (id, activeIndex = 0) => dispatch(setTabsFunc(id, activeIndex)),
 });
 
-export default connect(
+export default connect<CombinedProps, Props, MapStateToProps, any, any, Function>(
   null,
   mapDispatchToProps,
 )(TabComponent);
