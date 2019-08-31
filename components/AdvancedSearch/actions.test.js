@@ -4,34 +4,12 @@ import {
   actionTypes,
   setAdvancedSearchMapZoom,
   setAdvancedSearchQuery,
-  setCourses,
   setCurrentAdvancedSearchFilter,
   setFilter,
-  setSearchQuery,
-  toggleAdvancedSearch,
   toggleAdvancedSearchMap,
 } from './actions';
 
 describe('SearchContainer actions', () => {
-  it('Return valid action from setCourses', () => {
-    const expected = { type: actionTypes.SET_COURSES, courses: mockCoursesData };
-    expect(setCourses(mockCoursesData)).toEqual(expected);
-  });
-  it('Return valid action from setSearchQuery', () => {
-    const query = 'espoo';
-    const expected = { type: actionTypes.SET_SEARCH_QUERY, courses: mockCoursesData, query };
-    expect(setSearchQuery(mockCoursesData, query)).toEqual(expected);
-  });
-  it('Return valid action from toggleAdvancedSearch (true)', () => {
-    const open = true;
-    const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH, open };
-    expect(toggleAdvancedSearch(open)).toEqual(expected);
-  });
-  it('Return valid action from toggleAdvancedSearch (false)', () => {
-    const open = false;
-    const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH, open };
-    expect(toggleAdvancedSearch(open)).toEqual(expected);
-  });
   it('Return valid action from setFilter', () => {
     const filterName = 'filter';
     const data = [{ value: 'value', label: 'label' }];

@@ -8,36 +8,6 @@ describe('SearchContainer reducers', () => {
     const action = {};
     expect(reducer(initialState, action)).toEqual(initialState);
   });
-  it('Return SET_COURSES', () => {
-    const action = { type: actionTypes.SET_COURSES, courses: mockCoursesData };
-    const expected = {
-      ...initialState,
-      courses: {
-        [mockCoursesData[0].slug]: mockCoursesData[0],
-        [mockCoursesData[1].slug]: mockCoursesData[1],
-      },
-    };
-    expect(reducer(initialState, action)).toEqual(expected);
-  });
-  it('Return SET_SEARCH_QUERY', () => {
-    const query = 'espoo';
-    const action = { type: actionTypes.SET_SEARCH_QUERY, courses: mockCoursesData, query };
-    const expected = {
-      ...initialState,
-      queries: { [query]: mockCoursesData },
-      queryHistory: [query],
-    };
-    expect(reducer(initialState, action)).toEqual(expected);
-  });
-  it('Return TOGGLE_ADVANCED_SEARCH (true)', () => {
-    const open = true;
-    const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH, open };
-    const expected = {
-      ...initialState,
-      advancedSearchOpen: open,
-    };
-    expect(reducer(initialState, action)).toEqual(expected);
-  });
   it('Return TOGGLE_ADVANCED_SEARCH (false)', () => {
     const open = false;
     const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH, open };
