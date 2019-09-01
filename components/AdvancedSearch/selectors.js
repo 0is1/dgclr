@@ -7,7 +7,7 @@ export const queryResultsFromState = (state: State, latestQuery: string) => get(
 
 export const latestAdvancedQuery = (state: State) => get(['advancedSearch', 'advancedQueryHistory'], state)[0] || '';
 
-export const isAdvancedSearchOpen = (state: State) => get(['advancedSearch', 'advancedSearchOpen'], state);
+export const isAllAdvancedSearchInputsOpen = (state: State) => get(['advancedSearch', 'allAdvancedSearchInputsOpen'], state) || false;
 
 export const getFilterTypeData = (state: State, filterName: string) => get(['advancedSearch', 'advancedQueries', filterName], state) || [];
 

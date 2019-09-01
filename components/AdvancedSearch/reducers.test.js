@@ -13,7 +13,7 @@ describe('SearchContainer reducers', () => {
     const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH, open };
     const expected = {
       ...initialState,
-      advancedSearchOpen: open,
+      allAdvancedSearchInputsOpen: open,
     };
     expect(reducer(initialState, action)).toEqual(expected);
   });
@@ -65,6 +65,24 @@ describe('SearchContainer reducers', () => {
     const expected = {
       ...initialState,
       advancedSearchMapZoom: 10,
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+  it('Return TOGGLE_ADVANCED_SEARCH_INPUTS (true)', () => {
+    const open = true;
+    const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS, open };
+    const expected = {
+      ...initialState,
+      allAdvancedSearchInputsOpen: open,
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+  it('Return TOGGLE_ADVANCED_SEARCH_INPUTS (false)', () => {
+    const open = false;
+    const action = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS, open };
+    const expected = {
+      ...initialState,
+      allAdvancedSearchInputsOpen: open,
     };
     expect(reducer(initialState, action)).toEqual(expected);
   });

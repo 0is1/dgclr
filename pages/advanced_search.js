@@ -4,17 +4,18 @@ import { Helmet } from 'react-helmet';
 import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import withApollo from 'lib/withApollo';
+import { omit } from 'lodash/fp';
 import { getTitle, isArrayWithLength, convertKilometersToMeters } from 'helpers/utils';
 import Container from 'components/Container';
 import AdvancedSearch from 'components/AdvancedSearch';
-import { setFilter, setCurrentAdvancedSearchFilter } from 'components/AdvancedSearch/actions';
+import { setFilter, setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/AdvancedSearch/actions';
 import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import { ADVANCED_COURSE_INFO, ADVANCED_NEARBY } from 'lib/constants';
-import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN } from 'components/Map/constants';
+import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN, MAP_CHECKED_FILTER } from 'components/Map/constants';
 
 type Props = { query: { [key: string]: string } };
 type MapStateToProps = {};
-type MapDispatchToProps = { setAdvancedSearchFilter: Function, setFilter: Function };
+type MapDispatchToProps = { setAdvancedSearchFilter: Function, setFilter: Function, toggleMapVisibility: Function };
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
@@ -22,7 +23,7 @@ const AdvancedSearchPage = (props: CombinedProps) => {
   const { query } = props;
   if (query && Object.keys(query).length > 0 && query.q) {
     try {
-      const parsedQuery = JSON.parse(query.q);
+      const parsedQuery = JSON.parse(decodeURIComponent(query.q));
       const filters = Object.keys(SELECT_FILTER_NAMES);
       Object.keys(parsedQuery).forEach((filterName) => {
         if (filters.includes(filterName)) {
@@ -45,9 +46,12 @@ const AdvancedSearchPage = (props: CombinedProps) => {
             const [lng, lat] = coordinates;
             props.setFilter(filterName, [{ coordinates: { lng, lat }, radius: `${radius}` }]);
           }
+        } else if (filterName === MAP_CHECKED_FILTER) {
+          props.toggleMapVisibility(parsedQuery[filterName]);
         }
       });
-      props.setAdvancedSearchFilter(JSON.stringify(parsedQuery));
+      // Remove MAP_CHECKED_FILTER because that's not part of graphql query
+      props.setAdvancedSearchFilter(JSON.stringify(omit([MAP_CHECKED_FILTER], parsedQuery)));
     } catch (e) {
       console.error('Parsing advanced search query failed: ', e.message);
     }
@@ -73,6 +77,7 @@ AdvancedSearchPage.getInitialProps = async ({ req, query }) => {
 const mapDispatchToProps = (dispatch: Function) => ({
   setAdvancedSearchFilter: (query: string) => dispatch(setCurrentAdvancedSearchFilter(query)),
   setFilter: (filterName: string, data: any) => dispatch(setFilter(filterName, data)),
+  toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
 });
 
 export default connect<CombinedProps, Props, any, any, any, Function>(

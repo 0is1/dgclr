@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
-import { Tabs, Tab, Text } from 'rebass';
+import { Tabs, Text } from 'rebass';
 import * as gtag from 'lib/gtag';
 import colors from 'components/colors';
 import Styles from './Container.styles';
@@ -18,7 +18,9 @@ type Props = {
   },
 };
 
-const { Container, Footer, HeaderLink } = Styles;
+const {
+  Container, Footer, HeaderLink, Tab,
+} = Styles;
 
 class ContainerComponent extends Component<Props> {
   static defaultProps = {
@@ -42,17 +44,22 @@ class ContainerComponent extends Component<Props> {
   render() {
     const { activeRoute, children } = this.props;
     return (
-      <React.Fragment>
+      <>
         <header>
           <Tabs px={4} pt={2}>
-            <Tab hover={{ borderColor: colors.border }} borderColor={activeRoute === '/' ? `${colors.border}` : 'transparent'} px={3}>
+            <Tab borderColor={activeRoute === '/' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/">
-                <HeaderLink>Haku</HeaderLink>
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Tekstihaku</HeaderLink>
               </Link>
             </Tab>
-            <Tab hover={{ borderColor: colors.border }} borderColor={activeRoute === 'info' ? `${colors.border}` : 'transparent'} px={3}>
+            <Tab borderColor={activeRoute === '/advanced_search' ? `${colors.border}` : 'transparent'} px={3}>
+              <Link href="/advanced_search">
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Edistynyt haku</HeaderLink>
+              </Link>
+            </Tab>
+            <Tab borderColor={activeRoute === 'info' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/info">
-                <HeaderLink>Info</HeaderLink>
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Info</HeaderLink>
               </Link>
             </Tab>
           </Tabs>
@@ -74,7 +81,7 @@ class ContainerComponent extends Component<Props> {
             </a>
           </Text>
         </Footer>
-      </React.Fragment>
+      </>
     );
   }
 }

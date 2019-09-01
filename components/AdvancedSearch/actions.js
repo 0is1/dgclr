@@ -6,6 +6,7 @@ export const actionTypes = {
   SET_ADVANCED_FILTER_TYPE: 'dgclr/SET_ADVANCED_FILTER_TYPE',
   SET_CURRENT_ADVANCED_FILTER: 'dgclr/SET_CURRENT_ADVANCED_FILTER',
   TOGGLE_ADVANCED_SEARCH_MAP: 'dgclr/TOGGLE_ADVANCED_SEARCH_MAP',
+  TOGGLE_ADVANCED_SEARCH_INPUTS: 'dgclr/TOGGLE_ADVANCED_SEARCH_INPUTS',
   SET_ADVANCED_MAP_ZOOM: 'dgclr/SET_ADVANCED_MAP_ZOOM',
 };
 
@@ -61,4 +62,14 @@ export const toggleAdvancedSearchMap = (visible: boolean) => ({
 export const setAdvancedSearchMapZoom = (zoom: number) => ({
   type: actionTypes.SET_ADVANCED_MAP_ZOOM,
   zoom,
+});
+
+/**
+ * Toggle advanced search open
+ * @param {boolean} open
+ * @return {Object} action of TOGGLE_ADVANCED_SEARCH_INPUTS
+ */
+export const toggleAdvancedSearchInputs = (open: boolean = false) => ({
+  type: actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS,
+  open,
 });
