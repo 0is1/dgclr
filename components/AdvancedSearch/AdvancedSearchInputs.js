@@ -18,14 +18,21 @@ import { convertMetersToKilometers } from 'helpers/utils';
 import { ADVANCED_NEARBY, ADVANCED_COURSE_INFO } from 'lib/constants';
 import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import RebassComponents from 'components/RebassComponents';
-import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from './selectors';
-import { setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from './actions';
+import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible, isAllAdvancedSearchInputsOpen } from './selectors';
+import {
+  setCurrentAdvancedSearchFilter,
+  toggleAdvancedSearchMap,
+  toggleAdvancedSearchInputs as toggleAdvancedSearchInputsFunc,
+} from './actions';
+import Styles from './AdvancedSearchInputs.styles';
 
 const { Divider } = RebassComponents;
-type Props = {};
-type MapStateToProps = { filter: string, mapChecked: boolean };
+const { FadeInBox } = Styles;
 
-type MapDispatchToProps = { setFilter: Function, toggleMapVisibility: Function };
+type Props = {};
+type MapStateToProps = { filter: string, mapChecked: boolean, allInputsOpen: boolean };
+
+type MapDispatchToProps = { setFilter: Function, toggleMapVisibility: Function, toggleAdvancedSearchInputs: Function };
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 type FilterType = { courseInfo: {} };
@@ -117,8 +124,13 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     toggleMapVisibility(mapChecked);
   };
 
+  toggleAdvancedSearchInputs = () => {
+    const { allInputsOpen, toggleAdvancedSearchInputs } = this.props;
+    toggleAdvancedSearchInputs(!allInputsOpen);
+  };
+
   render() {
-    const { mapChecked } = this.props;
+    const { allInputsOpen, mapChecked } = this.props;
     return (
       <Box>
         <Text fontWeight="700" my={2} width="100%">
@@ -128,20 +140,23 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <RatingSelect onChange={this.onRatingChange} />
           </Box>
-          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
-            <BasketTypeSelect onChange={this.onBasketTypeChange} />
-          </Box>
-          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
-            <TeeTypeSelect onChange={this.onTeeTypeChange} />
-          </Box>
-          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
-            <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
-          </Box>
           <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
             <CourseTypeSelect onChange={this.onCourseTypeChange} />
           </Box>
-          <Box pl={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1]}>
-            <Toggle label="Käytä karttahakua" checked={mapChecked} handleOnChange={this.handleMapToggle} />
+          <FadeInBox show={allInputsOpen}>
+            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+              <BasketTypeSelect onChange={this.onBasketTypeChange} />
+            </Box>
+            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+              <TeeTypeSelect onChange={this.onTeeTypeChange} />
+            </Box>
+            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+              <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
+            </Box>
+          </FadeInBox>
+          <Toggle label="Näytä kaikki valinnat:" checked={allInputsOpen} handleOnChange={this.toggleAdvancedSearchInputs} />
+          <Box mb=".75rem" width={[1]}>
+            <Toggle label="Käytä karttahakua:" checked={mapChecked} handleOnChange={this.handleMapToggle} />
             <AdvancedSearchMap mapVisible={mapChecked} handleChange={this.onMapSearchChange} />
           </Box>
         </Flex>
@@ -152,12 +167,14 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
 }
 
 const mapStateToProps = (state: State): MapStateToProps => ({
+  allInputsOpen: isAllAdvancedSearchInputsOpen(state),
   filter: getCurrentAdvancedFilter(state),
   mapChecked: isAdvancedSearchMapVisible(state),
 });
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
   toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
+  toggleAdvancedSearchInputs: (visible: boolean) => dispatch(toggleAdvancedSearchInputsFunc(visible)),
 });
 
 export default connect<CombinedProps, Props, any, any, any, Function>(
