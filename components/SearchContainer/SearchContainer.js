@@ -1,7 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Link from 'next/link';
 import { debounce } from 'lodash';
 import { Box } from 'rebass';
 import Input from 'components/Input';
@@ -12,7 +11,7 @@ import { latestQuery as latestQueryFunc } from './selectors';
 import Styles from './SearchContainer.styles';
 
 const { Lead } = RebassComponents;
-const { AdvancedSearchLink, Wrapper } = Styles;
+const { Wrapper } = Styles;
 
 type Props = {};
 type MapStateToProps = { latestQuery: string };
@@ -53,9 +52,6 @@ class SearchContainer extends PureComponent<CombinedProps, State> {
     return (
       <Wrapper>
         <Box style={{ position: 'relative' }} m="1rem auto" px="2rem" width={[1, 1, 1, 0.7]}>
-          <Link href="/advanced_search">
-            <AdvancedSearchLink>Edistynyt haku</AdvancedSearchLink>
-          </Link>
           <Lead my={2}>Etsi frisbeegolfratoja:</Lead>
           <Input focusOnMount placeholder="Kaupungin tai radan nimi" value={inputValue} onChange={this.onSearchQueryChange} />
           <SearchQuery query={query} />
