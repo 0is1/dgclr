@@ -83,7 +83,8 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
 
   componentDidMount() {
     const { coordinates } = this.state;
-    if (defaultCoordinates.lat === coordinates.lat && defaultCoordinates.lng === coordinates.lng) {
+    const { mapVisible } = this.props;
+    if (mapVisible && defaultCoordinates.lat === coordinates.lat && defaultCoordinates.lng === coordinates.lng) {
       try {
         const options = {
           enableHighAccuracy: true,
