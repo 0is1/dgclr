@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, Text } from 'rebass';
+import { Box, Tab, Text } from 'rebass';
 import colors from 'components/colors';
 
 const Styles = {
@@ -8,9 +8,8 @@ const Styles = {
     color: rgb(43, 43, 43);
     width: 100%;
   `,
-  HeaderLink: styled.span`
+  HeaderLink: styled(Text)`
     display: block;
-    font-size: 1rem;
     color: ${colors.text};
     line-height: 1.5;
     cursor: pointer;
@@ -31,6 +30,12 @@ const Styles = {
   LI: styled.li`
     line-height: 1.35;
     list-style: ${props => (props.listStyle ? props.listStyle : 'inherit')};
+  `,
+  Tab: styled(Tab)`
+    cursor: pointer;
+    &:hover {
+      border-color: ${colors.border};
+    }
   `,
 };
 
