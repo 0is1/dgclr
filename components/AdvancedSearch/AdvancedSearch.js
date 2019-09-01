@@ -2,58 +2,59 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
-import Link from 'next/link';
 import { Box } from 'rebass';
 import type { State as ReduxState } from 'lib/types';
 import AdvancedSearchInputs from './AdvancedSearchInputs';
 import AdvancedSearchQuery from './AdvancedSearchQuery';
-import { getCurrentAdvancedFilter } from './selectors';
+import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from './selectors';
 import Styles from './AdvancedSearch.styles';
 
-const { TextSearchLink, Wrapper } = Styles;
+const { Wrapper } = Styles;
 const FILTER_UPDATED = 'FILTER_UPDATED';
 
 type Props = {};
-type MapStateToProps = { filter: string };
+type MapStateToProps = { filter: string, mapChecked: boolean };
 type MapDispatchToProps = {};
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 class AdvancedSearch extends PureComponent<CombinedProps> {
   componentDidMount() {
-    const { pathname, query } = Router;
+    const { query } = Router;
     const { filter } = this.props;
     if (query && Object.keys(query).length === 0 && filter) {
-      const href = `${pathname}?q=${filter}`;
-      Router.push(href, href, { shallow: true });
+      this.updateUrlQuery();
     }
   }
 
   componentDidUpdate(prevProps: CombinedProps, prevState: any, snapshot: any) {
     if (snapshot === FILTER_UPDATED) {
-      const { filter } = this.props;
-      const { pathname } = Router;
-      const href = `${pathname}?q=${filter}`;
-      Router.push(href, href, { shallow: true });
+      this.updateUrlQuery();
     }
   }
 
   getSnapshotBeforeUpdate(prevProps: CombinedProps) {
-    const { filter } = this.props;
-    if (prevProps.filter !== filter) {
+    const { filter, mapChecked } = this.props;
+    if (prevProps.filter !== filter || mapChecked !== prevProps.mapChecked) {
       return FILTER_UPDATED;
     }
     return null;
   }
+
+  updateUrlQuery = () => {
+    const { pathname } = Router;
+    const { filter, mapChecked } = this.props;
+    const filterObject = JSON.parse(filter);
+    const urlFilter = { ...filterObject, mapChecked };
+    const href = `${pathname}?q=${encodeURIComponent(JSON.stringify(urlFilter))}`;
+    Router.push(href, href, { shallow: true });
+  };
 
   render() {
     const { filter } = this.props;
     return (
       <Wrapper>
         <Box style={{ position: 'relative' }} m="1rem auto" px="2rem" width={[1, 1, 1, 0.7]}>
-          <Link href="/">
-            <TextSearchLink>Tekstihaku</TextSearchLink>
-          </Link>
           <AdvancedSearchInputs />
           <AdvancedSearchQuery filter={JSON.parse(filter)} />
         </Box>
@@ -63,6 +64,7 @@ class AdvancedSearch extends PureComponent<CombinedProps> {
 }
 
 const mapStateToProps = (state: ReduxState): MapStateToProps => ({
+  mapChecked: isAdvancedSearchMapVisible(state),
   filter: getCurrentAdvancedFilter(state),
 });
 
