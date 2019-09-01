@@ -7,6 +7,7 @@ import {
   setCurrentAdvancedSearchFilter,
   setFilter,
   toggleAdvancedSearchMap,
+  toggleAdvancedSearchInputs,
 } from './actions';
 
 describe('SearchContainer actions', () => {
@@ -36,5 +37,15 @@ describe('SearchContainer actions', () => {
     const zoom = 10;
     const expected = { type: actionTypes.SET_ADVANCED_MAP_ZOOM, zoom };
     expect(setAdvancedSearchMapZoom(zoom)).toEqual(expected);
+  });
+  it('Return valid action from toggleAdvancedSearchInputs (true)', () => {
+    const open = true;
+    const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS, open };
+    expect(toggleAdvancedSearchInputs(open)).toEqual(expected);
+  });
+  it('Return valid action from toggleAdvancedSearchInputs (false)', () => {
+    const open = false;
+    const expected = { type: actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS, open };
+    expect(toggleAdvancedSearchInputs(open)).toEqual(expected);
   });
 });

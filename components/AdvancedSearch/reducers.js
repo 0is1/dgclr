@@ -4,7 +4,7 @@ import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 import { actionTypes } from './actions';
 
 export const initialState = {
-  advancedSearchOpen: false,
+  allAdvancedSearchInputsOpen: false,
   queries: {},
   advancedQueries: {
     rating: [],
@@ -43,6 +43,10 @@ const reducer = createReducer({
   [actionTypes.SET_ADVANCED_MAP_ZOOM]: (state, action) => {
     const { zoom } = action;
     return { ...state, advancedSearchMapZoom: zoom };
+  },
+  [actionTypes.TOGGLE_ADVANCED_SEARCH_INPUTS]: (state, action) => {
+    const { open } = action;
+    return { ...state, allAdvancedSearchInputsOpen: open };
   },
 });
 

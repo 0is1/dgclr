@@ -4,7 +4,7 @@ import {
   getCurrentAdvancedFilter,
   getFilterTypeData,
   isAdvancedSearchMapVisible,
-  isAdvancedSearchOpen,
+  isAllAdvancedSearchInputsOpen,
   latestAdvancedQuery,
 } from './selectors';
 
@@ -37,16 +37,16 @@ describe('SearchContainer selectors', () => {
       expect(result).toEqual(query);
     });
   });
-  describe('isAdvancedSearchOpen', () => {
-    it('Return isAdvancedSearchOpen result with initialState', () => {
-      const result = isAdvancedSearchOpen(DEFAULT_STATE);
+  describe('isAllAdvancedSearchInputsOpen', () => {
+    it('Return isAllAdvancedSearchInputsOpen result with initialState', () => {
+      const result = isAllAdvancedSearchInputsOpen(DEFAULT_STATE);
       expect(result).toEqual(false);
     });
-    it('Return isAdvancedSearchOpen result with return value', () => {
+    it('Return isAllAdvancedSearchInputsOpen result with return value', () => {
       const open = true;
-      const result = isAdvancedSearchOpen({
+      const result = isAllAdvancedSearchInputsOpen({
         ...DEFAULT_STATE,
-        advancedSearch: { advancedSearchOpen: open },
+        advancedSearch: { allAdvancedSearchInputsOpen: open },
       });
       expect(result).toEqual(open);
     });
