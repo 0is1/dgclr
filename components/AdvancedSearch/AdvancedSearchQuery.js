@@ -8,6 +8,7 @@ import { differenceBy, size } from 'lodash';
 import { Box } from 'rebass';
 import { GoChevronRight } from 'react-icons/go';
 import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
+import { COURSE_QUERY } from 'lib/constants';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
@@ -122,49 +123,7 @@ const mapDispatchToProps = (dispatch: Function) => ({
 const SEARCH_COURSES = gql`
   query AdvancedCoursesQuery($filter: CourseQueryFilterInput!) {
     courses(filter: $filter, limit: 150) {
-      _id
-      name
-      description
-      slug
-      courseInfo {
-        basketType
-        teeType
-        infoSignType
-        surfaceShapeTypes
-        courseTypes
-        mapUrl
-        founded
-        maintenanceCycle
-        rangeMaster
-        courseDesigner
-        fee {
-          amount
-          currency
-          value
-        }
-      }
-      locationInfo {
-        address
-        city
-        zip
-        location {
-          coordinates
-        }
-      }
-      layouts {
-        name
-        mapUrl
-        rating
-        holes {
-          par
-          length {
-            foot
-            meter
-          }
-        }
-        holeCount
-        totalPar
-      }
+      ${COURSE_QUERY}
     }
   }
 `;

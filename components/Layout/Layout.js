@@ -49,20 +49,25 @@ const Layout = ({ active, layout }: Props) => {
           {`${layout.holeCount}`}
         </BaseText>
       )}
+      {layout.holeAverageLength && (
+        <BaseText>
+          <Strong>Väylien keskipituus: </Strong>
+          {`${layout.holeAverageLength.meter}m`}
+        </BaseText>
+      )}
       {layout.totalPar && (
         <BaseText>
           <Strong>Radan par: </Strong>
           {`${layout.totalPar}`}
         </BaseText>
       )}
-      {holeData
-        && holeData.length > 0 && (
-          <React.Fragment>
-            <BaseText>
-              <Strong>Radan väylät: </Strong>
-            </BaseText>
-            <OL>{holeData}</OL>
-          </React.Fragment>
+      {holeData && holeData.length > 0 && (
+        <React.Fragment>
+          <BaseText>
+            <Strong>Radan väylät: </Strong>
+          </BaseText>
+          <OL>{holeData}</OL>
+        </React.Fragment>
       )}
     </Box>
   );
