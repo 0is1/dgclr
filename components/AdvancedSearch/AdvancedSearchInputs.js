@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Box, Flex, Text } from 'rebass';
+import {
+  Box, Flex, Label, Text,
+} from 'rebass';
 import update from 'updeep';
 import { omit, size } from 'lodash';
 
@@ -13,12 +15,17 @@ import CourseTypeSelect from 'components/Select/CourseTypeSelect';
 import AdvancedSearchMap from 'components/Map/AdvancedSearchMap';
 import Toggle from 'components/Toggle';
 import colors from 'components/colors';
+import Input from 'components/Input';
 import type { CoordinatesObject, State } from 'lib/types';
 import { convertMetersToKilometers } from 'helpers/utils';
 import { ADVANCED_NEARBY, ADVANCED_COURSE_INFO } from 'lib/constants';
 import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import RebassComponents from 'components/RebassComponents';
-import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible, isAllAdvancedSearchInputsOpen } from './selectors';
+import {
+  getCurrentAdvancedFilter,
+  isAdvancedSearchMapVisible,
+  isAllAdvancedSearchInputsOpen,
+} from './selectors';
 import {
   setCurrentAdvancedSearchFilter,
   toggleAdvancedSearchMap,
@@ -30,9 +37,17 @@ const { Divider } = RebassComponents;
 const { FadeInBox } = Styles;
 
 type Props = {};
-type MapStateToProps = { filter: string, mapChecked: boolean, allInputsOpen: boolean };
+type MapStateToProps = {
+  filter: string,
+  mapChecked: boolean,
+  allInputsOpen: boolean,
+};
 
-type MapDispatchToProps = { setFilter: Function, toggleMapVisibility: Function, toggleAdvancedSearchInputs: Function };
+type MapDispatchToProps = {
+  setFilter: Function,
+  toggleMapVisibility: Function,
+  toggleAdvancedSearchInputs: Function,
+};
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 type FilterType = { courseInfo: {} };
@@ -58,7 +73,9 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onRatingChange: ', rating);
     const filter = this.getParsedFilter();
     // console.log('onRatingChange filter: ', filterData);
-    const newFilter = rating.length > 0 ? update({ rating }, filter) : omit(filter, [SELECT_FILTER_NAMES.rating.filterName]);
+    const newFilter = rating.length > 0
+      ? update({ rating }, filter)
+      : omit(filter, [SELECT_FILTER_NAMES.rating.filterName]);
     this.setFilterData(newFilter);
   };
 
@@ -67,7 +84,12 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onBasketTypeChange filter: ', filter);
     const newFilter = basketType.length > 0
       ? update({ courseInfo: { basketType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.basketType.filterName]) };
+      : {
+        ...filter,
+        courseInfo: omit(filter.courseInfo, [
+          SELECT_FILTER_NAMES.basketType.filterName,
+        ]),
+      };
     this.setFilterData(newFilter);
   };
 
@@ -76,7 +98,12 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('onTeeTypeChange filter: ', filter);
     const newFilter = teeType.length > 0
       ? update({ courseInfo: { teeType } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.teeType.filterName]) };
+      : {
+        ...filter,
+        courseInfo: omit(filter.courseInfo, [
+          SELECT_FILTER_NAMES.teeType.filterName,
+        ]),
+      };
     this.setFilterData(newFilter);
   };
 
@@ -85,7 +112,12 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('surfaceType filter: ', filter);
     const newFilter = surfaceShapeTypes.length > 0
       ? update({ courseInfo: { surfaceShapeTypes } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.surfaceShapeTypes.filterName]) };
+      : {
+        ...filter,
+        courseInfo: omit(filter.courseInfo, [
+          SELECT_FILTER_NAMES.surfaceShapeTypes.filterName,
+        ]),
+      };
     this.setFilterData(newFilter);
   };
 
@@ -94,11 +126,19 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     // console.log('courseTypes filter: ', filter);
     const newFilter = courseTypes.length > 0
       ? update({ courseInfo: { courseTypes } }, filter)
-      : { ...filter, courseInfo: omit(filter.courseInfo, [SELECT_FILTER_NAMES.courseTypes.filterName]) };
+      : {
+        ...filter,
+        courseInfo: omit(filter.courseInfo, [
+          SELECT_FILTER_NAMES.courseTypes.filterName,
+        ]),
+      };
     this.setFilterData(newFilter);
   };
 
-  onMapSearchChange = (data: { coordinates: CoordinatesObject, radius: number }) => {
+  onMapSearchChange = (data: {
+    coordinates: CoordinatesObject,
+    radius: number,
+  }) => {
     const filter = this.getParsedFilter();
     //  list the longitude first and then latitude https://docs.mongodb.com/manual/reference/geojson/#geojson-point
     const nearby = data.coordinates
@@ -129,6 +169,10 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     toggleAdvancedSearchInputs(!allInputsOpen);
   };
 
+  onHoleAverageLengthChange = (values: Array<number>) => {
+    console.log('handle change: ', values);
+  };
+
   render() {
     const { allInputsOpen, mapChecked } = this.props;
     return (
@@ -137,27 +181,74 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           Edistynyt haku (varhaisessa kehitysvaiheessa)
         </Text>
         <Flex flexWrap="wrap">
-          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+          <Box
+            pr={[0, 0, '.5rem', '.5rem']}
+            mb=".75rem"
+            width={[1, 1, 1 / 2, 1 / 2]}
+          >
             <RatingSelect onChange={this.onRatingChange} />
           </Box>
-          <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+          <Box
+            pr={[0, 0, '.5rem', '.5rem']}
+            mb=".75rem"
+            width={[1, 1, 1 / 2, 1 / 2]}
+          >
             <CourseTypeSelect onChange={this.onCourseTypeChange} />
           </Box>
+          <Box
+            pr={[0, 0, '.5rem', '.5rem']}
+            mb=".75rem"
+            width={[1, 1, 1 / 2, 1 / 2]}
+          >
+            <Label>Väylien keskipituus:</Label>
+            <Input
+              onChange={this.onHoleAverageLengthChange}
+              options={{
+                type: 'slider',
+                defaultValues: [10, 300],
+                domain: [0, 300],
+                step: 10,
+              }}
+            />
+          </Box>
           <FadeInBox show={allInputsOpen}>
-            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+            <Box
+              pr={[0, 0, '.5rem', '.5rem']}
+              mb=".75rem"
+              width={[1, 1, 1 / 2, 1 / 2]}
+            >
               <BasketTypeSelect onChange={this.onBasketTypeChange} />
             </Box>
-            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+            <Box
+              pr={[0, 0, '.5rem', '.5rem']}
+              mb=".75rem"
+              width={[1, 1, 1 / 2, 1 / 2]}
+            >
               <TeeTypeSelect onChange={this.onTeeTypeChange} />
             </Box>
-            <Box pr={[0, 0, '.5rem', '.5rem']} mb=".75rem" width={[1, 1, 1 / 2, 1 / 2]}>
+            <Box
+              pr={[0, 0, '.5rem', '.5rem']}
+              mb=".75rem"
+              width={[1, 1, 1 / 2, 1 / 2]}
+            >
               <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
             </Box>
           </FadeInBox>
-          <Toggle label="Näytä kaikki valinnat:" checked={allInputsOpen} handleOnChange={this.toggleAdvancedSearchInputs} />
+          <Toggle
+            label="Näytä kaikki valinnat:"
+            checked={allInputsOpen}
+            handleOnChange={this.toggleAdvancedSearchInputs}
+          />
           <Box mb=".75rem" width={[1]}>
-            <Toggle label="Käytä karttahakua:" checked={mapChecked} handleOnChange={this.handleMapToggle} />
-            <AdvancedSearchMap mapVisible={mapChecked} handleChange={this.onMapSearchChange} />
+            <Toggle
+              label="Käytä karttahakua:"
+              checked={mapChecked}
+              handleOnChange={this.handleMapToggle}
+            />
+            <AdvancedSearchMap
+              mapVisible={mapChecked}
+              handleChange={this.onMapSearchChange}
+            />
           </Box>
         </Flex>
         <Divider w={1} borderColor={colors.info} />
