@@ -170,7 +170,10 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
   };
 
   onHoleAverageLengthChange = (values: Array<number>) => {
-    console.log('handle change: ', values);
+    const filter = this.getParsedFilter();
+    const [min, max] = values;
+    const newFilter = update({ holeAverageLength: { min, max } }, filter);
+    this.setFilterData(newFilter);
   };
 
   render() {
@@ -205,8 +208,8 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
               onChange={this.onHoleAverageLengthChange}
               options={{
                 type: 'slider',
-                defaultValues: [10, 300],
-                domain: [0, 300],
+                defaultValues: [40, 180],
+                domain: [1, 180],
                 step: 10,
               }}
             />
