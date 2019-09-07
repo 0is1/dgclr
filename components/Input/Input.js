@@ -2,12 +2,19 @@
 import React, { PureComponent } from 'react';
 import colors from 'components/colors';
 import type { Event } from 'lib/types';
+import Slider from './Slider';
 import Styles from './Input.styles';
 
 type Props = {
   focusOnMount?: boolean,
   onChange: Function,
-  options?: {},
+  options?: {
+    max?: number,
+    min?: number,
+    name?: string,
+    step?: string,
+    type: string,
+  },
   placeholder?: string,
   value?: string,
 };
@@ -37,8 +44,23 @@ class InputComponent extends PureComponent<Props> {
     onChange(value);
   };
 
+  onSliderChange = (values: Array<number>) => {
+    const { onChange } = this.props;
+    onChange(values);
+  };
+
   render() {
     const { options, placeholder, value } = this.props;
+    const { type } = options;
+    if (type === 'slider') {
+      return (
+        <Slider
+          {...options}
+          ref={this.ref}
+          handleOnChange={this.onSliderChange}
+        />
+      );
+    }
     return (
       <Input
         {...options}
