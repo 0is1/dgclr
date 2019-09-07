@@ -28,11 +28,16 @@ type State = {
 };
 
 class SliderContainer extends PureComponent<Props, State> {
+  static defaultProps = {
+    reversed: false,
+    step: 5,
+  };
+
   state = {
     values: null,
   };
 
-  onChange = (values) => {
+  onChange = (values: Array<number>) => {
     const { handleOnChange } = this.props;
     // TODO: values from redux props
     this.setState({ values });
@@ -54,7 +59,7 @@ class SliderContainer extends PureComponent<Props, State> {
           domain={domain}
           reversed={reversed}
           rootStyle={sliderStyle}
-          onUpdate={this.onUpdate}
+          // onUpdate={this.onUpdate}
           onChange={this.onChange}
           values={values}
         >

@@ -33,7 +33,7 @@ const Tick = ({ tick, count, format }: Props) => (
         left: `${tick.percent}%`,
       }}
     >
-      {format(tick.value)}
+      {typeof format === 'function' && format(tick.value)}
     </div>
   </div>
 );

@@ -12,8 +12,10 @@ type Props = {
     max?: number,
     min?: number,
     name?: string,
-    step?: string,
+    step?: string | number,
     type: string,
+    defaultValues?: Array<number>,
+    domain?: Array<number>,
   },
   placeholder?: string,
   value?: string,
@@ -51,15 +53,19 @@ class InputComponent extends PureComponent<Props> {
 
   render() {
     const { options, placeholder, value } = this.props;
-    const { type } = options;
+    const { type = null } = options || {};
     if (type === 'slider') {
-      return (
-        <Slider
-          {...options}
-          ref={this.ref}
-          handleOnChange={this.onSliderChange}
-        />
-      );
+      const { defaultValues = null, domain = null, ...restProps } = options || {};
+      if (defaultValues && domain) {
+        return (
+          <Slider
+            defaultValues={defaultValues}
+            domain={domain}
+            {...restProps}
+            handleOnChange={this.onSliderChange}
+          />
+        );
+      }
     }
     return (
       <Input
