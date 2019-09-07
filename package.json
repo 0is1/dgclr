@@ -83,6 +83,7 @@
     "pm2": "^3.5.1",
     "react": "^16.9.0",
     "react-apollo": "^3.0.1",
+    "react-compound-slider": "^2.2.0",
     "react-dom": "^16.9.0",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.1",
