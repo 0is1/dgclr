@@ -1,5 +1,8 @@
 // @flow
 import React from 'react';
+import Styles from './Tick.styles';
+
+const { TickWrapper, TickComponent } = Styles;
 
 type Props = {
   tick: {
@@ -11,31 +14,12 @@ type Props = {
   format?: Function,
 };
 const Tick = ({ tick, count, format }: Props) => (
-  <div>
-    <div
-      style={{
-        position: 'absolute',
-        marginTop: 14,
-        width: 1,
-        height: 5,
-        backgroundColor: 'rgb(200,200,200)',
-        left: `${tick.percent}%`,
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        marginTop: 22,
-        fontSize: 10,
-        textAlign: 'center',
-        marginLeft: `${-(100 / count) / 2}%`,
-        width: `${100 / count}%`,
-        left: `${tick.percent}%`,
-      }}
-    >
+  <>
+    <TickWrapper percent={tick.percent} />
+    <TickComponent count={count} percent={tick.percent}>
       {typeof format === 'function' && format(tick.value)}
-    </div>
-  </div>
+    </TickComponent>
+  </>
 );
 
 Tick.defaultProps = {
