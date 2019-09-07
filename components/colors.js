@@ -1,5 +1,6 @@
 export default {
   border: '#c84b57',
+  gray: '#8a8a8a',
   green: '#44f46c',
   greenAlpha: 'rgba(68, 244, 108, .25)',
   hover: '#544c8e',
