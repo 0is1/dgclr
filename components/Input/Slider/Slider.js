@@ -1,8 +1,14 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import {
   Slider, Rail, Handles, Tracks, Ticks,
 } from 'react-compound-slider';
+import { connect } from 'react-redux';
+import { Label } from 'rebass';
+import { setFilter as setFilterFunc } from 'components/AdvancedSearch/actions';
+import { getFilterTypeData } from 'components/AdvancedSearch/selectors';
+import type { State, SliderFilterData } from 'lib/types';
+import { isArrayWithLength } from 'helpers/utils';
 import SliderRail from './SliderRail';
 import Handle from './Handle';
 import Track from './Track';
@@ -16,43 +22,51 @@ const sliderStyle = {
 };
 
 type Props = {
-  defaultValues: Array<number>,
+  initialValues: SliderFilterData,
   domain: Array<number>,
+  filterName: string,
   handleOnChange: Function,
   reversed?: boolean,
   step?: number,
 };
 
-type State = {
-  values: ?Array<number>,
+type MapStateToProps = {
+  currentValue: SliderFilterData,
 };
 
-class SliderContainer extends PureComponent<Props, State> {
+type MapDispatchToProps = {
+  setFilter: Function,
+};
+
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+class SliderContainer extends Component<CombinedProps> {
   static defaultProps = {
     reversed: false,
     step: 5,
   };
 
-  state = {
-    values: null,
-  };
-
   onChange = (values: Array<number>) => {
-    const { handleOnChange } = this.props;
-    // TODO: values from redux props
-    this.setState({ values });
+    const { filterName, handleOnChange, setFilter } = this.props;
     handleOnChange(values);
+    setFilter(filterName, values);
   };
 
   render() {
-    const { values: updatedValues } = this.state;
     const {
-      domain, defaultValues, reversed, step,
+      currentValue, domain, initialValues, reversed, step,
     } = this.props;
-    const values = updatedValues || defaultValues;
+    const values = isArrayWithLength(currentValue)
+      ? currentValue
+      : initialValues;
     const tracksLeftRight = domain.length > 1 ? { right: false, left: false } : { right: false };
+    const currentValues = values.join(' - ');
     return (
       <>
+        <Label>
+          {currentValues}
+m
+        </Label>
         <Slider
           mode={2} // mode 1 simple, 2 prevent crossing, 3 pushable
           step={step}
@@ -113,4 +127,13 @@ SliderContainer.defaultProps = {
   step: 5,
 };
 
-export default SliderContainer;
+const mapStateToProps = (state: State, ownProps: Props): MapStateToProps => ({
+  currentValue: getFilterTypeData(state, ownProps.filterName),
+});
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
+  setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
+});
+export default connect<CombinedProps, Props, any, any, any, Function>(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SliderContainer);
