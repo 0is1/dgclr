@@ -11,6 +11,9 @@ import type { ValueType } from 'react-select/src/types';
 import type { State } from 'lib/types';
 import { RATING_OPTIONS } from 'lib/constants';
 import { SELECT_FILTER_NAMES } from './constants';
+import Styles from './Select.styles';
+
+const { ZIndexContainer } = Styles;
 
 type Props = { onChange: Function };
 type MapStateToProps = { defaultValue: any };
@@ -36,10 +39,16 @@ class RatingSelect extends Component<CombinedProps> {
   render() {
     const { defaultValue } = this.props;
     return (
-      <React.Fragment>
+      <ZIndexContainer>
         <Label>Radan luokitus:</Label>
-        <Select defaultValue={defaultValue} isMulti options={RATING_OPTIONS} onChange={this.onRatingChange} placeholder="Radan luokitus" />
-      </React.Fragment>
+        <Select
+          defaultValue={defaultValue}
+          isMulti
+          options={RATING_OPTIONS}
+          onChange={this.onRatingChange}
+          placeholder="Radan luokitus"
+        />
+      </ZIndexContainer>
     );
   }
 }
