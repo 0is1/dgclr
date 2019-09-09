@@ -19,6 +19,7 @@ import Input from 'components/Input';
 import type { CoordinatesObject, State } from 'lib/types';
 import { convertMetersToKilometers } from 'helpers/utils';
 import { ADVANCED_NEARBY, ADVANCED_COURSE_INFO } from 'lib/constants';
+import { INPUT_FILTER_NAMES } from 'components/Input/constants';
 import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import RebassComponents from 'components/RebassComponents';
 import {
@@ -44,7 +45,7 @@ type MapStateToProps = {
 };
 
 type MapDispatchToProps = {
-  setFilter: Function,
+  setAdvancedSearchFilter: Function,
   toggleMapVisibility: Function,
   toggleAdvancedSearchInputs: Function,
 };
@@ -58,10 +59,10 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     return !filter.length ? {} : JSON.parse(filter);
   };
 
-  setFilterData = (newFilter: FilterType) => {
-    const { setFilter } = this.props;
+  setAdvancedSearchFilterData = (newFilter: FilterType) => {
+    const { setAdvancedSearchFilter } = this.props;
     // console.log('newFilter: ', this.cleanCourseInfo(newFilter));
-    setFilter(JSON.stringify(this.cleanCourseInfo(newFilter)));
+    setAdvancedSearchFilter(JSON.stringify(this.cleanCourseInfo(newFilter)));
   };
 
   cleanCourseInfo = (newFilter: FilterType) => {
@@ -76,7 +77,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
     const newFilter = rating.length > 0
       ? update({ rating }, filter)
       : omit(filter, [SELECT_FILTER_NAMES.rating.filterName]);
-    this.setFilterData(newFilter);
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   onBasketTypeChange = (basketType: string) => {
@@ -90,7 +91,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           SELECT_FILTER_NAMES.basketType.filterName,
         ]),
       };
-    this.setFilterData(newFilter);
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   onTeeTypeChange = (teeType: string) => {
@@ -104,7 +105,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           SELECT_FILTER_NAMES.teeType.filterName,
         ]),
       };
-    this.setFilterData(newFilter);
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   onSurfaceTypeChange = (surfaceShapeTypes: string) => {
@@ -118,7 +119,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           SELECT_FILTER_NAMES.surfaceShapeTypes.filterName,
         ]),
       };
-    this.setFilterData(newFilter);
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   onCourseTypeChange = (courseTypes: string) => {
@@ -132,7 +133,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
           SELECT_FILTER_NAMES.courseTypes.filterName,
         ]),
       };
-    this.setFilterData(newFilter);
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   onMapSearchChange = (data: {
@@ -147,7 +148,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
       coordinates: [data.coordinates.lng, data.coordinates.lat],
     };
     if (nearby) {
-      this.setFilterData(update({ nearby }, filter));
+      this.setAdvancedSearchFilterData(update({ nearby }, filter));
       return;
     }
     this.omitMapFilter();
@@ -155,7 +156,7 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
 
   omitMapFilter = () => {
     const filter = this.getParsedFilter();
-    this.setFilterData(omit(filter, [ADVANCED_NEARBY]));
+    this.setAdvancedSearchFilterData(omit(filter, [ADVANCED_NEARBY]));
   };
 
   handleMapToggle = (mapChecked: boolean) => {
@@ -172,8 +173,11 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
   onHoleAverageLengthChange = (values: Array<number>) => {
     const filter = this.getParsedFilter();
     const [min, max] = values;
-    const newFilter = update({ holeAverageLength: { min, max } }, filter);
-    this.setFilterData(newFilter);
+    const newFilter = update(
+      { [INPUT_FILTER_NAMES.holeAverageLength.filterName]: { min, max } },
+      filter,
+    );
+    this.setAdvancedSearchFilterData(newFilter);
   };
 
   render() {
@@ -208,9 +212,10 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
               onChange={this.onHoleAverageLengthChange}
               options={{
                 type: 'slider',
-                defaultValues: [40, 180],
-                domain: [1, 180],
+                initialValues: [40, 180],
+                domain: [10, 180],
                 step: 10,
+                filterName: INPUT_FILTER_NAMES.holeAverageLength.filterName,
               }}
             />
           </Box>
@@ -266,7 +271,7 @@ const mapStateToProps = (state: State): MapStateToProps => ({
   mapChecked: isAdvancedSearchMapVisible(state),
 });
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
-  setFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
+  setAdvancedSearchFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
   toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
   toggleAdvancedSearchInputs: (visible: boolean) => dispatch(toggleAdvancedSearchInputsFunc(visible)),
 });
