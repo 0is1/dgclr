@@ -11,7 +11,7 @@ type Props = {
     percent: number,
   },
   count: number,
-  format?: Function,
+  format: Function,
 };
 const Tick = ({ tick, count, format }: Props) => (
   <>
@@ -21,9 +21,5 @@ const Tick = ({ tick, count, format }: Props) => (
     </TickComponent>
   </>
 );
-
-Tick.defaultProps = {
-  format: d => d,
-};
 
 export default Tick;
