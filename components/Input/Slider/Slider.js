@@ -25,8 +25,10 @@ type Props = {
   initialValues: SliderFilterData,
   domain: Array<number>,
   filterName: string,
+  format?: Function,
   handleOnChange: Function,
   reversed?: boolean,
+  showCurrentValues?: boolean,
   step?: number,
 };
 
@@ -40,9 +42,11 @@ type MapDispatchToProps = {
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
-class SliderContainer extends Component<CombinedProps> {
+export class SliderContainer extends Component<CombinedProps> {
   static defaultProps = {
+    format: d => d,
     reversed: false,
+    showCurrentValues: true,
     step: 5,
   };
 
@@ -54,7 +58,13 @@ class SliderContainer extends Component<CombinedProps> {
 
   render() {
     const {
-      currentValue, domain, initialValues, reversed, step,
+      currentValue,
+      domain,
+      format,
+      initialValues,
+      reversed,
+      showCurrentValues,
+      step,
     } = this.props;
     const values = isArrayWithLength(currentValue)
       ? currentValue
@@ -63,10 +73,12 @@ class SliderContainer extends Component<CombinedProps> {
     const currentValues = values.join(' - ');
     return (
       <>
+        {showCurrentValues && (
         <Label>
           {currentValues}
 m
         </Label>
+        )}
         <Slider
           mode={2} // mode 1 simple, 2 prevent crossing, 3 pushable
           step={step}
@@ -112,7 +124,12 @@ m
             {({ ticks }) => (
               <div className="slider-ticks">
                 {ticks.map(tick => (
-                  <Tick key={tick.id} tick={tick} count={ticks.length} />
+                  <Tick
+                    key={tick.id}
+                    tick={tick}
+                    count={ticks.length}
+                    format={format}
+                  />
                 ))}
               </div>
             )}
@@ -123,7 +140,9 @@ m
   }
 }
 SliderContainer.defaultProps = {
+  format: d => d,
   reversed: false,
+  showCurrentValues: true,
   step: 5,
 };
 
