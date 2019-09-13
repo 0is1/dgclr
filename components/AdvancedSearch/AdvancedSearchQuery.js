@@ -32,7 +32,7 @@ type Props = {
   setSearchQuery: Function,
 };
 
-class AdvancedSearchQuery extends Component<Props> {
+export class AdvancedSearchQuery extends Component<Props> {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot !== null) {
       const { data = {} } = this.props;
@@ -53,7 +53,9 @@ class AdvancedSearchQuery extends Component<Props> {
     // console.log('courses: ', courses);
     // console.log('prevCourses: ', prevCourses);
     if (
-      (courses && courses.length && differenceBy(courses, prevCourses, '_id').length > 0)
+      (courses
+        && courses.length
+        && differenceBy(courses, prevCourses, '_id').length > 0)
       || (!courses.length && stringifyFilter !== latestQuery)
       || (courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
     ) {

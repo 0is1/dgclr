@@ -1,4 +1,4 @@
 // @flow
-import AdvancedSearch from './AdvancedSearch';
+import AdvancedSearchComponent from './AdvancedSearch';
 
-export default AdvancedSearch;
+export default AdvancedSearchComponent;
