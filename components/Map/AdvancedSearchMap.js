@@ -44,7 +44,7 @@ type Props = {
   mapVisible: boolean,
 };
 type MapStateToProps = {
-  defaultValue: Array<{ coordinates: CoordinatesObject, radius: string }>,
+  defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
   queryResults: Array<?Course>,
   zoom: number,
 };
@@ -55,7 +55,7 @@ type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 type State = {
   coordinates: CoordinatesObject,
-  radius: string,
+  radius: number,
   waitingLocation: boolean,
   error: ?string,
 };
@@ -70,7 +70,7 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     error: null,
   };
 
-  debounceRadius = debounce((radius: string) => {
+  debounceRadius = debounce((radius: number) => {
     this.updateFilter({ radius });
   }, 300);
 
@@ -83,7 +83,7 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     initialValues: [20000],
     domain: [MAP_RADIUS_DISTANCE_MIN, MAP_RADIUS_DISTANCE_MAX],
     filterName: MAP_SEARCH_RADIUS_FILTER,
-    format: value => parseInt(value / 1000, 10),
+    format: (value: number): number => parseInt(value / 1000, 10),
     showCurrentValues: false,
   };
 
@@ -172,7 +172,7 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     this.setState({ coordinates });
   };
 
-  onRadiusChange = (radius: string) => {
+  onRadiusChange = (radius: number) => {
     this.setState({ radius });
     this.debounceRadius(radius);
   };

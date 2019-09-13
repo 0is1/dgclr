@@ -44,7 +44,7 @@ type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 export class SliderContainer extends Component<CombinedProps> {
   static defaultProps = {
-    format: d => d,
+    format: (d: number): number => d,
     reversed: false,
     showCurrentValues: true,
     step: 5,
@@ -140,7 +140,7 @@ m
   }
 }
 SliderContainer.defaultProps = {
-  format: d => d,
+  format: (d: number): number => d,
   reversed: false,
   showCurrentValues: true,
   step: 5,
