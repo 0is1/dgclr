@@ -53,7 +53,7 @@ type MapDispatchToProps = {
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 type FilterType = { courseInfo: {} };
 
-class AdvancedSearchInputs extends Component<CombinedProps> {
+export class AdvancedSearchInputs extends Component<CombinedProps> {
   getParsedFilter = () => {
     const { filter } = this.props;
     return !filter.length ? {} : JSON.parse(filter);
@@ -220,27 +220,31 @@ class AdvancedSearchInputs extends Component<CombinedProps> {
             />
           </Box>
           <FadeInBox show={allInputsOpen}>
-            <Box
-              pr={[0, 0, '.5rem', '.5rem']}
-              mb=".75rem"
-              width={[1, 1, 1 / 2, 1 / 2]}
-            >
-              <BasketTypeSelect onChange={this.onBasketTypeChange} />
-            </Box>
-            <Box
-              pr={[0, 0, '.5rem', '.5rem']}
-              mb=".75rem"
-              width={[1, 1, 1 / 2, 1 / 2]}
-            >
-              <TeeTypeSelect onChange={this.onTeeTypeChange} />
-            </Box>
-            <Box
-              pr={[0, 0, '.5rem', '.5rem']}
-              mb=".75rem"
-              width={[1, 1, 1 / 2, 1 / 2]}
-            >
-              <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
-            </Box>
+            {allInputsOpen && (
+              <>
+                <Box
+                  pr={[0, 0, '.5rem', '.5rem']}
+                  mb=".75rem"
+                  width={[1, 1, 1 / 2, 1 / 2]}
+                >
+                  <BasketTypeSelect onChange={this.onBasketTypeChange} />
+                </Box>
+                <Box
+                  pr={[0, 0, '.5rem', '.5rem']}
+                  mb=".75rem"
+                  width={[1, 1, 1 / 2, 1 / 2]}
+                >
+                  <TeeTypeSelect onChange={this.onTeeTypeChange} />
+                </Box>
+                <Box
+                  pr={[0, 0, '.5rem', '.5rem']}
+                  mb=".75rem"
+                  width={[1, 1, 1 / 2, 1 / 2]}
+                >
+                  <SurfaceTypeSelect onChange={this.onSurfaceTypeChange} />
+                </Box>
+              </>
+            )}
           </FadeInBox>
           <Toggle
             label="Näytä kaikki valinnat:"
