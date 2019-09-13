@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component Match snapshot with default props 1`] = `
+exports[`Input and Slider component Input Match snapshot with default props 1`] = `
 <input
   className="sc-eNQAEJ Inputstyles__Input-tjx6pn-0 hRDFua"
   onChange={[Function]}
@@ -8,4 +8,429 @@ exports[`Input component Match snapshot with default props 1`] = `
   type="text"
   value=""
 />
+`;
+
+exports[`Input and Slider component Slider Renders correctly with 1 Handle 1`] = `
+Array [
+  <label
+    className="sc-jKJlTe lknMeZ"
+  >
+    0
+    m
+  </label>,
+  <div
+    style={
+      Object {
+        "margin": "1rem 0 3rem",
+        "position": "relative",
+        "touchAction": "none",
+        "width": "95%",
+      }
+    }
+  >
+    <div
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": 7,
+          "cursor": "pointer",
+          "height": 42,
+          "position": "absolute",
+          "transform": "translate(0%, -50%)",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "rgba(68, 244, 108, .25)",
+          "borderRadius": 7,
+          "height": 14,
+          "pointerEvents": "none",
+          "position": "absolute",
+          "transform": "translate(0%, -50%)",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      className="slider-handles"
+    >
+      <div
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "none",
+            "cursor": "pointer",
+            "height": 42,
+            "left": "0%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 28,
+            "zIndex": 5,
+          }
+        }
+      />
+      <div
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={0}
+        role="slider"
+        style={
+          Object {
+            "backgroundColor": "#e7e6e6",
+            "borderRadius": "50%",
+            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
+            "height": 24,
+            "left": "0%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 24,
+            "zIndex": 2,
+          }
+        }
+      />
+    </div>
+    <div
+      className="slider-tracks"
+    />
+    <div
+      className="slider-ticks"
+    >
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 PsyQD"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 jhJHAa"
+      >
+        0
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 BICCJ"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 hECGgU"
+      >
+        10
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 gmMByh"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 flmmap"
+      >
+        20
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 kjLlLz"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 hIVfnV"
+      >
+        30
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 befymK"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 kLheTP"
+      >
+        40
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hjRAqZ"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 gJzmeY"
+      >
+        50
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 bKupyL"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 mxEvE"
+      >
+        60
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hsWmgI"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 iwqUjd"
+      >
+        70
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hvRoTz"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 kCvuMu"
+      >
+        80
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 IkzaP"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 dAbzWU"
+      >
+        90
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 kRbsux"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 eJxVPw"
+      >
+        100
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Input and Slider component Slider Renders correctly with 2 Handles 1`] = `
+Array [
+  <label
+    className="sc-jKJlTe lknMeZ"
+  >
+    10 - 100
+    m
+  </label>,
+  <div
+    style={
+      Object {
+        "margin": "1rem 0 3rem",
+        "position": "relative",
+        "touchAction": "none",
+        "width": "95%",
+      }
+    }
+  >
+    <div
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "borderRadius": 7,
+          "cursor": "pointer",
+          "height": 42,
+          "position": "absolute",
+          "transform": "translate(0%, -50%)",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "rgba(68, 244, 108, .25)",
+          "borderRadius": 7,
+          "height": 14,
+          "pointerEvents": "none",
+          "position": "absolute",
+          "transform": "translate(0%, -50%)",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      className="slider-handles"
+    >
+      <div
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "none",
+            "cursor": "pointer",
+            "height": 42,
+            "left": "5%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 28,
+            "zIndex": 5,
+          }
+        }
+      />
+      <div
+        aria-valuemax={200}
+        aria-valuemin={0}
+        aria-valuenow={10}
+        role="slider"
+        style={
+          Object {
+            "backgroundColor": "#e7e6e6",
+            "borderRadius": "50%",
+            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
+            "height": 24,
+            "left": "5%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 24,
+            "zIndex": 2,
+          }
+        }
+      />
+      <div
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "backgroundColor": "none",
+            "cursor": "pointer",
+            "height": 42,
+            "left": "50%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 28,
+            "zIndex": 5,
+          }
+        }
+      />
+      <div
+        aria-valuemax={200}
+        aria-valuemin={0}
+        aria-valuenow={100}
+        role="slider"
+        style={
+          Object {
+            "backgroundColor": "#e7e6e6",
+            "borderRadius": "50%",
+            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
+            "height": 24,
+            "left": "50%",
+            "position": "absolute",
+            "transform": "translate(-50%, -50%)",
+            "width": 24,
+            "zIndex": 2,
+          }
+        }
+      />
+    </div>
+    <div
+      className="slider-tracks"
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#44f46c",
+            "borderRadius": 7,
+            "cursor": "pointer",
+            "height": 14,
+            "left": "5%",
+            "position": "absolute",
+            "transform": "translate(0%, -50%)",
+            "width": "45%",
+            "zIndex": 1,
+          }
+        }
+      />
+    </div>
+    <div
+      className="slider-ticks"
+    >
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 PsyQD"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 jhJHAa"
+      >
+        0
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 BICCJ"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 hECGgU"
+      >
+        20
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 gmMByh"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 flmmap"
+      >
+        40
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 kjLlLz"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 hIVfnV"
+      >
+        60
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 befymK"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 kLheTP"
+      >
+        80
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hjRAqZ"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 gJzmeY"
+      >
+        100
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 bKupyL"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 mxEvE"
+      >
+        120
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hsWmgI"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 iwqUjd"
+      >
+        140
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 hvRoTz"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 kCvuMu"
+      >
+        160
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 IkzaP"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 dAbzWU"
+      >
+        180
+      </div>
+      <div
+        className="Tickstyles__TickWrapper-sc-191tmui-0 kRbsux"
+      />
+      <div
+        className="Tickstyles__TickComponent-sc-191tmui-1 eJxVPw"
+      >
+        200
+      </div>
+    </div>
+  </div>,
+]
 `;
