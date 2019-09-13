@@ -4,7 +4,10 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Box, Label } from 'rebass';
 import { debounce } from 'lodash';
-import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/AdvancedSearch/actions';
+import {
+  setFilter as setFilterFunc,
+  setAdvancedSearchMapZoom,
+} from 'components/AdvancedSearch/actions';
 import {
   queryResultsFromState,
   getFilterTypeData,
@@ -15,13 +18,24 @@ import Map from 'components/Map';
 import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
 import { ADVANCED_NEARBY } from 'lib/constants';
-import { convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails } from 'helpers/utils';
+import {
+  convertCoordinatesToObject,
+  convertMetersToKilometers,
+  courseAddressDetails,
+} from 'helpers/utils';
 import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
 import type {
-  Course, CoordinatesObject, CourseForMap, State as ReduxState,
+  Course,
+  CoordinatesObject,
+  CourseForMap,
+  State as ReduxState,
 } from 'lib/types';
-import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN } from './constants';
+import {
+  MAP_RADIUS_DISTANCE_MAX,
+  MAP_RADIUS_DISTANCE_MIN,
+  MAP_SEARCH_RADIUS_FILTER,
+} from './constants';
 
 const { NoResults } = AdvancedSearchQueryStyles;
 
@@ -51,7 +65,7 @@ const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
 class AdvancedSearchMap extends Component<CombinedProps, State> {
   state = {
     coordinates: defaultCoordinates,
-    radius: '20000',
+    radius: 20000,
     waitingLocation: true,
     error: null,
   };
@@ -64,14 +78,23 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     max: MAP_RADIUS_DISTANCE_MAX,
     min: MAP_RADIUS_DISTANCE_MIN,
     name: 'radius',
-    step: '1000',
-    type: 'range',
+    step: 1000,
+    type: 'slider',
+    initialValues: [20000],
+    domain: [MAP_RADIUS_DISTANCE_MIN, MAP_RADIUS_DISTANCE_MAX],
+    filterName: MAP_SEARCH_RADIUS_FILTER,
+    format: value => parseInt(value / 1000, 10),
+    showCurrentValues: false,
   };
 
   constructor(props: CombinedProps) {
     super(props);
     const { defaultValue } = props;
-    if (defaultValue.length && defaultValue[0].coordinates && defaultValue[0].radius) {
+    if (
+      defaultValue.length
+      && defaultValue[0].coordinates
+      && defaultValue[0].radius
+    ) {
       this.state = {
         coordinates: defaultValue[0].coordinates,
         radius: defaultValue[0].radius,
@@ -84,7 +107,11 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
   componentDidMount() {
     const { coordinates } = this.state;
     const { mapVisible } = this.props;
-    if (mapVisible && defaultCoordinates.lat === coordinates.lat && defaultCoordinates.lng === coordinates.lng) {
+    if (
+      mapVisible
+      && defaultCoordinates.lat === coordinates.lat
+      && defaultCoordinates.lng === coordinates.lng
+    ) {
       try {
         const options = {
           enableHighAccuracy: true,
@@ -94,16 +121,26 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
 
         const getCurrentPositionSuccess = (pos) => {
           const { coords } = pos;
-          const newCoordinates = { lat: coords.latitude, lng: coords.longitude };
+          const newCoordinates = {
+            lat: coords.latitude,
+            lng: coords.longitude,
+          };
           this.updateFilter({ coordinates: newCoordinates });
-          this.setState({ coordinates: newCoordinates, waitingLocation: false });
+          this.setState({
+            coordinates: newCoordinates,
+            waitingLocation: false,
+          });
         };
 
         const getCurrentPositionError = (err) => {
           console.warn(`ERROR(${err.code}): ${err.message}`);
           this.setState({ waitingLocation: false, error: err.message });
         };
-        navigator.geolocation.getCurrentPosition(getCurrentPositionSuccess, getCurrentPositionError, options);
+        navigator.geolocation.getCurrentPosition(
+          getCurrentPositionSuccess,
+          getCurrentPositionError,
+          options,
+        );
       } catch (e) {
         console.error('getCurrentPosition error: ', e);
 
@@ -150,7 +187,9 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
         name,
         id: _id,
         address: courseAddressDetails(locationInfo),
-        coordinates: convertCoordinatesToObject(locationInfo.location.coordinates),
+        coordinates: convertCoordinatesToObject(
+          locationInfo.location.coordinates,
+        ),
         slug,
       };
     });
@@ -176,12 +215,16 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     const props = {
       advancedSearch: true,
       coordinates,
-      data: { name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`, queryResults: filteredResults },
+      data: {
+        name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`,
+        queryResults: filteredResults,
+      },
       onDragEnd: this.onCircleDragEnd,
       onZoomChange: this.handleZoomChange,
       radius,
       zoom,
     };
+    const radiusOptions = this.inputOptions;
 
     return (
       <Fragment>
@@ -191,8 +234,15 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
           </Box>
         )}
         <Map {...props} />
-        <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
-        <Input value={radius} options={this.inputOptions} onChange={this.onRadiusChange} />
+        <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>
+          {`Maksimietäisyys (${convertMetersToKilometers(
+            parseInt(radius, 10),
+          )}km): `}
+        </Label>
+        <Input
+          options={{ ...radiusOptions, initialValues: [radius] }}
+          onChange={this.onRadiusChange}
+        />
       </Fragment>
     );
   }
