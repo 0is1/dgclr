@@ -18,6 +18,7 @@ type Props = {
     initialValues?: Array<number>,
     filterName?: string,
     domain?: Array<number>,
+    format?: Function,
   },
   placeholder?: string,
   value?: string,
