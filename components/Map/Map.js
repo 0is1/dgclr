@@ -7,7 +7,11 @@ import {
   compose, lifecycle, withProps, withStateHandlers,
 } from 'recompose';
 import {
-  withScriptjs, withGoogleMap, GoogleMap, Marker, Circle,
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  Circle,
 } from 'react-google-maps';
 import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
 import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
@@ -21,7 +25,8 @@ const QUERY_RESULTS_CHANGED = 'QUERY_RESULTS_CHANGED';
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing&key=AIzaSyCgbVaENPZQ1wOhdIyCok5yJTSVKBa6gYQ',
+    googleMapURL:
+      'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing&key=AIzaSyCgbVaENPZQ1wOhdIyCok5yJTSVKBa6gYQ',
     loadingElement: (
       <div style={{ height: '500px' }}>
         <BarLoader />
@@ -91,20 +96,35 @@ const MyMapComponent = compose(
   } = props;
   // console.log('props: ', props);
   return (
-    <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter} onZoomChanged={onZoomChanged} ref={onMapMounted}>
+    <GoogleMap
+      defaultZoom={defaultZoom}
+      defaultCenter={defaultCenter}
+      onZoomChanged={onZoomChanged}
+      ref={onMapMounted}
+    >
       {!advancedSearch && (
         <Marker position={defaultCenter} onClick={onToggleOpen}>
           {isOpen && (
-            <InfoBox onCloseClick={onToggleOpen} options={{ closeBoxURL: '', enableEventPropagation: true }}>
+            <InfoBox
+              onCloseClick={onToggleOpen}
+              options={{ closeBoxURL: '', enableEventPropagation: true }}
+            >
               <div style={{ backgroundColor: colors.info, padding: '12px' }}>
-                <div style={{ fontSize: '16px', color: '#ffffff' }}>{markerName}</div>
+                <div style={{ fontSize: '16px', color: '#ffffff' }}>
+                  {markerName}
+                </div>
               </div>
             </InfoBox>
           )}
         </Marker>
       )}
       {isArrayWithLength(markers) && (
-        <MarkerClusterer onClick={props.onMarkerClustererClick} averageCenter enableRetinaIcons gridSize={60}>
+        <MarkerClusterer
+          onClick={props.onMarkerClustererClick}
+          averageCenter
+          enableRetinaIcons
+          gridSize={60}
+        >
           {markers.map(marker => (
             <Marker
               key={marker.name}
@@ -120,9 +140,16 @@ const MyMapComponent = compose(
                   }}
                   options={{ closeBoxURL: '', enableEventPropagation: true }}
                 >
-                  <div style={{ backgroundColor: colors.info, padding: '10px' }}>
-                    <div style={{ fontSize: '13px', color: '#ffffff' }}>{`${marker.name} – ${marker.address}`}</div>
-                    <Link as={`/${marker.slug}`} href={`/course?slug=${marker.slug}`}>
+                  <div
+                    style={{ backgroundColor: colors.info, padding: '10px' }}
+                  >
+                    <div style={{ fontSize: '13px', color: '#ffffff' }}>
+                      {`${marker.name} – ${marker.address}`}
+                    </div>
+                    <Link
+                      as={`/${marker.slug}`}
+                      href={`/course?slug=${marker.slug}`}
+                    >
                       <p>Näytä rata</p>
                     </Link>
                   </div>
@@ -176,17 +203,24 @@ class Map extends PureComponent<Props, State> {
     zoom: MAP_DEFAULT_ZOOM,
   };
 
+  state = {
+    coordinates: null,
+    isMarkerShown: false,
+    markers: [],
+  };
+
   constructor(props: Props) {
     super(props);
     const { data } = props;
     const { queryResults } = data;
-    // $FlowFixMe isArrayWithLength check that this is array but flow doesn't get it
-    const markers = isArrayWithLength(queryResults) ? queryResults.map(marker => ({ ...marker, isOpen: false })) : [];
-    this.state = {
-      coordinates: null,
-      isMarkerShown: false,
-      markers,
-    };
+    if (isArrayWithLength(queryResults)) {
+      const markers = this.getMarkersFromQueryData();
+      this.state = {
+        coordinates: null,
+        isMarkerShown: false,
+        markers,
+      };
+    }
   }
 
   componentDidMount() {
@@ -195,12 +229,7 @@ class Map extends PureComponent<Props, State> {
 
   componentDidUpdate(props: Props, state: State, snapshot: ?string) {
     if (snapshot === QUERY_RESULTS_CHANGED) {
-      const { data } = this.props;
-      const { queryResults } = data;
-      // $FlowFixMe isArrayWithLength check that this is array but flow doesn't get it
-      const markers = isArrayWithLength(queryResults) ? queryResults.map(marker => ({ ...marker, isOpen: false })) : [];
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ markers });
+      this.updateMarkers();
     }
   }
 
@@ -217,6 +246,21 @@ class Map extends PureComponent<Props, State> {
     return null;
   }
 
+  getMarkersFromQueryData = () => {
+    const { data } = this.props;
+    const { queryResults } = data;
+    if (isArrayWithLength(queryResults)) {
+      // $FlowFixMe isArrayWithLength check that this is array but flow doesn't get it
+      return queryResults.map(marker => ({ ...marker, isOpen: false }));
+    }
+    return [];
+  };
+
+  updateMarkers = () => {
+    const markers = this.getMarkersFromQueryData();
+    this.setState({ markers });
+  };
+
   delayedShowMarker = () => {
     this.timeOut = setTimeout(() => {
       this.setState({ isMarkerShown: true });
@@ -226,7 +270,9 @@ class Map extends PureComponent<Props, State> {
   handleMarkerClick = (markerId: string) => {
     const { markers } = this.state;
     // eslint-disable-next-line max-len
-    const updatedMarkers = markers.map(marker => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }));
+    const updatedMarkers = markers.map(marker => (marker && marker.id === markerId
+      ? { ...marker, isOpen: !marker.isOpen }
+      : { ...marker, isOpen: false }));
     this.setState({ markers: updatedMarkers });
     // this.delayedShowMarker();
   };
@@ -268,11 +314,7 @@ class Map extends PureComponent<Props, State> {
       radius,
       markers,
     };
-    return (
-      <React.Fragment>
-        <MyMapComponent {...props} />
-      </React.Fragment>
-    );
+    return <MyMapComponent {...props} />;
   }
 }
 
