@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Box, Label } from 'rebass';
 import { debounce } from 'lodash';
@@ -12,7 +12,7 @@ import {
   queryResultsFromState,
   getFilterTypeData,
   getAdvancedMapZoom,
-  latestAdvancedQuery as latestAdvancedQueryFunc,
+  latestAdvancedQuery as latestAdvancedQuerySelector,
 } from 'components/AdvancedSearch/selectors';
 import Map from 'components/Map';
 import Input from 'components/Input';
@@ -22,6 +22,7 @@ import {
   convertCoordinatesToObject,
   convertMetersToKilometers,
   courseAddressDetails,
+  isArrayWithLength,
 } from 'helpers/utils';
 import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
@@ -44,7 +45,7 @@ type Props = {
   mapVisible: boolean,
 };
 type MapStateToProps = {
-  defaultValue: Array<{ coordinates: CoordinatesObject, radius: number }>,
+  defaultValue: Array<?{ coordinates: CoordinatesObject, radius: number }>,
   queryResults: Array<?Course>,
   zoom: number,
 };
@@ -62,7 +63,7 @@ type State = {
 
 const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
 
-class AdvancedSearchMap extends Component<CombinedProps, State> {
+export class AdvancedSearchMap extends Component<CombinedProps, State> {
   state = {
     coordinates: defaultCoordinates,
     radius: 20000,
@@ -89,9 +90,10 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
 
   constructor(props: CombinedProps) {
     super(props);
+    // $FlowFixMe defaultValue is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
     const { defaultValue } = props;
     if (
-      defaultValue.length
+      isArrayWithLength(defaultValue)
       && defaultValue[0].coordinates
       && defaultValue[0].radius
     ) {
@@ -115,7 +117,7 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
       try {
         const options = {
           enableHighAccuracy: true,
-          timeout: 5000,
+          timeout: 10000,
           maximumAge: 0,
         };
 
@@ -227,7 +229,7 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
     const radiusOptions = this.inputOptions;
 
     return (
-      <Fragment>
+      <>
         {error && (
           <Box p={[0, '0.5rem 2rem']}>
             <NoResults>{error}</NoResults>
@@ -243,13 +245,13 @@ class AdvancedSearchMap extends Component<CombinedProps, State> {
           options={{ ...radiusOptions, initialValues: [radius] }}
           onChange={this.onRadiusChange}
         />
-      </Fragment>
+      </>
     );
   }
 }
 
 const mapStateToProps = (state: ReduxState): MapStateToProps => {
-  const latestQuery = latestAdvancedQueryFunc(state);
+  const latestQuery = latestAdvancedQuerySelector(state);
   return {
     defaultValue: getFilterTypeData(state, ADVANCED_NEARBY),
     queryResults: queryResultsFromState(state, latestQuery),
