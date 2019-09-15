@@ -37,7 +37,7 @@ export const setFilter = (
  * @return {Object} action of SET_ADVANCED_SEARCH_QUERY
  */
 export const setAdvancedSearchQuery = (
-  courses: Array<Course> = [],
+  courses: Array<?Course> = [],
   query: string,
 ) => ({
   type: actionTypes.SET_ADVANCED_SEARCH_QUERY,
