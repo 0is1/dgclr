@@ -1,33 +1,72 @@
 // @flow
-import React from 'react';
-import colors from 'components/colors';
+import React, { PureComponent } from 'react';
+import Styles from './SliderRail.styles';
 
-const railOuterStyle = {
-  position: 'absolute',
-  width: '100%',
-  height: 42,
-  transform: 'translate(0%, -50%)',
-  borderRadius: 7,
-  cursor: 'pointer',
+const {
+  TooltipContainer,
+  Tooltip,
+  TooltipText,
+  RailStyle,
+  RailCenterStyle,
+} = Styles;
+
+type Props = {
+  activeHandleID: string,
+  getRailProps: Function,
+  getEventData: Function,
+  format: Function,
 };
+type State = { value: ?number, percent: ?number };
 
-const railInnerStyle = {
-  position: 'absolute',
-  width: '100%',
-  height: 14,
-  transform: 'translate(0%, -50%)',
-  borderRadius: 7,
-  pointerEvents: 'none',
-  backgroundColor: colors.greenAlpha,
-};
+class SliderRail extends PureComponent<Props, State> {
+  state = {
+    value: null,
+    percent: null,
+  };
 
-type Props = { getRailProps: Function };
+  onMouseEnter = () => {
+    document.addEventListener('mousemove', this.onMouseMove);
+  };
 
-const SliderRail = ({ getRailProps }: Props) => (
-  <>
-    <div style={railOuterStyle} {...getRailProps()} />
-    <div style={railInnerStyle} />
-  </>
-);
+  onMouseLeave = () => {
+    this.setState({ value: null, percent: null });
+    document.removeEventListener('mousemove', this.onMouseMove);
+  };
+
+  onMouseMove = (e: MouseEvent) => {
+    const { activeHandleID, getEventData } = this.props;
+
+    if (activeHandleID) {
+      this.setState({ value: null, percent: null });
+    } else {
+      const { format } = this.props;
+      const { value, percent } = getEventData(e);
+      this.setState({ value: format(value), percent });
+    }
+  };
+
+  render() {
+    const { activeHandleID, getRailProps } = this.props;
+    const { value, percent } = this.state;
+    return (
+      <>
+        {!activeHandleID && value ? (
+          <TooltipContainer percent={percent}>
+            <Tooltip>
+              <TooltipText>{value}</TooltipText>
+            </Tooltip>
+          </TooltipContainer>
+        ) : null}
+        <RailStyle
+          {...getRailProps({
+            onMouseEnter: this.onMouseEnter,
+            onMouseLeave: this.onMouseLeave,
+          })}
+        />
+        <RailCenterStyle />
+      </>
+    );
+  }
+}
 
 export default SliderRail;

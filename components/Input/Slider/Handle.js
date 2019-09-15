@@ -1,9 +1,15 @@
 // @flow
-import React from 'react';
-import colors from 'components/colors';
+import React, { PureComponent } from 'react';
+import Styles from './Handle.styles';
+import SliderRailStyles from './SliderRail.styles';
+
+const { TooltipContainer, Tooltip, TooltipText } = SliderRailStyles;
+
+const { HandleDiv, Slider } = Styles;
 
 type Props = {
   domain: Array<number>,
+  isActive: boolean,
   handle: {
     id: string,
     value: number,
@@ -11,49 +17,66 @@ type Props = {
   },
   getHandleProps: Function,
   disabled?: boolean,
+  format: Function,
 };
-const Handle = ({
-  domain: [min, max],
-  handle: { id, value, percent },
-  disabled,
-  getHandleProps,
-}: Props) => (
-  <>
-    <div
-      style={{
-        left: `${percent}%`,
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
-        WebkitTapHighlightColor: 'rgba(0,0,0,0)',
-        zIndex: 5,
-        width: 28,
-        height: 42,
-        cursor: 'pointer',
-        backgroundColor: 'none',
-      }}
-      {...getHandleProps(id)}
-    />
-    <div
-      role="slider"
-      aria-valuemin={min}
-      aria-valuemax={max}
-      aria-valuenow={value}
-      style={{
-        left: `${percent}%`,
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 2,
-        width: 24,
-        height: 24,
-        borderRadius: '50%',
-        boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, 0.3)',
-        backgroundColor: disabled ? '#666' : colors.lightGray,
-      }}
-    />
-  </>
-);
+type State = { mouseOver: boolean };
+
+class Handle extends PureComponent<Props, State> {
+  static defaultProps = { disabled: false };
+
+  state = {
+    mouseOver: false,
+  };
+
+  onMouseEnter = () => {
+    this.setState({ mouseOver: true });
+  };
+
+  onMouseLeave = () => {
+    this.setState({ mouseOver: false });
+  };
+
+  render() {
+    const {
+      domain: [min, max],
+      handle: { id, value, percent },
+      isActive,
+      disabled,
+      getHandleProps,
+      format,
+    } = this.props;
+    const { mouseOver } = this.state;
+    return (
+      <>
+        {(mouseOver || isActive) && !disabled ? (
+          <TooltipContainer percent={percent}>
+            <Tooltip>
+              <TooltipText>{format(value)}</TooltipText>
+            </Tooltip>
+          </TooltipContainer>
+        ) : null}
+        <HandleDiv
+          percent={percent}
+          {...getHandleProps(id, {
+            onMouseEnter: this.onMouseEnter,
+            onMouseLeave: this.onMouseLeave,
+          })}
+        />
+        <Slider
+          role="slider"
+          aria-valuemin={min}
+          aria-valuemax={max}
+          aria-valuenow={value}
+          percent={percent}
+          disabled={disabled}
+        />
+      </>
+    );
+  }
+}
 
 Handle.defaultProps = {
   disabled: false,
 };
+
 export default Handle;

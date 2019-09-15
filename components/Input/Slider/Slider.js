@@ -15,7 +15,7 @@ import Track from './Track';
 import Tick from './Tick';
 
 const sliderStyle = {
-  margin: '1rem 0 3rem',
+  margin: '1rem 0px 4rem',
   position: 'relative',
   touchAction: 'none',
   width: '95%',
@@ -90,17 +90,19 @@ m
           values={values}
         >
           <Rail>
-            {({ getRailProps }) => <SliderRail getRailProps={getRailProps} />}
+            {railProps => <SliderRail {...railProps} format={format} />}
           </Rail>
           <Handles>
-            {({ handles, getHandleProps }) => (
+            {({ handles, activeHandleID, getHandleProps }) => (
               <div className="slider-handles">
                 {handles.map(handle => (
                   <Handle
                     key={handle.id}
                     handle={handle}
                     domain={domain}
+                    isActive={handle.id === activeHandleID}
                     getHandleProps={getHandleProps}
+                    format={format}
                   />
                 ))}
               </div>
