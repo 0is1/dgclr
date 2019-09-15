@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Styles = {
   ZIndexContainer: styled.div`
     position: relative;
-    z-index: 4;
+    z-index: ${props => (props.zIndex ? props.zIndex : 4)};
   `,
 };
 
