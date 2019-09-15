@@ -39,7 +39,7 @@ class RatingSelect extends Component<CombinedProps> {
   render() {
     const { defaultValue } = this.props;
     return (
-      <ZIndexContainer>
+      <ZIndexContainer zIndex={5}>
         <Label>Radan luokitus:</Label>
         <Select
           defaultValue={defaultValue}

@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdvancedSearchMap /> snapshots renders with default props 1`] = `
+<Fragment>
+  <Map
+    advancedSearch={true}
+    coordinates={
+      Object {
+        "lat": 60.190599999999996,
+        "lng": 24.89741416931156,
+      }
+    }
+    data={
+      Object {
+        "name": "Keskipiste: 60.190599999999996, 24.89741416931156",
+        "queryResults": Array [
+          Object {
+            "address": "Telakkakatu 15, 44200 Äänekoski",
+            "coordinates": Object {
+              "lat": 25.8686,
+              "lng": 62.5633,
+            },
+            "id": "5b86d88c88ad697a0c00b948",
+            "name": "44200 Suolahti",
+            "slug": "44200-suolahti-äänekoski",
+          },
+          Object {
+            "address": "Kilpailukuja, 04300 Tuusula",
+            "coordinates": Object {
+              "lat": 25.03,
+              "lng": 60.3905,
+            },
+            "id": "5b86d8ea88ad697a0c00b99c",
+            "name": "Ford DiscGolfPark",
+            "slug": "ford-discgolfpark-tuusula",
+          },
+        ],
+      }
+    }
+    onDragEnd={[Function]}
+    onZoomChange={[Function]}
+    radius={20000}
+    zoom={10}
+  />
+  <Label
+    alignItems="center"
+    fontSize={1}
+    is="label"
+    mb={1}
+    pt={
+      Array [
+        ".5rem",
+        ".5rem",
+        "1rem",
+        "1rem",
+      ]
+    }
+  >
+    Maksimietäisyys (20km): 
+  </Label>
+  <InputComponent
+    focusOnMount={false}
+    onChange={[Function]}
+    options={
+      Object {
+        "domain": Array [
+          1000,
+          150000,
+        ],
+        "filterName": "mapSearchRadius",
+        "format": [Function],
+        "initialValues": Array [
+          20000,
+        ],
+        "max": 150000,
+        "min": 1000,
+        "name": "radius",
+        "showCurrentValues": false,
+        "step": 1000,
+        "type": "slider",
+      }
+    }
+    placeholder=""
+    value=""
+  />
+</Fragment>
+`;
+
+exports[`<AdvancedSearchMap /> snapshots renders with error 1`] = `
+<Fragment>
+  <Box
+    p={
+      Array [
+        0,
+        "0.5rem 2rem",
+      ]
+    }
+  >
+    <AdvancedSearchQuerystyles__NoResults>
+      Tapahtui virhe
+    </AdvancedSearchQuerystyles__NoResults>
+  </Box>
+  <Map
+    advancedSearch={true}
+    coordinates={
+      Object {
+        "lat": 60.190599999999996,
+        "lng": 24.89741416931156,
+      }
+    }
+    data={
+      Object {
+        "name": "Keskipiste: 60.190599999999996, 24.89741416931156",
+        "queryResults": Array [
+          Object {
+            "address": "Telakkakatu 15, 44200 Äänekoski",
+            "coordinates": Object {
+              "lat": 25.8686,
+              "lng": 62.5633,
+            },
+            "id": "5b86d88c88ad697a0c00b948",
+            "name": "44200 Suolahti",
+            "slug": "44200-suolahti-äänekoski",
+          },
+          Object {
+            "address": "Kilpailukuja, 04300 Tuusula",
+            "coordinates": Object {
+              "lat": 25.03,
+              "lng": 60.3905,
+            },
+            "id": "5b86d8ea88ad697a0c00b99c",
+            "name": "Ford DiscGolfPark",
+            "slug": "ford-discgolfpark-tuusula",
+          },
+        ],
+      }
+    }
+    onDragEnd={[Function]}
+    onZoomChange={[Function]}
+    radius={20000}
+    zoom={10}
+  />
+  <Label
+    alignItems="center"
+    fontSize={1}
+    is="label"
+    mb={1}
+    pt={
+      Array [
+        ".5rem",
+        ".5rem",
+        "1rem",
+        "1rem",
+      ]
+    }
+  >
+    Maksimietäisyys (20km): 
+  </Label>
+  <InputComponent
+    focusOnMount={false}
+    onChange={[Function]}
+    options={
+      Object {
+        "domain": Array [
+          1000,
+          150000,
+        ],
+        "filterName": "mapSearchRadius",
+        "format": [Function],
+        "initialValues": Array [
+          20000,
+        ],
+        "max": 150000,
+        "min": 1000,
+        "name": "radius",
+        "showCurrentValues": false,
+        "step": 1000,
+        "type": "slider",
+      }
+    }
+    placeholder=""
+    value=""
+  />
+</Fragment>
+`;

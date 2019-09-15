@@ -7,17 +7,17 @@ import { connect } from 'react-redux';
 import { differenceBy, size } from 'lodash';
 import { Box } from 'rebass';
 import { GoChevronRight } from 'react-icons/go';
-import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
+import { uniqueLayoutRatings, isArrayWithLength } from 'helpers/utils';
 import { COURSE_QUERY } from 'lib/constants';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
 import type {
-  GraphQLData, State, QueryResults, Courses,
+  GraphQLData, State, QueryResults, Course,
 } from 'lib/types';
 import { setCourses as setCoursesFunc } from 'components/Course/actions';
-import { queryResultsFromState as queryResultsFromStateFunc } from 'components/SearchContainer/selectors';
+import { queryResultsFromState as queryResultsFromStateSelector } from 'components/SearchContainer/selectors';
 import { setAdvancedSearchQuery } from './actions';
 import { latestAdvancedQuery as latestQueryFunc } from './selectors';
 import AdvancedSearchQueryStyles from './AdvancedSearchQuery.styles';
@@ -48,10 +48,8 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
     if (snapshot !== null) {
       // $FlowFixMe data is set in Props but flow complains that it's missing in MapStateToProps or MapDispatchToProps
       const { data } = this.props;
-      const { courses } = data || {};
-      if (courses && courses.length > 0) {
-        this.setCourses(courses);
-      }
+      const { courses = [] } = data || {};
+      this.setCourses(courses);
     }
   }
 
@@ -60,43 +58,41 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
     const { courses = [] } = data || {};
     const prevCourseData = prevProps.data;
     const prevCourseArr = prevCourseData && prevProps.data.courses;
-    const prevCourses = prevCourseArr && prevCourseArr.length ? prevCourseArr : [];
+    const prevCourses = isArrayWithLength(prevCourseArr) ? prevCourseArr : [];
     const stringifyFilter = JSON.stringify(filter);
     // console.log('courses: ', courses);
     // console.log('prevCourses: ', prevCourses);
     if (
-      (courses
-        && courses.length > 0
+      (isArrayWithLength(courses)
         && differenceBy(courses, prevCourses, '_id').length > 0)
-      || (!courses.length && stringifyFilter !== latestQuery)
-      || (courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
+      || (!isArrayWithLength(courses) && stringifyFilter !== latestQuery)
+      || (prevCourses
+        && courses.length !== prevCourses.length
+        && stringifyFilter !== latestQuery)
     ) {
       return true;
     }
     return null;
   }
 
-  setCourses = (courses: Courses) => {
+  setCourses = (courses: Array<?Course>) => {
     const { setCourses, setSearchQuery, filter } = this.props;
     setCourses(courses);
     setSearchQuery(courses, JSON.stringify(filter));
   };
 
-  render() {
+  getResultList = () => {
     // $FlowFixMe queryResults is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
-    const { filter, queryResults, data = {} } = this.props;
-    if (size(filter) < 1 && !queryResults.length) return null;
-    if (data && data.loading) {
-      return <ClipLoader />;
-    }
+    const { queryResults, data = {} } = this.props;
     const { courses } = data;
-    const courseData = queryResults.length ? queryResults : courses;
+    const courseData = isArrayWithLength(queryResults) ? queryResults : courses;
     let results = false;
-    if (courseData && courseData.length) {
+    if (isArrayWithLength(courseData)) {
+      // $FlowFixMe flow does not understand that isArrayWithLength checks queryResults type
       results = courseData.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
         return (
-          <LI key={getRandomKey()} listStyle="none">
+          <LI key={course.slug} listStyle="none">
             <Link as={`/${course.slug}`} href={`/course?slug=${course.slug}`}>
               <SearchResultItem>
                 {course.name}
@@ -110,6 +106,17 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
         );
       });
     }
+    return results;
+  };
+
+  render() {
+    // $FlowFixMe queryResults is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
+    const { filter, queryResults, data = {} } = this.props;
+    if (size(filter) < 1 && !queryResults.length) return null;
+    if (data && data.loading) {
+      return <ClipLoader />;
+    }
+    const results = this.getResultList();
     if (!results) {
       return (
         <Box p={[0, '0.5rem 2rem']}>
@@ -127,7 +134,7 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
 
 const mapStateToProps = (state: State): MapStateToProps => ({
   latestQuery: latestQueryFunc(state),
-  queryResults: queryResultsFromStateFunc(state, latestQueryFunc(state)),
+  queryResults: queryResultsFromStateSelector(state, latestQueryFunc(state)),
 });
 
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
