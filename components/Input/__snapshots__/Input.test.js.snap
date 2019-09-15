@@ -21,7 +21,7 @@ Array [
   <div
     style={
       Object {
-        "margin": "1rem 0 3rem",
+        "margin": "1rem 0px 4rem",
         "position": "relative",
         "touchAction": "none",
         "width": "95%",
@@ -29,71 +29,33 @@ Array [
     }
   >
     <div
+      className="SliderRailstyles__RailStyle-ppxn0u-3 WKCjG"
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       onTouchStart={[Function]}
-      style={
-        Object {
-          "borderRadius": 7,
-          "cursor": "pointer",
-          "height": 42,
-          "position": "absolute",
-          "transform": "translate(0%, -50%)",
-          "width": "100%",
-        }
-      }
     />
     <div
-      style={
-        Object {
-          "backgroundColor": "rgba(68, 244, 108, .25)",
-          "borderRadius": 7,
-          "height": 14,
-          "pointerEvents": "none",
-          "position": "absolute",
-          "transform": "translate(0%, -50%)",
-          "width": "100%",
-        }
-      }
+      className="SliderRailstyles__RailCenterStyle-ppxn0u-4 gmZqjS"
     />
     <div
       className="slider-handles"
     >
       <div
+        className="Handlestyles__HandleDiv-sc-19ca9yj-0 jehFtI"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        style={
-          Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "backgroundColor": "none",
-            "cursor": "pointer",
-            "height": 42,
-            "left": "0%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 28,
-            "zIndex": 5,
-          }
-        }
       />
       <div
         aria-valuemax={100}
         aria-valuemin={0}
         aria-valuenow={0}
+        className="Handlestyles__Slider-sc-19ca9yj-1 jJJIoY"
+        disabled={false}
         role="slider"
-        style={
-          Object {
-            "backgroundColor": "#e7e6e6",
-            "borderRadius": "50%",
-            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
-            "height": 24,
-            "left": "0%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 24,
-            "zIndex": 2,
-          }
-        }
       />
     </div>
     <div
@@ -206,7 +168,7 @@ Array [
   <div
     style={
       Object {
-        "margin": "1rem 0 3rem",
+        "margin": "1rem 0px 4rem",
         "position": "relative",
         "touchAction": "none",
         "width": "95%",
@@ -214,108 +176,49 @@ Array [
     }
   >
     <div
+      className="SliderRailstyles__RailStyle-ppxn0u-3 WKCjG"
       onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       onTouchStart={[Function]}
-      style={
-        Object {
-          "borderRadius": 7,
-          "cursor": "pointer",
-          "height": 42,
-          "position": "absolute",
-          "transform": "translate(0%, -50%)",
-          "width": "100%",
-        }
-      }
     />
     <div
-      style={
-        Object {
-          "backgroundColor": "rgba(68, 244, 108, .25)",
-          "borderRadius": 7,
-          "height": 14,
-          "pointerEvents": "none",
-          "position": "absolute",
-          "transform": "translate(0%, -50%)",
-          "width": "100%",
-        }
-      }
+      className="SliderRailstyles__RailCenterStyle-ppxn0u-4 gmZqjS"
     />
     <div
       className="slider-handles"
     >
       <div
+        className="Handlestyles__HandleDiv-sc-19ca9yj-0 TrcBW"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        style={
-          Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "backgroundColor": "none",
-            "cursor": "pointer",
-            "height": 42,
-            "left": "5%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 28,
-            "zIndex": 5,
-          }
-        }
       />
       <div
         aria-valuemax={200}
         aria-valuemin={0}
         aria-valuenow={10}
+        className="Handlestyles__Slider-sc-19ca9yj-1 doyhEI"
+        disabled={false}
         role="slider"
-        style={
-          Object {
-            "backgroundColor": "#e7e6e6",
-            "borderRadius": "50%",
-            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
-            "height": 24,
-            "left": "5%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 24,
-            "zIndex": 2,
-          }
-        }
       />
       <div
+        className="Handlestyles__HandleDiv-sc-19ca9yj-0 fMnCTd"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        style={
-          Object {
-            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
-            "backgroundColor": "none",
-            "cursor": "pointer",
-            "height": 42,
-            "left": "50%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 28,
-            "zIndex": 5,
-          }
-        }
       />
       <div
         aria-valuemax={200}
         aria-valuemin={0}
         aria-valuenow={100}
+        className="Handlestyles__Slider-sc-19ca9yj-1 gnPMqK"
+        disabled={false}
         role="slider"
-        style={
-          Object {
-            "backgroundColor": "#e7e6e6",
-            "borderRadius": "50%",
-            "boxShadow": "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
-            "height": 24,
-            "left": "50%",
-            "position": "absolute",
-            "transform": "translate(-50%, -50%)",
-            "width": 24,
-            "zIndex": 2,
-          }
-        }
       />
     </div>
     <div
