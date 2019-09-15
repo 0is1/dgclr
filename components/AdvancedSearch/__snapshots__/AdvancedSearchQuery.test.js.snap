@@ -1,3 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AdvancedSearchQuery /> snapshots renders with default props 1`] = `""`;
+
+exports[`<AdvancedSearchQuery /> snapshots renders with queryResults 1`] = `
+<Box
+  p={
+    Array [
+      0,
+      "0.5rem 2rem",
+    ]
+  }
+>
+  <Containerstyles__UL>
+    <Containerstyles__LI
+      key="44200-suolahti-äänekoski"
+      listStyle="none"
+    >
+      <Link
+        as="/44200-suolahti-äänekoski"
+        href="/course?slug=44200-suolahti-äänekoski"
+      >
+        <SearchContainerstyles__SearchResultItem>
+          44200 Suolahti
+          <LayoutRatingBadges
+            ratings={
+              Array [
+                "A1",
+              ]
+            }
+            tiny={true}
+          />
+          <SearchContainerstyles__SearchResultIcon>
+            <GoChevronRight
+              color="#0067ee"
+              size="1.5rem"
+            />
+          </SearchContainerstyles__SearchResultIcon>
+        </SearchContainerstyles__SearchResultItem>
+      </Link>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="ford-discgolfpark-tuusula"
+      listStyle="none"
+    >
+      <Link
+        as="/ford-discgolfpark-tuusula"
+        href="/course?slug=ford-discgolfpark-tuusula"
+      >
+        <SearchContainerstyles__SearchResultItem>
+          Ford DiscGolfPark
+          <LayoutRatingBadges
+            ratings={
+              Array [
+                "AA1",
+              ]
+            }
+            tiny={true}
+          />
+          <SearchContainerstyles__SearchResultIcon>
+            <GoChevronRight
+              color="#0067ee"
+              size="1.5rem"
+            />
+          </SearchContainerstyles__SearchResultIcon>
+        </SearchContainerstyles__SearchResultItem>
+      </Link>
+    </Containerstyles__LI>
+  </Containerstyles__UL>
+</Box>
+`;
