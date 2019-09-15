@@ -1,5 +1,7 @@
 export default {
   border: '#c84b57',
+  darkGray: '#444444',
+  gray: '#8a8a8a',
   green: '#44f46c',
   greenAlpha: 'rgba(68, 244, 108, .25)',
   hover: '#544c8e',
@@ -8,5 +10,6 @@ export default {
   lightGray: '#e7e6e6',
   red: '#c62736',
   text: '#262626',
+  whiteText: '#f0f0f0',
   white: '#ffffff',
 };

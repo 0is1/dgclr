@@ -34,10 +34,16 @@ class Select extends Component<Props> {
       defaultValue, label, options, placeholder,
     } = this.props;
     return (
-      <React.Fragment>
+      <>
         <Label>{label}</Label>
-        <SelectInput defaultValue={defaultValue} options={options} onChange={this.onValueChange} placeholder={placeholder} isClearable />
-      </React.Fragment>
+        <SelectInput
+          defaultValue={defaultValue}
+          options={options}
+          onChange={this.onValueChange}
+          placeholder={placeholder}
+          isClearable
+        />
+      </>
     );
   }
 }

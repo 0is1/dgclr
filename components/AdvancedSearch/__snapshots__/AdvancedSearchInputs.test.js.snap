@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
+<Box>
+  <Text
+    fontWeight="700"
+    m={0}
+    my={2}
+    width="100%"
+  >
+    Edistynyt haku (varhaisessa kehitysvaiheessa)
+  </Text>
+  <Flex
+    extend={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "_foldedDefaultProps": Object {},
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "box-sizing: border-box;",
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+          ],
+        },
+        "displayName": "Box",
+        "foldedComponentIds": Array [],
+        "propTypes": Object {
+          "alignSelf": [Function],
+          "bg": [Function],
+          "color": [Function],
+          "flex": [Function],
+          "fontSize": [Function],
+          "m": [Function],
+          "mb": [Function],
+          "ml": [Function],
+          "mr": [Function],
+          "mt": [Function],
+          "mx": [Function],
+          "my": [Function],
+          "order": [Function],
+          "p": [Function],
+          "pb": [Function],
+          "pl": [Function],
+          "pr": [Function],
+          "pt": [Function],
+          "px": [Function],
+          "py": [Function],
+          "width": [Function],
+        },
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "systemComponent": true,
+        "target": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    flexWrap="wrap"
+  >
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <Connect(RatingSelect)
+        onChange={[Function]}
+      />
+    </Box>
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <CourseTypeSelect
+        onChange={[Function]}
+      />
+    </Box>
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <Label
+        alignItems="center"
+        fontSize={1}
+        is="label"
+        mb={1}
+      >
+        Väylien keskipituus:
+      </Label>
+      <InputComponent
+        focusOnMount={false}
+        onChange={[Function]}
+        options={
+          Object {
+            "domain": Array [
+              10,
+              180,
+            ],
+            "filterName": "holeAverageLength",
+            "initialValues": Array [
+              40,
+              180,
+            ],
+            "step": 10,
+            "type": "slider",
+          }
+        }
+        placeholder=""
+        value=""
+      />
+    </Box>
+    <AdvancedSearchInputsstyles__FadeInBox
+      show={true}
+    >
+      <Box
+        mb=".75rem"
+        pr={
+          Array [
+            0,
+            0,
+            ".5rem",
+            ".5rem",
+          ]
+        }
+        width={
+          Array [
+            1,
+            1,
+            0.5,
+            0.5,
+          ]
+        }
+      >
+        <BasketTypeSelect
+          onChange={[Function]}
+        />
+      </Box>
+      <Box
+        mb=".75rem"
+        pr={
+          Array [
+            0,
+            0,
+            ".5rem",
+            ".5rem",
+          ]
+        }
+        width={
+          Array [
+            1,
+            1,
+            0.5,
+            0.5,
+          ]
+        }
+      >
+        <TeeTypeSelect
+          onChange={[Function]}
+        />
+      </Box>
+      <Box
+        mb=".75rem"
+        pr={
+          Array [
+            0,
+            0,
+            ".5rem",
+            ".5rem",
+          ]
+        }
+        width={
+          Array [
+            1,
+            1,
+            0.5,
+            0.5,
+          ]
+        }
+      >
+        <SurfaceTypeSelect
+          onChange={[Function]}
+        />
+      </Box>
+    </AdvancedSearchInputsstyles__FadeInBox>
+    <Toggle
+      checked={true}
+      handleOnChange={[Function]}
+      label="Näytä kaikki valinnat:"
+    />
+    <Box
+      mb=".75rem"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <Toggle
+        checked={true}
+        handleOnChange={[Function]}
+        label="Käytä karttahakua:"
+      />
+      <Connect(AdvancedSearchMap)
+        handleChange={[Function]}
+        mapVisible={true}
+      />
+    </Box>
+  </Flex>
+  <Dividerstyles
+    borderColor="#6173fb"
+    w={1}
+  />
+</Box>
+`;
+
+exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
+<Box>
+  <Text
+    fontWeight="700"
+    m={0}
+    my={2}
+    width="100%"
+  >
+    Edistynyt haku (varhaisessa kehitysvaiheessa)
+  </Text>
+  <Flex
+    extend={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "_foldedDefaultProps": Object {},
+        "attrs": Array [],
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "rules": Array [
+            "box-sizing: border-box;",
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+          ],
+        },
+        "displayName": "Box",
+        "foldedComponentIds": Array [],
+        "propTypes": Object {
+          "alignSelf": [Function],
+          "bg": [Function],
+          "color": [Function],
+          "flex": [Function],
+          "fontSize": [Function],
+          "m": [Function],
+          "mb": [Function],
+          "ml": [Function],
+          "mr": [Function],
+          "mt": [Function],
+          "mx": [Function],
+          "my": [Function],
+          "order": [Function],
+          "p": [Function],
+          "pb": [Function],
+          "pl": [Function],
+          "pr": [Function],
+          "pt": [Function],
+          "px": [Function],
+          "py": [Function],
+          "width": [Function],
+        },
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "systemComponent": true,
+        "target": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+    flexWrap="wrap"
+  >
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <Connect(RatingSelect)
+        onChange={[Function]}
+      />
+    </Box>
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <CourseTypeSelect
+        onChange={[Function]}
+      />
+    </Box>
+    <Box
+      mb=".75rem"
+      pr={
+        Array [
+          0,
+          0,
+          ".5rem",
+          ".5rem",
+        ]
+      }
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+          0.5,
+        ]
+      }
+    >
+      <Label
+        alignItems="center"
+        fontSize={1}
+        is="label"
+        mb={1}
+      >
+        Väylien keskipituus:
+      </Label>
+      <InputComponent
+        focusOnMount={false}
+        onChange={[Function]}
+        options={
+          Object {
+            "domain": Array [
+              10,
+              180,
+            ],
+            "filterName": "holeAverageLength",
+            "initialValues": Array [
+              40,
+              180,
+            ],
+            "step": 10,
+            "type": "slider",
+          }
+        }
+        placeholder=""
+        value=""
+      />
+    </Box>
+    <AdvancedSearchInputsstyles__FadeInBox
+      show={false}
+    />
+    <Toggle
+      checked={false}
+      handleOnChange={[Function]}
+      label="Näytä kaikki valinnat:"
+    />
+    <Box
+      mb=".75rem"
+      width={
+        Array [
+          1,
+        ]
+      }
+    >
+      <Toggle
+        checked={true}
+        handleOnChange={[Function]}
+        label="Käytä karttahakua:"
+      />
+      <Connect(AdvancedSearchMap)
+        handleChange={[Function]}
+        mapVisible={true}
+      />
+    </Box>
+  </Flex>
+  <Dividerstyles
+    borderColor="#6173fb"
+    w={1}
+  />
+</Box>
+`;

@@ -37,10 +37,12 @@
     "cross-env": "^5.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.1.0",
     "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -83,6 +85,7 @@
     "pm2": "^3.5.1",
     "react": "^16.9.0",
     "react-apollo": "^3.0.1",
+    "react-compound-slider": "^2.2.0",
     "react-dom": "^16.9.0",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.1",
@@ -121,11 +124,15 @@
   "jest": {
     "verbose": true,
     "setupFiles": [
-      "<rootDir>/jest/jest.setup.js"
+      "<rootDir>/jest/jest.setup.js",
+      "<rootDir>/jest/jest.mock.js"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
       "<rootDir>/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "husky": {

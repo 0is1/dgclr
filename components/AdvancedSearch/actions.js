@@ -1,5 +1,10 @@
 // @flow
-import type { Course, FilterData, MapFilterData } from 'lib/types';
+import type {
+  Course,
+  FilterData,
+  MapFilterData,
+  SliderFilterData,
+} from 'lib/types';
 
 export const actionTypes = {
   SET_ADVANCED_SEARCH_QUERY: 'dgclr/SET_ADVANCED_SEARCH_QUERY',
@@ -16,7 +21,10 @@ export const actionTypes = {
  * @param {Array} data
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
-export const setFilter = (filterName: string = '', data: FilterData | MapFilterData) => ({
+export const setFilter = (
+  filterName: string = '',
+  data: FilterData | MapFilterData | SliderFilterData,
+) => ({
   type: actionTypes.SET_ADVANCED_FILTER_TYPE,
   filterName,
   data,
@@ -28,7 +36,10 @@ export const setFilter = (filterName: string = '', data: FilterData | MapFilterD
  * @param {string} query
  * @return {Object} action of SET_ADVANCED_SEARCH_QUERY
  */
-export const setAdvancedSearchQuery = (courses: Array<Course> = [], query: string) => ({
+export const setAdvancedSearchQuery = (
+  courses: Array<Course> = [],
+  query: string,
+) => ({
   type: actionTypes.SET_ADVANCED_SEARCH_QUERY,
   courses,
   query,

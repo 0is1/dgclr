@@ -2,12 +2,24 @@
 import React, { PureComponent } from 'react';
 import colors from 'components/colors';
 import type { Event } from 'lib/types';
+import Slider from './Slider';
 import Styles from './Input.styles';
 
 type Props = {
   focusOnMount?: boolean,
   onChange: Function,
-  options?: {},
+  options?: {
+    max?: number,
+    min?: number,
+    name?: string,
+    step?: string | number,
+    type: string,
+    // $FlowFixMe how to check that this is array in the way that flow likes it?
+    initialValues?: Array<number>,
+    filterName?: string,
+    domain?: Array<number>,
+    format?: Function,
+  },
   placeholder?: string,
   value?: string,
 };
@@ -37,8 +49,33 @@ class InputComponent extends PureComponent<Props> {
     onChange(value);
   };
 
+  onSliderChange = (values: Array<number>) => {
+    const { onChange } = this.props;
+    onChange(values);
+  };
+
   render() {
     const { options, placeholder, value } = this.props;
+    const { type = null } = options || {};
+    if (type === 'slider') {
+      const {
+        initialValues = [],
+        domain = null,
+        filterName = null,
+        ...restProps
+      } = options || {};
+      if (initialValues && domain && filterName) {
+        return (
+          <Slider
+            initialValues={initialValues}
+            domain={domain}
+            filterName={filterName}
+            {...restProps}
+            handleOnChange={this.onSliderChange}
+          />
+        );
+      }
+    }
     return (
       <Input
         {...options}

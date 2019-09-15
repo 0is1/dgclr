@@ -13,7 +13,9 @@ import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
 import Styles from 'components/SearchContainer/SearchContainer.styles';
 import BaseStyles from 'components/Container/Container.styles';
-import type { GraphQLData, State } from 'lib/types';
+import type {
+  GraphQLData, State, QueryResults, Courses,
+} from 'lib/types';
 import { setCourses as setCoursesFunc } from 'components/Course/actions';
 import { queryResultsFromState as queryResultsFromStateFunc } from 'components/SearchContainer/selectors';
 import { setAdvancedSearchQuery } from './actions';
@@ -23,29 +25,39 @@ import AdvancedSearchQueryStyles from './AdvancedSearchQuery.styles';
 const { UL, LI } = BaseStyles;
 const { SearchResultItem, SearchResultIcon } = Styles;
 const { NoResults } = AdvancedSearchQueryStyles;
+
 type Props = {
   filter: {},
-  queryResults: [],
   data: GraphQLData,
+};
+
+type MapStateToProps = {
   latestQuery: string,
+  queryResults: QueryResults,
+};
+
+type MapDispatchToProps = {
   setCourses: Function,
   setSearchQuery: Function,
 };
 
-class AdvancedSearchQuery extends Component<Props> {
-  componentDidUpdate(prevProps, prevState, snapshot) {
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+
+export class AdvancedSearchQuery extends Component<CombinedProps> {
+  componentDidUpdate(prevProps: CombinedProps, prevState: any, snapshot: any) {
     if (snapshot !== null) {
-      const { data = {} } = this.props;
-      const { courses = [] } = data;
-      if (courses) {
+      // $FlowFixMe data is set in Props but flow complains that it's missing in MapStateToProps or MapDispatchToProps
+      const { data } = this.props;
+      const { courses } = data || {};
+      if (courses && courses.length > 0) {
         this.setCourses(courses);
       }
     }
   }
 
-  getSnapshotBeforeUpdate(prevProps) {
-    const { data = {}, latestQuery, filter } = this.props;
-    const { courses = [] } = data;
+  getSnapshotBeforeUpdate(prevProps: CombinedProps) {
+    const { data, latestQuery, filter } = this.props;
+    const { courses = [] } = data || {};
     const prevCourseData = prevProps.data;
     const prevCourseArr = prevCourseData && prevProps.data.courses;
     const prevCourses = prevCourseArr && prevCourseArr.length ? prevCourseArr : [];
@@ -53,7 +65,9 @@ class AdvancedSearchQuery extends Component<Props> {
     // console.log('courses: ', courses);
     // console.log('prevCourses: ', prevCourses);
     if (
-      (courses && courses.length && differenceBy(courses, prevCourses, '_id').length > 0)
+      (courses
+        && courses.length > 0
+        && differenceBy(courses, prevCourses, '_id').length > 0)
       || (!courses.length && stringifyFilter !== latestQuery)
       || (courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
     ) {
@@ -62,13 +76,14 @@ class AdvancedSearchQuery extends Component<Props> {
     return null;
   }
 
-  setCourses = (courses) => {
+  setCourses = (courses: Courses) => {
     const { setCourses, setSearchQuery, filter } = this.props;
     setCourses(courses);
     setSearchQuery(courses, JSON.stringify(filter));
   };
 
   render() {
+    // $FlowFixMe queryResults is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
     const { filter, queryResults, data = {} } = this.props;
     if (size(filter) < 1 && !queryResults.length) return null;
     if (data && data.loading) {
@@ -110,12 +125,12 @@ class AdvancedSearchQuery extends Component<Props> {
   }
 }
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): MapStateToProps => ({
   latestQuery: latestQueryFunc(state),
   queryResults: queryResultsFromStateFunc(state, latestQueryFunc(state)),
 });
 
-const mapDispatchToProps = (dispatch: Function) => ({
+const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setCourses: courses => dispatch(setCoursesFunc(courses)),
   setSearchQuery: (courses, query) => dispatch(setAdvancedSearchQuery(courses, query)),
 });
@@ -129,7 +144,7 @@ const SEARCH_COURSES = gql`
 `;
 
 // The `graphql` wrapper executes a GraphQL query and makes the results
-// available on the `data` prop of the wrapped component (PostList)
+// available on the `data` prop of the wrapped component (AdvancedSearchQuery)
 const ComponentWithMutation = graphql(SEARCH_COURSES, {
   options: ({ filter }) => ({
     variables: {
@@ -142,7 +157,7 @@ const ComponentWithMutation = graphql(SEARCH_COURSES, {
   skip: ({ filter }) => !filter || size(filter) < 1,
 })(AdvancedSearchQuery);
 
-export default connect<any, Props, any, any, any, Function>(
+export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
 )(ComponentWithMutation);

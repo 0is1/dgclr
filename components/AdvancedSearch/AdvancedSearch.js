@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import Router from 'next/router';
 import { Box } from 'rebass';
 import type { State as ReduxState } from 'lib/types';
-import AdvancedSearchInputs from './AdvancedSearchInputs';
-import AdvancedSearchQuery from './AdvancedSearchQuery';
-import { getCurrentAdvancedFilter, isAdvancedSearchMapVisible } from './selectors';
+import AdvancedSearchInputsComponent from './AdvancedSearchInputs';
+import AdvancedSearchQueryComponent from './AdvancedSearchQuery';
+import {
+  getCurrentAdvancedFilter,
+  isAdvancedSearchMapVisible,
+} from './selectors';
 import Styles from './AdvancedSearch.styles';
 
 const { Wrapper } = Styles;
@@ -18,7 +21,7 @@ type MapDispatchToProps = {};
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
-class AdvancedSearch extends PureComponent<CombinedProps> {
+export class AdvancedSearch extends PureComponent<CombinedProps> {
   componentDidMount() {
     const { query } = Router;
     const { filter } = this.props;
@@ -46,7 +49,9 @@ class AdvancedSearch extends PureComponent<CombinedProps> {
     const { filter, mapChecked } = this.props;
     const filterObject = JSON.parse(filter);
     const urlFilter = { ...filterObject, mapChecked };
-    const href = `${pathname}?q=${encodeURIComponent(JSON.stringify(urlFilter))}`;
+    const href = `${pathname}?q=${encodeURIComponent(
+      JSON.stringify(urlFilter),
+    )}`;
     Router.push(href, href, { shallow: true });
   };
 
@@ -54,9 +59,14 @@ class AdvancedSearch extends PureComponent<CombinedProps> {
     const { filter } = this.props;
     return (
       <Wrapper>
-        <Box style={{ position: 'relative' }} m="1rem auto" px="2rem" width={[1, 1, 1, 0.7]}>
-          <AdvancedSearchInputs />
-          <AdvancedSearchQuery filter={JSON.parse(filter)} />
+        <Box
+          style={{ position: 'relative' }}
+          m="1rem auto"
+          px="2rem"
+          width={[1, 1, 1, 0.7]}
+        >
+          <AdvancedSearchInputsComponent />
+          <AdvancedSearchQueryComponent filter={JSON.parse(filter)} />
         </Box>
       </Wrapper>
     );
@@ -68,4 +78,6 @@ const mapStateToProps = (state: ReduxState): MapStateToProps => ({
   filter: getCurrentAdvancedFilter(state),
 });
 
-export default connect<CombinedProps, Props, any, any, any, Function>(mapStateToProps)(AdvancedSearch);
+export default connect<CombinedProps, Props, any, any, any, Function>(
+  mapStateToProps,
+)(AdvancedSearch);
