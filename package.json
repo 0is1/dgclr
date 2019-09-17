@@ -62,6 +62,7 @@
     "sinon": "^7.4.1"
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.7.5",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-client-preset": "^1.0.8",
@@ -87,7 +88,6 @@
     "react-apollo": "^3.0.1",
     "react-compound-slider": "^2.2.0",
     "react-dom": "^16.9.0",
-    "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
     "react-icons": "^3.7.0",
@@ -96,7 +96,6 @@
     "react-spinners": "^0.5.13",
     "react-switch": "^5.0.1",
     "rebass": "2.3.4",
-    "recompose": "^0.30.0",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.5",
     "redux-saga": "^1.0.5",
