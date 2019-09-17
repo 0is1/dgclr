@@ -17,10 +17,12 @@ type Props = {
   handleCenterChanged: Function,
   handleDragEnd: Function,
   handleMarkerClick: Function,
+  handleMapCenterChange: Function,
   handleZoomChange: Function,
   markerName: string,
   markers: Array<?MarkerData>,
   radius: number,
+  useCurrentLocation: boolean,
   zoom: number,
 };
 
@@ -51,6 +53,14 @@ class Map extends PureComponent<Props> {
     }
   };
 
+  onMapCenterChanged = () => {
+    if (this.mapRef.current) {
+      const { handleMapCenterChange } = this.props;
+      const { state } = this.mapRef.current;
+      handleMapCenterChange(state.map.center);
+    }
+  };
+
   onCircleCenterChanged = () => {
     if (this.circleRef.current) {
       const { state } = this.circleRef.current;
@@ -68,9 +78,10 @@ class Map extends PureComponent<Props> {
 
   render() {
     const {
-      advancedSearch, center, zoom, markerName, markers, handleDragEnd, handleMarkerClick, radius,
+      advancedSearch, center, zoom, markerName, markers, handleDragEnd, handleMarkerClick, radius, useCurrentLocation,
     } = this.props;
     const { isOpen } = this.state;
+    const mapOptions = useCurrentLocation ? { center } : {};
     return (
       <div
         style={{
@@ -81,11 +92,13 @@ class Map extends PureComponent<Props> {
           id="example-map"
           zoom={zoom}
           center={center}
+          onCenterChanged={this.onMapCenterChanged}
           onZoomChanged={this.onZoomChanged}
           mapContainerStyle={{
             height: '100%',
           }}
           ref={this.mapRef}
+          options={mapOptions}
         >
           {!advancedSearch && (
             <Marker position={center} onClick={this.onToggleOpen}>
