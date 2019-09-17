@@ -60,7 +60,7 @@ class Map extends PureComponent<Props, State> {
         coordinates: null,
         isMarkerShown: false,
         markers,
-        useCurrentLocation: advancedSearch,
+        useCurrentLocation: !!advancedSearch,
       };
     }
   }
@@ -163,7 +163,10 @@ class Map extends PureComponent<Props, State> {
         this.setState({
           coordinates: newCoordinates,
         });
-        onDragEnd(newCoordinates);
+        // TODO: separate variables for circle coords and map coords
+        if (typeof onDragEnd === 'function') {
+          onDragEnd(newCoordinates);
+        }
       };
 
       const getCurrentPositionError = (err) => {
@@ -220,4 +223,11 @@ class Map extends PureComponent<Props, State> {
   }
 }
 
+Map.defaultProps = {
+  advancedSearch: false,
+  onDragEnd: null,
+  onZoomChange: null,
+  radius: 10000,
+  zoom: MAP_DEFAULT_ZOOM,
+};
 export default Map;

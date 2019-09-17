@@ -5,7 +5,7 @@
  */
 
 // eslint-disable-next-line import/prefer-default-export
-export const getCurrentLocation = (getCurrentPositionSuccess, getCurrentPositionError) => {
+export const getCurrentLocation = (getCurrentPositionSuccess: Function, getCurrentPositionError: Function) => {
   try {
     if (!navigator) return null;
     const options = {

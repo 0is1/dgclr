@@ -47,7 +47,6 @@ type State = {
   coordinates: CoordinatesObject,
   error: ?string,
   radius: number,
-  useCurrentLocation: boolean,
   waitingLocation: boolean,
 };
 
