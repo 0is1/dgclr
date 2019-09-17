@@ -11,7 +11,7 @@ exports[`<Map /> snapshots renders with default props 1`] = `
   }
   handleCenterChanged={[Function]}
   handleDragEnd={[Function]}
-  handleOnMarkerClick={[Function]}
+  handleMarkerClick={[Function]}
   handleZoomChange={[Function]}
   isMarkerShown={false}
   markerName="Keskipiste: 60.190599999999996, 24.89741416931156"
