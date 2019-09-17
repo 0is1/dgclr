@@ -11,6 +11,7 @@ import {
   getAdvancedMapZoom,
   latestAdvancedQuery as latestAdvancedQuerySelector,
 } from 'components/AdvancedSearch/selectors';
+import { getCurrentLocation } from 'helpers/geolocation';
 import Map from 'components/Map';
 import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
@@ -18,6 +19,7 @@ import { ADVANCED_NEARBY } from 'lib/constants';
 import {
   convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails, isArrayWithLength,
 } from 'helpers/utils';
+
 import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
 import type {
@@ -43,9 +45,10 @@ type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 type State = {
   coordinates: CoordinatesObject,
-  radius: number,
-  waitingLocation: boolean,
   error: ?string,
+  radius: number,
+  useCurrentLocation: boolean,
+  waitingLocation: boolean,
 };
 
 export const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
@@ -53,9 +56,9 @@ export const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931
 export class AdvancedSearchMap extends Component<CombinedProps, State> {
   state = {
     coordinates: defaultCoordinates,
+    error: null,
     radius: 20000,
     waitingLocation: true,
-    error: null,
   };
 
   debounceRadius = debounce((radius: number) => {
@@ -82,9 +85,9 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     if (isArrayWithLength(defaultValue) && defaultValue[0].coordinates && defaultValue[0].radius) {
       this.state = {
         coordinates: defaultValue[0].coordinates,
+        error: null,
         radius: defaultValue[0].radius,
         waitingLocation: true,
-        error: null,
       };
     }
   }
@@ -94,12 +97,6 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     const { mapVisible } = this.props;
     if (mapVisible && defaultCoordinates.lat === coordinates.lat && defaultCoordinates.lng === coordinates.lng) {
       try {
-        const options = {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 0,
-        };
-
         const getCurrentPositionSuccess = (pos) => {
           const { coords } = pos;
           const newCoordinates = {
@@ -117,7 +114,7 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
           console.warn(`ERROR(${err.code}): ${err.message}`);
           this.setState({ waitingLocation: false, error: err.message });
         };
-        navigator.geolocation.getCurrentPosition(getCurrentPositionSuccess, getCurrentPositionError, options);
+        getCurrentLocation(getCurrentPositionSuccess, getCurrentPositionError);
       } catch (e) {
         console.error('getCurrentPosition error: ', e);
 
