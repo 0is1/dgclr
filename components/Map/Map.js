@@ -144,7 +144,7 @@ class Map extends PureComponent<Props, State> {
       markerName: data.name,
       handleCenterChanged: this.onCircleCenterChanged,
       handleDragEnd: this.onCircleDragEnd,
-      handleOnMarkerClick: this.onMarkerClick,
+      handleMarkerClick: this.onMarkerClick,
       handleZoomChange: this.onZoomChange,
       radius,
       markers,
