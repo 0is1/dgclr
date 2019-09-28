@@ -7,12 +7,17 @@ import { isArrayWithLength } from 'helpers/utils';
 import { BarLoader } from 'components/Spinners';
 import colors from 'components/colors';
 import type { CoordinatesObject, CourseForMap } from 'lib/types';
+import Styles from './MapComponent.styles';
 
+const {
+  Wrapper, LoaderWrapper, InfoBoxContainer, InfoBoxText,
+} = Styles;
 type MarkerData = { isOpen: boolean } & CourseForMap;
 
 type Props = {
   advancedSearch: boolean,
   center: CoordinatesObject,
+  currentLocationCoordinates: ?CoordinatesObject,
   data: { name: string, queryResults?: Array<?CourseForMap> },
   handleCenterChanged: Function,
   handleDragEnd: Function,
@@ -78,18 +83,23 @@ class Map extends PureComponent<Props> {
 
   render() {
     const {
-      advancedSearch, center, zoom, markerName, markers, handleDragEnd, handleMarkerClick, radius, useCurrentLocation,
+      advancedSearch,
+      currentLocationCoordinates,
+      center,
+      zoom,
+      markerName,
+      markers,
+      handleDragEnd,
+      handleMarkerClick,
+      radius,
+      useCurrentLocation,
     } = this.props;
     const { isOpen } = this.state;
-    const mapOptions = useCurrentLocation ? { center } : {};
+    const mapOptions = useCurrentLocation ? { center: currentLocationCoordinates } : {};
     return (
-      <div
-        style={{
-          height: '500px',
-        }}
-      >
+      <Wrapper>
         <GoogleMap
-          id="example-map"
+          id="dgclr-map"
           zoom={zoom}
           center={center}
           onCenterChanged={this.onMapCenterChanged}
@@ -100,6 +110,9 @@ class Map extends PureComponent<Props> {
           ref={this.mapRef}
           options={mapOptions}
         >
+          {currentLocationCoordinates && (
+            <Marker title="Sijaintisi" icon="/static/location-pin.svg" position={currentLocationCoordinates} />
+          )}
           {!advancedSearch && (
             <Marker position={center} onClick={this.onToggleOpen}>
               {isOpen && (
@@ -111,21 +124,9 @@ class Map extends PureComponent<Props> {
                   }}
                   position={center}
                 >
-                  <div
-                    style={{
-                      backgroundColor: colors.info,
-                      padding: '12px',
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: '16px',
-                        color: '#ffffff',
-                      }}
-                    >
-                      {markerName}
-                    </div>
-                  </div>
+                  <InfoBoxContainer>
+                    <InfoBoxText>{markerName}</InfoBoxText>
+                  </InfoBoxContainer>
                 </InfoBox>
               )}
             </Marker>
@@ -152,17 +153,12 @@ class Map extends PureComponent<Props> {
                     }}
                     position={marker.coordinates}
                   >
-                    <div
-                      style={{
-                        backgroundColor: colors.info,
-                        padding: '10px',
-                      }}
-                    >
-                      <div style={{ fontSize: '13px', color: '#ffffff' }}>{`${marker.name} – ${marker.address}`}</div>
+                    <InfoBoxContainer>
+                      <InfoBoxText>{`${marker.name} – ${marker.address}`}</InfoBoxText>
                       <Link as={`/${marker.slug}`} href={`/course?slug=${marker.slug}`}>
                         <p>Näytä rata</p>
                       </Link>
-                    </div>
+                    </InfoBoxContainer>
                   </InfoBox>
                   )}
                 </Marker>
@@ -187,7 +183,7 @@ class Map extends PureComponent<Props> {
             />
           )}
         </GoogleMap>
-      </div>
+      </Wrapper>
     );
   }
 }
@@ -202,9 +198,9 @@ const LoadMap = (props) => {
   }
   if (!isLoaded) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', height: '500px' }}>
+      <LoaderWrapper>
         <BarLoader />
-      </div>
+      </LoaderWrapper>
     );
   }
   return <Map {...props} />;
