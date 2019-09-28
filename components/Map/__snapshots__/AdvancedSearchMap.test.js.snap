@@ -37,7 +37,7 @@ exports[`<AdvancedSearchMap /> snapshots renders with default props 1`] = `
         ],
       }
     }
-    onDragEnd={[Function]}
+    onCircleDragEnd={[Function]}
     onZoomChange={[Function]}
     radius={20000}
     zoom={10}
@@ -88,7 +88,7 @@ exports[`<AdvancedSearchMap /> snapshots renders with default props 1`] = `
 
 exports[`<AdvancedSearchMap /> snapshots renders with error 1`] = `
 <Fragment>
-  <Box
+  <AdvancedSearchMapstyles__ErrorWrapperBox
     p={
       Array [
         0,
@@ -96,10 +96,13 @@ exports[`<AdvancedSearchMap /> snapshots renders with error 1`] = `
       ]
     }
   >
+    <GoAlert
+      size={20}
+    />
     <AdvancedSearchQuerystyles__NoResults>
       Tapahtui virhe
     </AdvancedSearchQuerystyles__NoResults>
-  </Box>
+  </AdvancedSearchMapstyles__ErrorWrapperBox>
   <Map
     advancedSearch={true}
     coordinates={
@@ -135,7 +138,7 @@ exports[`<AdvancedSearchMap /> snapshots renders with error 1`] = `
         ],
       }
     }
-    onDragEnd={[Function]}
+    onCircleDragEnd={[Function]}
     onZoomChange={[Function]}
     radius={20000}
     zoom={10}

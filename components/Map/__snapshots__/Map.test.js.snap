@@ -1,47 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Map /> snapshots renders with default props 1`] = `
-<LoadMap
-  advancedSearch={true}
-  center={
-    Object {
-      "lat": 60.190599999999996,
-      "lng": 24.89741416931156,
+<Mapstyles__MapWrapper>
+  <LoadMap
+    advancedSearch={true}
+    center={
+      Object {
+        "lat": 60.190599999999996,
+        "lng": 24.89741416931156,
+      }
     }
-  }
-  handleCenterChanged={[Function]}
-  handleDragEnd={[Function]}
-  handleMarkerClick={[Function]}
-  handleZoomChange={[Function]}
-  isMarkerShown={false}
-  markerName="Keskipiste: 60.190599999999996, 24.89741416931156"
-  markers={
-    Array [
+    currentLocationCoordinates={
       Object {
-        "address": "Kilpailukuja, 04300 Tuusula",
-        "coordinates": Object {
-          "lat": 60.3905,
-          "lng": 25.03,
+        "lat": 60.190599999999996,
+        "lng": 24.89741416931156,
+      }
+    }
+    handleCenterChanged={[Function]}
+    handleDragEnd={[Function]}
+    handleMapCenterChange={[Function]}
+    handleMarkerClick={[Function]}
+    handleZoomChange={[Function]}
+    isMarkerShown={false}
+    markerName="Keskipiste: 60.190599999999996, 24.89741416931156"
+    markers={
+      Array [
+        Object {
+          "address": "Kilpailukuja, 04300 Tuusula",
+          "coordinates": Object {
+            "lat": 60.3905,
+            "lng": 25.03,
+          },
+          "id": "5cfd0e367a3430892fcde89d",
+          "isOpen": false,
+          "name": "Ford DiscGolfPark",
+          "slug": "ford-discgolfpark-tuusula",
         },
-        "id": "5cfd0e367a3430892fcde89d",
-        "isOpen": false,
-        "name": "Ford DiscGolfPark",
-        "slug": "ford-discgolfpark-tuusula",
-      },
-      Object {
-        "address": "Keinukalliontie 47, 04250 Kerava",
-        "coordinates": Object {
-          "lat": 60.3846,
-          "lng": 25.1396,
+        Object {
+          "address": "Keinukalliontie 47, 04250 Kerava",
+          "coordinates": Object {
+            "lat": 60.3846,
+            "lng": 25.1396,
+          },
+          "id": "5cfd0e7f7a3430892fcde9c6",
+          "isOpen": false,
+          "name": "Keinukallio",
+          "slug": "keinukallio-kerava",
         },
-        "id": "5cfd0e7f7a3430892fcde9c6",
-        "isOpen": false,
-        "name": "Keinukallio",
-        "slug": "keinukallio-kerava",
-      },
-    ]
-  }
-  radius={20000}
-  zoom={9}
-/>
+      ]
+    }
+    radius={20000}
+    useCurrentLocation={true}
+    zoom={9}
+  />
+  <AdvancedSearchMapstyles__LocationButton
+    bg="blue"
+    border={0}
+    borderRadius={2}
+    color="white"
+    fontSize={1}
+    fontWeight="bold"
+    is="button"
+    lineHeight={1.1428571428571428}
+    m={0}
+    onClick={[Function]}
+    px={3}
+    py={2}
+    title="Käytä nykyistä sijaintia"
+  >
+    <AdvancedSearchMapstyles__LocationIconWrapper
+      useCurrentLocation={true}
+    >
+      <GoLocation
+        size="1.25rem"
+      />
+    </AdvancedSearchMapstyles__LocationIconWrapper>
+  </AdvancedSearchMapstyles__LocationButton>
+</Mapstyles__MapWrapper>
 `;

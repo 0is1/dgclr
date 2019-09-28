@@ -2,8 +2,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Box, Label } from 'rebass';
+import { Label } from 'rebass';
 import { debounce } from 'lodash';
+import { GoAlert } from 'react-icons/go';
 import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/AdvancedSearch/actions';
 import {
   queryResultsFromState,
@@ -11,6 +12,7 @@ import {
   getAdvancedMapZoom,
   latestAdvancedQuery as latestAdvancedQuerySelector,
 } from 'components/AdvancedSearch/selectors';
+import { getCurrentLocation } from 'helpers/geolocation';
 import Map from 'components/Map';
 import Input from 'components/Input';
 import { ClipLoader } from 'components/Spinners';
@@ -18,14 +20,17 @@ import { ADVANCED_NEARBY } from 'lib/constants';
 import {
   convertCoordinatesToObject, convertMetersToKilometers, courseAddressDetails, isArrayWithLength,
 } from 'helpers/utils';
+
 import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQuery.styles';
 
 import type {
   Course, CoordinatesObject, CourseForMap, State as ReduxState,
 } from 'lib/types';
+import Styles from './AdvancedSearchMap.styles';
 import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN, MAP_SEARCH_RADIUS_FILTER } from './constants';
 
 const { NoResults } = AdvancedSearchQueryStyles;
+const { ErrorWrapperBox } = Styles;
 
 type Props = {
   handleChange: Function,
@@ -43,9 +48,9 @@ type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 type State = {
   coordinates: CoordinatesObject,
+  error: ?string,
   radius: number,
   waitingLocation: boolean,
-  error: ?string,
 };
 
 export const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931156 };
@@ -53,9 +58,9 @@ export const defaultCoordinates = { lat: 60.190599999999996, lng: 24.89741416931
 export class AdvancedSearchMap extends Component<CombinedProps, State> {
   state = {
     coordinates: defaultCoordinates,
+    error: null,
     radius: 20000,
     waitingLocation: true,
-    error: null,
   };
 
   debounceRadius = debounce((radius: number) => {
@@ -82,9 +87,9 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     if (isArrayWithLength(defaultValue) && defaultValue[0].coordinates && defaultValue[0].radius) {
       this.state = {
         coordinates: defaultValue[0].coordinates,
+        error: null,
         radius: defaultValue[0].radius,
         waitingLocation: true,
-        error: null,
       };
     }
   }
@@ -94,12 +99,6 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     const { mapVisible } = this.props;
     if (mapVisible && defaultCoordinates.lat === coordinates.lat && defaultCoordinates.lng === coordinates.lng) {
       try {
-        const options = {
-          enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 0,
-        };
-
         const getCurrentPositionSuccess = (pos) => {
           const { coords } = pos;
           const newCoordinates = {
@@ -117,7 +116,7 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
           console.warn(`ERROR(${err.code}): ${err.message}`);
           this.setState({ waitingLocation: false, error: err.message });
         };
-        navigator.geolocation.getCurrentPosition(getCurrentPositionSuccess, getCurrentPositionError, options);
+        getCurrentLocation(getCurrentPositionSuccess, getCurrentPositionError);
       } catch (e) {
         console.error('getCurrentPosition error: ', e);
 
@@ -194,19 +193,20 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
         name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`,
         queryResults: filteredResults,
       },
-      onDragEnd: this.onCircleDragEnd,
+      onCircleDragEnd: this.onCircleDragEnd,
       onZoomChange: this.handleZoomChange,
       radius,
       zoom,
     };
     const radiusOptions = this.inputOptions;
-
+    // TODO: move Error-component to own reusable file
     return (
       <>
         {error && (
-          <Box p={[0, '0.5rem 2rem']}>
+          <ErrorWrapperBox p={[0, '0.5rem 2rem']}>
+            <GoAlert size={20} />
             <NoResults>{error}</NoResults>
-          </Box>
+          </ErrorWrapperBox>
         )}
         <Map {...mapProps} />
         <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
