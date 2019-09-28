@@ -10,13 +10,13 @@ import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 import MapComponent from './MapComponent';
 import AdvancedMapStyles from './AdvancedSearchMap.styles';
 import Styles from './Map.styles';
+import type { LatLngFunctions } from './types';
 
 const QUERY_RESULTS_CHANGED = 'QUERY_RESULTS_CHANGED';
 
 const { LocationButton, LocationIconWrapper } = AdvancedMapStyles;
 const { MapWrapper } = Styles;
 type MarkerData = { isOpen: boolean } & CourseForMap;
-type LatLngFunctions = { lat: Function, lng: Function };
 
 type Props = {
   advancedSearch?: boolean,
@@ -65,6 +65,7 @@ class Map extends PureComponent<Props, State> {
         isMarkerShown: false,
         markers,
         useCurrentLocation: !!advancedSearch,
+        currentLocationCoordinates: null,
       };
     }
   }

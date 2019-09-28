@@ -1,5 +1,5 @@
 // @flow
-import type { CoordinatesObject } from 'lib/types';
+import type { LatLngFunctions } from 'components/Map/types';
 
 /**
  * Get current location
@@ -28,7 +28,7 @@ export const getCurrentLocation = (getCurrentPositionSuccess: Function, getCurre
  * @param {Object} coordinates object
  * @return {boolean}
  */
-export const validateCoordsFromMap = (coords: ?CoordinatesObject) => {
+export const validateCoordsFromMap = (coords: LatLngFunctions) => {
   if (coords && typeof coords.lat === 'function' && typeof coords.lng === 'function') {
     return true;
   }
