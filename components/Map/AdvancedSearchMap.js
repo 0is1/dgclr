@@ -2,8 +2,9 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Box, Label } from 'rebass';
+import { Label } from 'rebass';
 import { debounce } from 'lodash';
+import { GoAlert } from 'react-icons/go';
 import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/AdvancedSearch/actions';
 import {
   queryResultsFromState,
@@ -25,9 +26,11 @@ import AdvancedSearchQueryStyles from 'components/AdvancedSearch/AdvancedSearchQ
 import type {
   Course, CoordinatesObject, CourseForMap, State as ReduxState,
 } from 'lib/types';
+import Styles from './AdvancedSearchMap.styles';
 import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN, MAP_SEARCH_RADIUS_FILTER } from './constants';
 
 const { NoResults } = AdvancedSearchQueryStyles;
+const { ErrorWrapperBox } = Styles;
 
 type Props = {
   handleChange: Function,
@@ -190,19 +193,20 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
         name: `Keskipiste: ${coordinates.lat}, ${coordinates.lng}`,
         queryResults: filteredResults,
       },
-      onDragEnd: this.onCircleDragEnd,
+      onCircleDragEnd: this.onCircleDragEnd,
       onZoomChange: this.handleZoomChange,
       radius,
       zoom,
     };
     const radiusOptions = this.inputOptions;
-
+    // TODO: move Error-component to own reusable file
     return (
       <>
         {error && (
-          <Box p={[0, '0.5rem 2rem']}>
+          <ErrorWrapperBox p={[0, '0.5rem 2rem']}>
+            <GoAlert size={20} />
             <NoResults>{error}</NoResults>
-          </Box>
+          </ErrorWrapperBox>
         )}
         <Map {...mapProps} />
         <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
