@@ -1,10 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Map /> snapshots renders with default props 1`] = `
-<Fragment>
+<Mapstyles__MapWrapper>
   <LoadMap
     advancedSearch={true}
     center={
+      Object {
+        "lat": 60.190599999999996,
+        "lng": 24.89741416931156,
+      }
+    }
+    currentLocationCoordinates={
       Object {
         "lat": 60.190599999999996,
         "lng": 24.89741416931156,
@@ -70,5 +76,5 @@ exports[`<Map /> snapshots renders with default props 1`] = `
       />
     </AdvancedSearchMapstyles__LocationIconWrapper>
   </AdvancedSearchMapstyles__LocationButton>
-</Fragment>
+</Mapstyles__MapWrapper>
 `;
