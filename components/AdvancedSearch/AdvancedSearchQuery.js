@@ -63,12 +63,9 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
     // console.log('courses: ', courses);
     // console.log('prevCourses: ', prevCourses);
     if (
-      (isArrayWithLength(courses)
-        && differenceBy(courses, prevCourses, '_id').length > 0)
+      (isArrayWithLength(courses) && differenceBy(courses, prevCourses, '_id').length > 0)
       || (!isArrayWithLength(courses) && stringifyFilter !== latestQuery)
-      || (prevCourses
-        && courses.length !== prevCourses.length
-        && stringifyFilter !== latestQuery)
+      || (prevCourses && courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
     ) {
       return true;
     }
@@ -98,7 +95,7 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
                 {course.name}
                 <LayoutRatingBadges tiny ratings={ratings} />
                 <SearchResultIcon>
-                  <GoChevronRight size="1.5rem" color="#0067ee" />
+                  <GoChevronRight size="25" color="#0067ee" />
                 </SearchResultIcon>
               </SearchResultItem>
             </Link>

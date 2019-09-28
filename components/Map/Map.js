@@ -222,7 +222,7 @@ class Map extends PureComponent<Props, State> {
         {advancedSearch && (
           <LocationButton onClick={this.toggleCurrentLocation} title="Käytä nykyistä sijaintia">
             <LocationIconWrapper useCurrentLocation={useCurrentLocation}>
-              <GoLocation size="1.25rem" />
+              <GoLocation size="20" />
             </LocationIconWrapper>
           </LocationButton>
         )}

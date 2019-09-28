@@ -33,7 +33,7 @@ exports[`<AdvancedSearchQuery /> snapshots renders with queryResults 1`] = `
           <SearchContainerstyles__SearchResultIcon>
             <GoChevronRight
               color="#0067ee"
-              size="1.5rem"
+              size="25"
             />
           </SearchContainerstyles__SearchResultIcon>
         </SearchContainerstyles__SearchResultItem>
@@ -60,7 +60,7 @@ exports[`<AdvancedSearchQuery /> snapshots renders with queryResults 1`] = `
           <SearchContainerstyles__SearchResultIcon>
             <GoChevronRight
               color="#0067ee"
-              size="1.5rem"
+              size="25"
             />
           </SearchContainerstyles__SearchResultIcon>
         </SearchContainerstyles__SearchResultItem>

@@ -72,7 +72,7 @@ exports[`<Map /> snapshots renders with default props 1`] = `
       useCurrentLocation={true}
     >
       <GoLocation
-        size="1.25rem"
+        size="20"
       />
     </AdvancedSearchMapstyles__LocationIconWrapper>
   </AdvancedSearchMapstyles__LocationButton>
