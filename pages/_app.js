@@ -1,12 +1,11 @@
 import App from 'next/app';
-import Head from 'next/head';
 import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import { Provider as RebassProvider } from 'rebass';
 import { createGlobalStyle } from 'styled-components';
-
+import { appWithTranslation } from 'i18n';
 import { configureStore } from 'lib/withReduxSaga';
 
 const GlobalStyle = createGlobalStyle`
@@ -24,9 +23,6 @@ class DGCLRApp extends App {
     return (
       <>
         <GlobalStyle />
-        <Head>
-          <title>DGCLR - Disc Golf Course Lists and Results</title>
-        </Head>
         <RebassProvider>
           <Provider store={store}>
             <Component {...pageProps} />
@@ -37,4 +33,4 @@ class DGCLRApp extends App {
   }
 }
 
-export default withRedux(configureStore)(withReduxSaga(DGCLRApp));
+export default withRedux(configureStore)(withReduxSaga(appWithTranslation(DGCLRApp)));
