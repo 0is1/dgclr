@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import { differenceBy } from 'lodash';
 import { Box } from 'rebass';
+import { withTranslation } from 'lib/i18n';
 import { GoChevronRight } from 'react-icons/go';
 import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
 import { COURSE_QUERY } from 'lib/constants';
@@ -30,6 +31,7 @@ type Props = {
   latestQuery: string,
   setCourses: Function,
   setSearchQuery: Function,
+  t: Function,
 };
 
 class SearchQuery extends Component<Props> {
@@ -65,7 +67,9 @@ class SearchQuery extends Component<Props> {
   };
 
   render() {
-    const { query, queryResults, data = {} } = this.props;
+    const {
+      query, queryResults, data = {}, t,
+    } = this.props;
     if (!query && !queryResults.length) return null;
     if (data && data.loading) {
       return <ClipLoader />;
@@ -94,7 +98,7 @@ class SearchQuery extends Component<Props> {
     if (!results) {
       return (
         <Box p={[0, '0.5rem 2rem']}>
-          <NoResults>Ei hakutuloksia!</NoResults>
+          <NoResults>{t('no-search-results')}</NoResults>
         </Box>
       );
     }
@@ -141,4 +145,4 @@ const ComponentWithMutation = graphql(SEARCH_COURSES, {
 export default connect<any, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(ComponentWithMutation);
+)(withTranslation('common')(ComponentWithMutation));

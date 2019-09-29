@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import { differenceBy, size } from 'lodash';
 import { Box } from 'rebass';
+import { withTranslation } from 'lib/i18n';
 import { GoChevronRight } from 'react-icons/go';
 import { uniqueLayoutRatings, isArrayWithLength } from 'helpers/utils';
 import { COURSE_QUERY } from 'lib/constants';
@@ -29,6 +30,7 @@ const { NoResults } = AdvancedSearchQueryStyles;
 type Props = {
   filter: {},
   data: GraphQLData,
+  t: Function,
 };
 
 type MapStateToProps = {
@@ -108,7 +110,9 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
 
   render() {
     // $FlowFixMe queryResults is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
-    const { filter, queryResults, data = {} } = this.props;
+    const {
+      filter, queryResults, data = {}, t,
+    } = this.props;
     if (size(filter) < 1 && !queryResults.length) return null;
     if (data && data.loading) {
       return <ClipLoader />;
@@ -117,7 +121,7 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
     if (!results) {
       return (
         <Box p={[0, '0.5rem 2rem']}>
-          <NoResults>Ei hakutuloksia!</NoResults>
+          <NoResults>{t('no-search-results')}</NoResults>
         </Box>
       );
     }
@@ -164,4 +168,4 @@ const ComponentWithMutation = graphql(SEARCH_COURSES, {
 export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(ComponentWithMutation);
+)(withTranslation('common')(ComponentWithMutation));
