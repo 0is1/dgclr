@@ -102,7 +102,7 @@ class Course extends Component<CombinedProps> {
           <title>{`${t('title')} – ${name}`}</title>
         </Helmet>
         <PanelWrapper>
-          <PanelHeader>Radan tiedot</PanelHeader>
+          <PanelHeader>{t('course:info-title')}</PanelHeader>
           <Flex flexWrap="wrap">
             <Box width={[1, 1, 1, 1 / 2]} p={[2, 2, null, 4]}>
               <Title>
@@ -111,59 +111,86 @@ class Course extends Component<CombinedProps> {
               </Title>
               <Description>{ReactHtmlParser(descriptionWithLinks)}</Description>
               <PanelWrapper mt={4}>
-                <PanelHeader>Radan lisätiedot:</PanelHeader>
+                <PanelHeader>{t('course:additional-info-title')}</PanelHeader>
                 <Box width="100%" px={1} pt={2} pb="1rem">
                   {courseInfo.founded && (
                     <BaseText>
-                      <Strong>Perustettu: </Strong>
+                      <Strong>
+                        {t('course:founded')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.founded}`}
                     </BaseText>
                   )}
                   {courseInfo.courseDesigner && (
                     <BaseText>
-                      <Strong>Suunnittelija: </Strong>
+                      <Strong>
+                        {t('course:designer')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.courseDesigner}`}
                     </BaseText>
                   )}
                   {courseInfo.rangeMaster && (
                     <BaseText>
-                      <Strong>Ratamestari: </Strong>
+                      <Strong>
+                        {t('course:course-master')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.rangeMaster}`}
                     </BaseText>
                   )}
                   {courseInfo.basketType && (
                     <BaseText>
-                      <Strong>Korityyppi: </Strong>
+                      <Strong>
+                        {t('course:basket-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.basketType}`}
                     </BaseText>
                   )}
                   {courseInfo.infoSignType && (
                     <BaseText>
-                      <Strong>Opastaulut: </Strong>
+                      <Strong>
+                        {t('course:info-board-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.infoSignType}`}
                     </BaseText>
                   )}
                   {courseInfo.teeType && (
                     <BaseText>
-                      <Strong>Heittoalustat: </Strong>
+                      <Strong>
+                        {t('course:tee-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.teeType}`}
                     </BaseText>
                   )}
                   {courseInfo.courseTypes && (
                     <BaseText>
-                      <Strong>Ratatyypit: </Strong>
+                      <Strong>
+                        {t('course:course-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.courseTypes.join(', ')}`}
                     </BaseText>
                   )}
                   {courseInfo.surfaceShapeTypes && (
                     <BaseText>
-                      <Strong>Pinnanmuodot: </Strong>
+                      <Strong>
+                        {t('course:surface-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.surfaceShapeTypes.join('. ')}`}
                     </BaseText>
                   )}
                   {courseInfo.fee && courseInfo.fee.value && (
                     <BaseText>
-                      <Strong>Maksullinen / Ilmainen: </Strong>
+                      <Strong>
+                        {t('course:price-info')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.fee.value}`}
                     </BaseText>
                   )}
@@ -212,4 +239,4 @@ const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
 export default connect<CombinedProps, OwnProps, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(withTranslation(['common'])(Course));
+)(withTranslation(['common', 'course'])(Course));
