@@ -1,5 +1,5 @@
 import React from 'react';
-import { config } from 'i18n';
+import { config } from 'lib/i18n';
 import { isArrayWithLength } from 'helpers/utils';
 import LanguageSelector from './LanguageSelector';
 import Styles from './LanguageSelector.styles';

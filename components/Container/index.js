@@ -5,7 +5,7 @@ import { withRouter } from 'next/router';
 import { Tabs, Text } from 'rebass';
 import * as gtag from 'lib/gtag';
 import colors from 'components/colors';
-import { withTranslation } from 'i18n';
+import { withTranslation } from 'lib/i18n';
 import LanguageSelector from 'components/LanguageSelector';
 import Styles from './Container.styles';
 

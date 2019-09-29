@@ -5,7 +5,7 @@ import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import withApollo from 'lib/withApollo';
 import { omit } from 'lodash/fp';
-import { i18n, withTranslation } from 'i18n';
+import { i18n, withTranslation } from 'lib/i18n';
 import { isArrayWithLength, convertKilometersToMeters } from 'helpers/utils';
 import Container from 'components/Container';
 import AdvancedSearch from 'components/AdvancedSearch';

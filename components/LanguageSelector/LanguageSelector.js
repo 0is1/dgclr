@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { i18n } from 'i18n';
+import { i18n } from 'lib/i18n';
 import Styles from './LanguageSelector.styles';
 
 const { Text } = Styles;

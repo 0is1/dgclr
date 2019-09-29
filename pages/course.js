@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { graphql } from 'react-apollo';
 import { withRouter } from 'next/router';
 import { size } from 'lodash';
-import { i18n, withTranslation } from 'i18n';
+import { i18n, withTranslation } from 'lib/i18n';
 import withApollo from 'lib/withApollo';
 import Container from 'components/Container';
 import Course from 'components/Course';

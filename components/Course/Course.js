@@ -12,7 +12,7 @@ import {
   getCourseMapUrlForLayout,
   uniqueLayoutRatings,
 } from 'helpers/utils';
-import { withTranslation } from 'i18n';
+import { withTranslation } from 'lib/i18n';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import Map from 'components/Map';
 import Layouts from 'components/Layouts';

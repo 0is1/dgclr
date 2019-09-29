@@ -5,7 +5,7 @@ import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import { Provider as RebassProvider } from 'rebass';
 import { createGlobalStyle } from 'styled-components';
-import { appWithTranslation } from 'i18n';
+import { appWithTranslation } from 'lib/i18n';
 import { configureStore } from 'lib/withReduxSaga';
 
 const GlobalStyle = createGlobalStyle`

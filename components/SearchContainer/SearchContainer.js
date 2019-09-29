@@ -5,7 +5,7 @@ import { debounce } from 'lodash';
 import { Box } from 'rebass';
 import Input from 'components/Input';
 import RebassComponents from 'components/RebassComponents';
-import { withTranslation } from 'i18n';
+import { withTranslation } from 'lib/i18n';
 import type { State as ReduxState } from 'lib/types';
 import SearchQuery from './SearchQuery';
 import { latestQuery as latestQueryFunc } from './selectors';

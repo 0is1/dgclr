@@ -2,7 +2,7 @@
 
 import React from 'react';
 import withApollo from 'lib/withApollo';
-import { i18n } from 'i18n';
+import { i18n } from 'lib/i18n';
 import Container from 'components/Container';
 import SearchContainer from 'components/SearchContainer';
 

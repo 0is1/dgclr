@@ -11,7 +11,7 @@ const path = require('path');
 const forceDomain = require('forcedomain');
 const Rollbar = require('rollbar');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
-const nextI18next = require('./i18n');
+const nextI18next = require('./lib/i18n');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
