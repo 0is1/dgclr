@@ -9,10 +9,11 @@ const Styles = {
     width: 100%;
   `,
   HeaderLink: styled(Text)`
-    display: block;
     color: ${colors.text};
-    line-height: 1.5;
     cursor: pointer;
+    display: block;
+    line-height: 1.5;
+    text-align: center;
   `,
   BaseText: styled(Text)`
     margin-top: 0.85rem;

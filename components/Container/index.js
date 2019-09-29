@@ -5,17 +5,21 @@ import { withRouter } from 'next/router';
 import { Tabs, Text } from 'rebass';
 import * as gtag from 'lib/gtag';
 import colors from 'components/colors';
+import { withTranslation } from 'i18n';
+import LanguageSelector from 'components/LanguageSelector';
 import Styles from './Container.styles';
 
 type Props = {
   activeRoute?: string,
   children: Node,
+  currentLanguage: ?string,
   router: {
     events: {
       on: Function,
       off: Function,
     },
   },
+  t: Function,
 };
 
 const {
@@ -42,32 +46,35 @@ class ContainerComponent extends Component<Props> {
   };
 
   render() {
-    const { activeRoute, children } = this.props;
+    const {
+      activeRoute, children, currentLanguage, t,
+    } = this.props;
     return (
       <>
         <header>
           <Tabs px={4} pt={2}>
             <Tab borderColor={activeRoute === '/' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/">
-                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Tekstihaku</HeaderLink>
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>{t('menu-text-search')}</HeaderLink>
               </Link>
             </Tab>
             <Tab borderColor={activeRoute === '/advanced_search' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/advanced_search">
-                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Edistynyt haku</HeaderLink>
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>{t('menu-text-advanced-search')}</HeaderLink>
               </Link>
             </Tab>
             <Tab borderColor={activeRoute === 'info' ? `${colors.border}` : 'transparent'} px={3}>
               <Link href="/info">
-                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>Info</HeaderLink>
+                <HeaderLink fontSize={['0.65rem', '0.75rem', '1rem', '1rem']}>{t('menu-text-info')}</HeaderLink>
               </Link>
             </Tab>
+            <LanguageSelector currentLanguage={currentLanguage} />
           </Tabs>
         </header>
         <Container p={['0 0 2rem 0', '0.5rem 0', '0.5rem 0', '2rem 0']}>{children}</Container>
         <Footer>
           <Text mt={2} textAlign="center">
-            DGCLR.fi ei vastaa sivujen sisällön oikeellisuudesta tai virheettömyydestä!
+            {t('footer-disclaimer')}
           </Text>
           <Text mt={2} textAlign="center">
             <a
@@ -77,7 +84,7 @@ class ContainerComponent extends Component<Props> {
               data-show-count="false"
               aria-label="See 0is1/dgclr in GitHub"
             >
-              See code in GitHub
+              {t('github-text')}
             </a>
           </Text>
         </Footer>
@@ -86,4 +93,4 @@ class ContainerComponent extends Component<Props> {
   }
 }
 
-export default withRouter(ContainerComponent);
+export default withRouter(withTranslation('common')(ContainerComponent));
