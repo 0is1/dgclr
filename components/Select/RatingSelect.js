@@ -15,7 +15,7 @@ import Styles from './Select.styles';
 
 const { ZIndexContainer } = Styles;
 
-type Props = { onChange: Function };
+type Props = { onChange: Function, placeholder: string, label: string };
 type MapStateToProps = { defaultValue: any };
 
 type MapDispatchToProps = { setFilter: Function };
@@ -37,17 +37,11 @@ class RatingSelect extends Component<CombinedProps> {
   };
 
   render() {
-    const { defaultValue } = this.props;
+    const { defaultValue, placeholder, label } = this.props;
     return (
       <ZIndexContainer zIndex={5}>
-        <Label>Radan luokitus:</Label>
-        <Select
-          defaultValue={defaultValue}
-          isMulti
-          options={RATING_OPTIONS}
-          onChange={this.onRatingChange}
-          placeholder="Radan luokitus"
-        />
+        <Label>{label}</Label>
+        <Select defaultValue={defaultValue} isMulti options={RATING_OPTIONS} onChange={this.onRatingChange} placeholder={placeholder} />
       </ZIndexContainer>
     );
   }

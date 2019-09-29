@@ -29,19 +29,13 @@ export const courseTypeOptions = [
   },
 ];
 
-type Props = { onChange: Function };
+type Props = { onChange: Function, placeholder: string, label: string };
 
 const CourseTypeSelect = (props: Props) => {
-  const { onChange } = props;
+  const { onChange, ...other } = props;
   return (
     <ZIndexContainer>
-      <Select
-        options={courseTypeOptions}
-        onChange={onChange}
-        placeholder="Ratatyyppi"
-        label="Ratatyyppi:"
-        filterName={SELECT_FILTER_NAMES.courseTypes.filterName}
-      />
+      <Select options={courseTypeOptions} onChange={onChange} {...other} filterName={SELECT_FILTER_NAMES.courseTypes.filterName} />
     </ZIndexContainer>
   );
 };

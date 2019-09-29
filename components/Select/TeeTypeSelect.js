@@ -15,19 +15,11 @@ const teeTypeOptions = [
   { value: 'Betoni', label: 'Betoni' },
 ];
 
-type Props = { onChange: Function };
+type Props = { onChange: Function, placeholder: string, label: string };
 
 const TeeTypeSelect = (props: Props) => {
-  const { onChange } = props;
-  return (
-    <Select
-      options={teeTypeOptions}
-      onChange={onChange}
-      placeholder="Heittopaikan tyyppi"
-      label="Heittopaikan tyyppi:"
-      filterName={SELECT_FILTER_NAMES.teeType.filterName}
-    />
-  );
+  const { onChange, ...other } = props;
+  return <Select options={teeTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.teeType.filterName} {...other} />;
 };
 
 export default TeeTypeSelect;
