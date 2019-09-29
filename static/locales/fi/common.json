@@ -1,0 +1,12 @@
+{
+    "advanced-search": "edistynyt haku",
+    "error-with-status": "Palvelimella tapahtui virhe {{statusCode}}  – 😭",
+    "error-without-status": "Palvelimella tapahtui virhe – 😰",
+    "footer-disclaimer": "DGCLR.fi ei vastaa sivujen sisällön oikeellisuudesta tai virheettömyydestä!",
+    "github-text": "Tsekkaa sorsat GitHubista",
+    "menu-text-advanced-search": "Edistynyt haku",
+    "menu-text-info": "Info",
+    "menu-text-search": "Tekstihaku",
+    "sub-title": "frisbeegolfrata info",
+    "title": "DGCLR.fi"
+}
