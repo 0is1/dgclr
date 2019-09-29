@@ -3,13 +3,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Box, Heading } from 'rebass';
 import { getTitle } from 'helpers/utils';
+import { i18n } from 'lib/i18n';
 import Container from 'components/Container';
 import BaseStyles from 'components/Container/Container.styles';
 
 const { BaseText, UL, LI } = BaseStyles;
+type Props = { currentLanguage: ?string };
 
-const InfoPage = () => (
-  <Container activeRoute="info">
+const InfoPage = ({ currentLanguage }: Props) => (
+  <Container activeRoute="info" currentLanguage={currentLanguage}>
     <Helmet>
       <title>{getTitle('Info')}</title>
     </Helmet>
@@ -47,5 +49,10 @@ const InfoPage = () => (
     </Box>
   </Container>
 );
+
+InfoPage.getInitialProps = async ({ req }) => {
+  const currentLanguage = req ? req.language : i18n.language;
+  return { namespacesRequired: ['common'], currentLanguage };
+};
 
 export default InfoPage;
