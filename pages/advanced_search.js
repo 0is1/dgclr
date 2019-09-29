@@ -86,11 +86,12 @@ const AdvancedSearchPage = (props: CombinedProps) => {
 
 AdvancedSearchPage.getInitialProps = async ({ req, query }) => {
   const currentLanguage = req ? req.language : i18n.language;
+  const namespacesRequired = ['common', 'advanced-search'];
   if (req) {
     const { query: reqQuery } = req;
-    return { currentLanguage, query: reqQuery };
+    return { currentLanguage, query: reqQuery, namespacesRequired };
   }
-  return { currentLanguage, query };
+  return { currentLanguage, query, namespacesRequired };
 };
 
 const mapDispatchToProps = (dispatch: Function) => ({

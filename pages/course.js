@@ -37,7 +37,7 @@ const CoursePage = (props: Props) => {
 CoursePage.getInitialProps = async ({ query, req }) => {
   const { slug } = query;
   const currentLanguage = req ? req.language : i18n.language;
-  return { currentLanguage, namespacesRequired: ['common'], slug };
+  return { currentLanguage, namespacesRequired: ['common', 'course'], slug };
 };
 
 const SEARCH_COURSE = gql`
