@@ -10,6 +10,8 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const forceDomain = require('forcedomain');
 const Rollbar = require('rollbar');
+const nextI18NextMiddleware = require('next-i18next/middleware').default;
+const nextI18next = require('./i18n');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -90,6 +92,7 @@ app
     if (process.env.NODE_ENV !== 'production') {
       server.use(faviconShortCircuit);
     }
+    server.use(nextI18NextMiddleware(nextI18next));
     // Use force https in production
     if (process.env.NODE_ENV === 'production') {
       server.use(
