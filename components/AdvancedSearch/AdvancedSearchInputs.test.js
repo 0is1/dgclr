@@ -6,6 +6,7 @@ const mockProps = (props = {}) => ({
   filter: '{}',
   mapChecked: true,
   allInputsOpen: false,
+  t: jest.fn(value => value),
   ...props,
 });
 

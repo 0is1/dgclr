@@ -16,6 +16,7 @@ const mockProps = (props = {}) => ({
   zoom: 10,
   setFilter: jest.fn(),
   setMapZoom: jest.fn(),
+  t: jest.fn(value => value),
   ...props,
 });
 

@@ -56,7 +56,7 @@ exports[`<AdvancedSearchMap /> snapshots renders with default props 1`] = `
       ]
     }
   >
-    Maksimietäisyys (20km): 
+    advanced-search:slider-label-map-circle-max-distance (20km): 
   </Label>
   <InputComponent
     focusOnMount={false}
@@ -157,7 +157,7 @@ exports[`<AdvancedSearchMap /> snapshots renders with error 1`] = `
       ]
     }
   >
-    Maksimietäisyys (20km): 
+    advanced-search:slider-label-map-circle-max-distance (20km): 
   </Label>
   <InputComponent
     focusOnMount={false}

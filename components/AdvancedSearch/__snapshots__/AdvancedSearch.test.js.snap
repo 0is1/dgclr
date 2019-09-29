@@ -19,7 +19,7 @@ exports[`<AdvancedSearch /> snapshots renders with default props 1`] = `
       ]
     }
   >
-    <Connect(AdvancedSearchInputs) />
+    <Connect(withI18nextTranslation(AdvancedSearchInputs)) />
     <Connect(Apollo(AdvancedSearchQuery))
       filter={Object {}}
     />
