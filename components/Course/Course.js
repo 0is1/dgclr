@@ -10,9 +10,9 @@ import {
   convertLinksToHtml,
   courseAddressDetails,
   getCourseMapUrlForLayout,
-  getTitle,
   uniqueLayoutRatings,
 } from 'helpers/utils';
+import { withTranslation } from 'i18n';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import Map from 'components/Map';
 import Layouts from 'components/Layouts';
@@ -28,6 +28,7 @@ import { setCourses as setCoursesFunc } from './actions';
 
 type Props = {
   data: GraphQLData,
+  t: Function,
 };
 type OwnProps = Props & { slug: string };
 type MapStateToProps = { activeIndex: ?number, course: CourseType };
@@ -74,7 +75,9 @@ class Course extends Component<CombinedProps> {
   };
 
   render() {
-    const { activeIndex, course, data = {} } = this.props;
+    const {
+      activeIndex, course, data = {}, t,
+    } = this.props;
     const { courseBySlug = [] } = data;
     if ((size(course) < 1 && size(courseBySlug) < 1) || (data && data.loading)) {
       return <ClipLoader />;
@@ -96,7 +99,7 @@ class Course extends Component<CombinedProps> {
     return (
       <Box width={[1, 1, 1, '90%']} p={[0, 0, '0 0.5rem', '0 1rem']} m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}>
         <Helmet>
-          <title>{getTitle(name)}</title>
+          <title>{`${t('title')} – ${name}`}</title>
         </Helmet>
         <PanelWrapper>
           <PanelHeader>Radan tiedot</PanelHeader>
@@ -209,4 +212,4 @@ const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
 export default connect<CombinedProps, OwnProps, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(Course);
+)(withTranslation(['common'])(Course));
