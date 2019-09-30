@@ -1,6 +1,6 @@
 {
   "name": "dgclr",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Disc Golf Course Lists and Results",
   "main": "server.js",
   "author": "Janne Saarela",
