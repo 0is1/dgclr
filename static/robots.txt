@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /info
+Allow: /advanced_search
+Allow: /*
+Disallow: /course
+
+Sitemap: https://dgclr.fi/sitemap.xml
