@@ -12,11 +12,13 @@ const forceDomain = require('forcedomain');
 const Rollbar = require('rollbar');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 const nextI18next = require('./lib/i18n');
+const setupSitemap = require('./sitemap');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+let rollbar = null;
 if (process.env.ROLLBAR_ACCESS_TOKEN && isProduction) {
-  const rollbar = new Rollbar({
+  rollbar = new Rollbar({
     accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
     captureUncaught: true,
     captureUnhandledRejections: true,
@@ -119,6 +121,19 @@ app
     );
     server.use(express.static('static'));
     server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
+    server.get('/sitemap.xml', async (req, res) => {
+      try {
+        const sitemap = await setupSitemap();
+        const xml = sitemap.toXML();
+        res.header('Content-Type', 'application/xml');
+        res.send(xml);
+      } catch (err) {
+        if (rollbar) {
+          rollbar.critical(`GET sitemap.xml error: ${err.message}`);
+        }
+        res.status(500).end();
+      }
+    });
     server.get('/health-check', (req, res) => {
       res.status(200);
       res.json({ result: true });
