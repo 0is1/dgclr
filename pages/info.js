@@ -12,7 +12,7 @@ type Props = { currentLanguage: ?string, t: Function };
 const InfoPage = ({ currentLanguage, t }: Props) => {
   const moreFeaturesListData = t('info:more-features-list-data-one').split(',');
   return (
-    <Container activeRoute="info" currentLanguage={currentLanguage}>
+    <Container activeRoute="/info" currentLanguage={currentLanguage}>
       <Helmet>
         <title>{`${t('common:title')} – ${t('info:title')}`}</title>
       </Helmet>
