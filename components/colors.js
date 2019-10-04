@@ -1,5 +1,6 @@
 export default {
   border: '#c84b57',
+  blue: '#0077cc',
   darkGray: '#444444',
   gray: '#8a8a8a',
   grayAlpha: 'rgba(138, 138, 138, .25)',
