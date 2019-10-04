@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import { Box } from 'rebass';
@@ -18,7 +18,7 @@ type MapDispatchToProps = {};
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
-export class AdvancedSearch extends PureComponent<CombinedProps> {
+export class AdvancedSearch extends Component<CombinedProps> {
   componentDidMount() {
     const { query } = Router;
     const { filter } = this.props;

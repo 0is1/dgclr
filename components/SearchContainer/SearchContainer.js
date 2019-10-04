@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { debounce } from 'lodash';
 import { Box } from 'rebass';
@@ -26,7 +26,7 @@ type State = {
   query?: string,
 };
 
-class SearchContainer extends PureComponent<CombinedProps, State> {
+export class SearchContainer extends Component<CombinedProps, State> {
   state = {
     inputValue: '',
     query: '',
