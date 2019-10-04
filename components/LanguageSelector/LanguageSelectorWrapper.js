@@ -10,6 +10,7 @@ type Props = { currentLanguage: ?string };
 
 const LanguageSelectorWrapper = ({ currentLanguage }: Props) => {
   const languages = config.allLanguages;
+
   if (!isArrayWithLength(languages)) {
     return null;
   }

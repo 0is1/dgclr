@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageSelector /> snapshots renders with default props 1`] = `
+<LanguageSelectorstyles__Text
+  active={true}
+  onClick={[Function]}
+>
+  fi
+</LanguageSelectorstyles__Text>
+`;
+
+exports[`<LanguageSelector /> snapshots renders with language prop 1`] = `
+<LanguageSelectorstyles__Text
+  active={false}
+  onClick={[Function]}
+>
+  en
+</LanguageSelectorstyles__Text>
+`;
