@@ -104,7 +104,7 @@ class Course extends Component<CombinedProps> {
         <PanelWrapper>
           <PanelHeader>{t('course:info-title')}</PanelHeader>
           <Flex flexWrap="wrap">
-            <Box width={[1, 1, 1, 1 / 2]} p={[2, 2, null, 4]}>
+            <Box width={[1, 1, 1, 1 / 2]} p={[3, 3, null, 4]}>
               <Title>
                 {name}
                 <LayoutRatingBadges ratings={ratings} />
