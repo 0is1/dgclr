@@ -19,8 +19,8 @@ exports[`<AdvancedSearch /> snapshots renders with default props 1`] = `
       ]
     }
   >
-    <Connect(AdvancedSearchInputs) />
-    <Connect(Apollo(AdvancedSearchQuery))
+    <Connect(withI18nextTranslation(AdvancedSearchInputs)) />
+    <Connect(withI18nextTranslation(Apollo(AdvancedSearchQuery)))
       filter={Object {}}
     />
   </Box>

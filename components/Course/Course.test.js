@@ -15,6 +15,7 @@ const { Description, PanelWrapper } = Styles;
 const defaultProps = {
   setCourses: jest.fn(),
   slug: mockCoursesData[1].slug,
+  t: jest.fn(value => value),
 };
 
 function setup() {

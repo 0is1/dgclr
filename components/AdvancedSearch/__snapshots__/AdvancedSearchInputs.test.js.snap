@@ -8,7 +8,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
     my={2}
     width="100%"
   >
-    Edistynyt haku (varhaisessa kehitysvaiheessa)
+    advanced-search:title
   </Text>
   <Flex
     extend={
@@ -90,7 +90,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
       }
     >
       <Connect(RatingSelect)
+        label="advanced-search:input-label-course-rating"
         onChange={[Function]}
+        placeholder="advanced-search:input-placeholder-course-rating"
       />
     </Box>
     <Box
@@ -113,7 +115,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
       }
     >
       <CourseTypeSelect
+        label="advanced-search:input-label-course-type"
         onChange={[Function]}
+        placeholder="advanced-search:input-placeholder-course-type"
       />
     </Box>
     <Box
@@ -141,7 +145,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         is="label"
         mb={1}
       >
-        Väylien keskipituus:
+        advanced-search:slider-label-hole-average-length
       </Label>
       <InputComponent
         focusOnMount={false}
@@ -188,7 +192,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         }
       >
         <BasketTypeSelect
+          label="advanced-search:input-label-basket-type"
           onChange={[Function]}
+          placeholder="advanced-search:input-placeholder-basket-type"
         />
       </Box>
       <Box
@@ -211,7 +217,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         }
       >
         <TeeTypeSelect
+          label="advanced-search:input-label-tee-type"
           onChange={[Function]}
+          placeholder="advanced-search:input-placeholder-tee-type"
         />
       </Box>
       <Box
@@ -234,14 +242,16 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         }
       >
         <SurfaceTypeSelect
+          label="advanced-search:input-label-surface-contour-type"
           onChange={[Function]}
+          placeholder="advanced-search:input-placeholder-surface-contour-type"
         />
       </Box>
     </AdvancedSearchInputsstyles__FadeInBox>
     <Toggle
       checked={true}
       handleOnChange={[Function]}
-      label="Näytä kaikki valinnat:"
+      label="advanced-search:toggle-label-show-all-inputs"
     />
     <Box
       mb=".75rem"
@@ -254,9 +264,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
       <Toggle
         checked={true}
         handleOnChange={[Function]}
-        label="Käytä karttahakua:"
+        label="advanced-search:toggle-label-use-map"
       />
-      <Connect(AdvancedSearchMap)
+      <Connect(withI18nextTranslation(AdvancedSearchMap))
         handleChange={[Function]}
         mapVisible={true}
       />
@@ -277,7 +287,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
     my={2}
     width="100%"
   >
-    Edistynyt haku (varhaisessa kehitysvaiheessa)
+    advanced-search:title
   </Text>
   <Flex
     extend={
@@ -359,7 +369,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
       }
     >
       <Connect(RatingSelect)
+        label="advanced-search:input-label-course-rating"
         onChange={[Function]}
+        placeholder="advanced-search:input-placeholder-course-rating"
       />
     </Box>
     <Box
@@ -382,7 +394,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
       }
     >
       <CourseTypeSelect
+        label="advanced-search:input-label-course-type"
         onChange={[Function]}
+        placeholder="advanced-search:input-placeholder-course-type"
       />
     </Box>
     <Box
@@ -410,7 +424,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
         is="label"
         mb={1}
       >
-        Väylien keskipituus:
+        advanced-search:slider-label-hole-average-length
       </Label>
       <InputComponent
         focusOnMount={false}
@@ -440,7 +454,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
     <Toggle
       checked={false}
       handleOnChange={[Function]}
-      label="Näytä kaikki valinnat:"
+      label="advanced-search:toggle-label-show-all-inputs"
     />
     <Box
       mb=".75rem"
@@ -453,9 +467,9 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
       <Toggle
         checked={true}
         handleOnChange={[Function]}
-        label="Käytä karttahakua:"
+        label="advanced-search:toggle-label-use-map"
       />
-      <Connect(AdvancedSearchMap)
+      <Connect(withI18nextTranslation(AdvancedSearchMap))
         handleChange={[Function]}
         mapVisible={true}
       />

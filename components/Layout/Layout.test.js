@@ -9,6 +9,7 @@ import Layout from './Layout';
 const defaultProps = {
   active: true,
   layout: mockCoursesData[1].layouts[0],
+  t: jest.fn(value => value),
 };
 
 describe('Layout component', () => {

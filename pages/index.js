@@ -2,20 +2,25 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { getTitle } from 'helpers/utils';
 import withApollo from 'lib/withApollo';
+import { i18n, withTranslation } from 'lib/i18n';
 import Container from 'components/Container';
 import SearchContainer from 'components/SearchContainer';
 
-type Props = {};
+type Props = { currentLanguage: ?string, t: Function };
 
-const Index = (): Props => (
-  <Container activeRoute="/">
+const Index = ({ currentLanguage, t }: Props) => (
+  <Container activeRoute="/" currentLanguage={currentLanguage}>
     <Helmet>
-      <title>{getTitle()}</title>
+      <title>{`${t('title')}`}</title>
     </Helmet>
     <SearchContainer />
   </Container>
 );
 
-export default withApollo(Index);
+Index.getInitialProps = async ({ req }) => {
+  const currentLanguage = req ? req.language : i18n.language;
+  return { namespacesRequired: ['common', 'search'], currentLanguage };
+};
+
+export default withApollo(withTranslation('common')(Index));

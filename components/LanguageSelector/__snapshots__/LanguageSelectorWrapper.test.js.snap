@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageSelectorWrapper /> snapshots renders with default props 1`] = `
+<LanguageSelectorstyles__Wrapper>
+  <LanguageSelector
+    currentLanguage="fi"
+    key="en"
+    language="en"
+  />
+  <LanguageSelector
+    currentLanguage="fi"
+    key="fi"
+    language="fi"
+  />
+</LanguageSelectorstyles__Wrapper>
+`;

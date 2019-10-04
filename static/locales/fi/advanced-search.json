@@ -1,0 +1,17 @@
+{
+    "title": "Edistynyt haku (varhaisessa kehitysvaiheessa)",
+    "input-label-course-rating": "Radan luokitus:",
+    "input-placeholder-course-rating": "Radan luokitus",
+    "input-label-course-type": "Ratatyyppi:",
+    "input-placeholder-course-type": "Ratatyyppi",
+    "input-label-basket-type": "Korityyppi:",
+    "input-placeholder-basket-type": "Korityyppi",
+    "input-label-tee-type": "Heittopaikan tyyppi:",
+    "input-placeholder-tee-type": "Heittopaikan tyyppi",
+    "input-label-surface-contour-type": "Pinnanmuodot:",
+    "input-placeholder-surface-contour-type": "Pinnanmuodot",
+    "slider-label-hole-average-length": "Väylien keskipituus:",
+    "slider-label-map-circle-max-distance": "Maksimietäisyys",
+    "toggle-label-show-all-inputs": "Näytä kaikki valinnat:",
+    "toggle-label-use-map": "Käytä karttahakua:"
+}

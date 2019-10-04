@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Label } from 'rebass';
 import { debounce } from 'lodash';
 import { GoAlert } from 'react-icons/go';
+import { withTranslation } from 'lib/i18n';
 import { setFilter as setFilterFunc, setAdvancedSearchMapZoom } from 'components/AdvancedSearch/actions';
 import {
   queryResultsFromState,
@@ -35,6 +36,7 @@ const { ErrorWrapperBox } = Styles;
 type Props = {
   handleChange: Function,
   mapVisible: boolean,
+  t: Function,
 };
 type MapStateToProps = {
   defaultValue: Array<?{ coordinates: CoordinatesObject, radius: number }>,
@@ -177,7 +179,7 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
   };
 
   render() {
-    const { mapVisible, zoom } = this.props;
+    const { mapVisible, t, zoom } = this.props;
     if (!mapVisible) return null;
     const {
       coordinates, error, radius, waitingLocation,
@@ -209,7 +211,9 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
           </ErrorWrapperBox>
         )}
         <Map {...mapProps} />
-        <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>{`Maksimietäisyys (${convertMetersToKilometers(parseInt(radius, 10))}km): `}</Label>
+        <Label pt={['.5rem', '.5rem', '1rem', '1rem']}>
+          {`${t('advanced-search:slider-label-map-circle-max-distance')} (${convertMetersToKilometers(parseInt(radius, 10))}km): `}
+        </Label>
         <Input options={{ ...radiusOptions, initialValues: [radius] }} onChange={this.onRadiusChange} />
       </>
     );
@@ -228,7 +232,8 @@ const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
   setMapZoom: (zoom: number) => dispatch(setAdvancedSearchMapZoom(zoom)),
 });
+
 export default connect<CombinedProps, Props, any, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(AdvancedSearchMap);
+)(withTranslation('advanced-search')(AdvancedSearchMap));

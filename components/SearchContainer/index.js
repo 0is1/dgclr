@@ -1,4 +1,4 @@
 // @flow
-import SearchContainer from './SearchContainer';
+import SearchContainerComponent from './SearchContainer';
 
-export default SearchContainer;
+export default SearchContainerComponent;

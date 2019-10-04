@@ -10,9 +10,9 @@ import {
   convertLinksToHtml,
   courseAddressDetails,
   getCourseMapUrlForLayout,
-  getTitle,
   uniqueLayoutRatings,
 } from 'helpers/utils';
+import { withTranslation } from 'lib/i18n';
 import { courseBySlugFromState } from 'components/Course/selectors';
 import Map from 'components/Map';
 import Layouts from 'components/Layouts';
@@ -28,6 +28,7 @@ import { setCourses as setCoursesFunc } from './actions';
 
 type Props = {
   data: GraphQLData,
+  t: Function,
 };
 type OwnProps = Props & { slug: string };
 type MapStateToProps = { activeIndex: ?number, course: CourseType };
@@ -74,7 +75,9 @@ class Course extends Component<CombinedProps> {
   };
 
   render() {
-    const { activeIndex, course, data = {} } = this.props;
+    const {
+      activeIndex, course, data = {}, t,
+    } = this.props;
     const { courseBySlug = [] } = data;
     if ((size(course) < 1 && size(courseBySlug) < 1) || (data && data.loading)) {
       return <ClipLoader />;
@@ -96,71 +99,98 @@ class Course extends Component<CombinedProps> {
     return (
       <Box width={[1, 1, 1, '90%']} p={[0, 0, '0 0.5rem', '0 1rem']} m={['.5rem 0', '.5rem 0', '.5rem 0', '1rem auto']}>
         <Helmet>
-          <title>{getTitle(name)}</title>
+          <title>{`${t('title')} – ${name}`}</title>
         </Helmet>
         <PanelWrapper>
-          <PanelHeader>Radan tiedot</PanelHeader>
+          <PanelHeader>{t('course:info-title')}</PanelHeader>
           <Flex flexWrap="wrap">
-            <Box width={[1, 1, 1, 1 / 2]} p={[2, 2, null, 4]}>
+            <Box width={[1, 1, 1, 1 / 2]} p={[3, 3, null, 4]}>
               <Title>
                 {name}
                 <LayoutRatingBadges ratings={ratings} />
               </Title>
               <Description>{ReactHtmlParser(descriptionWithLinks)}</Description>
               <PanelWrapper mt={4}>
-                <PanelHeader>Radan lisätiedot:</PanelHeader>
+                <PanelHeader>{t('course:additional-info-title')}</PanelHeader>
                 <Box width="100%" px={1} pt={2} pb="1rem">
                   {courseInfo.founded && (
                     <BaseText>
-                      <Strong>Perustettu: </Strong>
+                      <Strong>
+                        {t('course:founded')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.founded}`}
                     </BaseText>
                   )}
                   {courseInfo.courseDesigner && (
                     <BaseText>
-                      <Strong>Suunnittelija: </Strong>
+                      <Strong>
+                        {t('course:designer')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.courseDesigner}`}
                     </BaseText>
                   )}
                   {courseInfo.rangeMaster && (
                     <BaseText>
-                      <Strong>Ratamestari: </Strong>
+                      <Strong>
+                        {t('course:course-master')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.rangeMaster}`}
                     </BaseText>
                   )}
                   {courseInfo.basketType && (
                     <BaseText>
-                      <Strong>Korityyppi: </Strong>
+                      <Strong>
+                        {t('course:basket-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.basketType}`}
                     </BaseText>
                   )}
                   {courseInfo.infoSignType && (
                     <BaseText>
-                      <Strong>Opastaulut: </Strong>
+                      <Strong>
+                        {t('course:info-board-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.infoSignType}`}
                     </BaseText>
                   )}
                   {courseInfo.teeType && (
                     <BaseText>
-                      <Strong>Heittoalustat: </Strong>
+                      <Strong>
+                        {t('course:tee-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.teeType}`}
                     </BaseText>
                   )}
                   {courseInfo.courseTypes && (
                     <BaseText>
-                      <Strong>Ratatyypit: </Strong>
+                      <Strong>
+                        {t('course:course-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.courseTypes.join(', ')}`}
                     </BaseText>
                   )}
                   {courseInfo.surfaceShapeTypes && (
                     <BaseText>
-                      <Strong>Pinnanmuodot: </Strong>
+                      <Strong>
+                        {t('course:surface-type')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.surfaceShapeTypes.join('. ')}`}
                     </BaseText>
                   )}
                   {courseInfo.fee && courseInfo.fee.value && (
                     <BaseText>
-                      <Strong>Maksullinen / Ilmainen: </Strong>
+                      <Strong>
+                        {t('course:price-info')}
+                        {' '}
+                      </Strong>
                       {`${courseInfo.fee.value}`}
                     </BaseText>
                   )}
@@ -209,4 +239,4 @@ const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
 export default connect<CombinedProps, OwnProps, MapStateToProps, any, any, Function>(
   mapStateToProps,
   mapDispatchToProps,
-)(Course);
+)(withTranslation(['common', 'course'])(Course));

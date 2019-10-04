@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
 import { Wrapper, Img } from './Image.styles';
 
@@ -7,17 +7,15 @@ type Props = {
   alt: string,
 };
 
-class Image extends PureComponent<Props> {
-  render() {
-    const { alt, src } = this.props;
-    return (
-      <Wrapper>
-        <Img className="img" src={src} alt={alt} />
-      </Wrapper>
-    );
-  }
-}
+const Image = (props: Props) => {
+  const { alt, src } = props;
+  return (
+    <Wrapper>
+      <Img className="img" src={src} alt={alt} />
+    </Wrapper>
+  );
+};
 
 Image.displayName = 'Image';
 
-export default Image;
+export default React.memo(Image);

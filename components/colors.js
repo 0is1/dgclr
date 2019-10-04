@@ -1,5 +1,6 @@
 export default {
-  border: '#c84b57',
+  border: '#D0021B',
+  blue: '#0077cc',
   darkGray: '#444444',
   gray: '#8a8a8a',
   grayAlpha: 'rgba(138, 138, 138, .25)',
@@ -11,6 +12,7 @@ export default {
   lightGray: '#e7e6e6',
   red: '#c62736',
   pink: '#ee0081',
+  purple: '#653299',
   text: '#262626',
   whiteText: '#f0f0f0',
   white: '#ffffff',
