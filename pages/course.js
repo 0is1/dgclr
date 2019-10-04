@@ -26,7 +26,7 @@ const CoursePage = (props: Props) => {
     currentLanguage, data, slug, t,
   } = props;
   return (
-    <Container currentLanguage={currentLanguage}>
+    <Container activeRoute={`/${slug}`} currentLanguage={currentLanguage}>
       <Helmet>
         <title>{`${t('title')} – ${slug}`}</title>
       </Helmet>
