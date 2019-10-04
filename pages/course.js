@@ -4,13 +4,14 @@ import gql from 'graphql-tag';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { graphql } from 'react-apollo';
+
 import { withRouter } from 'next/router';
 import { size } from 'lodash';
 import { i18n, withTranslation } from 'lib/i18n';
 import withApollo from 'lib/withApollo';
+import { courseBySlugFromState } from 'components/Course/selectors';
 import Container from 'components/Container';
 import Course from 'components/Course';
-import { courseBySlugFromState } from 'components/Course/selectors';
 import type { GraphQLData } from 'lib/types';
 
 type Props = {
@@ -35,6 +36,8 @@ const CoursePage = (props: Props) => {
 };
 
 CoursePage.getInitialProps = async ({ query, req }) => {
+  // TODO: figure out how to get data from apolloClient cache instead of redux
+  // console.log('apolloClient: ', apolloClient);
   const { slug } = query;
   const currentLanguage = req ? req.language : i18n.language;
   return { currentLanguage, namespacesRequired: ['common', 'course'], slug };
