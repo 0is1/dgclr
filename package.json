@@ -22,7 +22,7 @@
     "patch-version": "mversion patch",
     "minor-version": "mversion minor",
     "major-version": "mversion major",
-    "prepublish": "npm run snyk-protect && if [ $RUN_SNYK ]; then yarn snyk-protect; fi",
+    "prepublish": "if [ $RUN_SNYK ]; then yarn snyk-protect; fi",
     "snyk-protect": "snyk protect"
   },
   "devDependencies": {
