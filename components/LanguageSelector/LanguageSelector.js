@@ -15,7 +15,7 @@ class LanguageSelector extends PureComponent<Props> {
     try {
       await i18n.changeLanguage(language);
     } catch (e) {
-      console.log(e);
+      console.log('LanguageSelector error: ', e.message);
     }
   };
 
