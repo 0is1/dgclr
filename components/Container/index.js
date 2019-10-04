@@ -10,7 +10,7 @@ import LanguageSelector from 'components/LanguageSelector';
 import Styles from './Container.styles';
 
 type Props = {
-  activeRoute?: string,
+  activeRoute: string,
   children: Node,
   currentLanguage: ?string,
   router: {
@@ -27,10 +27,6 @@ const {
 } = Styles;
 
 class ContainerComponent extends Component<Props> {
-  static defaultProps = {
-    activeRoute: '',
-  };
-
   componentDidMount() {
     const { router } = this.props;
     router.events.on('routeChangeComplete', this.handleRouteChange);
