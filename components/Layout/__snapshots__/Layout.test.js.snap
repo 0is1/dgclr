@@ -1,694 +1,1634 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout component Match snapshot 1`] = `
-<div
-  className="sc-bdVaJa AVsQP"
+<Box
+  mt={2}
+  p={2}
+  width="100%"
 >
-  <div
-    className="sc-fAjcbJ xmqIb"
+  <Badge
+    bg="blue"
+    borderRadius={2}
+    color="white"
+    fontSize={0}
+    fontWeight="bold"
+    mx="1rem"
+    px={2}
+    py={1}
   >
     AA1
-  </div>
-  <div
-    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 bKftYv"
+  </Badge>
+  <Containerstyles__BaseText
+    m={0}
+    mt={0}
   >
-    <span
-      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-    >
+    <Coursestyles__Strong>
       course:hole-count
-    </span>
+    </Coursestyles__Strong>
     18
-  </div>
-  <div
-    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+  </Containerstyles__BaseText>
+  <Containerstyles__BaseText
+    m={0}
   >
-    <span
-      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-    >
+    <Coursestyles__Strong>
       course:course-par
-    </span>
+    </Coursestyles__Strong>
     57
-  </div>
-  <div
-    className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+  </Containerstyles__BaseText>
+  <Containerstyles__BaseText
+    m={0}
   >
-    <span
-      className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-    >
+    <Coursestyles__Strong>
       course:course-holes
-    </span>
-  </div>
-  <ol
-    className="Containerstyles__OL-sc-1kiz1wt-5 hBppxg"
-  >
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+    </Coursestyles__Strong>
+  </Containerstyles__BaseText>
+  <Containerstyles__OL>
+    <Containerstyles__LI
+      key="3-0"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              132m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-1"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              56m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="4-2"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              4
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              180m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-3"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              74m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="4-4"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              4
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              162m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-5"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              84m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-6"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              94m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-7"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              90m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-8"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              77m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-9"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              120m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="4-10"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              4
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              213m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-11"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              95m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-12"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              94m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-13"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              123m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-14"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              102m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-15"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              100m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-16"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              124m
-          </div>
-        </div>
-      </div>
-    </li>
-    <li
-      className="Containerstyles__LI-sc-1kiz1wt-6 jFNgTK"
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+    <Containerstyles__LI
+      key="3-17"
     >
-      <div
-        className="sc-bwzfXH hKiLMS sc-bdVaJa iHZvIS"
+      <Flex
+        extend={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {},
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "rules": Array [
+                "box-sizing: border-box;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+            "displayName": "Box",
+            "foldedComponentIds": Array [],
+            "propTypes": Object {
+              "alignSelf": [Function],
+              "bg": [Function],
+              "color": [Function],
+              "flex": [Function],
+              "fontSize": [Function],
+              "m": [Function],
+              "mb": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "p": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "systemComponent": true,
+            "target": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
       >
-        <div
-          className="sc-bdVaJa VTcue"
+        <Box
+          width="70px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:par
-            </span>
+            </Coursestyles__Strong>
              3
-          </div>
-        </div>
-        <div
-          className="sc-bdVaJa jXUlqe"
+          </Containerstyles__BaseText>
+        </Box>
+        <Box
+          width="140px"
         >
-          <div
-            className="sc-gqjmRU Containerstyles__BaseText-sc-1kiz1wt-2 idtCAR"
+          <Containerstyles__BaseText
+            m={0}
           >
-            <span
-              className="Coursestyles__Strong-sc-170ivnh-7 PWqLP"
-            >
+            <Coursestyles__Strong>
               course:length
-            </span>
+            </Coursestyles__Strong>
              99m
-          </div>
-        </div>
-      </div>
-    </li>
-  </ol>
-</div>
+          </Containerstyles__BaseText>
+        </Box>
+      </Flex>
+    </Containerstyles__LI>
+  </Containerstyles__OL>
+</Box>
 `;
+
+exports[`Layout component Renders correctly with active false 1`] = `""`;

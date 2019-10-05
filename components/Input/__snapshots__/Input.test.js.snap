@@ -1,12 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input and Slider component Input Match snapshot with default props 1`] = `
-<input
-  className="sc-eNQAEJ Inputstyles__Input-tjx6pn-0 hRDFua"
+<Inputstyles__Input
+  bg="#ffffff"
+  border={0}
+  borderColor="gray"
+  borderRadius={2}
+  boxShadow={1}
+  color="inherit"
+  fontSize="inherit"
+  is="input"
+  lineHeight="inherit"
+  m={0}
   onChange={[Function]}
   placeholder=""
+  px=".75rem"
+  py=".75rem"
   type="text"
   value=""
+  width={1}
 />
 `;
 
