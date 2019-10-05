@@ -45,7 +45,7 @@ export const Layout = ({ active, layout, t }: Props) => {
       </LI>
     );
   });
-  console.log('layout: ', layout);
+
   return (
     <Box width="100%" mt={2} p={2}>
       {layout.rating && <Badge mx="1rem">{layout.rating}</Badge>}
