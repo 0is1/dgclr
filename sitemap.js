@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('isomorphic-unfetch');
 const sm = require('sitemap');
 
 const coursesContainsData = courses => Array.isArray(courses) && courses.length > 0;
@@ -34,7 +34,7 @@ const sitemap = sm.createSitemap({
   cacheTime: CACHE_TIME_MS,
 });
 
-// For now, lets use just in "memory cache" to check if courses data is fetched
+// For now, lets use just "in memory cache" to check if courses data is fetched
 const inMemoryCache = { timestamp: 0 };
 
 const setup = async () => {
