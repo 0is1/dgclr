@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { Badge } from 'rebass';
-import { getRandomKey } from 'helpers/utils';
 import type { Node } from 'react';
 
 type Props = {
@@ -10,14 +9,15 @@ type Props = {
 };
 
 const LayoutRatingBadges = ({ ratings, tiny }: Props) => {
-  const badges: Array<?Node> = ratings.map((rating) => {
+  const badges: Array<?Node> = ratings.map((rating, index) => {
     if (rating) {
+      const key = `${rating}-${index}`;
       return tiny ? (
-        <Badge mx="8px" py={0} key={getRandomKey()}>
+        <Badge mx="8px" py={0} key={key}>
           {rating}
         </Badge>
       ) : (
-        <Badge key={getRandomKey()}>{rating}</Badge>
+        <Badge key={key}>{rating}</Badge>
       );
     }
     return null;
