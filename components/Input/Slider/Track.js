@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
-import colors from 'components/colors';
+import Styles from './Track.styles';
+
+const { Track } = Styles;
 
 type Props = {
   source: {
@@ -16,27 +18,15 @@ type Props = {
   getTrackProps: Function,
   disabled?: boolean,
 };
-const Track = ({
+
+const TrackComponent = ({
   source, target, getTrackProps, disabled,
 }: Props) => (
-  <div
-    style={{
-      position: 'absolute',
-      transform: 'translate(0%, -50%)',
-      height: 14,
-      zIndex: 1,
-      backgroundColor: disabled ? '#999' : colors.green,
-      borderRadius: 7,
-      cursor: 'pointer',
-      left: `${source.percent}%`,
-      width: `${target.percent - source.percent}%`,
-    }}
-    {...getTrackProps()}
-  />
+  <Track disabled={disabled} targetPercent={target.percent} sourcePercent={source.percent} {...getTrackProps()} />
 );
 
-Track.defaultProps = {
+TrackComponent.defaultProps = {
   disabled: false,
 };
 
-export default Track;
+export default React.memo(TrackComponent);
