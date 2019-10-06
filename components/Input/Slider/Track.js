@@ -29,4 +29,4 @@ TrackComponent.defaultProps = {
   disabled: false,
 };
 
-export default React.memo<Props>(TrackComponent);
+export default TrackComponent;
