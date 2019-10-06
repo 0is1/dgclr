@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 import { Slider } from 'react-compound-slider';
 import TestStoreProvider from 'jest/TestStoreProvider';
@@ -30,7 +29,7 @@ const setup = (props = {}) => {
     </TestStoreProvider>
   );
   const enzymeWrapper = mount(components);
-  const component = renderer.create(components);
+  const component = shallow(components);
   return { component, enzymeWrapper };
 };
 
@@ -81,8 +80,7 @@ describe('Input and Slider component', () => {
         options,
       });
       const { component, enzymeWrapper } = setup(props);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
       const SliderComponent = enzymeWrapper.find(Slider);
       const { step, domain, values } = SliderComponent.props();
       expect(step).toEqual(5);
@@ -103,8 +101,7 @@ describe('Input and Slider component', () => {
         options,
       });
       const { component, enzymeWrapper } = setup(props);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
       const SliderComponent = enzymeWrapper.find(Slider);
       const { step, domain, values } = SliderComponent.props();
       expect(step).toEqual(10);

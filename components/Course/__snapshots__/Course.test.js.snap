@@ -1,15 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Course component Match snapshot 1`] = `
-<div
-  className="sc-bwzfXH dbiuev sc-bdVaJa enBfDC"
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <div
-    className="sc-bdVaJa iHZvIS"
-  >
-    <div
-      className="css-bde0ze-style-Loader"
-    />
-  </div>
-</div>
+  <Connect(withI18nextTranslation(Course))
+    setCourses={[MockFunction]}
+    slug="ford-discgolfpark-tuusula"
+    t={[MockFunction]}
+  />
+</Provider>
 `;

@@ -1,7 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import TestStoreProvider from 'jest/TestStoreProvider';
 import mockCoursesData from 'components/SearchContainer/mock/courses.mock';
 import { DEFAULT_STATE } from 'lib/rootReducer';
@@ -35,17 +34,15 @@ function setup() {
 
 describe('Layouts component', () => {
   it('Match snapshot', () => {
-    const component = renderer.create(
+    const subject = shallow(
       <TestStoreProvider storeData={DEFAULT_STATE}>
         <Layouts {...defaultProps} />
       </TestStoreProvider>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(subject).toMatchSnapshot();
   });
   it('Renders correctly', () => {
     const { enzymeWrapper } = setup();
-    expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(Layout).length).toEqual(2);
   });
 });
