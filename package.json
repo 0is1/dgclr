@@ -58,7 +58,6 @@
     "mversion": "^1.13.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.9.0",
     "redux-mock-store": "^1.5.3",
     "rimraf": "^3.0.0",
     "sinon": "^7.4.1"
