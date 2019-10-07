@@ -72,7 +72,7 @@ export const isBrowser = typeof window !== 'undefined';
  * @param {Array} array
  * @return {boolean}
  */
-export const isArrayWithLength = (array?: Array<any>): boolean => Array.isArray(array) && array.length > 0;
+export const isArrayWithLength = (array: ?Array<any>): boolean => Array.isArray(array) && array.length > 0;
 
 /**
  * Convert meters to kilometers
