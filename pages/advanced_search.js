@@ -26,6 +26,8 @@ type MapDispatchToProps = {
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
 class AdvancedSearchPage extends Component<CombinedProps> {
+  static getInitialProps: any => any;
+
   componentDidMount() {
     const {
       setFilter, setAdvancedSearchFilter, toggleMapVisibility, query,
