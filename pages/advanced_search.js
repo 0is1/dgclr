@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
@@ -9,7 +9,7 @@ import { i18n, withTranslation } from 'lib/i18n';
 import { isArrayWithLength, convertKilometersToMeters } from 'helpers/utils';
 import Container from 'components/Container';
 import AdvancedSearch from 'components/AdvancedSearch';
-import { setFilter, setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/AdvancedSearch/actions';
+import { setFilter as setFilterAction, setCurrentAdvancedSearchFilter, toggleAdvancedSearchMap } from 'components/AdvancedSearch/actions';
 import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import { INPUT_FILTER_NAMES } from 'components/Input/constants';
 import { ADVANCED_COURSE_INFO, ADVANCED_NEARBY } from 'lib/constants';
@@ -25,64 +25,82 @@ type MapDispatchToProps = {
 
 type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 
-const AdvancedSearchPage = (props: CombinedProps) => {
-  const { currentLanguage, query, t } = props;
-  if (query && Object.keys(query).length > 0 && query.q) {
-    try {
-      const parsedQuery = JSON.parse(decodeURIComponent(query.q));
-      const selectFilters = Object.keys(SELECT_FILTER_NAMES);
-      const inputFilters = Object.keys(INPUT_FILTER_NAMES);
-      Object.keys(parsedQuery).forEach((filterName) => {
-        if (selectFilters.includes(filterName)) {
-          if (isArrayWithLength(parsedQuery[filterName])) {
-            const filterData = parsedQuery[filterName].map(value => ({
-              value,
-              label: value,
-            }));
-            props.setFilter(filterName, filterData);
-          } else {
-            props.setFilter(filterName, {
-              value: parsedQuery[filterName],
-              label: parsedQuery[filterName],
+class AdvancedSearchPage extends Component<CombinedProps> {
+  componentDidMount() {
+    const {
+      setFilter, setAdvancedSearchFilter, toggleMapVisibility, query,
+    } = this.props;
+    if (query && Object.keys(query).length > 0 && query.q) {
+      try {
+        const parsedQuery = JSON.parse(decodeURIComponent(query.q));
+        const selectFilters = Object.keys(SELECT_FILTER_NAMES);
+        const inputFilters = Object.keys(INPUT_FILTER_NAMES);
+        let mapChecked = false;
+        Object.keys(parsedQuery).forEach((filterName) => {
+          if (selectFilters.includes(filterName)) {
+            if (isArrayWithLength(parsedQuery[filterName])) {
+              const filterData = parsedQuery[filterName].map(value => ({
+                value,
+                label: value,
+              }));
+
+              setFilter(filterName, filterData);
+            } else {
+              setFilter(filterName, {
+                value: parsedQuery[filterName],
+                label: parsedQuery[filterName],
+              });
+            }
+          } else if (filterName === ADVANCED_COURSE_INFO) {
+            // Special logic
+            const courseInfoKeys = Object.keys(parsedQuery[filterName]);
+            // eslint-disable-next-line max-len
+            courseInfoKeys.forEach((filter) => {
+              setFilter(filter, {
+                value: parsedQuery[filterName][filter],
+                label: parsedQuery[filterName][filter],
+              });
             });
+          } else if (filterName === ADVANCED_NEARBY) {
+            // Special logic
+            const { coordinates, maxDistance } = parsedQuery[filterName];
+            const radius = convertKilometersToMeters(maxDistance);
+            if (isArrayWithLength(coordinates) && radius && radius >= MAP_RADIUS_DISTANCE_MIN && radius <= MAP_RADIUS_DISTANCE_MAX) {
+              const [lng, lat] = coordinates;
+
+              setFilter(filterName, [{ coordinates: { lng, lat }, radius: `${radius}` }]);
+            }
+          } else if (filterName === MAP_CHECKED_FILTER) {
+            toggleMapVisibility(parsedQuery[filterName]);
+            if (parsedQuery[filterName]) {
+              mapChecked = true;
+            }
+          } else if (inputFilters.includes(filterName) && isArrayWithLength(Object.values(parsedQuery[filterName]))) {
+            setFilter(filterName, Object.values(parsedQuery[filterName]));
           }
-        } else if (filterName === ADVANCED_COURSE_INFO) {
-          // Special logic
-          const courseInfoKeys = Object.keys(parsedQuery[filterName]);
-          // eslint-disable-next-line max-len
-          courseInfoKeys.forEach(filter => props.setFilter(filter, {
-            value: parsedQuery[filterName][filter],
-            label: parsedQuery[filterName][filter],
-          }));
-        } else if (filterName === ADVANCED_NEARBY) {
-          // Special logic
-          const { coordinates, maxDistance } = parsedQuery[filterName];
-          const radius = convertKilometersToMeters(maxDistance);
-          if (isArrayWithLength(coordinates) && radius && radius >= MAP_RADIUS_DISTANCE_MIN && radius <= MAP_RADIUS_DISTANCE_MAX) {
-            const [lng, lat] = coordinates;
-            props.setFilter(filterName, [{ coordinates: { lng, lat }, radius: `${radius}` }]);
-          }
-        } else if (filterName === MAP_CHECKED_FILTER) {
-          props.toggleMapVisibility(parsedQuery[filterName]);
-        } else if (inputFilters.includes(filterName) && isArrayWithLength(Object.values(parsedQuery[filterName]))) {
-          props.setFilter(filterName, Object.values(parsedQuery[filterName]));
-        }
-      });
-      // Remove MAP_CHECKED_FILTER because that's not part of graphql query
-      props.setAdvancedSearchFilter(JSON.stringify(omit([MAP_CHECKED_FILTER], parsedQuery)));
-    } catch (e) {
-      console.error('Parsing advanced search query failed: ', e.message);
+        });
+        // Remove MAP_CHECKED_FILTER because that's not part of graphql query
+        // Remove also ADVANCED_NEARBY if mapChecked is false because we are not using that filter in that case
+        const finalQuery = mapChecked ? omit([MAP_CHECKED_FILTER], parsedQuery) : omit([ADVANCED_NEARBY, MAP_CHECKED_FILTER], parsedQuery);
+        setAdvancedSearchFilter(JSON.stringify(finalQuery));
+      } catch (e) {
+        console.error('Parsing advanced search query failed: ', e.message);
+      }
     }
   }
-  return (
-    <Container activeRoute="/advanced_search" currentLanguage={currentLanguage}>
-      <Helmet>
-        <title>{`${t('title')} – ${t('advanced-search')}`}</title>
-      </Helmet>
-      <AdvancedSearch />
-    </Container>
-  );
-};
+
+  render() {
+    const { currentLanguage, t } = this.props;
+    return (
+      <Container activeRoute="/advanced_search" currentLanguage={currentLanguage}>
+        <Helmet>
+          <title>{`${t('title')} – ${t('advanced-search')}`}</title>
+        </Helmet>
+        <AdvancedSearch />
+      </Container>
+    );
+  }
+}
 
 AdvancedSearchPage.getInitialProps = async ({ req, query }) => {
   const currentLanguage = req ? req.language : i18n.language;
@@ -96,7 +114,7 @@ AdvancedSearchPage.getInitialProps = async ({ req, query }) => {
 
 const mapDispatchToProps = (dispatch: Function) => ({
   setAdvancedSearchFilter: (query: string) => dispatch(setCurrentAdvancedSearchFilter(query)),
-  setFilter: (filterName: string, data: any) => dispatch(setFilter(filterName, data)),
+  setFilter: (filterName: string, data: any) => dispatch(setFilterAction(filterName, data)),
   toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
 });
 
