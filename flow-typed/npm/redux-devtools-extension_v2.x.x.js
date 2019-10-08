@@ -1,5 +1,5 @@
-// flow-typed signature: d06dc6c588058d3bf41d1029fb1be4ef
-// flow-typed version: c6154227d1/redux-devtools-extension_v2.x.x/flow_>=v0.104.x
+// flow-typed signature: da9e3a934faed5aec97160e69a2578c8
+// flow-typed version: 9931c6ffb0/redux-devtools-extension_v2.x.x/flow_>=v0.104.x
 
 import type { ActionCreator, StoreEnhancer } from 'redux';
 import typeof { compose } from 'redux';
@@ -9,24 +9,22 @@ declare type $npm$ReduxDevtoolsExtension$DevToolsOptions = {
   actionCreators?: Array<ActionCreator<any>> | { [string]: ActionCreator<any>, ... },
   latency?: number,
   maxAge?: number,
-  serialize?:
-    | boolean
-    | {
-        date?: boolean,
-        regex?: boolean,
-        undefined?: boolean,
-        error?: boolean,
-        symbol?: boolean,
-        map?: boolean,
-        set?: boolean,
-        function?: boolean | Function,
-        ...
-      },
-  actionSanitizer?: <A: { type: $Subtype<string>, ... }>(action: A, id: number) => A,
+  serialize?: boolean | {
+    date?: boolean,
+    regex?: boolean,
+    undefined?: boolean,
+    error?: boolean,
+    symbol?: boolean,
+    map?: boolean,
+    set?: boolean,
+    function?: boolean | Function,
+    ...
+  },
+  actionSanitizer?: <A: { type: string, ... }>(action: A, id: number) => A,
   stateSanitizer?: <S>(state: S, index: number) => S,
   actionsBlacklist?: string | string[],
   actionsWhitelist?: string | string[],
-  predicate?: <S, A: { type: $Subtype<string>, ... }>(state: S, action: A) => boolean,
+  predicate?: <S, A: { type: string, ... }>(state: S, action: A) => boolean,
   shouldRecordChanges?: boolean,
   pauseActionType?: string,
   autoPause?: boolean,
@@ -37,8 +35,8 @@ declare type $npm$ReduxDevtoolsExtension$DevToolsOptions = {
     pause?: boolean,
     lock?: boolean,
     persist?: boolean,
-    export?: boolean | 'custom',
-    import?: boolean | 'custom',
+    export?: boolean | "custom",
+    import?: boolean | "custom",
     jump?: boolean,
     skip?: boolean,
     reorder?: boolean,
@@ -49,54 +47,59 @@ declare type $npm$ReduxDevtoolsExtension$DevToolsOptions = {
   ...
 };
 
-declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B>(ab: (A) => B): A => B;
+declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B>(ab: A => B): A => B;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools(options: $npm$ReduxDevtoolsExtension$DevToolsOptions): compose;
-declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C>(bc: (B) => C, ab: (A) => B): A => C;
-declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D>(cd: (C) => D, bc: (B) => C, ab: (A) => B): A => D;
+declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C>(
+  bc: B => C,
+  ab: A => B
+): A => C;
+declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D>(
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
+): A => D;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D, E>(
-  de: (D) => E,
-  cd: (C) => D,
-  bc: (B) => C,
-  ab: (A) => B
+  de: D => E,
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
 ): A => E;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D, E, F>(
-  ef: (E) => F,
-  de: (D) => E,
-  cd: (C) => D,
-  bc: (B) => C,
-  ab: (A) => B
+  ef: E => F,
+  de: D => E,
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
 ): A => F;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D, E, F, G>(
-  fg: (F) => G,
-  ef: (E) => F,
-  de: (D) => E,
-  cd: (C) => D,
-  bc: (B) => C,
-  ab: (A) => B
+  fg: F => G,
+  ef: E => F,
+  de: D => E,
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
 ): A => G;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D, E, F, G, H>(
-  gh: (G) => H,
-  fg: (F) => G,
-  ef: (E) => F,
-  de: (D) => E,
-  cd: (C) => D,
-  bc: (B) => C,
-  ab: (A) => B
+  gh: G => H,
+  fg: F => G,
+  ef: E => F,
+  de: D => E,
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
 ): A => H;
 declare function $npm$ReduxDevtoolsExtension$composeWithDevTools<A, B, C, D, E, F, G, H, I>(
-  hi: (H) => I,
-  gh: (G) => H,
-  fg: (F) => G,
-  ef: (E) => F,
-  de: (D) => E,
-  cd: (C) => D,
-  bc: (B) => C,
-  ab: (A) => B
+  hi: H => I,
+  gh: G => H,
+  fg: F => G,
+  ef: E => F,
+  de: D => E,
+  cd: C => D,
+  bc: B => C,
+  ab: A => B
 ): A => H;
 
-declare function $npm$ReduxDevtoolsExtension$devToolsEnhancer<S, A>(
-  options?: $npm$ReduxDevtoolsExtension$DevToolsOptions
-): StoreEnhancer<S, A>;
+declare function $npm$ReduxDevtoolsExtension$devToolsEnhancer<S, A>(options?: $npm$ReduxDevtoolsExtension$DevToolsOptions): StoreEnhancer<S, A>;
 
 declare module 'redux-devtools-extension' {
   declare export type DevToolsOptions = $npm$ReduxDevtoolsExtension$DevToolsOptions;

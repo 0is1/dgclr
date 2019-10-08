@@ -3,25 +3,38 @@
 
 // @flow
 
-declare module 'apollo-link-http' {
+declare module "apollo-link-http" {
   declare type $Record<T, U> = { [key: $Keys<T>]: U, ... };
 
   declare type NextLink = (operation: Operation) => any;
 
-  declare export type RequestHandler = (operation: Operation, forward?: NextLink) => any;
+  declare export type RequestHandler = (
+    operation: Operation,
+    forward?: NextLink,
+  ) => any;
 
   declare export class ApolloLink {
     constructor(request?: RequestHandler): void;
 
     static empty: ApolloLink;
     static from(links: ApolloLink[]): ApolloLink;
-    static execute(link: ApolloLink, operation: GraphQLRequest): any;
+    static execute(
+      link: ApolloLink,
+      operation: GraphQLRequest,
+    ): any;
 
-    split(test: (op: Operation) => boolean, left: ApolloLink | RequestHandler, right: ApolloLink | RequestHandler): ApolloLink;
+    split(
+      test: (op: Operation) => boolean,
+      left: ApolloLink | RequestHandler,
+      right: ApolloLink | RequestHandler,
+    ): ApolloLink;
 
     concat(next: ApolloLink | RequestHandler): ApolloLink;
 
-    request(operation: Operation, forward?: NextLink): any;
+    request(
+      operation: Operation,
+      forward?: NextLink,
+    ): any;
   }
 
   declare export interface GraphQLRequest {
@@ -54,7 +67,7 @@ declare module 'apollo-link-http' {
     headers?: any,
     fetchOptions?: any,
     ...
-  };
+  }
 
   declare export function createHttpLink(opts: FetchOptions): ApolloLink;
 

@@ -1,7 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 // $FlowFixMe
 import SelectInput from 'react-select';
 import { Label } from 'rebass';
@@ -41,17 +40,15 @@ function setup(advancedQueries = {}) {
 
 describe('Select component', () => {
   it('Match snapshot', () => {
-    const component = renderer.create(
+    const subject = shallow(
       <TestStoreProvider storeData={DEFAULT_STATE}>
         <Select {...defaultProps} />
       </TestStoreProvider>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(subject).toMatchSnapshot();
   });
   it('Renders correctly', () => {
     const { enzymeWrapper } = setup();
-    expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(SelectInput).length).toEqual(1);
     expect(enzymeWrapper.find(SelectInput).prop('defaultValue')).toEqual([]);
     expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(surfaceTypeOptions);
@@ -65,7 +62,6 @@ describe('Select component', () => {
       filterName: [surfaceTypeOptions[0]],
     };
     const { enzymeWrapper } = setup(advancedQueries);
-    expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(SelectInput).length).toEqual(1);
     expect(enzymeWrapper.find(SelectInput).prop('defaultValue')).toEqual([surfaceTypeOptions[0]]);
     expect(enzymeWrapper.find(SelectInput).prop('options')).toEqual(surfaceTypeOptions);

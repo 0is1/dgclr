@@ -8,7 +8,7 @@ import { differenceBy } from 'lodash';
 import { Box } from 'rebass';
 import { withTranslation } from 'lib/i18n';
 import { GoChevronRight } from 'react-icons/go';
-import { getRandomKey, uniqueLayoutRatings } from 'helpers/utils';
+import { uniqueLayoutRatings } from 'helpers/utils';
 import { COURSE_QUERY } from 'lib/constants';
 import LayoutRatingBadges from 'components/Layout/Badges';
 import { ClipLoader } from 'components/Spinners';
@@ -81,7 +81,7 @@ class SearchQuery extends Component<Props> {
       results = courses.map((course) => {
         const ratings = uniqueLayoutRatings(course.layouts);
         return (
-          <LI key={getRandomKey()} listStyle="none">
+          <LI key={course.slug} listStyle="none">
             <Link as={`/${course.slug}`} href={`/course?slug=${course.slug}`}>
               <SearchResultItem>
                 {course.name}

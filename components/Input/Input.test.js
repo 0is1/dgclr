@@ -1,7 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Slider } from 'react-compound-slider';
 import TestStoreProvider from 'jest/TestStoreProvider';
 import { DEFAULT_STATE } from 'lib/rootReducer';
@@ -11,7 +10,7 @@ import Styles from './Input.styles';
 
 const { Input } = Styles;
 
-const defaultProps = (props = {}) => ({
+const mockProps = (props = {}) => ({
   focusOnMount: false,
   options: { type: 'text' },
   placeholder: '',
@@ -30,44 +29,41 @@ const setup = (props = {}) => {
     </TestStoreProvider>
   );
   const enzymeWrapper = mount(components);
-  const component = renderer.create(components);
+  const component = shallow(components);
   return { component, enzymeWrapper };
 };
 
 describe('Input and Slider component', () => {
   describe('Input', () => {
     it('Match snapshot with default props', () => {
-      const props = defaultProps();
-      const component = renderer.create(<InputComponent {...props} />);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+      const props = mockProps();
+      const subject = shallow(<InputComponent {...props} />);
+      expect(subject).toMatchSnapshot();
     });
     it('Renders correctly', () => {
-      const props = defaultProps({
+      const props = mockProps({
         value: 'espoo',
         placeholder: 'Kaupungin tai radan nimi',
       });
-      const enzymeWrapper = mount(<InputComponent {...props} />);
-      expect(enzymeWrapper.find(Input).length).toEqual(1);
-      expect(enzymeWrapper.find(Input).getDOMNode().placeholder).toEqual(
-        'Kaupungin tai radan nimi',
-      );
-      expect(enzymeWrapper.find(Input).getDOMNode().value).toEqual('espoo');
+      const subject = shallow(<InputComponent {...props} />);
+      expect(subject.find(Input).length).toEqual(1);
+      expect(subject.find(Input).prop('placeholder')).toEqual('Kaupungin tai radan nimi');
+      expect(subject.find(Input).prop('value')).toEqual('espoo');
     });
     it('Does not autofocus by default', () => {
-      const props = defaultProps();
-      const enzymeWrapper = mount(<InputComponent {...props} />);
-      const { ref } = enzymeWrapper.instance();
+      const props = mockProps();
+      const subject = mount(<InputComponent {...props} />);
+      const { ref } = subject.instance();
       jest.spyOn(ref.current, 'focus');
-      enzymeWrapper.instance().componentDidMount();
+      subject.instance().componentDidMount();
       expect(ref.current.focus).toHaveBeenCalledTimes(0);
     });
     it('Autofocus correctly if prop is set', () => {
-      const props = defaultProps({ focusOnMount: true });
-      const enzymeWrapper = mount(<InputComponent {...props} />);
-      const { ref } = enzymeWrapper.instance();
+      const props = mockProps({ focusOnMount: true });
+      const subject = mount(<InputComponent {...props} />);
+      const { ref } = subject.instance();
       jest.spyOn(ref.current, 'focus');
-      enzymeWrapper.instance().componentDidMount();
+      subject.instance().componentDidMount();
       expect(ref.current.focus).toHaveBeenCalledTimes(1);
     });
   });
@@ -80,12 +76,11 @@ describe('Input and Slider component', () => {
         filterName: 'slider-filter',
         domain: [0, 100],
       };
-      const props = defaultProps({
+      const props = mockProps({
         options,
       });
       const { component, enzymeWrapper } = setup(props);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
       const SliderComponent = enzymeWrapper.find(Slider);
       const { step, domain, values } = SliderComponent.props();
       expect(step).toEqual(5);
@@ -102,12 +97,11 @@ describe('Input and Slider component', () => {
         filterName: 'slider-filter',
         domain: [0, 200],
       };
-      const props = defaultProps({
+      const props = mockProps({
         options,
       });
       const { component, enzymeWrapper } = setup(props);
-      const tree = component.toJSON();
-      expect(tree).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
       const SliderComponent = enzymeWrapper.find(Slider);
       const { step, domain, values } = SliderComponent.props();
       expect(step).toEqual(10);

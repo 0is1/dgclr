@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Tabs } from 'rebass';
 import { getActiveIndex } from 'components/Tabs/selectors';
 import { setTabs as setTabsFunc } from 'components/Tabs/actions';
-import { getRandomKey } from 'helpers/utils';
 import type { State as ReduxState } from 'lib/types';
 import Tab from './Tab';
 
@@ -30,7 +29,10 @@ class TabsComponent extends Component<CombinedProps> {
     const { activeIndex, id, tabs } = this.props;
     if (typeof activeIndex !== 'number') return null;
     const props = { activeIndex, id };
-    const tabData = tabs.map((name, index) => <Tab {...props} key={getRandomKey()} index={index} name={name} />);
+    const tabData = tabs.map((name, index) => {
+      const key = `${name}-${index}`;
+      return <Tab {...props} key={key} index={index} name={name} />;
+    });
     return <Tabs>{tabData}</Tabs>;
   }
 }

@@ -1,12 +1,15 @@
 // @flow
 import { uniq } from 'lodash';
 import type { Layout, LocationInfo } from 'lib/types';
+import matchAll from 'string.prototype.matchall';
+
 /**
  * Convert links in text to <a href="">url</a>
  * @param {String} text
  * @return {String} links converted to <a>:s
  */
-export const convertLinksToHtml = (string: string): string => string.replace(/((https?|ftp):\/\/[^\s/$.?#].[^\s]*)/gi, "<a href='$1'>$1</a>");
+const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s]*)/gi;
+export const convertLinksToHtml = (string: string): string => string.replace(LINK_REGEX, "<a href='$1'>$1</a>");
 
 /**
  * Convert coordinates array to {lat, lng} object
@@ -69,7 +72,7 @@ export const isBrowser = typeof window !== 'undefined';
  * @param {Array} array
  * @return {boolean}
  */
-export const isArrayWithLength = (array?: Array<any>): boolean => Array.isArray(array) && array.length > 0;
+export const isArrayWithLength = (array: ?Array<any>): boolean => Array.isArray(array) && array.length > 0;
 
 /**
  * Convert meters to kilometers
@@ -91,3 +94,34 @@ export const convertKilometersToMeters = (kilometers: number): number => parseIn
  * @return {string}
  */
 export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
+
+const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=]*)/gi;
+const HTTP_REGEX = /((?:https?:\/\/)(([a-öA-Ö]*\.[a-öA-Ö]{2,})*))/gi;
+/**
+ * Convert text with only "www" to links in text to <a href="">url</a>
+ * @param {String} text
+ * @return {String} links converted to <a>:s
+ */
+export const convertWWWToHttpAndAddLinks = (string: string): string => {
+  if (!isArrayWithLength(string.match(WWW_REGEX))) {
+    return string;
+  }
+  const httpMatches = Array.from(matchAll(string, HTTP_REGEX));
+  const wwwMatches = Array.from(new Set(string.match(WWW_REGEX)));
+  if (isArrayWithLength(httpMatches) && isArrayWithLength(wwwMatches)) {
+    let stringWithWWWLinks = string;
+    const ignoredWWWTexts = httpMatches.map((matchArray) => {
+      // www-match is second group => third item in the array
+      const [, , wwwMatch] = matchArray;
+      return wwwMatch;
+    });
+    // If this www.something.com is already wrapped with <a>, filter it out from wwwTextsWithoutLink
+    const wwwTextsWithoutLink = wwwMatches.filter(www => !ignoredWWWTexts.includes(www));
+    wwwTextsWithoutLink.forEach((wwwString) => {
+      const regex = new RegExp(`(${wwwString})`, 'g');
+      stringWithWWWLinks = stringWithWWWLinks.replace(regex, "<a href='http://$1'>$1</a>");
+    });
+    return stringWithWWWLinks;
+  }
+  return string.replace(WWW_REGEX, "<a href='http://$1'>$1</a>");
+};

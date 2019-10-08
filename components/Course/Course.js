@@ -8,6 +8,7 @@ import { Card, Flex, Subhead } from 'rebass';
 import {
   convertCoordinatesToObject,
   convertLinksToHtml,
+  convertWWWToHttpAndAddLinks,
   courseAddressDetails,
   getCourseMapUrlForLayout,
   uniqueLayoutRatings,
@@ -88,7 +89,7 @@ class Course extends Component<CombinedProps> {
       name, courseInfo, description, locationInfo, layouts,
     } = courseData;
     const mapUrl = getCourseMapUrlForLayout(course.layouts, activeIndex || 0);
-    const descriptionWithLinks = convertLinksToHtml(description);
+    const descriptionWithLinks = convertWWWToHttpAndAddLinks(convertLinksToHtml(description));
     const { location } = locationInfo;
     const coordinates = location && convertCoordinatesToObject(location.coordinates);
     const layoutNames = layouts.map(layout => layout.name);

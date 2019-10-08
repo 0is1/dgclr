@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { graphql } from 'react-apollo';
-
+import { COURSE_QUERY } from 'lib/constants';
 import { withRouter } from 'next/router';
 import { size } from 'lodash';
 import { i18n, withTranslation } from 'lib/i18n';
@@ -46,49 +46,7 @@ CoursePage.getInitialProps = async ({ query, req }) => {
 const SEARCH_COURSE = gql`
   query CourseBySlugQuery($slug: String!) {
     courseBySlug(slug: $slug) {
-      _id
-      name
-      description
-      slug
-      courseInfo {
-        basketType
-        teeType
-        infoSignType
-        surfaceShapeTypes
-        courseTypes
-        mapUrl
-        founded
-        maintenanceCycle
-        rangeMaster
-        courseDesigner
-        fee {
-          amount
-          currency
-          value
-        }
-      }
-      locationInfo {
-        address
-        city
-        zip
-        location {
-          coordinates
-        }
-      }
-      layouts {
-        name
-        mapUrl
-        rating
-        holes {
-          par
-          length {
-            foot
-            meter
-          }
-        }
-        holeCount
-        totalPar
-      }
+      ${COURSE_QUERY}
     }
   }
 `;

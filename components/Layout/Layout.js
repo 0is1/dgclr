@@ -3,7 +3,6 @@
 import React from 'react';
 import { Badge, Box, Flex } from 'rebass';
 import { withTranslation } from 'lib/i18n';
-import { getRandomKey } from 'helpers/utils';
 import CourseStyles from 'components/Course/Course.styles';
 import BaseStyles from 'components/Container/Container.styles';
 import type { Layout as LayoutType } from 'lib/types';
@@ -17,31 +16,36 @@ type Props = {
 const { Strong } = CourseStyles;
 const { BaseText, OL, LI } = BaseStyles;
 
-const Layout = ({ active, layout, t }: Props) => {
+export const Layout = ({ active, layout, t }: Props) => {
   if (!active) return null;
   const { holes } = layout;
-  const holeData = holes.map(hole => (
-    <LI key={getRandomKey()}>
-      <Flex>
-        <Box width="70px">
-          {!!hole.par && (
-            <BaseText>
-              <Strong>{t('course:par')}</Strong>
-              {` ${hole.par}`}
-            </BaseText>
-          )}
-        </Box>
-        <Box width="140px">
-          {!!hole.length.meter && (
-            <BaseText>
-              <Strong>{t('course:length')}</Strong>
-              {` ${hole.length.meter}m`}
-            </BaseText>
-          )}
-        </Box>
-      </Flex>
-    </LI>
-  ));
+  const holeData = holes.map((hole, index) => {
+    const { par, length } = hole;
+    const key = `${par}-${index}`;
+    return (
+      <LI key={key}>
+        <Flex>
+          <Box width="70px">
+            {!!par && (
+              <BaseText>
+                <Strong>{t('course:par')}</Strong>
+                {` ${par}`}
+              </BaseText>
+            )}
+          </Box>
+          <Box width="140px">
+            {!!length.meter && (
+              <BaseText>
+                <Strong>{t('course:length')}</Strong>
+                {` ${length.meter}m`}
+              </BaseText>
+            )}
+          </Box>
+        </Flex>
+      </LI>
+    );
+  });
+
   return (
     <Box width="100%" mt={2} p={2}>
       {layout.rating && <Badge mx="1rem">{layout.rating}</Badge>}
@@ -51,7 +55,7 @@ const Layout = ({ active, layout, t }: Props) => {
           {`${layout.holeCount}`}
         </BaseText>
       )}
-      {layout.holeAverageLength && (
+      {layout.holeAverageLength && layout.holeAverageLength.meter && (
         <BaseText>
           <Strong>{t('course:hole-average-length')}</Strong>
           {`${layout.holeAverageLength.meter}m`}

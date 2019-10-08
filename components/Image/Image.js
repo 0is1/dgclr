@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import { Wrapper, Img } from './Image.styles';
@@ -18,4 +20,4 @@ const Image = (props: Props) => {
 
 Image.displayName = 'Image';
 
-export default React.memo(Image);
+export default React.memo<Props>(Image);

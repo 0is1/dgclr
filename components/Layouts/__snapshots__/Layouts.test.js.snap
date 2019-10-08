@@ -1,3 +1,293 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layouts component Match snapshot 1`] = `null`;
+exports[`Layouts component Match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Layouts)
+    layouts={
+      Array [
+        Object {
+          "_id": "5b86d8ea88ad697a0c00b99e",
+          "holeCount": 18,
+          "holes": Array [
+            Object {
+              "length": Object {
+                "foot": 432,
+                "meter": 132,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 183,
+                "meter": 56,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 590,
+                "meter": 180,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 242,
+                "meter": 74,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 531,
+                "meter": 162,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 275,
+                "meter": 84,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 308,
+                "meter": 94,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 295,
+                "meter": 90,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 252,
+                "meter": 77,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 393,
+                "meter": 120,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 698,
+                "meter": 213,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 311,
+                "meter": 95,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 308,
+                "meter": 94,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 403,
+                "meter": 123,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 334,
+                "meter": 102,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 328,
+                "meter": 100,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 406,
+                "meter": 124,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 324,
+                "meter": 99,
+              },
+              "par": 3,
+            },
+          ],
+          "name": "Ford DiscGolfPark, Punainen",
+          "rating": "AA1",
+          "totalPar": 57,
+        },
+        Object {
+          "_id": "5b86d8ea88ad697a0c00b99d",
+          "holeCount": 18,
+          "holes": Array [
+            Object {
+              "length": Object {
+                "foot": 724,
+                "meter": 221,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 229,
+                "meter": 70,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 590,
+                "meter": 180,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 242,
+                "meter": 74,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 531,
+                "meter": 162,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 275,
+                "meter": 84,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 308,
+                "meter": 94,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 295,
+                "meter": 90,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 255,
+                "meter": 78,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 393,
+                "meter": 120,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 698,
+                "meter": 213,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 459,
+                "meter": 140,
+              },
+              "par": 4,
+            },
+            Object {
+              "length": Object {
+                "foot": 308,
+                "meter": 94,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 442,
+                "meter": 135,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 334,
+                "meter": 102,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 328,
+                "meter": 100,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 419,
+                "meter": 128,
+              },
+              "par": 3,
+            },
+            Object {
+              "length": Object {
+                "foot": 324,
+                "meter": 99,
+              },
+              "par": 3,
+            },
+          ],
+          "name": "Ford DiscGolfPark, Sininen",
+          "rating": "AA1",
+          "totalPar": 59,
+        },
+      ]
+    }
+  />
+</Provider>
+`;

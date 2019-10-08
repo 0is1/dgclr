@@ -1,339 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input and Slider component Input Match snapshot with default props 1`] = `
-<input
-  className="sc-eNQAEJ Inputstyles__Input-tjx6pn-0 hRDFua"
+<Inputstyles__Input
+  bg="#ffffff"
+  border={0}
+  borderColor="gray"
+  borderRadius={2}
+  boxShadow={1}
+  color="inherit"
+  fontSize="inherit"
+  is="input"
+  lineHeight="inherit"
+  m={0}
   onChange={[Function]}
   placeholder=""
+  px=".75rem"
+  py=".75rem"
   type="text"
   value=""
+  width={1}
 />
 `;
 
 exports[`Input and Slider component Slider Renders correctly with 1 Handle 1`] = `
-Array [
-  <label
-    className="sc-jKJlTe lknMeZ"
-  >
-    0
-    m
-  </label>,
-  <div
-    style={
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <InputComponent
+    focusOnMount={false}
+    onChange={[MockFunction]}
+    options={
       Object {
-        "margin": "1rem 0px 4rem",
-        "position": "relative",
-        "touchAction": "none",
-        "width": "95%",
+        "domain": Array [
+          0,
+          100,
+        ],
+        "filterName": "slider-filter",
+        "initialValues": Array [
+          0,
+        ],
+        "step": 5,
+        "type": "slider",
       }
     }
-  >
-    <div
-      className="SliderRailstyles__RailStyle-ppxn0u-3 WKCjG"
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onTouchStart={[Function]}
-    />
-    <div
-      className="SliderRailstyles__RailCenterStyle-ppxn0u-4 gmZqjS"
-    />
-    <div
-      className="slider-handles"
-    >
-      <div
-        className="Handlestyles__HandleDiv-sc-19ca9yj-0 jehFtI"
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchStart={[Function]}
-      />
-      <div
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={0}
-        className="Handlestyles__Slider-sc-19ca9yj-1 jJJIoY"
-        disabled={false}
-        role="slider"
-      />
-    </div>
-    <div
-      className="slider-tracks"
-    />
-    <div
-      className="slider-ticks"
-    >
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 PsyQD"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 jhJHAa"
-      >
-        0
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 BICCJ"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 hECGgU"
-      >
-        10
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 gmMByh"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 flmmap"
-      >
-        20
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 kjLlLz"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 hIVfnV"
-      >
-        30
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 befymK"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 kLheTP"
-      >
-        40
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hjRAqZ"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 gJzmeY"
-      >
-        50
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 bKupyL"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 mxEvE"
-      >
-        60
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hsWmgI"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 iwqUjd"
-      >
-        70
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hvRoTz"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 kCvuMu"
-      >
-        80
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 IkzaP"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 dAbzWU"
-      >
-        90
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 kRbsux"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 eJxVPw"
-      >
-        100
-      </div>
-    </div>
-  </div>,
-]
+    placeholder=""
+    value=""
+  />
+</Provider>
 `;
 
 exports[`Input and Slider component Slider Renders correctly with 2 Handles 1`] = `
-Array [
-  <label
-    className="sc-jKJlTe lknMeZ"
-  >
-    10 - 100
-    m
-  </label>,
-  <div
-    style={
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <InputComponent
+    focusOnMount={false}
+    onChange={[MockFunction]}
+    options={
       Object {
-        "margin": "1rem 0px 4rem",
-        "position": "relative",
-        "touchAction": "none",
-        "width": "95%",
+        "domain": Array [
+          0,
+          200,
+        ],
+        "filterName": "slider-filter",
+        "initialValues": Array [
+          10,
+          100,
+        ],
+        "step": 10,
+        "type": "slider",
       }
     }
-  >
-    <div
-      className="SliderRailstyles__RailStyle-ppxn0u-3 WKCjG"
-      onMouseDown={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onTouchStart={[Function]}
-    />
-    <div
-      className="SliderRailstyles__RailCenterStyle-ppxn0u-4 gmZqjS"
-    />
-    <div
-      className="slider-handles"
-    >
-      <div
-        className="Handlestyles__HandleDiv-sc-19ca9yj-0 TrcBW"
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchStart={[Function]}
-      />
-      <div
-        aria-valuemax={200}
-        aria-valuemin={0}
-        aria-valuenow={10}
-        className="Handlestyles__Slider-sc-19ca9yj-1 doyhEI"
-        disabled={false}
-        role="slider"
-      />
-      <div
-        className="Handlestyles__HandleDiv-sc-19ca9yj-0 fMnCTd"
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onTouchStart={[Function]}
-      />
-      <div
-        aria-valuemax={200}
-        aria-valuemin={0}
-        aria-valuenow={100}
-        className="Handlestyles__Slider-sc-19ca9yj-1 gnPMqK"
-        disabled={false}
-        role="slider"
-      />
-    </div>
-    <div
-      className="slider-tracks"
-    >
-      <div
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
-        style={
-          Object {
-            "backgroundColor": "#44f46c",
-            "borderRadius": 7,
-            "cursor": "pointer",
-            "height": 14,
-            "left": "5%",
-            "position": "absolute",
-            "transform": "translate(0%, -50%)",
-            "width": "45%",
-            "zIndex": 1,
-          }
-        }
-      />
-    </div>
-    <div
-      className="slider-ticks"
-    >
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 PsyQD"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 jhJHAa"
-      >
-        0
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 BICCJ"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 hECGgU"
-      >
-        20
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 gmMByh"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 flmmap"
-      >
-        40
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 kjLlLz"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 hIVfnV"
-      >
-        60
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 befymK"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 kLheTP"
-      >
-        80
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hjRAqZ"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 gJzmeY"
-      >
-        100
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 bKupyL"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 mxEvE"
-      >
-        120
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hsWmgI"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 iwqUjd"
-      >
-        140
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 hvRoTz"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 kCvuMu"
-      >
-        160
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 IkzaP"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 dAbzWU"
-      >
-        180
-      </div>
-      <div
-        className="Tickstyles__TickWrapper-sc-191tmui-0 kRbsux"
-      />
-      <div
-        className="Tickstyles__TickComponent-sc-191tmui-1 eJxVPw"
-      >
-        200
-      </div>
-    </div>
-  </div>,
-]
+    placeholder=""
+    value=""
+  />
+</Provider>
 `;

@@ -1,22 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout component Match snapshot 1`] = `
-<div
-  className="sc-bwzfXH dbiuev sc-bdVaJa iHZvIS"
+<Flex
+  alignItems="center"
+  extend={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "_foldedDefaultProps": Object {},
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "box-sizing: border-box;",
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        ],
+      },
+      "displayName": "Box",
+      "foldedComponentIds": Array [],
+      "propTypes": Object {
+        "alignSelf": [Function],
+        "bg": [Function],
+        "color": [Function],
+        "flex": [Function],
+        "fontSize": [Function],
+        "m": [Function],
+        "mb": [Function],
+        "ml": [Function],
+        "mr": [Function],
+        "mt": [Function],
+        "mx": [Function],
+        "my": [Function],
+        "order": [Function],
+        "p": [Function],
+        "pb": [Function],
+        "pl": [Function],
+        "pr": [Function],
+        "pt": [Function],
+        "px": [Function],
+        "py": [Function],
+        "width": [Function],
+      },
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "systemComponent": true,
+      "target": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  justifyContent="center"
 >
-  <div
-    className="sc-bdVaJa iHZvIS"
-  >
-    <div
-      className="css-1bqul2e-wrapper-Loader"
-    >
-      <div
-        className="css-15zzetn-style"
-      />
-      <div
-        className="css-fvcvnq-style"
-      />
-    </div>
-  </div>
-</div>
+  <Box>
+    <onlyUpdateForKeys(Loader)
+      className="loading"
+      color="#6173fb"
+      css={Object {}}
+      height={8}
+      heightUnit="px"
+      loading={true}
+      sizeUnit="%"
+      width={80}
+      widthUnit="px"
+    />
+  </Box>
+</Flex>
 `;

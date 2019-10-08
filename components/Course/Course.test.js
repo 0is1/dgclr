@@ -1,7 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Card } from 'rebass';
 import TestStoreProvider from 'jest/TestStoreProvider';
 import mockCoursesData from 'components/SearchContainer/mock/courses.mock';
@@ -12,11 +11,12 @@ import Course from './Course';
 
 const { Description, PanelWrapper } = Styles;
 
-const defaultProps = {
+const mockProps = (props = {}) => ({
   setCourses: jest.fn(),
   slug: mockCoursesData[1].slug,
   t: jest.fn(value => value),
-};
+  ...props,
+});
 
 function setup() {
   const storeData = {
@@ -27,9 +27,10 @@ function setup() {
       [mockCoursesData[1].slug]: mockCoursesData[1],
     },
   };
+  const props = mockProps();
   const components = (
     <TestStoreProvider storeData={storeData}>
-      <Course {...defaultProps} />
+      <Course {...props} />
     </TestStoreProvider>
   );
   const enzymeWrapper = mount(components);
@@ -38,17 +39,16 @@ function setup() {
 
 describe('Course component', () => {
   it('Match snapshot', () => {
-    const component = renderer.create(
+    const props = mockProps();
+    const subject = shallow(
       <TestStoreProvider storeData={DEFAULT_STATE}>
-        <Course {...defaultProps} />
+        <Course {...props} />
       </TestStoreProvider>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(subject).toMatchSnapshot();
   });
   it('Renders correctly', () => {
     const { enzymeWrapper } = setup();
-    expect(enzymeWrapper).toBeDefined();
     expect(enzymeWrapper.find(PanelWrapper).length).toEqual(2);
     expect(enzymeWrapper.find(Card).length).toEqual(1);
     expect(enzymeWrapper.props().children.props.slug).toEqual(mockCoursesData[1].slug);
