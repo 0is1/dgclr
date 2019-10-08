@@ -123,6 +123,8 @@ export class AdvancedSearchInputs extends Component<CombinedProps> {
   };
 
   onMapSearchChange = (data: { coordinates: CoordinatesObject, radius: number }) => {
+    const { mapChecked } = this.props;
+    if (!mapChecked) return;
     const filter = this.getParsedFilter();
     //  list the longitude first and then latitude https://docs.mongodb.com/manual/reference/geojson/#geojson-point
     const nearby = data.coordinates
