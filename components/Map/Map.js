@@ -71,8 +71,12 @@ class Map extends PureComponent<Props, State> {
   }
 
   componentDidMount() {
+    const { advancedSearch } = this.props;
     this.delayedShowMarker();
-    this.updateCoordinatesToCurrentLocation();
+    if (advancedSearch) {
+      // Only in advanced search
+      this.updateCoordinatesToCurrentLocation();
+    }
   }
 
   componentDidUpdate(props: Props, state: State, snapshot: ?string) {
@@ -187,7 +191,7 @@ class Map extends PureComponent<Props, State> {
     const { useCurrentLocation } = this.state;
     const newUseCurrentLocationValue = !useCurrentLocation;
     this.setState({ useCurrentLocation: newUseCurrentLocationValue });
-    console.log('newUseCurrentLocationValue: ', newUseCurrentLocationValue);
+
     if (newUseCurrentLocationValue) {
       this.updateCoordinatesToCurrentLocation();
     }
