@@ -50,7 +50,7 @@ exports[`<Map /> snapshots renders with default props 1`] = `
       ]
     }
     radius={20000}
-    useCurrentLocation={true}
+    useCurrentLocation={false}
     zoom={9}
   />
   <AdvancedSearchMapstyles__LocationButton
@@ -69,7 +69,7 @@ exports[`<Map /> snapshots renders with default props 1`] = `
     title="Käytä nykyistä sijaintia"
   >
     <AdvancedSearchMapstyles__LocationIconWrapper
-      useCurrentLocation={true}
+      useCurrentLocation={false}
     >
       <GoLocation
         size="20"
