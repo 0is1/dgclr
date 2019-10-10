@@ -136,10 +136,24 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     }
   }
 
-  updateFilter = (data: ?{} = {}) => {
-    const { defaultValue, handleChange, setFilter } = this.props;
+  getValuesFromStateOrDefault = (): { coordinates: CoordinatesObject, radius: number } => {
+    const { defaultValue } = this.props;
     const { coordinates, radius } = this.state;
-    const [currentData = { coordinates, radius }] = defaultValue;
+    if (coordinates && radius) {
+      return { coordinates, radius };
+    }
+    if (isArrayWithLength(defaultValue) && defaultValue[0].coordinates) {
+      const [{ coordinates: defaultValueCoordinates, radius: defaultValueRadius }] = defaultValue;
+      return { coordinates: defaultValueCoordinates, radius: defaultValueRadius };
+    }
+    return { coordinates: defaultCoordinates, radius };
+  };
+
+  updateFilter = (data: ?{} = {}) => {
+    const { handleChange, setFilter } = this.props;
+    const { coordinates, radius } = this.getValuesFromStateOrDefault();
+    const currentData = { coordinates, radius };
+    // Data order: data-parameter, state, defaultValue prop
     const updatedFilter = { ...currentData, ...data };
     setFilter(ADVANCED_NEARBY, [updatedFilter]);
     handleChange(updatedFilter);
