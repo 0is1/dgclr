@@ -28,10 +28,11 @@ type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
 class AdvancedSearchPage extends Component<CombinedProps> {
   static getInitialProps: any => any;
 
-  componentDidMount() {
+  constructor(props: CombinedProps) {
+    super(props);
     const {
       setFilter, setAdvancedSearchFilter, toggleMapVisibility, query,
-    } = this.props;
+    } = props;
     if (query && Object.keys(query).length > 0 && query.q) {
       try {
         const parsedQuery = JSON.parse(decodeURIComponent(query.q));

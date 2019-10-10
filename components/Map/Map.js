@@ -56,7 +56,7 @@ class Map extends PureComponent<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    const { advancedSearch, data } = props;
+    const { data } = props;
     const { queryResults } = data;
     if (isArrayWithLength(queryResults)) {
       const markers = this.getMarkersFromQueryData();
@@ -64,7 +64,7 @@ class Map extends PureComponent<Props, State> {
         searchAreaCircleCoordinates: null,
         isMarkerShown: false,
         markers,
-        useCurrentLocation: !!advancedSearch,
+        useCurrentLocation: false,
         currentLocationCoordinates: null,
       };
     }
@@ -72,7 +72,7 @@ class Map extends PureComponent<Props, State> {
 
   componentDidMount() {
     const { advancedSearch } = this.props;
-    this.delayedShowMarker();
+    this.updateMarkers();
     if (advancedSearch) {
       // Only in advanced search
       this.updateCoordinatesToCurrentLocation();
@@ -113,24 +113,16 @@ class Map extends PureComponent<Props, State> {
     this.setState({ markers });
   };
 
-  delayedShowMarker = () => {
-    this.timeOut = setTimeout(() => {
-      this.setState({ isMarkerShown: true });
-    }, 3000);
-  };
-
   onMarkerClick = (markerId: string) => {
     const { markers } = this.state;
     // eslint-disable-next-line max-len
     const updatedMarkers = markers.map(marker => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }));
     this.setState({ markers: updatedMarkers });
-    // this.delayedShowMarker();
   };
 
   onCircleDragEnd = () => {
     const { onCircleDragEnd } = this.props;
     const { searchAreaCircleCoordinates } = this.state;
-    // console.log('searchAreaCircleCoordinates: ', searchAreaCircleCoordinates);
     if (typeof onCircleDragEnd === 'function' && searchAreaCircleCoordinates) {
       onCircleDragEnd(searchAreaCircleCoordinates);
     }
@@ -164,6 +156,7 @@ class Map extends PureComponent<Props, State> {
     try {
       const getCurrentPositionSuccess = (pos) => {
         const { onCircleDragEnd } = this.props;
+        const { useCurrentLocation } = this.state;
         const { coords } = pos;
         const newCoordinates = {
           lat: coords.latitude,
@@ -172,8 +165,8 @@ class Map extends PureComponent<Props, State> {
         this.setState({
           currentLocationCoordinates: newCoordinates,
         });
-        // TODO: separate variables for circle coords and map coords
-        if (typeof onCircleDragEnd === 'function') {
+        // Update coordinates only if useCurrentLocation is true
+        if (typeof onCircleDragEnd === 'function' && useCurrentLocation) {
           onCircleDragEnd(newCoordinates);
         }
       };
