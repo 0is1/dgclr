@@ -137,6 +137,7 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
   }
 
   getValuesFromStateOrDefault = (): { coordinates: CoordinatesObject, radius: number } => {
+    // $FlowFixMe defaultValue is set in MapStateToProps but flow complains that it's missing in Props or MapDispatchToProps
     const { defaultValue } = this.props;
     const { coordinates, radius } = this.state;
     if (coordinates && radius) {
