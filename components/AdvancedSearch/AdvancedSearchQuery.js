@@ -64,9 +64,12 @@ export class AdvancedSearchQuery extends Component<CombinedProps> {
     const stringifyFilter = JSON.stringify(filter);
     // console.log('courses: ', courses);
     // console.log('prevCourses: ', prevCourses);
+    // console.log('latestQuery: ', latestQuery);
+    // console.log('stringifyFilter: ', stringifyFilter);
     if (
       (isArrayWithLength(courses) && differenceBy(courses, prevCourses, '_id').length > 0)
       || (!isArrayWithLength(courses) && stringifyFilter !== latestQuery)
+      || (isArrayWithLength(courses) && stringifyFilter !== '' && latestQuery === '')
       || (prevCourses && courses.length !== prevCourses.length && stringifyFilter !== latestQuery)
     ) {
       return true;
