@@ -8,8 +8,15 @@ import matchAll from 'string.prototype.matchall';
  * @param {String} text
  * @return {String} links converted to <a>:s
  */
-const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s]*)/gi;
-export const convertLinksToHtml = (string: string): string => string.replace(LINK_REGEX, "<a href='$1'>$1</a>");
+const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
+export const convertLinksToHtml = (string: string): string => string.replace(LINK_REGEX, (wholeMatch, group1) => {
+  if (group1) {
+    const includesLastDot = group1.endsWith('.');
+    const returnString = includesLastDot ? group1.slice(0, -1) : group1;
+    return `<a href='${returnString}'>${returnString}</a>${includesLastDot ? '.' : ''}`;
+  }
+  return '';
+});
 
 /**
  * Convert coordinates array to {lat, lng} object
@@ -96,7 +103,7 @@ export const convertKilometersToMeters = (kilometers: number): number => parseIn
 export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
 
 const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=]*)/gi;
-const HTTP_REGEX = /((?:https?:\/\/)(([a-öA-Ö]*\.[a-öA-Ö]{2,})*))/gi;
+const HTTP_REGEX = /(https?):\/\/([^\s/$.?#].[^\s<>'")]*)/gi;
 /**
  * Convert text with only "www" to links in text to <a href="">url</a>
  * @param {String} text
@@ -107,16 +114,21 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
     return string;
   }
   const httpMatches = Array.from(matchAll(string, HTTP_REGEX));
+  // console.log('httpMatches: ', httpMatches);
   const wwwMatches = Array.from(new Set(string.match(WWW_REGEX)));
+  // console.log('wwwMatches: ', wwwMatches);
   if (isArrayWithLength(httpMatches) && isArrayWithLength(wwwMatches)) {
     let stringWithWWWLinks = string;
     const ignoredWWWTexts = httpMatches.map((matchArray) => {
       // www-match is second group => third item in the array
       const [, , wwwMatch] = matchArray;
-      return wwwMatch;
+      // Remove last dot if there is one
+      return wwwMatch.endsWith('.') ? wwwMatch.slice(0, -1) : wwwMatch;
     });
+    // console.log('ignoredWWWTexts: ', ignoredWWWTexts);
     // If this www.something.com is already wrapped with <a>, filter it out from wwwTextsWithoutLink
     const wwwTextsWithoutLink = wwwMatches.filter(www => !ignoredWWWTexts.includes(www));
+    // console.log('wwwTextsWithoutLink: ', wwwTextsWithoutLink);
     wwwTextsWithoutLink.forEach((wwwString) => {
       const regex = new RegExp(`(${wwwString})`, 'g');
       stringWithWWWLinks = stringWithWWWLinks.replace(regex, "<a href='http://$1'>$1</a>");
