@@ -27,7 +27,7 @@ export const removeLastCommaAndReturnLinkFromFirstCaptureGroup = (string: string
  * @param {String} text
  * @return {String} links converted to <a>:s
  */
-const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
+export const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
 export const convertLinksToHtml = (string: string): string => removeLastCommaAndReturnLinkFromFirstCaptureGroup(string, LINK_REGEX);
 
 /**
@@ -114,7 +114,7 @@ export const convertKilometersToMeters = (kilometers: number): number => parseIn
  */
 export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
 
-const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=.]*)/gi;
+export const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=.]*)/gi;
 const HTTP_REGEX = /(https?):\/\/([^\s/$.?#].[^\s<>'")]*)/gi;
 /**
  * Convert text with only "www" to links in text to <a href="">url</a>

@@ -5,13 +5,16 @@ import {
   convertKilometersToMeters,
   convertLinksToHtml,
   convertMetersToKilometers,
+  convertWWWToHttpAndAddLinks,
   courseAddressDetails,
   getCourseMapUrlForLayout,
   getRandomKey,
   getTitle,
   isArrayWithLength,
+  LINK_REGEX,
+  removeLastCommaAndReturnLinkFromFirstCaptureGroup,
   uniqueLayoutRatings,
-  convertWWWToHttpAndAddLinks,
+  WWW_REGEX,
 } from './utils';
 import { MOCK_DESCRIPTION_WITH_DOT_AT_THE_END_OF_URL } from './mock/description-mocks';
 
@@ -188,6 +191,27 @@ describe('Utils', () => {
     it('convert string with www.domain.com/path?a=1&b=2 text to links', () => {
       const result = convertWWWToHttpAndAddLinks('www.hello.world/subpath/another/?a=1&b=2');
       expect(result).toEqual("<a href='http://www.hello.world/subpath/another/?a=1&b=2'>www.hello.world/subpath/another/?a=1&b=2</a>");
+    });
+  });
+  describe('removeLastCommaAndReturnLinkFromFirstCaptureGroup', () => {
+    it('Return as expected without includeHttp', () => {
+      expect(removeLastCommaAndReturnLinkFromFirstCaptureGroup(MOCK_DESCRIPTION_WITH_DOT_AT_THE_END_OF_URL, LINK_REGEX)).toEqual(
+        "Rata on perustettu vuonna 1998 vanhan golfkentän paikalle, ja se laajennettiin täysimittaiseksi 18-väyläiseksi vuonna 2004. Hiirosessa on pelattu useita SM-tason kilpailuja. Rata soveltuu sekä kilpapelaajille että harrastajille: osa väylistä on haastavia metsäväyliä, mutta tarjolla on myös lyhyempiä puistoväyliä. Radan pituus on 1999 metriä ja par 58. Väylien pituudet vaihtelevat 69:stä 243metriin. Hiirosen frisbeegolfrataa hoitavat oululaiset seurat Oulun Frisbeeseura ry ja BSC Disc Golf Team ry yhteistyössä. Oulun kaupunki huolehtii ruohon ja heinän leikkuusta säännöllisesti. Radan yhteydessä on riittävästi paikoitustilaa, jonka sijainti käy ilmi ratakartasta. Alue on yleinen puisto, joten muiden liikkujien ja toisten turvallisuus on huomioitava erityisen tarkasti. WC-tiloja radan yhteydessä ei ole. Lähimmät palvelut ovat Hiirosen Neste ja Maikkulan Neste. Radalla pelataan viikkokisoja, joissa ennen kisan alkua on paikalla myös välinemyynti. Katso tarkemmat tiedot osoitteesta www.viikkokisat.com. Ratakartta, väyläesittelyt ja ajo-ohjeet <a href='http://www.oulunfrisbeeseura.net/radat.php?rata=hiironen'>http://www.oulunfrisbeeseura.net/radat.php?rata=hiironen</a>. Tervetuloa Hiiroseen!",
+      );
+    });
+    it('Return as expected with includeHttp', () => {
+      expect(
+        removeLastCommaAndReturnLinkFromFirstCaptureGroup(
+          'Rata on perustettu vuonna 1998 vanhan golfkentän paikalle, ja se laajennettiin täysimittaiseksi 18-väyläiseksi vuonna 2004. Hiirosessa on pelattu useita SM-tason kilpailuja. Rata soveltuu sekä kilpapelaajille että harrastajille: osa väylistä on haastavia metsäväyliä, mutta tarjolla on myös lyhyempiä puistoväyliä. Radan pituus on 1999 metriä ja par 58. Väylien pituudet vaihtelevat 69:stä 243metriin. Hiirosen frisbeegolfrataa hoitavat oululaiset seurat Oulun Frisbeeseura ry ja BSC Disc Golf Team ry yhteistyössä. Oulun kaupunki huolehtii ruohon ja heinän leikkuusta säännöllisesti. Radan yhteydessä on riittävästi paikoitustilaa, jonka sijainti käy ilmi ratakartasta. Alue on yleinen puisto, joten muiden liikkujien ja toisten turvallisuus on huomioitava erityisen tarkasti. WC-tiloja radan yhteydessä ei ole. Lähimmät palvelut ovat Hiirosen Neste ja Maikkulan Neste. Radalla pelataan viikkokisoja, joissa ennen kisan alkua on paikalla myös välinemyynti. Katso tarkemmat tiedot osoitteesta www.viikkokisat.com.',
+          WWW_REGEX,
+          true,
+        ),
+      ).toEqual(
+        "Rata on perustettu vuonna 1998 vanhan golfkentän paikalle, ja se laajennettiin täysimittaiseksi 18-väyläiseksi vuonna 2004. Hiirosessa on pelattu useita SM-tason kilpailuja. Rata soveltuu sekä kilpapelaajille että harrastajille: osa väylistä on haastavia metsäväyliä, mutta tarjolla on myös lyhyempiä puistoväyliä. Radan pituus on 1999 metriä ja par 58. Väylien pituudet vaihtelevat 69:stä 243metriin. Hiirosen frisbeegolfrataa hoitavat oululaiset seurat Oulun Frisbeeseura ry ja BSC Disc Golf Team ry yhteistyössä. Oulun kaupunki huolehtii ruohon ja heinän leikkuusta säännöllisesti. Radan yhteydessä on riittävästi paikoitustilaa, jonka sijainti käy ilmi ratakartasta. Alue on yleinen puisto, joten muiden liikkujien ja toisten turvallisuus on huomioitava erityisen tarkasti. WC-tiloja radan yhteydessä ei ole. Lähimmät palvelut ovat Hiirosen Neste ja Maikkulan Neste. Radalla pelataan viikkokisoja, joissa ennen kisan alkua on paikalla myös välinemyynti. Katso tarkemmat tiedot osoitteesta <a href='http://www.viikkokisat.com'>www.viikkokisat.com</a>.",
+      );
+    });
+    it('Return input', () => {
+      expect(removeLastCommaAndReturnLinkFromFirstCaptureGroup('No links', LINK_REGEX)).toEqual('No links');
     });
   });
 });
