@@ -4,19 +4,31 @@ import type { Layout, LocationInfo } from 'lib/types';
 import matchAll from 'string.prototype.matchall';
 
 /**
+ * Convert links in text to <a href="">url</a> from first capture group
+ * add "http://"-prefix if includeHttp is used
+ * @param {String} text
+ * @param {String} regex
+ * @param {boolean} includeHttp
+ * @return {String} links converted to <a>:s
+ */
+// eslint-disable-next-line max-len
+export const removeLastCommaAndReturnLinkFromFirstCaptureGroup = (string: string, regex: any, includeHttp: boolean = false): string => string.replace(regex, (wholeMatch, group1) => {
+  if (group1) {
+    const includesLastDot = group1.endsWith('.');
+    const returnString = includesLastDot ? group1.slice(0, -1) : group1;
+    const hrefString = includeHttp ? `http://${returnString}` : returnString;
+    return `<a href='${hrefString}'>${returnString}</a>${includesLastDot ? '.' : ''}`;
+  }
+  return '';
+});
+
+/**
  * Convert links in text to <a href="">url</a>
  * @param {String} text
  * @return {String} links converted to <a>:s
  */
-const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
-export const convertLinksToHtml = (string: string): string => string.replace(LINK_REGEX, (wholeMatch, group1) => {
-  if (group1) {
-    const includesLastDot = group1.endsWith('.');
-    const returnString = includesLastDot ? group1.slice(0, -1) : group1;
-    return `<a href='${returnString}'>${returnString}</a>${includesLastDot ? '.' : ''}`;
-  }
-  return '';
-});
+export const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
+export const convertLinksToHtml = (string: string): string => removeLastCommaAndReturnLinkFromFirstCaptureGroup(string, LINK_REGEX);
 
 /**
  * Convert coordinates array to {lat, lng} object
@@ -102,7 +114,7 @@ export const convertKilometersToMeters = (kilometers: number): number => parseIn
  */
 export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
 
-const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=]*)/gi;
+export const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=.]*)/gi;
 const HTTP_REGEX = /(https?):\/\/([^\s/$.?#].[^\s<>'")]*)/gi;
 /**
  * Convert text with only "www" to links in text to <a href="">url</a>
@@ -115,7 +127,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
   }
   const httpMatches = Array.from(matchAll(string, HTTP_REGEX));
   // console.log('httpMatches: ', httpMatches);
-  const wwwMatches = Array.from(new Set(string.match(WWW_REGEX)));
+  const wwwMatches = Array.from(new Set(string.match(WWW_REGEX))).map(item => (item.endsWith('.') ? item.slice(0, -1) : item));
   // console.log('wwwMatches: ', wwwMatches);
   if (isArrayWithLength(httpMatches) && isArrayWithLength(wwwMatches)) {
     let stringWithWWWLinks = string;
@@ -135,5 +147,5 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
     });
     return stringWithWWWLinks;
   }
-  return string.replace(WWW_REGEX, "<a href='http://$1'>$1</a>");
+  return removeLastCommaAndReturnLinkFromFirstCaptureGroup(string, WWW_REGEX, true);
 };
