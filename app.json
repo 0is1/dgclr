@@ -5,23 +5,6 @@
       "url": "heroku/nodejs"
     }
   ],
-  "env": {
-    "NODE_ENV": {
-      "required": true
-    },
-    "NPM_CONFIG_PRODUCTION": {
-      "required": true
-    },
-    "ROLLBAR_ACCESS_TOKEN": {
-      "required": true
-    },
-    "ROLLBAR_ENDPOINT": {
-      "required": true
-    },
-    "YARN_PRODUCTION": {
-      "required": true
-    }
-  },
   "formation": {
     "web": {
       "quantity": 1
