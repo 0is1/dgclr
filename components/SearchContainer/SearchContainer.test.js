@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { SearchContainer } from './SearchContainer';
 
 const mockProps = (props = {}) => ({
-  t: jest.fn(value => value),
+  t: jest.fn((value) => value),
   latestQuery: '',
   ...props,
 });

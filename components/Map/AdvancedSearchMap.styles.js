@@ -25,7 +25,7 @@ const Styles = {
   LocationIconWrapper: styled.span`
     width: 20px;
     > svg {
-      color: ${props => (props.useCurrentLocation ? colors.pink : colors.gray)};
+      color: ${(props) => (props.useCurrentLocation ? colors.pink : colors.gray)};
       width: 15px;
     }
   `,

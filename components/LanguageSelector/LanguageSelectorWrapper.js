@@ -14,7 +14,7 @@ const LanguageSelectorWrapper = ({ currentLanguage }: Props) => {
   if (!isArrayWithLength(languages)) {
     return null;
   }
-  const languageSelectors = languages.map(language => (
+  const languageSelectors = languages.map((language) => (
     <LanguageSelector key={language} language={language} currentLanguage={currentLanguage} />
   ));
   return <Wrapper>{languageSelectors}</Wrapper>;

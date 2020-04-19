@@ -133,7 +133,7 @@ class Map extends PureComponent<Props> {
           )}
           {isArrayWithLength(markers) && (
             <MarkerClusterer onClick={this.onMarkerClustererClick} averageCenter enableRetinaIcons gridSize={60}>
-              {clusterer => markers.map(marker => (
+              {(clusterer) => markers.map((marker) => (
                 <Marker
                   key={marker.name}
                   position={marker.coordinates}
@@ -162,8 +162,7 @@ class Map extends PureComponent<Props> {
                   </InfoBox>
                   )}
                 </Marker>
-              ))
-              }
+              ))}
             </MarkerClusterer>
           )}
           {advancedSearch && (

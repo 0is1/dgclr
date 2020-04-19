@@ -28,7 +28,7 @@ const InfoPage = ({ currentLanguage, t }: Props) => {
           <UL>
             <LI>{t('info:more-features-list-title-one')}</LI>
             <UL padding="0 0 0 1rem">
-              {moreFeaturesListData.map(item => (
+              {moreFeaturesListData.map((item) => (
                 <LI key={item}>{item}</LI>
               ))}
             </UL>

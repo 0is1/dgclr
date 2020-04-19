@@ -58,7 +58,7 @@ export const courseAddressDetails = (locationInfo: LocationInfo) => {
  * @return {Array} ratings as strings
  */
 // eslint-disable-next-line max-len
-export const uniqueLayoutRatings = (layouts: Array<Layout> = []): Array<string> => uniq(layouts.filter(layout => layout && layout.rating).map(layout => layout.rating));
+export const uniqueLayoutRatings = (layouts: Array<Layout> = []): Array<string> => uniq(layouts.filter((layout) => layout && layout.rating).map((layout) => layout.rating));
 
 /**
  * Get unique key id
@@ -127,7 +127,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
   }
   const httpMatches = Array.from(matchAll(string, HTTP_REGEX));
   // console.log('httpMatches: ', httpMatches);
-  const wwwMatches = Array.from(new Set(string.match(WWW_REGEX))).map(item => (item.endsWith('.') ? item.slice(0, -1) : item));
+  const wwwMatches = Array.from(new Set(string.match(WWW_REGEX))).map((item) => (item.endsWith('.') ? item.slice(0, -1) : item));
   // console.log('wwwMatches: ', wwwMatches);
   if (isArrayWithLength(httpMatches) && isArrayWithLength(wwwMatches)) {
     let stringWithWWWLinks = string;
@@ -139,7 +139,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
     });
     // console.log('ignoredWWWTexts: ', ignoredWWWTexts);
     // If this www.something.com is already wrapped with <a>, filter it out from wwwTextsWithoutLink
-    const wwwTextsWithoutLink = wwwMatches.filter(www => !ignoredWWWTexts.includes(www));
+    const wwwTextsWithoutLink = wwwMatches.filter((www) => !ignoredWWWTexts.includes(www));
     // console.log('wwwTextsWithoutLink: ', wwwTextsWithoutLink);
     wwwTextsWithoutLink.forEach((wwwString) => {
       const regex = new RegExp(`(${wwwString})`, 'g');

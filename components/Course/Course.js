@@ -92,7 +92,7 @@ class Course extends Component<CombinedProps> {
     const descriptionWithLinks = convertWWWToHttpAndAddLinks(convertLinksToHtml(description));
     const { location } = locationInfo;
     const coordinates = location && convertCoordinatesToObject(location.coordinates);
-    const layoutNames = layouts.map(layout => layout.name);
+    const layoutNames = layouts.map((layout) => layout.name);
     const layoutTabs = <Tabs tabs={layoutNames} id={courseData._id} />;
     const mapElement = coordinates ? <Map coordinates={coordinates} data={courseData} /> : null;
     const courseImage = mapUrl && mapUrl !== '' ? <Image alt={name} src={mapUrl} /> : null;
@@ -234,7 +234,7 @@ const mapStateToProps = (state: ReduxState, ownProps: OwnProps): MapStateToProps
 };
 
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
-  setCourses: courses => dispatch(setCoursesFunc(courses)),
+  setCourses: (courses) => dispatch(setCoursesFunc(courses)),
 });
 
 export default connect<CombinedProps, OwnProps, MapStateToProps, any, any, Function>(

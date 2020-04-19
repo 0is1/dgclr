@@ -8,16 +8,16 @@ const Styles = {
     width: 1px;
     height: 5px;
     background-color: ${colors.gray};
-    left: ${props => props.percent}%;
+    left: ${(props) => props.percent}%;
   `,
   TickComponent: styled.div`
     position: absolute;
     margin-top: 22px;
     font-size: 10px;
     text-align: center;
-    margin-left: ${props => -(100 / props.count) / 2}%;
-    width: ${props => 100 / props.count}%;
-    left: ${props => props.percent}%;
+    margin-left: ${(props) => -(100 / props.count) / 2}%;
+    width: ${(props) => 100 / props.count}%;
+    left: ${(props) => props.percent}%;
   `,
 };
 
