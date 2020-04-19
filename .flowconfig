@@ -3,6 +3,7 @@
 .*/node_modules/react-select/.*
 .*/dist/.*
 .*/node_modules/graphql/error/GraphQLError.js.flow
+.*/.git/.*
 
 [include]
 
