@@ -9,7 +9,8 @@ exports[`Layout component Match snapshot 1`] = `
       "_foldedDefaultProps": Object {},
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
+        "baseHash": 400283751,
+        "componentId": "sc-AxjAm",
         "isStatic": false,
         "rules": Array [
           "box-sizing: border-box;",
@@ -22,6 +23,7 @@ exports[`Layout component Match snapshot 1`] = `
           [Function],
           [Function],
         ],
+        "staticRulesId": "",
       },
       "displayName": "Box",
       "foldedComponentIds": Array [],
@@ -49,7 +51,8 @@ exports[`Layout component Match snapshot 1`] = `
         "width": [Function],
       },
       "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
+      "shouldForwardProp": undefined,
+      "styledComponentId": "sc-AxjAm",
       "systemComponent": true,
       "target": Object {
         "$$typeof": Symbol(react.forward_ref),
@@ -63,16 +66,14 @@ exports[`Layout component Match snapshot 1`] = `
   justifyContent="center"
 >
   <Box>
-    <onlyUpdateForKeys(Loader)
+    <Loader
       className="loading"
       color="#6173fb"
-      css={Object {}}
+      css=""
       height={8}
-      heightUnit="px"
       loading={true}
       sizeUnit="%"
       width={80}
-      widthUnit="px"
     />
   </Box>
 </Flex>

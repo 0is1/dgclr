@@ -142,7 +142,7 @@ const mapStateToProps = (state: State): MapStateToProps => ({
 });
 
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
-  setCourses: courses => dispatch(setCoursesFunc(courses)),
+  setCourses: (courses) => dispatch(setCoursesFunc(courses)),
   setSearchQuery: (courses, query) => dispatch(setAdvancedSearchQuery(courses, query)),
 });
 

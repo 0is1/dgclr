@@ -7,7 +7,7 @@ export const initialState = {};
 
 const reducer = createReducer({
   [actionTypes.SET_COURSES]: (state, action) => {
-    const courses = keyBy(course => course.slug, action.courses);
+    const courses = keyBy((course) => course.slug, action.courses);
     return update(courses, state);
   },
 });

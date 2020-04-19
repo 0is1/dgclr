@@ -3,7 +3,7 @@ import colors from 'components/colors';
 
 const Styles = {
   TooltipContainer: styled.div`
-    left: ${props => props.percent}%;
+    left: ${(props) => props.percent}%;
     position: absolute;
     margin-left: -11px;
     margin-top: -35px;

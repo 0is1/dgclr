@@ -8,7 +8,7 @@ import { Layout } from './Layout';
 const mockProps = (props = {}) => ({
   active: true,
   layout: mockCoursesData[1].layouts[0],
-  t: jest.fn(value => value),
+  t: jest.fn((value) => value),
   ...props,
 });
 

@@ -246,7 +246,7 @@ const mapStateToProps = (state: State): MapStateToProps => ({
   mapChecked: isAdvancedSearchMapVisible(state),
 });
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
-  setAdvancedSearchFilter: filter => dispatch(setCurrentAdvancedSearchFilter(filter)),
+  setAdvancedSearchFilter: (filter) => dispatch(setCurrentAdvancedSearchFilter(filter)),
   toggleMapVisibility: (visible: boolean) => dispatch(toggleAdvancedSearchMap(visible)),
   toggleAdvancedSearchInputs: (visible: boolean) => dispatch(toggleAdvancedSearchInputsFunc(visible)),
 });

@@ -19,7 +19,7 @@ type Props = { onChange: Function, placeholder: string, label: string };
 
 const TeeTypeSelect = (props: Props) => {
   const { onChange, ...other } = props;
-  return <Select options={teeTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.teeType.filterName} {...other} />;
+  return <Select {...other} options={teeTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.teeType.filterName} />;
 };
 
 export default TeeTypeSelect;

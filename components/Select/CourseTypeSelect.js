@@ -35,7 +35,7 @@ const CourseTypeSelect = (props: Props) => {
   const { onChange, ...other } = props;
   return (
     <ZIndexContainer>
-      <Select options={courseTypeOptions} onChange={onChange} {...other} filterName={SELECT_FILTER_NAMES.courseTypes.filterName} />
+      <Select {...other} options={courseTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.courseTypes.filterName} />
     </ZIndexContainer>
   );
 };

@@ -29,7 +29,7 @@ type Props = {
   handleOnChange: Function,
   reversed?: boolean,
   showCurrentValues?: boolean,
-  step?: number,
+  step?: string | number,
 };
 
 type MapStateToProps = {
@@ -58,17 +58,9 @@ export class SliderContainer extends Component<CombinedProps> {
 
   render() {
     const {
-      currentValue,
-      domain,
-      format,
-      initialValues,
-      reversed,
-      showCurrentValues,
-      step,
+      currentValue, domain, format, initialValues, reversed, showCurrentValues, step,
     } = this.props;
-    const values = isArrayWithLength(currentValue)
-      ? currentValue
-      : initialValues;
+    const values = isArrayWithLength(currentValue) ? currentValue : initialValues;
     const tracksLeftRight = domain.length > 1 ? { right: false, left: false } : { right: false };
     const currentValues = values.join(' - ');
     return (
@@ -76,7 +68,7 @@ export class SliderContainer extends Component<CombinedProps> {
         {showCurrentValues && (
         <Label>
           {currentValues}
-m
+          m
         </Label>
         )}
         <Slider
@@ -89,13 +81,11 @@ m
           onChange={this.onChange}
           values={values}
         >
-          <Rail>
-            {railProps => <SliderRail {...railProps} format={format} />}
-          </Rail>
+          <Rail>{(railProps) => <SliderRail {...railProps} format={format} />}</Rail>
           <Handles>
             {({ handles, activeHandleID, getHandleProps }) => (
               <div className="slider-handles">
-                {handles.map(handle => (
+                {handles.map((handle) => (
                   <Handle
                     key={handle.id}
                     handle={handle}
@@ -112,12 +102,7 @@ m
             {({ tracks, getTrackProps }) => (
               <div className="slider-tracks">
                 {tracks.map(({ id, source, target }) => (
-                  <Track
-                    key={id}
-                    source={source}
-                    target={target}
-                    getTrackProps={getTrackProps}
-                  />
+                  <Track key={id} source={source} target={target} getTrackProps={getTrackProps} />
                 ))}
               </div>
             )}
@@ -125,13 +110,8 @@ m
           <Ticks count={10}>
             {({ ticks }) => (
               <div className="slider-ticks">
-                {ticks.map(tick => (
-                  <Tick
-                    key={tick.id}
-                    tick={tick}
-                    count={ticks.length}
-                    format={format}
-                  />
+                {ticks.map((tick) => (
+                  <Tick key={tick.id} tick={tick} count={ticks.length} format={format} />
                 ))}
               </div>
             )}
@@ -154,7 +134,4 @@ const mapStateToProps = (state: State, ownProps: Props): MapStateToProps => ({
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
-export default connect<CombinedProps, Props, any, any, any, Function>(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SliderContainer);
+export default connect<CombinedProps, Props, any, any, any, Function>(mapStateToProps, mapDispatchToProps)(SliderContainer);

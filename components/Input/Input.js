@@ -15,7 +15,7 @@ type Props = {
     step?: string | number,
     type: string,
     // $FlowFixMe how to check that this is array in the way that flow likes it?
-    initialValues?: Array<number>,
+    initialValues?: Array<?number>,
     filterName?: string,
     domain?: Array<number>,
     format?: Function,
@@ -59,18 +59,15 @@ class InputComponent extends PureComponent<Props> {
     const { type = null } = options || {};
     if (type === 'slider') {
       const {
-        initialValues = [],
-        domain = null,
-        filterName = null,
-        ...restProps
+        initialValues = [], domain = null, filterName = null, ...restProps
       } = options || {};
       if (initialValues && domain && filterName) {
         return (
           <Slider
+            {...restProps}
             initialValues={initialValues}
             domain={domain}
             filterName={filterName}
-            {...restProps}
             handleOnChange={this.onSliderChange}
           />
         );

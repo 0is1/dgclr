@@ -31,7 +31,7 @@ type State = {
   currentLocationCoordinates: ?CoordinatesObject,
   searchAreaCircleCoordinates: ?CoordinatesObject,
   isMarkerShown: boolean,
-  markers: Array<?MarkerData>,
+  markers: Array<MarkerData>,
   useCurrentLocation: boolean,
 };
 
@@ -103,7 +103,7 @@ class Map extends PureComponent<Props, State> {
     const { queryResults } = data;
     if (isArrayWithLength(queryResults)) {
       // $FlowFixMe isArrayWithLength check that this is array but flow doesn't get it
-      return queryResults.map(marker => ({ ...marker, isOpen: false }));
+      return queryResults.map((marker: MarkerData) => ({ ...marker, isOpen: false }));
     }
     return [];
   };
@@ -116,7 +116,8 @@ class Map extends PureComponent<Props, State> {
   onMarkerClick = (markerId: string) => {
     const { markers } = this.state;
     // eslint-disable-next-line max-len
-    const updatedMarkers = markers.map(marker => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }));
+    const updatedMarkers = markers.map((marker: MarkerData) => (marker && marker.id === markerId ? { ...marker, isOpen: !marker.isOpen } : { ...marker, isOpen: false }));
+    console.log('updatedMarkers: ', updatedMarkers);
     this.setState({ markers: updatedMarkers });
   };
 

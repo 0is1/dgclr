@@ -43,7 +43,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const staticOptions = {
-  root: `${__dirname}/static/`,
+  root: `${__dirname}/public/`,
   headers: {
     'Content-Type': 'text/plain;charset=UTF-8',
   },
@@ -119,17 +119,19 @@ app
         }, // configure when sessions expires (24h)
       }),
     );
-    server.use(express.static('static'));
-    server.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
+    server.use(express.static('public'));
+    server.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     server.get('/sitemap.xml', async (req, res) => {
       try {
-        const sitemap = await setupSitemap();
-        const xml = sitemap.toXML();
         res.header('Content-Type', 'application/xml');
-        res.send(xml);
+        res.header('Content-Encoding', 'gzip');
+        const sitemap = await setupSitemap();
+        res.send(sitemap);
       } catch (err) {
         if (rollbar) {
           rollbar.critical(`GET sitemap.xml error: ${err.message}`);
+        } else {
+          console.error('GET sitemap.xml error: ', err.message);
         }
         res.status(500).end();
       }

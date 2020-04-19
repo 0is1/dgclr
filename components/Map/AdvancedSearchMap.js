@@ -155,7 +155,7 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
     const { coordinates, radius } = this.getValuesFromStateOrDefault();
     const currentData = { coordinates, radius };
     // Data order: data-parameter, state, defaultValue prop
-    const updatedFilter = { ...currentData, ...data };
+    const updatedFilter = { ...data, ...currentData };
     setFilter(ADVANCED_NEARBY, [updatedFilter]);
     handleChange(updatedFilter);
   };

@@ -24,7 +24,7 @@ type Props = { onChange: Function, placeholder: string, label: string };
 const SurfaceTypeSelect = (props: Props) => {
   const { onChange, ...other } = props;
   return (
-    <Select options={surfaceTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.surfaceShapeTypes.filterName} {...other} />
+    <Select {...other} options={surfaceTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.surfaceShapeTypes.filterName} />
   );
 };
 

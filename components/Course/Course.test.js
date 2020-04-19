@@ -14,7 +14,7 @@ const { Description, PanelWrapper } = Styles;
 const mockProps = (props = {}) => ({
   setCourses: jest.fn(),
   slug: mockCoursesData[1].slug,
-  t: jest.fn(value => value),
+  t: jest.fn((value) => value),
   ...props,
 });
 

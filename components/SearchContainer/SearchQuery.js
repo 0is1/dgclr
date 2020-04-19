@@ -116,7 +116,7 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = (dispatch: Function) => ({
-  setCourses: courses => dispatch(setCoursesFunc(courses)),
+  setCourses: (courses) => dispatch(setCoursesFunc(courses)),
   setSearchQuery: (courses, query) => dispatch(setSearchQueryFunc(courses, query)),
 });
 

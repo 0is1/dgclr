@@ -3,7 +3,7 @@ jest.mock('next/router', () => ({
 }));
 
 const mockGeolocation = {
-  getCurrentPosition: jest.fn().mockImplementationOnce(success => Promise.resolve(
+  getCurrentPosition: jest.fn().mockImplementationOnce((success) => Promise.resolve(
     success({
       coords: {
         latitude: 60.190599999999996,

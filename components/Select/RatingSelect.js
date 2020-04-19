@@ -27,7 +27,7 @@ class RatingSelect extends Component<CombinedProps> {
     const { onChange, setFilter } = this.props;
     if (values) {
       // console.log('onRatingChange values. ', values);
-      const rating = values.map(item => item.value);
+      const rating = values.map((item) => item.value);
       onChange(rating);
       setFilter(SELECT_FILTER_NAMES.rating.filterName, values);
     } else {
@@ -53,7 +53,4 @@ const mapStateToProps = (state: State): MapStateToProps => ({
 const mapDispatchToProps = (dispatch: Function): MapDispatchToProps => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
-export default connect<CombinedProps, Props, any, any, any, Function>(
-  mapStateToProps,
-  mapDispatchToProps,
-)(RatingSelect);
+export default connect<CombinedProps, Props, any, any, any, Function>(mapStateToProps, mapDispatchToProps)(RatingSelect);
