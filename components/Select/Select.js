@@ -36,13 +36,7 @@ class Select extends Component<Props> {
     return (
       <>
         <Label>{label}</Label>
-        <SelectInput
-          defaultValue={defaultValue}
-          options={options}
-          onChange={this.onValueChange}
-          placeholder={placeholder}
-          isClearable
-        />
+        <SelectInput defaultValue={defaultValue} options={options} onChange={this.onValueChange} placeholder={placeholder} isClearable />
       </>
     );
   }
@@ -51,10 +45,7 @@ class Select extends Component<Props> {
 const mapStateToProps = (state, ownProps) => ({
   defaultValue: getFilterTypeData(state, ownProps.filterName),
 });
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   setFilter: (filterName, data) => dispatch(setFilterFunc(filterName, data)),
 });
-export default connect<any, Props, any, any, any, Function>(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Select);
+export default connect<any, Props, any, any, any, Function>(mapStateToProps, mapDispatchToProps)(Select);

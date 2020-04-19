@@ -19,7 +19,7 @@ type Props = { onChange: Function, placeholder: string, label: string };
 
 const BasketTypeSelect = (props: Props) => {
   const { onChange, ...other } = props;
-  return <Select options={basketTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.basketType.filterName} {...other} />;
+  return <Select {...other} options={basketTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.basketType.filterName} />;
 };
 
 export default BasketTypeSelect;

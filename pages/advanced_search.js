@@ -14,6 +14,7 @@ import { SELECT_FILTER_NAMES } from 'components/Select/constants';
 import { INPUT_FILTER_NAMES } from 'components/Input/constants';
 import { ADVANCED_COURSE_INFO, ADVANCED_NEARBY } from 'lib/constants';
 import { MAP_RADIUS_DISTANCE_MAX, MAP_RADIUS_DISTANCE_MIN, MAP_CHECKED_FILTER } from 'components/Map/constants';
+import type { Props as WithApolloProps } from 'lib/withApollo';
 
 type Props = { currentLanguage: ?string, query: { [key: string]: string }, t: Function };
 type MapStateToProps = {};
@@ -23,10 +24,10 @@ type MapDispatchToProps = {
   toggleMapVisibility: Function,
 };
 
-type CombinedProps = Props & MapStateToProps & MapDispatchToProps;
+type CombinedProps = Props & MapStateToProps & MapDispatchToProps & WithApolloProps;
 
 class AdvancedSearchPage extends Component<CombinedProps> {
-  static getInitialProps: any => any;
+  static getInitialProps: (any) => any;
 
   constructor(props: CombinedProps) {
     super(props);
@@ -42,7 +43,7 @@ class AdvancedSearchPage extends Component<CombinedProps> {
         Object.keys(parsedQuery).forEach((filterName) => {
           if (selectFilters.includes(filterName)) {
             if (isArrayWithLength(parsedQuery[filterName])) {
-              const filterData = parsedQuery[filterName].map(value => ({
+              const filterData = parsedQuery[filterName].map((value) => ({
                 value,
                 label: value,
               }));
