@@ -121,8 +121,8 @@
     "trailingComma": "es5"
   },
   "engines": {
-    "node": "^8.16.0 || ^10.16.0",
-    "yarn": "^1.13.0"
+    "node": "^12",
+    "yarn": "^1.22.0"
   },
   "jest": {
     "verbose": true,
