@@ -101,6 +101,7 @@ app
         forceDomain({
           hostname: 'www.dgclr.fi',
           protocol: 'https',
+          excludeRule: /[a-zA-Z0-9][a-zA-Z0-9-]+\.herokuapp\.com/i,
         }),
       );
     }
