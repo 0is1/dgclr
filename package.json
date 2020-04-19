@@ -17,7 +17,7 @@
     "validate": "npm ls",
     "flow": "flow",
     "flow-typed-install": "flow-typed install",
-    "test": "yarn jest && yarn flow",
+    "test": "yarn lint && yarn jest && yarn flow",
     "jest": "NODE_ENV=test jest",
     "patch-version": "mversion patch",
     "minor-version": "mversion minor",

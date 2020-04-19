@@ -1,7 +1,5 @@
 {
-  "addons": [
-    "rollbar"
-  ],
+  "addons": ["rollbar"],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
@@ -30,7 +28,14 @@
     }
   },
   "name": "dgclr",
-  "scripts": {
-  },
-  "stack": "heroku-18"
+  "scripts": {},
+  "stack": "heroku-18",
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "yarn",
+        "test": "yarn test"
+      }
+    }
+  }
 }
