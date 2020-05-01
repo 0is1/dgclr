@@ -22,7 +22,7 @@
     "patch-version": "mversion patch",
     "minor-version": "mversion minor",
     "major-version": "mversion major",
-    "prepublish": "if [ $RUN_SNYK ]; then yarn snyk-protect; fi",
+    "prepublish": "yarn run snyk-protect && if [ $RUN_SNYK ]; then yarn snyk-protect; fi",
     "snyk-protect": "snyk protect"
   },
   "devDependencies": {
@@ -104,7 +104,7 @@
     "rollbar": "^2.15.1",
     "serve-favicon": "^2.5.0",
     "sitemap": "^6.1.1",
-    "snyk": "^1.305.1",
+    "snyk": "^1.316.1",
     "string.prototype.matchall": "^4.0.2",
     "styled-components": "^5.1.0",
     "updeep": "^1.2.0",
