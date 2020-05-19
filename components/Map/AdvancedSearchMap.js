@@ -161,8 +161,8 @@ export class AdvancedSearchMap extends Component<CombinedProps, State> {
   };
 
   onCircleDragEnd = (coordinates: CoordinatesObject) => {
-    this.updateFilter({ coordinates });
     this.setState({ coordinates });
+    this.updateFilter({ coordinates });
   };
 
   onRadiusChange = (radius: number) => {
