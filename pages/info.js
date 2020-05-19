@@ -6,7 +6,10 @@ import { i18n, withTranslation } from 'lib/i18n';
 import Container from 'components/Container';
 import BaseStyles from 'components/Container/Container.styles';
 
-const { BaseText, UL, LI } = BaseStyles;
+const {
+  BaseText, FooterLink, UL, LI,
+} = BaseStyles;
+
 type Props = { currentLanguage: ?string, t: Function };
 
 const InfoPage = ({ currentLanguage, t }: Props) => {
@@ -44,6 +47,15 @@ const InfoPage = ({ currentLanguage, t }: Props) => {
           </a>
         </BaseText>
       </Box>
+      <FooterLink
+        className="github-button"
+        href="https://github.com/0is1/dgclr"
+        data-size="large"
+        data-show-count="false"
+        aria-label="See 0is1/dgclr in GitHub"
+      >
+        {t('common:github-text')}
+      </FooterLink>
     </Container>
   );
 };

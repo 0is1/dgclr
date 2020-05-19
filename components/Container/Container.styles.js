@@ -23,6 +23,16 @@ const Styles = {
   Footer: styled.footer`
     padding: 1rem;
   `,
+  FooterLink: styled.a`
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    > * {
+      margin-right: 0.5rem;
+    }
+  `,
   UL: styled.ul`
     padding: ${(props) => (props.padding ? props.padding : 0)};
   `,

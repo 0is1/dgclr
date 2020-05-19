@@ -23,7 +23,7 @@ type Props = {
 };
 
 const {
-  Container, Footer, HeaderLink, Tab, MobileMenuUL, MobileMenu, MobileNav, DesktopNav,
+  Container, Footer, FooterLink, HeaderLink, Tab, MobileMenuUL, MobileMenu, MobileNav, DesktopNav,
 } = Styles;
 
 class ContainerComponent extends Component<Props> {
@@ -103,15 +103,10 @@ class ContainerComponent extends Component<Props> {
             {t('footer-disclaimer')}
           </Text>
           <Text mt={2} textAlign="center">
-            <a
-              className="github-button"
-              href="https://github.com/0is1/dgclr"
-              data-size="large"
-              data-show-count="false"
-              aria-label="See 0is1/dgclr in GitHub"
-            >
-              {t('github-text')}
-            </a>
+            <FooterLink href="https://frisbeegolfradat.fi/" target="_blank" rel="noopener noreferrer">
+              <span>{t('fgr-footer')}</span>
+              <img src="/fgr-footer-logo.png" alt="frisbeegolfradat.fi" />
+            </FooterLink>
           </Text>
         </Footer>
       </>
