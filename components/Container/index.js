@@ -99,7 +99,7 @@ class ContainerComponent extends Component<Props> {
         </header>
         <Container p={['0 0 2rem 0', '0.5rem 0', '0.5rem 0', '2rem 0']}>{children}</Container>
         <Footer>
-          <Text mt={2} textAlign="center">
+          <Text className="ghost" mt={2} textAlign="center">
             {t('footer-disclaimer')}
           </Text>
           <Text mt={2} textAlign="center">

@@ -22,6 +22,10 @@ const Styles = {
   `,
   Footer: styled.footer`
     padding: 1rem;
+    .ghost {
+      color: #b0b0b0;
+      font-size: 0.75rem;
+    }
   `,
   Centered: styled.div`
     align-items: center;
@@ -36,8 +40,10 @@ const Styles = {
     flex-direction: row;
     justify-content: center;
     text-decoration: none;
+    padding: 1rem;
     > * {
       margin-right: 0.5rem;
+      max-width: 65%;
     }
   `,
   UL: styled.ul`
