@@ -74,7 +74,7 @@
     "express": "^4.17.1",
     "express-favicon-short-circuit": "^1.2.0",
     "express-session": "^1.17.1",
-    "forcedomain": "^2.0.0",
+    "forcedomain": "^2.0.1",
     "graphql": "^15.0.0",
     "graphql-anywhere": "^4.2.7",
     "graphql-tag": "^2.10.3",
