@@ -6743,12 +6743,12 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
-forcedomain@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/forcedomain/-/forcedomain-2.0.0.tgz#338a4dcf88c576ab0a5a34003838a88b49b93a97"
-  integrity sha512-UWfUXZWRdsU3MxudJu6xfYiyd6kmq3O2Zu8w2DD062YbbLagsoeIJdxZgnhpTb8dYdHn7vNJEBDm9V8a6qygZg==
+forcedomain@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/forcedomain/-/forcedomain-2.0.1.tgz#cb23b447d6c3d64a51b334651d3d733fcf6d61d3"
+  integrity sha512-7k8hADi7xKHS4cfpz28h2H4ED5vEJ1nn/qaCPidoJQlEOQ40I3/KFiqDs8/RxAnwuB4KN1Wyt694E8/JN00h0Q==
   dependencies:
-    lodash "4.17.15"
+    lodash "4.17.20"
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -9163,15 +9163,20 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.15, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+lodash@4.17.20:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.2.0:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 log-driver@^1.2.7:
   version "1.2.7"
