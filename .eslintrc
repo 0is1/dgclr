@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": "airbnb",
   "env": {
     "browser": true,
@@ -23,5 +23,5 @@
       "babel-module": {}
     }
   },
-  "plugins": ["json", "flowtype"]
+  "plugins": ["@babel", "json", "flowtype"]
 }

@@ -1,4 +1,5 @@
 import App from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
@@ -22,6 +23,9 @@ class DGCLRApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <GlobalStyle />
         <RebassProvider>
           <Provider store={store}>
