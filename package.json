@@ -55,7 +55,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.4",
-    "mversion": "^1.13.0",
+    "mversion": "^2.0.0",
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
     "redux-mock-store": "^1.5.4",
