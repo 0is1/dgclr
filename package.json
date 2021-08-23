@@ -105,7 +105,7 @@
     "rollbar": "^2.16.2",
     "serve-favicon": "^2.5.0",
     "sitemap": "^6.1.4",
-    "snyk": "^1.434.0",
+    "snyk": "^1.518.0",
     "string.prototype.matchall": "^4.0.2",
     "styled-components": "^5.1.0",
     "updeep": "^1.2.0",
