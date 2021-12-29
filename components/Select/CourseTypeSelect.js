@@ -29,15 +29,20 @@ export const courseTypeOptions = [
   },
 ];
 
-type Props = { onChange: Function, placeholder: string, label: string };
+type Props = {| onChange: Function, placeholder: string, label: string |};
 
-const CourseTypeSelect = (props: Props) => {
+function CourseTypeSelect(props: Props) {
   const { onChange, ...other } = props;
   return (
     <ZIndexContainer>
-      <Select {...other} options={courseTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.courseTypes.filterName} />
+      <Select
+        {...other}
+        options={courseTypeOptions}
+        onChange={onChange}
+        filterName={SELECT_FILTER_NAMES.courseTypes.filterName}
+      />
     </ZIndexContainer>
   );
-};
+}
 
 export default CourseTypeSelect;

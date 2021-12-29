@@ -16,7 +16,7 @@ type Props = {
 const { Strong } = CourseStyles;
 const { BaseText, OL, LI } = BaseStyles;
 
-export const Layout = ({ active, layout, t }: Props) => {
+export function Layout({ active, layout, t }: Props) {
   if (!active) return null;
   const { holes } = layout;
   const holeData = holes.map((hole, index) => {
@@ -77,6 +77,6 @@ export const Layout = ({ active, layout, t }: Props) => {
       )}
     </Box>
   );
-};
+}
 
 export default withTranslation(['course'])(Layout);

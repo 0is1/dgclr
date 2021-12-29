@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import Select from 'components/Select';
+
 import { SELECT_FILTER_NAMES } from './constants';
 
 const basketTypeOptions = [
@@ -15,11 +16,22 @@ const basketTypeOptions = [
   { value: 'Prodiscus', label: 'Prodiscus' },
 ];
 
-type Props = { onChange: Function, placeholder: string, label: string };
+type Props = {|
+  onChange: Function,
+  placeholder: string,
+  label: string,
+|};
 
-const BasketTypeSelect = (props: Props) => {
+function BasketTypeSelect(props: Props) {
   const { onChange, ...other } = props;
-  return <Select {...other} options={basketTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.basketType.filterName} />;
-};
+  return (
+    <Select
+      {...other}
+      onChange={onChange}
+      options={basketTypeOptions}
+      filterName={SELECT_FILTER_NAMES.basketType.filterName}
+    />
+  );
+}
 
 export default BasketTypeSelect;

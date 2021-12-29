@@ -14,14 +14,14 @@ import Container from 'components/Container';
 import Course from 'components/Course';
 import type { GraphQLData } from 'lib/types';
 
-type Props = {
+type Props = {|
   currentLanguage: ?string,
   data: GraphQLData,
   slug: string,
   t: Function,
-};
+|};
 
-const CoursePage = (props: Props) => {
+function CoursePage(props: Props) {
   const {
     currentLanguage, data, slug, t,
   } = props;
@@ -33,7 +33,7 @@ const CoursePage = (props: Props) => {
       <Course slug={slug} data={data} />
     </Container>
   );
-};
+}
 
 CoursePage.getInitialProps = async ({ query, req }) => {
   // TODO: figure out how to get data from apolloClient cache instead of redux

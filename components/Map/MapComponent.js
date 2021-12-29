@@ -187,7 +187,7 @@ class Map extends PureComponent<Props> {
   }
 }
 
-const LoadMap = (props) => {
+function LoadMap(props) {
   const { isLoaded, loadError } = useLoadScript({
     id: 'script-loader',
     googleMapsApiKey: 'AIzaSyCgbVaENPZQ1wOhdIyCok5yJTSVKBa6gYQ',
@@ -203,5 +203,5 @@ const LoadMap = (props) => {
     );
   }
   return <Map {...props} />;
-};
+}
 export default LoadMap;

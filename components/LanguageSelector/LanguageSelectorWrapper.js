@@ -8,7 +8,7 @@ const { Wrapper } = Styles;
 
 type Props = { currentLanguage: ?string };
 
-const LanguageSelectorWrapper = ({ currentLanguage }: Props) => {
+function LanguageSelectorWrapper({ currentLanguage }: Props) {
   const languages = config.allLanguages;
 
   if (!isArrayWithLength(languages)) {
@@ -18,6 +18,6 @@ const LanguageSelectorWrapper = ({ currentLanguage }: Props) => {
     <LanguageSelector key={language} language={language} currentLanguage={currentLanguage} />
   ));
   return <Wrapper>{languageSelectors}</Wrapper>;
-};
+}
 
 export default LanguageSelectorWrapper;

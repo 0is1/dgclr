@@ -12,7 +12,7 @@ const {
 
 type Props = { currentLanguage: ?string, t: Function };
 
-const InfoPage = ({ currentLanguage, t }: Props) => {
+function InfoPage({ currentLanguage, t }: Props) {
   const moreFeaturesListData = t('info:more-features-list-data-one').split(',');
   return (
     <Container activeRoute="/info" currentLanguage={currentLanguage}>
@@ -60,7 +60,7 @@ const InfoPage = ({ currentLanguage, t }: Props) => {
       </Centered>
     </Container>
   );
-};
+}
 
 InfoPage.getInitialProps = async ({ req }) => {
   const currentLanguage = req ? req.language : i18n.language;
