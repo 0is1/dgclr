@@ -22,7 +22,7 @@ export const actionTypes = {
  * @return {Object} action of SET_ADVANCED_BASKET_TYPE_FILTER
  */
 export const setFilter = (
-  filterName: string = '',
+  filterName: string,
   data: FilterData | MapFilterData | SliderFilterData,
 ) => ({
   type: actionTypes.SET_ADVANCED_FILTER_TYPE,
@@ -37,7 +37,7 @@ export const setFilter = (
  * @return {Object} action of SET_ADVANCED_SEARCH_QUERY
  */
 export const setAdvancedSearchQuery = (
-  courses: Array<?Course> = [],
+  courses: Array<?Course>,
   query: string,
 ) => ({
   type: actionTypes.SET_ADVANCED_SEARCH_QUERY,

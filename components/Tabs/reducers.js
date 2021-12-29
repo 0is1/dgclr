@@ -1,4 +1,4 @@
-import { updateIn } from 'updeep';
+import u from 'updeep';
 import { createReducer } from 'lib/createReducer';
 import { actionTypes } from './actions';
 
@@ -9,7 +9,7 @@ export const initialState = {
 const reducer = createReducer({
   [actionTypes.SET_TABS]: (state, action) => {
     const { id, activeIndex } = action;
-    return updateIn(['data', id], { id, activeIndex }, state);
+    return u.updateIn(['data', id], { id, activeIndex }, state);
   },
 });
 

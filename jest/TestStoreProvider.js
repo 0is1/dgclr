@@ -14,9 +14,9 @@ type Props = {
   storeData: {},
 };
 
-const TestStoreProvider = ({ children, storeData }: Props) => {
+function TestStoreProvider({ children, storeData }: Props) {
   const store = mockStore(storeData);
   return <Provider store={store}>{children}</Provider>;
-};
+}
 
 export default TestStoreProvider;

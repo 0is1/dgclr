@@ -9,14 +9,16 @@ import SearchContainer from 'components/SearchContainer';
 
 type Props = { currentLanguage: ?string, t: Function };
 
-const Index = ({ currentLanguage, t }: Props) => (
-  <Container activeRoute="/" currentLanguage={currentLanguage}>
-    <Helmet>
-      <title>{`${t('title')}`}</title>
-    </Helmet>
-    <SearchContainer />
-  </Container>
-);
+function Index({ currentLanguage, t }: Props) {
+  return (
+    <Container activeRoute="/" currentLanguage={currentLanguage}>
+      <Helmet>
+        <title>{`${t('title')}`}</title>
+      </Helmet>
+      <SearchContainer />
+    </Container>
+  );
+}
 
 Index.getInitialProps = async ({ req }) => {
   const currentLanguage = req ? req.language : i18n.language;

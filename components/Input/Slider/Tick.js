@@ -13,13 +13,15 @@ type Props = {
   count: number,
   format: Function,
 };
-const Tick = ({ tick, count, format }: Props) => (
-  <>
-    <TickWrapper percent={tick.percent} />
-    <TickComponent count={count} percent={tick.percent}>
-      {typeof format === 'function' && format(tick.value)}
-    </TickComponent>
-  </>
-);
+function Tick({ tick, count, format }: Props) {
+  return (
+    <>
+      <TickWrapper percent={tick.percent} />
+      <TickComponent count={count} percent={tick.percent}>
+        {typeof format === 'function' && format(tick.value)}
+      </TickComponent>
+    </>
+  );
+}
 
 export default Tick;

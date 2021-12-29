@@ -12,12 +12,18 @@ import matchAll from 'string.prototype.matchall';
  * @return {String} links converted to <a>:s
  */
 // eslint-disable-next-line max-len
-export const removeLastCommaAndReturnLinkFromFirstCaptureGroup = (string: string, regex: any, includeHttp: boolean = false): string => string.replace(regex, (wholeMatch, group1) => {
+export const removeLastCommaAndReturnLinkFromFirstCaptureGroup = (
+  string: string,
+  regex: any,
+  includeHttp: boolean = false,
+): string => string.replace(regex, (wholeMatch, group1) => {
   if (group1) {
     const includesLastDot = group1.endsWith('.');
     const returnString = includesLastDot ? group1.slice(0, -1) : group1;
     const hrefString = includeHttp ? `http://${returnString}` : returnString;
-    return `<a href='${hrefString}'>${returnString}</a>${includesLastDot ? '.' : ''}`;
+    return `<a href='${hrefString}'>${returnString}</a>${
+      includesLastDot ? '.' : ''
+    }`;
   }
   return '';
 });
@@ -35,7 +41,9 @@ export const convertLinksToHtml = (string: string): string => removeLastCommaAnd
  * @param {Array} coordinates
  * @return {Object} {lat, lng}
  */
-export const convertCoordinatesToObject = (coordinates: Array<number> = []): ?{ lat: number, lng: number } => {
+export const convertCoordinatesToObject = (
+  coordinates: Array<number> = [],
+): ?{ lat: number, lng: number } => {
   const [lng, lat] = coordinates;
   return parseFloat(lat) && parseFloat(lng) ? { lat, lng } : null;
 };
@@ -58,19 +66,21 @@ export const courseAddressDetails = (locationInfo: LocationInfo) => {
  * @return {Array} ratings as strings
  */
 // eslint-disable-next-line max-len
-export const uniqueLayoutRatings = (layouts: Array<Layout> = []): Array<string> => uniq(layouts.filter((layout) => layout && layout.rating).map((layout) => layout.rating));
+export const uniqueLayoutRatings = (
+  layouts: Array<Layout> = [],
+): Array<string> => uniq(
+  layouts
+    .filter((layout) => layout && layout.rating)
+    .map((layout) => layout.rating),
+);
 
 /**
  * Get unique key id
  * @return {String} unique id
  */
 
-export const getRandomKey = () => Math.random()
-  .toString(36)
-  .substring(2, 15)
-  + Math.random()
-    .toString(36)
-    .substring(2, 15);
+export const getRandomKey = () => Math.random().toString(36).substring(2, 15)
+  + Math.random().toString(36).substring(2, 15);
 
 /**
  * Get page title
@@ -112,7 +122,13 @@ export const convertKilometersToMeters = (kilometers: number): number => parseIn
  * @param {Array} layouts
  * @return {string}
  */
-export const getCourseMapUrlForLayout = (layouts: Array<Layout> = [], activeIndex: number): string => (layouts && layouts[activeIndex] && layouts[activeIndex].mapUrl) || '';
+export const getCourseMapUrlForLayout = (
+  layouts: Array<Layout>,
+  activeIndex: number,
+): string => (isArrayWithLength(layouts)
+    && layouts[activeIndex]
+    && layouts[activeIndex].mapUrl)
+  || '';
 
 export const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=.]*)/gi;
 const HTTP_REGEX = /(https?):\/\/([^\s/$.?#].[^\s<>'")]*)/gi;
@@ -139,13 +155,22 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
     });
     // console.log('ignoredWWWTexts: ', ignoredWWWTexts);
     // If this www.something.com is already wrapped with <a>, filter it out from wwwTextsWithoutLink
-    const wwwTextsWithoutLink = wwwMatches.filter((www) => !ignoredWWWTexts.includes(www));
+    const wwwTextsWithoutLink = wwwMatches.filter(
+      (www) => !ignoredWWWTexts.includes(www),
+    );
     // console.log('wwwTextsWithoutLink: ', wwwTextsWithoutLink);
     wwwTextsWithoutLink.forEach((wwwString) => {
       const regex = new RegExp(`(${wwwString})`, 'g');
-      stringWithWWWLinks = stringWithWWWLinks.replace(regex, "<a href='http://$1'>$1</a>");
+      stringWithWWWLinks = stringWithWWWLinks.replace(
+        regex,
+        "<a href='http://$1'>$1</a>",
+      );
     });
     return stringWithWWWLinks;
   }
-  return removeLastCommaAndReturnLinkFromFirstCaptureGroup(string, WWW_REGEX, true);
+  return removeLastCommaAndReturnLinkFromFirstCaptureGroup(
+    string,
+    WWW_REGEX,
+    true,
+  );
 };

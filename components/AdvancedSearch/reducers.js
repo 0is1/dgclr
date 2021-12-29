@@ -1,4 +1,4 @@
-import update, { updateIn } from 'updeep';
+import u from 'updeep';
 import { createReducer } from 'lib/createReducer';
 import { MAP_DEFAULT_ZOOM } from 'lib/constants';
 import { actionTypes } from './actions';
@@ -20,17 +20,20 @@ const addQueryHistory = (queryHistory, query) => [].concat([query], queryHistory
 const reducer = createReducer({
   [actionTypes.SET_ADVANCED_SEARCH_QUERY]: (state, action) => {
     const { courses, query } = action;
-    return update(
+    return u(
       {
         queries: { [query]: courses },
-        advancedQueryHistory: addQueryHistory(state.advancedQueryHistory, query),
+        advancedQueryHistory: addQueryHistory(
+          state.advancedQueryHistory,
+          query,
+        ),
       },
       state,
     );
   },
   [actionTypes.SET_ADVANCED_FILTER_TYPE]: (state, action) => {
     const { filterName, data } = action;
-    return updateIn(['advancedQueries', filterName], data);
+    return u.updateIn(['advancedQueries', filterName], data);
   },
   [actionTypes.SET_CURRENT_ADVANCED_FILTER]: (state, action) => {
     const { filter } = action;

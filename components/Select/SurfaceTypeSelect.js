@@ -19,13 +19,18 @@ export const surfaceTypeOptions = [
   { value: 'Tasainen, ei korkeuseroja', label: 'Tasainen, ei korkeuseroja' },
 ];
 
-type Props = { onChange: Function, placeholder: string, label: string };
+type Props = {| onChange: Function, placeholder: string, label: string |};
 
-const SurfaceTypeSelect = (props: Props) => {
+function SurfaceTypeSelect(props: Props) {
   const { onChange, ...other } = props;
   return (
-    <Select {...other} options={surfaceTypeOptions} onChange={onChange} filterName={SELECT_FILTER_NAMES.surfaceShapeTypes.filterName} />
+    <Select
+      {...other}
+      options={surfaceTypeOptions}
+      onChange={onChange}
+      filterName={SELECT_FILTER_NAMES.surfaceShapeTypes.filterName}
+    />
   );
-};
+}
 
 export default SurfaceTypeSelect;

@@ -7,7 +7,9 @@ type Props = {
   t: Function,
 };
 
-const Error = ({ statusCode, t }: Props) => <p>{statusCode ? t('error-with-status', { statusCode }) : t('error-without-status')}</p>;
+function Error({ statusCode, t }: Props) {
+  return <p>{statusCode ? t('error-with-status', { statusCode }) : t('error-without-status')}</p>;
+}
 
 Error.getInitialProps = async ({ res, err }) => {
   let statusCode = null;

@@ -11,7 +11,7 @@ export const actionTypes = {
  * @param {String} query
  * @return {Object} action of SET_SEARCH_QUERY
  */
-export const setSearchQuery = (courses: Array<Course> = [], query: string) => ({
+export const setSearchQuery = (courses: Array<Course>, query: string) => ({
   type: actionTypes.SET_SEARCH_QUERY,
   courses,
   query,

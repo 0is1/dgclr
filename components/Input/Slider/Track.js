@@ -19,11 +19,11 @@ type Props = {
   disabled?: boolean,
 };
 
-const TrackComponent = ({
+function TrackComponent({
   source, target, getTrackProps, disabled,
-}: Props) => (
-  <Track disabled={disabled} targetPercent={target.percent} sourcePercent={source.percent} {...getTrackProps()} />
-);
+}: Props) {
+  return <Track disabled={disabled} targetPercent={target.percent} sourcePercent={source.percent} {...getTrackProps()} />;
+}
 
 TrackComponent.defaultProps = {
   disabled: false,

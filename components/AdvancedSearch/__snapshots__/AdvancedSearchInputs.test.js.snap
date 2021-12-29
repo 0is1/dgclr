@@ -16,9 +16,10 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         "$$typeof": Symbol(react.forward_ref),
         "_foldedDefaultProps": Object {},
         "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "baseHash": 400283751,
-          "componentId": "sc-AxjAm",
+        "componentStyle": e {
+          "baseHash": -578376589,
+          "baseStyle": undefined,
+          "componentId": "sc-bdvvtL",
           "isStatic": false,
           "rules": Array [
             "box-sizing: border-box;",
@@ -60,7 +61,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with allInputsOpen 1`] = `
         },
         "render": [Function],
         "shouldForwardProp": undefined,
-        "styledComponentId": "sc-AxjAm",
+        "styledComponentId": "sc-bdvvtL",
         "systemComponent": true,
         "target": Object {
           "$$typeof": Symbol(react.forward_ref),
@@ -298,9 +299,10 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
         "$$typeof": Symbol(react.forward_ref),
         "_foldedDefaultProps": Object {},
         "attrs": Array [],
-        "componentStyle": ComponentStyle {
-          "baseHash": 400283751,
-          "componentId": "sc-AxjAm",
+        "componentStyle": e {
+          "baseHash": -578376589,
+          "baseStyle": undefined,
+          "componentId": "sc-bdvvtL",
           "isStatic": false,
           "rules": Array [
             "box-sizing: border-box;",
@@ -342,7 +344,7 @@ exports[`<AdvancedSearchInputs /> snapshots renders with default props 1`] = `
         },
         "render": [Function],
         "shouldForwardProp": undefined,
-        "styledComponentId": "sc-AxjAm",
+        "styledComponentId": "sc-bdvvtL",
         "systemComponent": true,
         "target": Object {
           "$$typeof": Symbol(react.forward_ref),
