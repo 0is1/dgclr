@@ -75,6 +75,7 @@ exports[`Layout component Match snapshot 1`] = `
       loading={true}
       size={80}
       sizeUnit="px"
+      speedMultiplier={1}
     />
   </Box>
 </Flex>

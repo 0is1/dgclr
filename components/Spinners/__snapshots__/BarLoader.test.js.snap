@@ -74,6 +74,7 @@ exports[`Layout component Match snapshot 1`] = `
       height={8}
       loading={true}
       sizeUnit="%"
+      speedMultiplier={1}
       width={80}
     />
   </Box>
