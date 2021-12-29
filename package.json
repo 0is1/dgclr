@@ -56,6 +56,7 @@
     "flow-typed": "^3.1.0",
     "husky": "^4.3.0",
     "jest": "^27.4.5",
+    "jsdom": "^19.0.0",
     "lint-staged": "^12.1.2",
     "mversion": "^2.0.1",
     "nodemon": "^2.0.15",
@@ -125,20 +126,6 @@
   "engines": {
     "node": "^14",
     "yarn": "^1.22.0"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFiles": [
-      "<rootDir>/jest/jest.setup.js",
-      "<rootDir>/jest/jest.mock.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
-      "<rootDir>/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   },
   "husky": {
     "hooks": {
