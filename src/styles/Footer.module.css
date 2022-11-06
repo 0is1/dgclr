@@ -1,0 +1,36 @@
+.footer {
+  align-items: center;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 2rem 0;
+  }
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.logo {
+  height: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  .footer {
+    border-color: #222;
+  }
+  .footer img {
+    filter: invert(1);
+  }
+} */
