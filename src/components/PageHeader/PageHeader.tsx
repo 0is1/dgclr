@@ -1,8 +1,6 @@
 import { BulbTwoTone, BulbOutlined, BulbFilled } from "@ant-design/icons";
 import { Card, Space, Switch, Tooltip } from "antd";
-import { useEffect, useMemo } from "react";
 import useLocalStorageState from "use-local-storage-state";
-import { getBrowserPrefersDarkMode } from "../../helpers/utils";
 import styles from "../../styles/PageHeader.module.css";
 
 type Props = {
@@ -16,7 +14,7 @@ const PageHeader = ({ beforeTitle, title, description, children }: Props) => {
   const [useDarkTheme, toggleDarkTheme] = useLocalStorageState(
     "use_dark_theme",
     {
-      defaultValue: getBrowserPrefersDarkMode(),
+      defaultValue: false,
     }
   );
   return (
