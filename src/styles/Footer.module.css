@@ -1,7 +1,8 @@
 .footer {
   align-items: center;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 1);
   border-top: 1px solid #eaeaea;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -29,7 +30,11 @@
 
 /* @media (prefers-color-scheme: dark) {
   .footer {
+    background-color: rgba(255, 255, 255, .1);
     border-color: #222;
+  }
+  .footer a {
+    color: #fff;
   }
   .footer img {
     filter: invert(1);

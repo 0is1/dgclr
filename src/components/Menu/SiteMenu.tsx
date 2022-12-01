@@ -70,7 +70,6 @@ const SiteMenu = () => {
     <Menu
       onClick={onClick}
       selectedKeys={[current]}
-      theme="dark"
       mode="horizontal"
       items={[
         {

@@ -38,7 +38,7 @@ export const getLocationCoordinatesFromCourseData = (data?: Course) => {
 };
 
 export const getCourseLayoutImage = (
-  course: Course | null,
+  course: Course | undefined,
   layoutIndex: string
 ) => {
   if (!course) {
@@ -51,7 +51,7 @@ export const getCourseLayoutImage = (
   return layout.mapUrl;
 };
 
-export const getTabListFromCourseLayouts = (course: Course | null) => {
+export const getTabListFromCourseLayouts = (course: Course | undefined) => {
   if (!course || !course.layouts) {
     return [];
   }
@@ -63,7 +63,7 @@ export const getTabListFromCourseLayouts = (course: Course | null) => {
   });
 };
 export const getCourseLayoutByIndex = (
-  course: Course | null,
+  course: Course | undefined,
   layoutIndex: string
 ) => {
   if (!course || !course.layouts) {
@@ -72,7 +72,7 @@ export const getCourseLayoutByIndex = (
   return course.layouts[parseInt(layoutIndex, 10)];
 };
 
-export const getCourseInfo = (course: Course | null) => {
+export const getCourseInfo = (course: Course | undefined) => {
   if (!course) {
     return null;
   }

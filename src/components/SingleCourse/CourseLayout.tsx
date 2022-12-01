@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 const { Paragraph, Title } = Typography;
 
 const CourseLayout = (props: {
-  course: Course | null;
+  course: Course | undefined;
   layoutIndex: string;
 }) => {
   const { t } = useTranslation(["common"]);

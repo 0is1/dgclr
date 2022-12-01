@@ -2,14 +2,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ReactHtmlParser from "html-react-parser";
-import { Col, PageHeader, Row, Card, Space, Divider } from "antd";
+import { Col, Row, Card, Space, Divider, Button } from "antd";
 import { toBase64, shimmer } from "../../helpers/image";
 import {
   convertWWWToHttpAndAddLinks,
   convertLinksToHtml,
 } from "../../helpers/utils";
 import styles from "../../styles/Course.module.css";
-import headerStyles from "../../styles/PageHeader.module.css";
 import {
   getCourseDataFromSearchCourseBySlug,
   getCourseLayoutImage,
@@ -19,6 +18,8 @@ import CourseLayout from "./CourseLayout";
 import CourseDetails from "./CourseDetails";
 import SiteMenu from "../Menu";
 import useGetCourseBySlug from "../../hooks/useGetCourseBySlug";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import PageHeader from "../PageHeader";
 
 const { Meta } = Card;
 
@@ -39,11 +40,11 @@ const SingleCourse = () => {
     <Space direction="vertical" style={{ width: "100%" }} size="large">
       <PageHeader
         title="DGCLR"
-        subTitle={course?.name}
-        onBack={() => router.back()}
-        className={headerStyles.header}
-        footer={<SiteMenu />}
-      />
+        description={`${course?.name}`}
+        beforeTitle={<ArrowLeftOutlined onClick={() => router.back()} />}
+      >
+        <SiteMenu />
+      </PageHeader>
       <Row justify="center">
         <Col
           xs={{
@@ -64,7 +65,7 @@ const SingleCourse = () => {
         >
           <Card
             loading={isLoading}
-            className={styles.card}
+            className={(styles.card, styles.cardDark)}
             tabList={getTabListFromCourseLayouts(course)}
             activeTabKey={activeLayoutIndex}
             onTabChange={(key) => {

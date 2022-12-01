@@ -1,4 +1,4 @@
-import { Col, PageHeader, Row, Space, Typography } from "antd";
+import { Col, Descriptions, Row, Space, Typography } from "antd";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../components/Layout";
@@ -12,12 +12,20 @@ export default function Info() {
   return (
     <Layout>
       <Space direction="vertical" style={{ width: "100%" }} size="large">
-        <PageHeader
+        {/* <PageHeader
           title="DGCLR"
           backIcon={null}
           subTitle={t("common:sub_title")}
           footer={<SiteMenu />}
-        />
+        /> */}
+        <Descriptions title="DGCLR">
+          <Descriptions.Item label="">
+            {t("common:sub_title")}
+          </Descriptions.Item>
+          <Descriptions.Item label="">
+            <SiteMenu />
+          </Descriptions.Item>
+        </Descriptions>
         <Row justify="center">
           <Col
             xs={{

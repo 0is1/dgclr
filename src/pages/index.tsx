@@ -1,9 +1,11 @@
-import { Col, PageHeader, Row, Space, Typography } from "antd";
+import { Col, Row, Space, Typography } from "antd";
 import { useTranslation } from "next-i18next";
+import { HomeOutlined } from "@ant-design/icons";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../components/Layout";
 import TextSearch from "../components/TextSearch";
 import SiteMenu from "../components/Menu";
+import PageHeader from "../components/PageHeader";
 import { StaticProps } from "../types/pages";
 
 const { Title } = Typography;
@@ -15,10 +17,11 @@ export default function Home() {
       <Space direction="vertical" style={{ width: "100%" }} size="large">
         <PageHeader
           title="DGCLR"
-          backIcon={null}
-          subTitle={t("common:sub_title")}
-          footer={<SiteMenu />}
-        />
+          beforeTitle={<HomeOutlined />}
+          description={t("common:sub_title")}
+        >
+          <SiteMenu />
+        </PageHeader>
         <Row justify="center">
           <Col
             xs={{

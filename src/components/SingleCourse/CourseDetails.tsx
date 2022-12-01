@@ -4,7 +4,7 @@ import { getCourseInfo } from "../../helpers/course";
 import MapModal from "../Maps/MapModal";
 import { Course } from "../../types";
 
-const CourseDetails = (props: { course: Course | null }) => {
+const CourseDetails = (props: { course: Course | undefined }) => {
   const { course } = props;
   const { t } = useTranslation(["common"]);
   const courseInfo = getCourseInfo(course);

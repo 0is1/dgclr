@@ -29,7 +29,7 @@ function MapComponent(props: Props) {
   const center = getCenterFromCoordinates(coordinates);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyDD8XEh5dqIux5jDGUyyxxkdBbQNSHzs_0",
+    googleMapsApiKey: `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`,
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
