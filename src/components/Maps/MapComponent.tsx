@@ -24,6 +24,7 @@ const getCenterFromCoordinates = (coordinates?: number[]) => {
 type Props = {
   coordinates?: number[];
 };
+
 function MapComponent(props: Props) {
   const { coordinates } = props;
   const center = getCenterFromCoordinates(coordinates);
