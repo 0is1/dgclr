@@ -1,4 +1,4 @@
-export type CourseBySlug = {
+export type SearchCourseBySlug = {
   courseBySlug: Course[];
 };
 
@@ -47,6 +47,10 @@ export type LocationInfo = {
   address: string | null;
   city: string | null;
   zip: string | null;
+};
+
+export type SearchCourseByName = {
+  courseByName: Course[];
 };
 
 export type Course = {

@@ -1,4 +1,5 @@
-export const SERVER_URL = "https://dgclr-server.herokuapp.com/graphql";
+export const SERVER_URL =
+  "https://0duxpicyxf.execute-api.eu-central-1.amazonaws.com/graphql";
 
 export const COURSE_QUERY = `
 _id
@@ -51,9 +52,17 @@ layouts {
 `;
 
 export const SEARCH_COURSE = `
-  query CourseBySlugQuery($slug: String!) {
+  query SearchCourseBySlugQuery($slug: String!) {
     courseBySlug(slug: $slug) {
       ${COURSE_QUERY}
     }
   }
+`;
+
+export const SEARCH_COURSES = `
+query CoursesQuery($query: String!) {
+  courseByName(query: $query) {
+    ${COURSE_QUERY}
+  }
+}
 `;

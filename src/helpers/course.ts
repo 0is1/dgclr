@@ -1,13 +1,40 @@
 import { Course } from "../types";
 
-type CourseBySlug = {
+type SearchCourseBySlug = {
   courseBySlug: Course[];
 };
-export const getCourseDataFromCourseBySlug = (courseBySlug?: CourseBySlug) => {
-  if (!courseBySlug) {
+export const getCourseDataFromSearchCourseBySlug = (
+  data?: SearchCourseBySlug
+) => {
+  if (!data || !data.courseBySlug) {
+    return undefined;
+  }
+  return data.courseBySlug[0];
+};
+
+export const getCourseNameFromCourseData = (data?: Course) => {
+  if (!data) {
     return null;
   }
-  return courseBySlug.courseBySlug[0];
+  return data.name;
+};
+
+export const getCourseAddressFromCourseData = (data?: Course) => {
+  if (!data?.locationInfo) {
+    return "";
+  }
+  const { address, city, zip } = data.locationInfo;
+  if (!address || !city || !zip) {
+    return "";
+  }
+  return `${address}, ${zip} ${city}`;
+};
+
+export const getLocationCoordinatesFromCourseData = (data?: Course) => {
+  if (!data?.locationInfo?.location?.coordinates) {
+    return undefined;
+  }
+  return data.locationInfo.location.coordinates;
 };
 
 export const getCourseLayoutImage = (

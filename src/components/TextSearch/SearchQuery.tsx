@@ -1,21 +1,13 @@
-import request from "graphql-request";
 import { useQuery } from "@tanstack/react-query";
 import { Table } from "antd";
 import { useRouter } from "next/router";
 import type { SortOrder } from "antd/lib/table/interface";
 import Link from "next/link";
-import { Course } from "../../types";
 import useLocalStorageState from "use-local-storage-state";
-import { COURSE_QUERY, SERVER_URL } from "../../graphql/queries";
 import { useTranslation } from "next-i18next";
+import { Course } from "../../types";
 
-const SEARCH_COURSES = `
-  query CoursesQuery($query: String!) {
-    courseByName(query: $query) {
-      ${COURSE_QUERY}
-    }
-  }
-`;
+import { getCoursesByName } from "../../graphql/fetcher";
 
 function SearchQuery() {
   const { t } = useTranslation(["common"]);
@@ -23,10 +15,22 @@ function SearchQuery() {
   const [query] = useLocalStorageState("text_search", {
     defaultValue: "",
   });
-  const { data, isLoading } = useQuery<{ courseByName: Course[] }>({
+  const { data, failureReason, isError, isLoading } = useQuery({
     queryKey: [`courseByName_${query}`],
-    queryFn: async () => request(SERVER_URL, SEARCH_COURSES, { query }),
+    queryFn: async () => {
+      const data = await getCoursesByName(query);
+      return data;
+    },
+    retry: 2,
   });
+  if (isError) {
+    console.log(failureReason);
+    return (
+      <div>
+        <>{t("common:search_error")}</>
+      </div>
+    );
+  }
   const columns = [
     {
       title: `${t("common:course_name")}`,
@@ -53,6 +57,7 @@ function SearchQuery() {
       dataSource={data?.courseByName}
       columns={columns}
       loading={isLoading}
+      rowKey="_id"
       onRow={(record) => {
         return {
           onClick: () => {

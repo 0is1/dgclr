@@ -1,6 +1,8 @@
 {
   "advanced_search": "Edistynyt haku",
   "course_address": "Radan osoite",
+  "course_fee": "Ratamaksu",
+  "course_hole_average_length": "Väylien keskipituus",
   "course_designer": "Suunnittelija",
   "course_hole_count": "Väylien määrä",
   "course_hole_details": "Väylien tiedot",

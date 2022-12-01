@@ -1,7 +1,9 @@
 {
   "advanced_search": "advanced search",
   "course_address": "Address",
+  "course_fee": "Course Fee",
   "course_designer": "Designer",
+  "course_hole_average_length": "Hole average length",
   "course_hole_count": "Hole count",
   "course_hole_details": "Course hole details",
   "course_info": "Info",

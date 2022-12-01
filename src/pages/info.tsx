@@ -2,13 +2,12 @@ import { Col, PageHeader, Row, Space, Typography } from "antd";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../components/Layout";
-import TextSearch from "../components/TextSearch";
 import SiteMenu from "../components/Menu";
 import { StaticProps } from "../types/pages";
 
 const { Title } = Typography;
 
-export default function Home() {
+export default function Info() {
   const { t } = useTranslation(["common"]);
   return (
     <Layout>
@@ -31,8 +30,7 @@ export default function Home() {
               span: 12,
             }}
           >
-            <Title level={4}>{t("common:text_search_placeholder")}</Title>
-            <TextSearch />
+            <Title level={4}>{t("common:info")}</Title>
           </Col>
         </Row>
       </Space>

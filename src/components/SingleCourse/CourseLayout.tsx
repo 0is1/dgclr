@@ -3,7 +3,7 @@ import { Course, Hole } from "../../types";
 import { List, Space, Tag, Typography } from "antd";
 import { useTranslation } from "next-i18next";
 
-const { Title } = Typography;
+const { Paragraph, Title } = Typography;
 
 const CourseLayout = (props: {
   course: Course | null;
@@ -15,19 +15,30 @@ const CourseLayout = (props: {
   if (!layout) {
     return null;
   }
+  console.log("layout", layout);
   return (
     <List
       header={
         <Space direction="vertical">
           <Title level={5}>{t("common:course_hole_details")}</Title>
+          <Paragraph>{layout.name}</Paragraph>
+          {layout.rating && <Tag color="gold">{layout.rating}</Tag>}
           <Space>
-            {layout.rating && <Tag color="gold">{layout.rating}</Tag>}
             <Tag>
-              {t("common:course_hole_count")} {layout.holeCount}
+              {t("common:course_hole_count")}: {layout.holeCount}
             </Tag>
             <Tag>
               {t("common:par")}: {layout.totalPar}
             </Tag>
+          </Space>
+          <Space>
+            {layout.holeAverageLength?.meter && (
+              <Tag>
+                {t("common:course_hole_average_length")}:{" "}
+                {layout.holeAverageLength.meter}m /{" "}
+                {layout.holeAverageLength.foot}ft
+              </Tag>
+            )}
           </Space>
         </Space>
       }
