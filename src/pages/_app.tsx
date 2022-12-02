@@ -11,14 +11,18 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
+import { toggleDarkClassToBody } from "../helpers/utils";
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   const [useDarkTheme] = useLocalStorageState("use_dark_theme", {
     defaultValue: false,
   });
+  useEffect(() => {
+    toggleDarkClassToBody(useDarkTheme);
+  }, [useDarkTheme]);
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>

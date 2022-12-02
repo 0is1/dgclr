@@ -87,3 +87,15 @@ export const getBrowserPrefersDarkMode = (): boolean => {
   }
   return false;
 };
+
+export const toggleDarkClassToBody = (useDarkTheme: boolean): void => {
+  // toggle "dark" class on body
+  const body = document.querySelector("body");
+  if (body) {
+    if (useDarkTheme) {
+      body.classList.add("dark");
+    } else {
+      body.classList.remove("dark");
+    }
+  }
+};

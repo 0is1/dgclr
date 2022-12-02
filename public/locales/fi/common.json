@@ -1,5 +1,7 @@
 {
   "advanced_search": "Edistynyt haku",
+  "change_language": "Vaihda kieli",
+  "close": "Sulje",
   "course_address": "Radan osoite",
   "course_fee": "Ratamaksu",
   "course_hole_average_length": "Väylien keskipituus",
@@ -23,7 +25,10 @@
   "par": "Par",
   "powered_by": "Powered by",
   "search": "Etsi",
-  "sub_title": "löydä frisbeegolfratoja",
+  "show_on_map": "Näytä kartalla",
+  "sub_title": "löydä uusia frisbeegolfratoja",
+  "switch_light_mode": "Vaihda vaaleaan teemaan",
+  "switch_dark_mode": "Vaihda tummaan teemaan",
   "text_search_placeholder": "Etsi ratoja nimellä tai paikkakunnalla",
   "title": "DGCLR.fi"
 }

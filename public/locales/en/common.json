@@ -1,8 +1,10 @@
 {
   "advanced_search": "advanced search",
+  "change_language": "Change language",
+  "close": "Close",
   "course_address": "Address",
-  "course_fee": "Course Fee",
   "course_designer": "Designer",
+  "course_fee": "Course Fee",
   "course_hole_average_length": "Hole average length",
   "course_hole_count": "Hole count",
   "course_hole_details": "Course hole details",
@@ -23,7 +25,10 @@
   "par": "Par",
   "powered_by": "Powered by",
   "search": "Search",
-  "sub_title": "find disc golf courses",
+  "show_on_map": "Show on map",
+  "sub_title": "find new disc golf courses",
+  "switch_dark_mode": "Switch to dark mode",
+  "switch_light_mode": "Switch to light mode",
   "text_search_placeholder": "Search by course name or city",
   "title": "DGCLR.fi"
 }

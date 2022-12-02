@@ -1,4 +1,8 @@
 body{
-    background: linear-gradient(0deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(0deg, #667db6, #0082c8, #0082c8, #667db6);
     background-attachment: fixed;
+}
+
+body.dark {
+    background: linear-gradient(0deg, #0f0c29, #302b63, #24243e);
 }
