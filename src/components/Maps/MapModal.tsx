@@ -1,6 +1,7 @@
 import { Button, Modal } from "antd";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import {
   getCourseAddressFromCourseData,
   getCourseDataFromSearchCourseBySlug,
@@ -11,6 +12,7 @@ import MapComponent from "./MapComponent";
 
 const MapModal: React.FC = () => {
   const router = useRouter();
+  const { t } = useTranslation(["common"]);
   const { slug } = router.query;
   const { data } = useGetCourseBySlug(slug as string);
   const course = getCourseDataFromSearchCourseBySlug(data);
@@ -25,7 +27,7 @@ const MapModal: React.FC = () => {
       width: "80vw",
       title,
       content: <MapComponent coordinates={coordinates} />,
-      okText: "Close",
+      okText: t("common:close"),
     });
   };
   if (!title) {
@@ -34,7 +36,7 @@ const MapModal: React.FC = () => {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Show on Map
+        {t("common:show_on_map")}
       </Button>
     </>
   );

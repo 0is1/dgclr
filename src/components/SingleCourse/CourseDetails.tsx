@@ -1,4 +1,4 @@
-import { Descriptions, Space, Tag } from "antd";
+import { Button, Descriptions, Space, Tag } from "antd";
 import { useTranslation } from "next-i18next";
 import { getCourseInfo } from "../../helpers/course";
 import MapModal from "../Maps/MapModal";
@@ -11,14 +11,17 @@ const CourseDetails = (props: { course: Course | undefined }) => {
   if (!courseInfo) {
     return null;
   }
-  console.log("courseInfo", courseInfo);
   return (
     <Descriptions title={t("common:course_info")} layout="vertical" column={2}>
       <Descriptions.Item label={<strong>{t("common:course_address")}</strong>}>
         <Space direction="vertical">
-          <span>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${courseInfo.address}%20${courseInfo.city}%20${courseInfo.zip}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             {courseInfo.address}, {courseInfo.city}, {courseInfo.zip}
-          </span>
+          </a>
           <MapModal />
         </Space>
       </Descriptions.Item>
