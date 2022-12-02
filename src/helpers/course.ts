@@ -62,6 +62,20 @@ export const getTabListFromCourseLayouts = (course: Course | undefined) => {
     };
   });
 };
+export const getRatingListFromCourseLayouts = (course: Course | undefined) => {
+  if (!course || !course.layouts) {
+    return [];
+  }
+  return course.layouts
+    .map((layout, index) => {
+      return {
+        key: index.toString(),
+        rating: layout.rating,
+      };
+    })
+    .filter((layout) => layout.rating);
+};
+
 export const getCourseLayoutByIndex = (
   course: Course | undefined,
   layoutIndex: string

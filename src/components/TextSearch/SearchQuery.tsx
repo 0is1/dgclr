@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Table } from "antd";
+import { Space, Table, Tag } from "antd";
 import { useRouter } from "next/router";
 import type { SortOrder } from "antd/lib/table/interface";
 import Link from "next/link";
@@ -8,6 +8,8 @@ import { useTranslation } from "next-i18next";
 import { Course } from "../../types";
 
 import { getCoursesByName } from "../../graphql/fetcher";
+import { DoubleRightOutlined } from "@ant-design/icons";
+import { getRatingListFromCourseLayouts } from "../../helpers/course";
 
 function SearchQuery() {
   const { t } = useTranslation(["common"]);
@@ -15,6 +17,12 @@ function SearchQuery() {
   const [query] = useLocalStorageState("text_search", {
     defaultValue: "",
   });
+  const [currentPageForQuery, setCurrentPageForQuery] = useLocalStorageState(
+    `current_page_${query}`,
+    {
+      defaultValue: 1,
+    }
+  );
   const { data, failureReason, isError, isLoading } = useQuery({
     queryKey: [`courseByName_${query}`],
     queryFn: async () => {
@@ -37,7 +45,6 @@ function SearchQuery() {
       dataIndex: "name",
       key: "name",
       showSorterTooltip: false,
-      defaultSortOrder: "ascend" as SortOrder,
       sorter: (a: Course, b: Course) => {
         if (a.name < b.name) {
           return -1;
@@ -48,7 +55,21 @@ function SearchQuery() {
         return 0;
       },
       render: (text: string, record: Course) => {
-        return <Link href={`/course/${record.slug}`}>{text}</Link>;
+        const tags = getRatingListFromCourseLayouts(record);
+        return (
+          <Space>
+            <Link href={`/course/${record.slug}`}>
+              {text} <DoubleRightOutlined />
+            </Link>
+            <span>
+              {tags.map((tag) => (
+                <Tag color="blue" key={tag.key}>
+                  {tag.rating}
+                </Tag>
+              ))}
+            </span>
+          </Space>
+        );
       },
     },
   ];
@@ -58,6 +79,12 @@ function SearchQuery() {
       columns={columns}
       loading={isLoading}
       rowKey="_id"
+      pagination={{
+        current: currentPageForQuery,
+        onChange: (page) => {
+          setCurrentPageForQuery(page);
+        },
+      }}
       onRow={(record) => {
         return {
           onClick: () => {
