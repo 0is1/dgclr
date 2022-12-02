@@ -16,5 +16,5 @@ export default async function handler(
     { query },
     requestHeaders
   );
-  return res.status(200).json(result);
+  return res.status(200).json(result as SearchCourseByName);
 }

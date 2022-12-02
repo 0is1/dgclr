@@ -26,8 +26,10 @@
     "next-i18next": "^12.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sitemap": "^7.1.1",
     "typescript": "4.9.3",
-    "use-local-storage-state": "^18.1.1"
+    "use-local-storage-state": "^18.1.1",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.0",

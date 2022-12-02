@@ -66,3 +66,8 @@ query CoursesQuery($query: String!) {
   }
 }
 `;
+
+export const GET_ALL_COURSE_SLUGS = `
+query AllCoursesQuery {
+  courses {slug}
+}`;

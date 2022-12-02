@@ -16,5 +16,5 @@ export default async function handler(
     { slug },
     requestHeaders
   );
-  return res.status(200).json(result);
+  return res.status(200).json(result as SearchCourseBySlug);
 }
