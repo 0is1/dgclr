@@ -53,6 +53,46 @@ export type SearchCourseByName = {
   courseByName: Course[];
 };
 
+export type SearchCourses = {
+  courses: Course[];
+};
+
+export type CourseQueryFilterInput = {
+  courseInfo: CourseInfoFilter;
+  locationInfo: CourseLocationFilter;
+  rating: [string];
+  nearby: NearbyFilter;
+  holeAverageLength: CourseAverageLength;
+};
+
+export type CourseEventsFilterInput = {
+  onlyUpcoming: boolean;
+};
+export type CourseAverageLength = {
+  min: number;
+  max: number;
+};
+export type CourseInfoFilter = {
+  founded: string;
+  basketType: string;
+  teeType: string;
+  infoSignType: string;
+  maintenanceCycle: string;
+  rangeMaster: string;
+  courseDesigner: string;
+  surfaceShapeTypes: [string];
+  mapUrls: [string];
+  courseTypes: [string];
+};
+export type CourseLocationFilter = {
+  address: string;
+  city: string;
+  zip: string;
+};
+export type NearbyFilter = {
+  coordinates: number[];
+  maxDistance: number;
+};
 export type Course = {
   _id: string;
   courseInfo: CourseInfo;
@@ -64,7 +104,7 @@ export type Course = {
 };
 
 export type GraphQLData = {
-  loading: Boolean;
+  loading: boolean;
   courseBySlug?: Course[];
   courseByName?: Course[];
   courses?: Course[];

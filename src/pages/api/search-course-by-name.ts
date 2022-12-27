@@ -1,8 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import request from "graphql-request";
-import { SEARCH_COURSES } from "../../graphql/queries";
-import { SearchCourseByName } from "../../types";
-import { getRequestHeaders } from "../../helpers/server-utils";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import request from 'graphql-request';
+import { SEARCH_COURSES_BY_NAME } from '../../graphql/queries';
+import { SearchCourseByName } from '../../types';
+import { getRequestHeaders } from '../../helpers/server-utils';
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +12,7 @@ export default async function handler(
   const { query } = req.query;
   const result = await request(
     `${process.env.SERVER_URL}`,
-    SEARCH_COURSES,
+    SEARCH_COURSES_BY_NAME,
     { query },
     requestHeaders
   );

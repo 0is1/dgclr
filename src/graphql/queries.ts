@@ -1,5 +1,5 @@
 export const SERVER_URL =
-  "https://0duxpicyxf.execute-api.eu-central-1.amazonaws.com/graphql";
+  'https://0duxpicyxf.execute-api.eu-central-1.amazonaws.com/graphql';
 
 export const COURSE_QUERY = `
 _id
@@ -59,7 +59,7 @@ export const SEARCH_COURSE = `
   }
 `;
 
-export const SEARCH_COURSES = `
+export const SEARCH_COURSES_BY_NAME = `
 query CoursesQuery($query: String!) {
   courseByName(query: $query) {
     ${COURSE_QUERY}
@@ -71,3 +71,11 @@ export const GET_ALL_COURSE_SLUGS = `
 query AllCoursesQuery {
   courses {slug}
 }`;
+
+export const SEARCH_COURSES = `
+query CoursesQuery($limit: Int, $skip: Int, $filter: CourseQueryFilterInput) {
+  courses(limit: $limit, skip: $skip, filter: $filter) {
+    ${COURSE_QUERY}
+  }
+}
+`;

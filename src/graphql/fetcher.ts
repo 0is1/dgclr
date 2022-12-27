@@ -1,4 +1,9 @@
-import { SearchCourseByName, SearchCourseBySlug } from "../types";
+import {
+  CourseQueryFilterInput,
+  SearchCourseByName,
+  SearchCourseBySlug,
+  SearchCourses,
+} from '../types';
 
 const getAbsoluteOrRelativeUrl = (relativeUrl: string) => {
   if (process.env.VERCEL_URL) {
@@ -22,5 +27,21 @@ export const getCourseBySlug = async (slug: string) => {
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchCourseBySlug;
+  return data;
+};
+
+export const getCourses = async ({
+  filter,
+  limit,
+}: {
+  filter: CourseQueryFilterInput;
+  limit: number;
+}) => {
+  const stringifiedFilter = JSON.stringify(filter);
+  const url = getAbsoluteOrRelativeUrl(
+    `/api/search-courses?filter=${stringifiedFilter}&limit=${limit}`
+  );
+  const response = await fetch(url);
+  const data = (await response.json()) as SearchCourses;
   return data;
 };
