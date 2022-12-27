@@ -6,7 +6,7 @@ export const LINK_REGEX = /((https?):\/\/[^\s/$.?#].[^\s)]*)/gim;
 export const convertLinksToHtml = (string?: string): string =>
   string
     ? removeLastCommaAndReturnLinkFromFirstCaptureGroup(string, LINK_REGEX)
-    : "";
+    : '';
 
 /**
  * Is array with length
@@ -22,18 +22,18 @@ export const isArrayWithLength = (array?: any): boolean =>
 export const removeLastCommaAndReturnLinkFromFirstCaptureGroup = (
   string: string,
   regex: any,
-  includeHttp: boolean = false
+  includeHttp = false
 ): string =>
   string.replace(regex, (wholeMatch, group1) => {
     if (group1) {
-      const includesLastDot = group1.endsWith(".");
+      const includesLastDot = group1.endsWith('.');
       const returnString = includesLastDot ? group1.slice(0, -1) : group1;
       const hrefString = includeHttp ? `http://${returnString}` : returnString;
       return `<a href='${hrefString}'>${returnString}</a>${
-        includesLastDot ? "." : ""
+        includesLastDot ? '.' : ''
       }`;
     }
-    return "";
+    return '';
   });
 
 export const WWW_REGEX = /(www\.[a-öA-Ö]*\.([a-öA-Ö]*)[/a-öA-Ö?&0-9=.]*)/gi;
@@ -48,7 +48,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
   const httpMatches = Array.from(string.matchAll(HTTP_REGEX));
   // console.log('httpMatches: ', httpMatches);
   const wwwMatches = Array.from(new Set(string.match(WWW_REGEX))).map((item) =>
-    item.endsWith(".") ? item.slice(0, -1) : item
+    item.endsWith('.') ? item.slice(0, -1) : item
   );
   // console.log('wwwMatches: ', wwwMatches);
   if (isArrayWithLength(httpMatches) && isArrayWithLength(wwwMatches)) {
@@ -57,7 +57,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
       // www-match is second group => third item in the array
       const [, , wwwMatch] = matchArray;
       // Remove last dot if there is one
-      return wwwMatch.endsWith(".") ? wwwMatch.slice(0, -1) : wwwMatch;
+      return wwwMatch.endsWith('.') ? wwwMatch.slice(0, -1) : wwwMatch;
     });
     // console.log('ignoredWWWTexts: ', ignoredWWWTexts);
     // If this www.something.com is already wrapped with <a>, filter it out from wwwTextsWithoutLink
@@ -66,7 +66,7 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
     );
     // console.log('wwwTextsWithoutLink: ', wwwTextsWithoutLink);
     wwwTextsWithoutLink.forEach((wwwString) => {
-      const regex = new RegExp(`(${wwwString})`, "g");
+      const regex = new RegExp(`(${wwwString})`, 'g');
       stringWithWWWLinks = stringWithWWWLinks.replace(
         regex,
         "<a href='http://$1'>$1</a>"
@@ -82,20 +82,31 @@ export const convertWWWToHttpAndAddLinks = (string: string): string => {
 };
 
 export const getBrowserPrefersDarkMode = (): boolean => {
-  if (typeof window !== "undefined") {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
   return false;
 };
 
 export const toggleDarkClassToBody = (useDarkTheme: boolean): void => {
   // toggle "dark" class on body
-  const body = document.querySelector("body");
+  const body = document.querySelector('body');
   if (body) {
     if (useDarkTheme) {
-      body.classList.add("dark");
+      body.classList.add('dark');
     } else {
-      body.classList.remove("dark");
+      body.classList.remove('dark');
     }
   }
+};
+
+export const allObjectKeysAreEmpty = (
+  obj: Record<string, unknown>
+): boolean => {
+  return Object.keys(obj).every((key) => {
+    if (typeof obj[key] === 'object') {
+      return allObjectKeysAreEmpty(obj[key] as Record<string, unknown>);
+    }
+    return obj[key] === '';
+  });
 };

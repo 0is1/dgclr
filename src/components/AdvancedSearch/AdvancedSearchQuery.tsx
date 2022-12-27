@@ -1,34 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import { Space, Table, Tag } from 'antd';
-import { useRouter } from 'next/router';
-// import type { SortOrder } from 'antd/lib/table/interface';
-// import Link from 'next/link';
-import useLocalStorageState from 'use-local-storage-state';
 import { useTranslation } from 'next-i18next';
-// import { Course } from '../../types';
-
+import { Col, Spin, Typography } from 'antd';
 import { getCourses } from '../../graphql/fetcher';
 import { CourseQueryFilterInput } from '../../types';
 import AdvancedMapComponent from '../Maps/AdvancedMapComponent';
+import useAdvancedQuery from '../../hooks/useAdvancedQuery';
+
+const { Title } = Typography;
 
 function AdvancedSearchQuery() {
   const { t } = useTranslation(['common']);
-  const router = useRouter();
-  const [query, setQuery] = useLocalStorageState('advanced_search', {
-    defaultValue: {
-      filter: {},
-      limit: 50,
-      events: {},
-      skip: 0,
-    },
-  });
-  console.log('query: ', query);
-  if (query.limit !== 50) {
-    setQuery({
-      ...query,
-      limit: 50,
-    });
-  }
+  const { query } = useAdvancedQuery();
   const { data, failureReason, isError, isLoading } = useQuery({
     queryKey: [`courses_${JSON.stringify(query)}`],
     queryFn: async () => {
@@ -45,15 +27,29 @@ function AdvancedSearchQuery() {
   if (isError) {
     console.log(failureReason);
     return (
-      <div>
-        <>{t('common:search_error')}</>
-      </div>
+      <Col span={24}>
+        <Title level={2}>
+          <>{t('common:search_error')}</>
+        </Title>
+      </Col>
     );
   }
   if (isLoading) {
-    return <h1>Loading</h1>;
+    return (
+      <Col span={24}>
+        <Spin tip="Loading" size="large" style={{ marginTop: '4rem' }}>
+          <div className="content" />
+        </Spin>
+      </Col>
+    );
   }
-  console.log('data: ', data);
+  if (data?.courses.length === 0) {
+    return (
+      <Col span={24}>
+        <Title level={2}>No results</Title>
+      </Col>
+    );
+  }
   const locations = data?.courses.map((course) => {
     const { locationInfo } = course;
     const { location } = locationInfo;
@@ -75,7 +71,11 @@ function AdvancedSearchQuery() {
       lng: coordinates[0],
     };
   });
-  return <AdvancedMapComponent locations={locations} />;
+  return (
+    <Col span={24}>
+      <AdvancedMapComponent locations={locations} />
+    </Col>
+  );
 }
 
 export default AdvancedSearchQuery;

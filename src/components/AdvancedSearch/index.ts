@@ -1,3 +1,3 @@
-import AdvancedSearchQuery from './AdvancedSearchQuery';
+import AdvancedSearch from './AdvancedSearch';
 
-export default AdvancedSearchQuery;
+export default AdvancedSearch;

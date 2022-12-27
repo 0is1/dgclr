@@ -56,38 +56,42 @@ export type SearchCourseByName = {
 export type SearchCourses = {
   courses: Course[];
 };
-
+export type CourseQueryParams = {
+  filter: CourseQueryFilterInput;
+  limit: number;
+  skip: number;
+};
 export type CourseQueryFilterInput = {
-  courseInfo: CourseInfoFilter;
-  locationInfo: CourseLocationFilter;
-  rating: [string];
-  nearby: NearbyFilter;
-  holeAverageLength: CourseAverageLength;
+  courseInfo: CourseInfoFilter | undefined;
+  locationInfo: CourseLocationFilter | undefined;
+  rating: [string] | undefined;
+  nearby: NearbyFilter | undefined;
+  holeAverageLength: CourseAverageLength | undefined;
 };
 
 export type CourseEventsFilterInput = {
   onlyUpcoming: boolean;
 };
 export type CourseAverageLength = {
-  min: number;
-  max: number;
+  min: number | undefined;
+  max: number | undefined;
 };
 export type CourseInfoFilter = {
-  founded: string;
-  basketType: string;
-  teeType: string;
-  infoSignType: string;
-  maintenanceCycle: string;
-  rangeMaster: string;
-  courseDesigner: string;
-  surfaceShapeTypes: [string];
-  mapUrls: [string];
-  courseTypes: [string];
+  founded: string | undefined;
+  basketType: string | undefined;
+  teeType: string | undefined;
+  infoSignType: string | undefined;
+  maintenanceCycle: string | undefined;
+  rangeMaster: string | undefined;
+  courseDesigner: string | undefined;
+  surfaceShapeTypes: [string] | undefined;
+  mapUrls: [string] | undefined;
+  courseTypes: [string] | undefined;
 };
 export type CourseLocationFilter = {
-  address: string;
-  city: string;
-  zip: string;
+  address: string | undefined;
+  city: string | undefined;
+  zip: string | undefined;
 };
 export type NearbyFilter = {
   coordinates: number[];

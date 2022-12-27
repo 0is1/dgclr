@@ -1,12 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
-import {
-  GoogleMap,
-  Marker,
-  useJsApiLoader,
-  InfoWindow,
-} from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, InfoWindow } from '@react-google-maps/api';
 import { Button } from 'antd';
 
 const containerStyle = {

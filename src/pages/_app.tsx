@@ -1,23 +1,21 @@
-// import "antd/dist/antd.css";
-// import "antd/dist/antd.dark.css";
-
-import "../styles/globals.css";
-import { ConfigProvider, theme } from "antd";
-import type { AppProps } from "next/app";
-import { appWithTranslation } from "next-i18next";
-import nextI18NextConfig from "../../next-i18next.config";
+import '../styles/globals.css';
+import { ConfigProvider, theme } from 'antd';
+import type { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
+import nextI18NextConfig from '../../next-i18next.config';
 import {
   Hydrate,
   QueryClient,
   QueryClientProvider,
-} from "@tanstack/react-query";
-import { useEffect, useState } from "react";
-import useLocalStorageState from "use-local-storage-state";
-import { toggleDarkClassToBody } from "../helpers/utils";
+} from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import useLocalStorageState from 'use-local-storage-state';
+import { toggleDarkClassToBody } from '../helpers/utils';
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
-  const [useDarkTheme] = useLocalStorageState("use_dark_theme", {
+
+  const [useDarkTheme] = useLocalStorageState('use_dark_theme', {
     defaultValue: false,
   });
   useEffect(() => {
