@@ -29,9 +29,6 @@ function App({ Component, pageProps }: AppProps) {
             algorithm: useDarkTheme
               ? theme.darkAlgorithm
               : theme.defaultAlgorithm,
-            // token: {
-            //   colorPrimary: "hsl(200, 50%, 20%)",
-            // },
           }}
         >
           <Component {...pageProps} />
