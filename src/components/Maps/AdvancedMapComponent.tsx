@@ -26,7 +26,7 @@ type Props = {
 function AdvancedMapComponent(props: Props) {
   const router = useRouter();
   const { locations } = props;
-  const [activeMarker, setActiveMarker] = useState<any | null>(null);
+  const [activeMarker, setActiveMarker] = useState<MapData | null>(null);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: `${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`,
@@ -73,10 +73,13 @@ function AdvancedMapComponent(props: Props) {
     }
   }, [locations, map, addClusterer]);
 
-  const onLoad = useCallback((currentMap: google.maps.Map) => {
-    setMap(currentMap);
-    setTimeout(() => addClusterer(currentMap), 500);
-  }, []);
+  const onLoad = useCallback(
+    (currentMap: google.maps.Map) => {
+      setMap(currentMap);
+      setTimeout(() => addClusterer(currentMap), 500);
+    },
+    [addClusterer]
+  );
 
   const onUnmount = useCallback(() => {
     setMap(null);
@@ -92,7 +95,7 @@ function AdvancedMapComponent(props: Props) {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      {activeMarker && (
+      {activeMarker && activeMarker.lat && activeMarker.lng && (
         <InfoWindow
           onCloseClick={() => setActiveMarker(null)}
           position={{ lat: activeMarker.lat, lng: activeMarker.lng }}

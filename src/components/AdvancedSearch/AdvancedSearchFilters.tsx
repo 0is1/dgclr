@@ -6,13 +6,13 @@ import AdvancedSearchCourseTypesSelect from './AdvancedSearchCourseTypesSelect';
 function AdvancedSearchFilters() {
   return (
     <>
-      <Col span={12}>
+      <Col md={12} xs={24}>
         <AdvancedSearchRatingSelect />
       </Col>
-      <Col span={12}>
+      <Col md={12} xs={24}>
         <AdvancedSearchSurfaceShapeTypesSelect />
       </Col>
-      <Col span={12}>
+      <Col md={12} xs={24}>
         <AdvancedSearchCourseTypesSelect />
       </Col>
     </>
