@@ -15,10 +15,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const data = await getCourseBySlug(`${slug}`);
     return data;
   });
-
+  const translations = await serverSideTranslations(`${localeForTranslation}`, [
+    'common',
+  ]);
   return {
     props: {
-      ...(await serverSideTranslations(`${localeForTranslation}`, ['common'])),
+      ...translations,
       dehydratedState: dehydrate(queryClient),
     },
   };

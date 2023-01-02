@@ -1,7 +1,7 @@
-import { getCourseLayoutByIndex } from '../../helpers/course';
-import { Course, Hole } from '../../types';
 import { List, Space, Tag, Typography } from 'antd';
 import { useTranslation } from 'next-i18next';
+import { getCourseLayoutByIndex } from '../../helpers/course';
+import { Course, Hole } from '../../types';
 
 const { Paragraph, Title } = Typography;
 
