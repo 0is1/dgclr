@@ -1,24 +1,24 @@
-import { Col, Row, Space, Typography } from "antd";
-import { useTranslation } from "next-i18next";
-import { HomeOutlined } from "@ant-design/icons";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Layout from "../components/Layout";
-import TextSearch from "../components/TextSearch";
-import SiteMenu from "../components/Menu";
-import PageHeader from "../components/PageHeader";
-import { StaticProps } from "../types/pages";
+import { Col, Row, Space, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
+import { HomeOutlined } from '@ant-design/icons';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Layout from '../components/Layout';
+import TextSearch from '../components/TextSearch';
+import SiteMenu from '../components/Menu';
+import PageHeader from '../components/PageHeader';
+import { StaticProps } from '../types/pages';
 
 const { Title } = Typography;
 
 export default function Home() {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   return (
     <Layout>
-      <Space direction="vertical" style={{ width: "100%" }} size="large">
+      <Space direction="vertical" style={{ width: '100%' }} size="large">
         <PageHeader
           title="DGCLR"
           beforeTitle={<HomeOutlined />}
-          description={t("common:sub_title")}
+          description={t('common:sub_title')}
         >
           <SiteMenu />
         </PageHeader>
@@ -34,7 +34,7 @@ export default function Home() {
               span: 12,
             }}
           >
-            <Title level={4}>{t("common:text_search_placeholder")}</Title>
+            <Title level={4}>{t('common:text_search_placeholder')}</Title>
             <TextSearch />
           </Col>
         </Row>
@@ -46,7 +46,7 @@ export default function Home() {
 export const getStaticProps = async ({ locale }: StaticProps) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 };

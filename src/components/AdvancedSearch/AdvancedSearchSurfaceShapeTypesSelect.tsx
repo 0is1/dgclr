@@ -4,6 +4,7 @@ import { DEFAULT_LIMIT, SURFACE_TYPE_OPTIONS } from '../../utils/constants';
 import useNotification from '../../hooks/useNotification';
 import useAdvancedQuery from '../../hooks/useAdvancedQuery';
 import { CourseQueryParams } from '../../types';
+import { useTranslation } from 'react-i18next';
 
 const getFilterSurfaceShapeTypesFromQuery = (query: CourseQueryParams) => {
   if (query?.filter?.courseInfo?.surfaceShapeTypes) {
@@ -15,14 +16,18 @@ const { Paragraph } = Typography;
 
 function AdvancedSearchSurfaceShapeTypesSelect() {
   const { query, setQuery } = useAdvancedQuery();
+  const { t } = useTranslation(['common']);
   const defaultValues = getFilterSurfaceShapeTypesFromQuery(query);
   const { openNotification, contextHolder } = useNotification();
   return (
     <>
       {contextHolder}
       <Space style={{ width: '100%' }} direction="vertical">
-        <Paragraph style={{ marginBottom: 0 }}>Surface shape types</Paragraph>
+        <Paragraph style={{ marginBottom: 0 }}>
+          {t('common:search_course_surface_types')}
+        </Paragraph>
         <Select
+          size="large"
           value={defaultValues}
           style={{ width: '100%' }}
           options={SURFACE_TYPE_OPTIONS}

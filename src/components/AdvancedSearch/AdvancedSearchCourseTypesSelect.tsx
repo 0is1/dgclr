@@ -1,5 +1,5 @@
 import { Select, Space, Typography } from 'antd';
-// import useLocalStorageState from 'use-local-storage-state';
+import { useTranslation } from 'react-i18next';
 import { DEFAULT_LIMIT, COURSE_TYPE_OPTIONS } from '../../utils/constants';
 import useNotification from '../../hooks/useNotification';
 import useAdvancedQuery from '../../hooks/useAdvancedQuery';
@@ -15,20 +15,23 @@ const { Paragraph } = Typography;
 
 function AdvancedSearchCourseTypesSelect() {
   const { query, setQuery } = useAdvancedQuery();
+  const { t } = useTranslation(['common']);
   const defaultValues = getFilterCourseTypesFromQuery(query);
   const { openNotification, contextHolder } = useNotification();
   return (
     <>
       {contextHolder}
       <Space style={{ width: '100%' }} direction="vertical">
-        <Paragraph style={{ marginBottom: 0 }}>Course types</Paragraph>
+        <Paragraph style={{ marginBottom: 0 }}>
+          {t('common:search_course_types')}
+        </Paragraph>
         <Select
+          size="large"
           value={defaultValues}
           style={{ width: '100%' }}
           options={COURSE_TYPE_OPTIONS}
           mode="multiple"
           onChange={(value: string[]) => {
-            console.log(value);
             if (value.length > 3) {
               openNotification(
                 'You can only select 3 course types at a time',

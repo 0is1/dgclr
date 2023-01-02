@@ -1,31 +1,31 @@
-import { useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import ReactHtmlParser from "html-react-parser";
-import { Col, Row, Card, Space, Divider, Button } from "antd";
-import { toBase64, shimmer } from "../../helpers/image";
+import { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import ReactHtmlParser from 'html-react-parser';
+import { Col, Row, Card, Space, Divider } from 'antd';
+import { toBase64, shimmer } from '../../helpers/image';
 import {
   convertWWWToHttpAndAddLinks,
   convertLinksToHtml,
-} from "../../helpers/utils";
-import styles from "../../styles/Course.module.css";
+} from '../../helpers/utils';
+import styles from '../../styles/Course.module.css';
 import {
   getCourseDataFromSearchCourseBySlug,
   getCourseLayoutImage,
   getTabListFromCourseLayouts,
-} from "../../helpers/course";
-import CourseLayout from "./CourseLayout";
-import CourseDetails from "./CourseDetails";
-import SiteMenu from "../Menu";
-import useGetCourseBySlug from "../../hooks/useGetCourseBySlug";
-import { ArrowLeftOutlined } from "@ant-design/icons";
-import PageHeader from "../PageHeader";
+} from '../../helpers/course';
+import CourseLayout from './CourseLayout';
+import CourseDetails from './CourseDetails';
+import SiteMenu from '../Menu';
+import useGetCourseBySlug from '../../hooks/useGetCourseBySlug';
+import { ArrowLeftOutlined } from '@ant-design/icons';
+import PageHeader from '../PageHeader';
 
 const { Meta } = Card;
 
 const SingleCourse = () => {
   const router = useRouter();
-  const [activeLayoutIndex, setActiveLayout] = useState<string>("0");
+  const [activeLayoutIndex, setActiveLayout] = useState<string>('0');
   const { slug } = router.query;
   const { data, error, isLoading } = useGetCourseBySlug(slug as string);
   if (error) {
@@ -37,7 +37,7 @@ const SingleCourse = () => {
   }
   const layoutImage = getCourseLayoutImage(course, activeLayoutIndex);
   return (
-    <Space direction="vertical" style={{ width: "100%" }} size="large">
+    <Space direction="vertical" style={{ width: '100%' }} size="large">
       <PageHeader
         title="DGCLR"
         description={`${course?.name}`}

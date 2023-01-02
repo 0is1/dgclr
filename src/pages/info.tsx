@@ -1,23 +1,23 @@
-import { InfoCircleOutlined } from "@ant-design/icons";
-import { Col, Row, Space, Typography } from "antd";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Layout from "../components/Layout";
-import SiteMenu from "../components/Menu";
-import PageHeader from "../components/PageHeader";
-import { StaticProps } from "../types/pages";
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Col, Row, Space, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Layout from '../components/Layout';
+import SiteMenu from '../components/Menu';
+import PageHeader from '../components/PageHeader';
+import { StaticProps } from '../types/pages';
 
 const { Title } = Typography;
 
 export default function Info() {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   return (
     <Layout>
-      <Space direction="vertical" style={{ width: "100%" }} size="large">
+      <Space direction="vertical" style={{ width: '100%' }} size="large">
         <PageHeader
           title="DGCLR"
           beforeTitle={<InfoCircleOutlined />}
-          description={t("common:sub_title")}
+          description={t('common:sub_title')}
         >
           <SiteMenu />
         </PageHeader>
@@ -33,7 +33,7 @@ export default function Info() {
               span: 12,
             }}
           >
-            <Title level={4}>{t("common:info")}</Title>
+            <Title level={4}>{t('common:info')}</Title>
           </Col>
         </Row>
       </Space>
@@ -44,7 +44,7 @@ export default function Info() {
 export const getStaticProps = async ({ locale }: StaticProps) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 };

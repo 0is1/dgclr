@@ -12,7 +12,6 @@ export default async function handler(
   const { filter: filterString, limit } = req.query;
   const limitNumber = parseInt(limit as string, 10);
   const filter = JSON.parse(filterString as string);
-  console.log('filter', filter);
   const result = await request(
     `${process.env.SERVER_URL}`,
     SEARCH_COURSES,

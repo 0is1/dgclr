@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Select, Space, Typography } from 'antd';
 import { RATING_OPTIONS } from '../../utils/constants';
 import useNotification from '../../hooks/useNotification';
@@ -14,14 +15,18 @@ const { Paragraph } = Typography;
 
 function AdvancedSearchRatingSelect() {
   const { query, setQuery } = useAdvancedQuery();
+  const { t } = useTranslation(['common']);
   const defaultValues = getFilterRatingsFromQuery(query);
   const { openNotification, contextHolder } = useNotification();
   return (
     <>
       {contextHolder}
       <Space style={{ width: '100%' }} direction="vertical">
-        <Paragraph style={{ marginBottom: 0 }}>Course ratings</Paragraph>
+        <Paragraph style={{ marginBottom: 0 }}>
+          {t('common:search_course_ratings')}
+        </Paragraph>
         <Select
+          size="large"
           value={defaultValues}
           style={{ width: '100%' }}
           options={RATING_OPTIONS}

@@ -31,7 +31,10 @@ export default function AdvancedSearch() {
               span: 24,
             }}
             md={{
-              span: 12,
+              span: 20,
+            }}
+            lg={{
+              span: 16,
             }}
           >
             <Title level={4}>{t('common:advanced_search')}</Title>

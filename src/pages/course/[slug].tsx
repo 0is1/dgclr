@@ -7,7 +7,8 @@ import { getCourseBySlug } from '../../graphql/fetcher';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { slug } = context.query;
-  const { locale = 'en' } = context;
+  const { defaultLocale, locale } = context;
+  const localeForTranslation = locale || defaultLocale;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery([`courseBySlug_${slug}`], async () => {
@@ -17,7 +18,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   return {
     props: {
-      ...(await serverSideTranslations(`${locale}`, ['common'])),
+      ...(await serverSideTranslations(`${localeForTranslation}`, ['common'])),
       dehydratedState: dehydrate(queryClient),
     },
   };
