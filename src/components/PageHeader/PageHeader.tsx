@@ -1,7 +1,8 @@
-import { Card, Space } from "antd";
-import LanguageSelector from "../LanguageSelector";
-import ThemeSwithcer from "../ThemeSwitcher";
-import styles from "../../styles/PageHeader.module.css";
+import { Card, Space } from 'antd';
+import LanguageSelector from '../LanguageSelector';
+import ThemeSwithcer from '../ThemeSwitcher';
+import styles from '../../styles/PageHeader.module.css';
+import useWindowSize from '../../hooks/useWindowSize';
 
 type Props = {
   beforeTitle?: React.ReactNode;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const PageHeader = ({ beforeTitle, title, description, children }: Props) => {
+  const { isMobileWidth } = useWindowSize();
   return (
     <Card
       className={styles.header}
@@ -23,10 +25,12 @@ const PageHeader = ({ beforeTitle, title, description, children }: Props) => {
       }
       bordered={false}
       extra={
-        <Space>
-          <LanguageSelector />
-          <ThemeSwithcer />
-        </Space>
+        !isMobileWidth && (
+          <Space>
+            <LanguageSelector />
+            <ThemeSwithcer />
+          </Space>
+        )
       }
     >
       {children}
