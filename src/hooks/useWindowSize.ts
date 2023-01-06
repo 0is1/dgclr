@@ -1,14 +1,15 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from 'react';
 
 function useWindowSize() {
-  const isClient = typeof window === "object";
+  const isClient = typeof window === 'object';
   const getSize = useCallback(
     () => ({
       width: isClient ? window.innerWidth : null,
       height: isClient ? window.innerHeight : null,
       scrollHeight: isClient
-        ? document.getElementsByTagName("body")[0].scrollHeight
+        ? document.getElementsByTagName('body')[0].scrollHeight
         : null,
+      isMobileWidth: isClient ? window.innerWidth < 768 : false,
     }),
     [isClient]
   );
@@ -22,8 +23,8 @@ function useWindowSize() {
       setWindowSize(getSize());
     }
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
   return windowSize;
