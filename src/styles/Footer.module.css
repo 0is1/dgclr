@@ -9,6 +9,13 @@
   padding: 1rem 0;
   width: 100%;
 }
+.footerDark {
+  background-color: #141414;
+  border-color: #222;
+}
+.footerDark img {
+  filter: invert(1);
+}
 
 @media (min-width: 1024px) {
   .footer {
@@ -27,16 +34,3 @@
   height: 1.5rem;
   margin-left: 0.5rem;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  .footer {
-    background-color: rgba(255, 255, 255, .1);
-    border-color: #222;
-  }
-  .footer a {
-    color: #fff;
-  }
-  .footer img {
-    filter: invert(1);
-  }
-} */

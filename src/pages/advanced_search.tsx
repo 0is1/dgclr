@@ -8,7 +8,7 @@ import SiteMenu from '../components/Menu';
 import PageHeader from '../components/PageHeader';
 import { StaticProps } from '../types/pages';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 export default function AdvancedSearch() {
   const { t } = useTranslation(['common']);
@@ -38,7 +38,10 @@ export default function AdvancedSearch() {
             }}
           >
             <Title level={4}>{t('common:advanced_search')}</Title>
-            <AdvancedSearchQuery />
+            <Space direction="vertical" size="large" style={{ width: '100%' }}>
+              <Text strong>{t('common:advanced_search_description')}</Text>
+              <AdvancedSearchQuery />
+            </Space>
           </Col>
         </Row>
       </Space>

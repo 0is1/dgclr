@@ -7,7 +7,7 @@ import SiteMenu from '../components/Menu';
 import PageHeader from '../components/PageHeader';
 import { StaticProps } from '../types/pages';
 
-const { Title } = Typography;
+const { Paragraph, Title } = Typography;
 
 export default function Info() {
   const { t } = useTranslation(['common']);
@@ -33,7 +33,10 @@ export default function Info() {
               span: 12,
             }}
           >
-            <Title level={4}>{t('common:info')}</Title>
+            <Title level={4}>{t('info:title')}</Title>
+            <Paragraph>{t('info:paragraph_01')}</Paragraph>
+            <Paragraph>{t('info:paragraph_02')}</Paragraph>
+            <Paragraph>{t('info:paragraph_03')}</Paragraph>
           </Col>
         </Row>
       </Space>
@@ -44,7 +47,7 @@ export default function Info() {
 export const getStaticProps = async ({ locale }: StaticProps) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'info'])),
     },
   };
 };
