@@ -9,9 +9,11 @@ import {
 } from '../../helpers/course';
 import useGetCourseBySlug from '../../hooks/useGetCourseBySlug';
 import MapComponent from './MapComponent';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const MapModal: React.FC = () => {
   const router = useRouter();
+  const { isMobileWidth } = useWindowSize();
   const { t } = useTranslation(['common']);
   const { slug } = router.query;
   const { data } = useGetCourseBySlug(slug as string);
@@ -21,10 +23,10 @@ const MapModal: React.FC = () => {
   const showModal = () => {
     Modal.info({
       bodyStyle: {
-        padding: '1rem 1rem .5rem',
+        padding: isMobileWidth ? 0 : '1rem 1rem .5rem',
         minHeight: '50vh',
       },
-      width: '80vw',
+      width: isMobileWidth ? '100vw' : '80vw',
       title,
       content: <MapComponent coordinates={coordinates} />,
       okText: t('common:close'),

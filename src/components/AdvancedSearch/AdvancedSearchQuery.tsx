@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
-import { Col, Spin, Typography } from 'antd';
+import { Col, Empty, Spin, Typography } from 'antd';
 import { getCourses } from '../../graphql/fetcher';
 import { CourseQueryFilterInput } from '../../types';
 import AdvancedMapComponent from '../Maps/AdvancedMapComponent';
 import useAdvancedQuery from '../../hooks/useAdvancedQuery';
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 
 function AdvancedSearchQuery() {
   const { t } = useTranslation(['common']);
@@ -36,7 +36,13 @@ function AdvancedSearchQuery() {
   }
   if (isLoading) {
     return (
-      <Col span={24}>
+      <Col
+        span={24}
+        style={{
+          backgroundColor: 'rgba(255,255,255,0.5)',
+          minHeight: '125px',
+        }}
+      >
         <Spin tip="Loading" size="large" style={{ marginTop: '4rem' }}>
           <div className="content" />
         </Spin>
@@ -46,7 +52,9 @@ function AdvancedSearchQuery() {
   if (data?.courses.length === 0) {
     return (
       <Col span={24}>
-        <Title level={2}>No results</Title>
+        <Empty
+          description={<Text strong>{t('common:search_no_results')}</Text>}
+        />
       </Col>
     );
   }

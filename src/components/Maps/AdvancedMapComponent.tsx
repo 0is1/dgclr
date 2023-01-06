@@ -63,6 +63,11 @@ function AdvancedMapComponent(props: Props) {
       // fit the map to the newly inclusive bounds
       currentMap.fitBounds(bounds);
       new MarkerClusterer({ markers, map: currentMap });
+      const zoom = currentMap.getZoom();
+      // if zoom is too high, set it to 14
+      if (zoom && zoom > 14) {
+        currentMap.setZoom(14);
+      }
     },
     [locations]
   );
