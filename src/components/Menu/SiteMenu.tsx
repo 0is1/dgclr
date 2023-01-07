@@ -34,11 +34,21 @@ const SiteMenu = () => {
   return (
     <>
       {isMobileWidth && (
-        <Row gutter={[46, 32]} style={{ paddingBottom: '1rem' }}>
+        <Row gutter={[16, 16]} align="middle">
           <Col span={12}>
+            <Button
+              style={{ marginBottom: menuOpen ? 16 : 0 }}
+              onClick={() => setMenuOpen(!menuOpen)}
+              icon={menuOpen ? <ArrowUpOutlined /> : <MenuOutlined />}
+              size="large"
+            >
+              {!menuOpen ? t('common:menu') : t('common:menu_close')}
+            </Button>
+          </Col>
+          <Col span={8}>
             <LanguageSelector />
           </Col>
-          <Col span={6} offset={6}>
+          <Col span={4}>
             <ThemeSwithcer />
           </Col>
         </Row>
@@ -66,19 +76,6 @@ const SiteMenu = () => {
             },
           ]}
         />
-      )}
-      {isMobileWidth && (
-        <Row justify="center">
-          <Col>
-            <Button
-              onClick={() => setMenuOpen(!menuOpen)}
-              icon={menuOpen ? <ArrowUpOutlined /> : <MenuOutlined />}
-              size="large"
-            >
-              {!menuOpen ? t('common:menu') : t('common:menu_close')}
-            </Button>
-          </Col>
-        </Row>
       )}
     </>
   );

@@ -1,12 +1,12 @@
-import { BulbTwoTone, BulbFilled } from "@ant-design/icons";
-import { Switch, Tooltip } from "antd";
-import useLocalStorageState from "use-local-storage-state";
-import { useTranslation } from "next-i18next";
+import { BulbTwoTone, BulbFilled } from '@ant-design/icons';
+import { Switch, Tooltip } from 'antd';
+import useLocalStorageState from 'use-local-storage-state';
+import { useTranslation } from 'next-i18next';
 
 const ThemeSwithcer = () => {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   const [useDarkTheme, toggleDarkTheme] = useLocalStorageState(
-    "use_dark_theme",
+    'use_dark_theme',
     {
       defaultValue: false,
     }
@@ -15,8 +15,8 @@ const ThemeSwithcer = () => {
     <Tooltip
       title={
         useDarkTheme
-          ? t("common:switch_light_mode")
-          : t("common:switch_dark_mode")
+          ? t('common:switch_light_mode')
+          : t('common:switch_dark_mode')
       }
     >
       <Switch
