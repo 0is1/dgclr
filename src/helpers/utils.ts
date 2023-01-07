@@ -11,8 +11,12 @@ export const convertLinksToHtml = (string?: string): string =>
 /**
  * Is array with length
  */
-export const isArrayWithLength = (array?: any): boolean =>
-  Array.isArray(array) && array.length > 0;
+export const isArrayWithLength = (array?: any, minLength = 1): boolean => {
+  if (minLength > 1) {
+    return Array.isArray(array) && array.length >= minLength;
+  }
+  return Array.isArray(array) && array.length > 0;
+};
 
 /**
  * Convert links in text to <a href="">url</a> from first capture group

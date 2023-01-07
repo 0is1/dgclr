@@ -67,6 +67,14 @@ query CoursesQuery($query: String!) {
 }
 `;
 
+export const SEARCH_NEARBY_COURSES = `
+query NearbyCoursesQuery($coordinates: [Float], $maxDistance: Int) {
+  nearbyCourse(currentCoordinates: $coordinates, maxDistance: $maxDistance) {
+    ${COURSE_QUERY}
+  }
+}
+`;
+
 export const GET_ALL_COURSE_SLUGS = `
 query AllCoursesQuery {
   courses {slug}

@@ -48,6 +48,9 @@ export type LocationInfo = {
   city: string | null;
   zip: string | null;
 };
+export type SearchNearbyCourses = {
+  nearbyCourse: Course[];
+};
 
 export type SearchCourseByName = {
   courseByName: Course[];

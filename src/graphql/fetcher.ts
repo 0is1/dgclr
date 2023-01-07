@@ -1,8 +1,10 @@
+import { isArrayWithLength } from '../helpers/utils';
 import {
   CourseQueryFilterInput,
   SearchCourseByName,
   SearchCourseBySlug,
   SearchCourses,
+  SearchNearbyCourses,
 } from '../types';
 
 const getAbsoluteOrRelativeUrl = (relativeUrl: string) => {
@@ -18,6 +20,23 @@ export const getCoursesByName = async (query: string) => {
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchCourseByName;
+  return data;
+};
+
+export const getNearbyCourses = async (
+  coordinates: number[],
+  maxDistance: number
+) => {
+  if (!isArrayWithLength(coordinates, 2)) {
+    return { nearbyCourse: [] } as SearchNearbyCourses;
+  }
+  const url = getAbsoluteOrRelativeUrl(
+    `/api/search-nearby-courses?coordinates=${JSON.stringify(
+      coordinates
+    )}&maxDistance=${maxDistance}`
+  );
+  const response = await fetch(url);
+  const data = (await response.json()) as SearchNearbyCourses;
   return data;
 };
 
