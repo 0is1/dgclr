@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce';
 import { useTranslation } from 'react-i18next';
 import useLocalStorageState from 'use-local-storage-state';
 
-const { Text } = Typography;
+const { Title } = Typography;
 
 const NearbyDistanceSlider = () => {
   const { t } = useTranslation(['common']);
@@ -31,10 +31,12 @@ const NearbyDistanceSlider = () => {
     onChange,
   ]);
 
+  if (!query.coordinates.length) return null;
+
   return (
     <Row gutter={[16, 16]} justify="space-between">
       <Col span={24}>
-        <Text>{t('common:nearby_distance_title')}</Text>
+        <Title level={4}>{t('common:nearby_distance_title')}</Title>
       </Col>
       <Col span={16}>
         <Slider

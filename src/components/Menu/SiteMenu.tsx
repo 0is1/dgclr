@@ -35,17 +35,15 @@ const SiteMenu = () => {
     <>
       {isMobileWidth && (
         <Row gutter={[16, 16]} align="middle">
-          <Col span={12}>
+          <Col span={11}>
             <Button
-              style={{ marginBottom: menuOpen ? 16 : 0 }}
               onClick={() => setMenuOpen(!menuOpen)}
               icon={menuOpen ? <ArrowUpOutlined /> : <MenuOutlined />}
-              size="large"
             >
               {!menuOpen ? t('common:menu') : t('common:menu_close')}
             </Button>
           </Col>
-          <Col span={8}>
+          <Col span={9}>
             <LanguageSelector />
           </Col>
           <Col span={4}>
@@ -55,6 +53,7 @@ const SiteMenu = () => {
       )}
       {menuOpen && (
         <Menu
+          style={isMobileWidth ? { marginTop: 16 } : {}}
           onClick={onClick}
           selectedKeys={[current]}
           mode={isMobileWidth ? 'vertical' : 'horizontal'}

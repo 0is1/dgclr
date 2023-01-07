@@ -25,7 +25,6 @@ const LanguageSelector = () => {
 
   return (
     <Radio.Group
-      size="large"
       onChange={async ({ target: { value } }: RadioChangeEvent) => {
         setLocale(value);
         await i18n.changeLanguage(value);

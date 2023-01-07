@@ -26,7 +26,7 @@ const PageHeader = ({ beforeTitle, title, description, children }: Props) => {
       bordered={false}
       extra={
         !isMobileWidth && (
-          <Space>
+          <Space size="large">
             <LanguageSelector />
             <ThemeSwithcer />
           </Space>
