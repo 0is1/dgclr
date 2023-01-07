@@ -107,7 +107,7 @@ function AdvancedMapComponent(props: Props) {
         >
           <Button
             type="primary"
-            onClick={() => router.push(`/course/${activeMarker.slug}`)}
+            onClick={() => router.push(`/${activeMarker.slug}`)}
           >
             {activeMarker.name}
           </Button>

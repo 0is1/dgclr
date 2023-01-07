@@ -1,21 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
-import { Space, Table, Tag } from "antd";
-import { useRouter } from "next/router";
-import type { SortOrder } from "antd/lib/table/interface";
-import Link from "next/link";
-import useLocalStorageState from "use-local-storage-state";
-import { useTranslation } from "next-i18next";
-import { Course } from "../../types";
+import { useQuery } from '@tanstack/react-query';
+import { Space, Table, Tag } from 'antd';
+import { useRouter } from 'next/router';
+import type { SortOrder } from 'antd/lib/table/interface';
+import Link from 'next/link';
+import useLocalStorageState from 'use-local-storage-state';
+import { useTranslation } from 'next-i18next';
+import { Course } from '../../types';
 
-import { getCoursesByName } from "../../graphql/fetcher";
-import { DoubleRightOutlined } from "@ant-design/icons";
-import { getRatingListFromCourseLayouts } from "../../helpers/course";
+import { getCoursesByName } from '../../graphql/fetcher';
+import { DoubleRightOutlined } from '@ant-design/icons';
+import { getRatingListFromCourseLayouts } from '../../helpers/course';
 
 function SearchQuery() {
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(['common']);
   const router = useRouter();
-  const [query] = useLocalStorageState("text_search", {
-    defaultValue: "",
+  const [query] = useLocalStorageState('text_search', {
+    defaultValue: '',
   });
   const [currentPageForQuery, setCurrentPageForQuery] = useLocalStorageState(
     `current_page_${query}`,
@@ -35,15 +35,15 @@ function SearchQuery() {
     console.log(failureReason);
     return (
       <div>
-        <>{t("common:search_error")}</>
+        <>{t('common:search_error')}</>
       </div>
     );
   }
   const columns = [
     {
-      title: `${t("common:course_name")}`,
-      dataIndex: "name",
-      key: "name",
+      title: `${t('common:course_name')}`,
+      dataIndex: 'name',
+      key: 'name',
       showSorterTooltip: false,
       sorter: (a: Course, b: Course) => {
         if (a.name < b.name) {
@@ -58,7 +58,7 @@ function SearchQuery() {
         const tags = getRatingListFromCourseLayouts(record);
         return (
           <Space>
-            <Link href={`/course/${record.slug}`}>
+            <Link href={`/${record.slug}`}>
               {text} <DoubleRightOutlined />
             </Link>
             <span>
@@ -88,7 +88,7 @@ function SearchQuery() {
       onRow={(record) => {
         return {
           onClick: () => {
-            router.push(`/course/${record.slug}`);
+            router.push(`/${record.slug}`);
           },
         };
       }}

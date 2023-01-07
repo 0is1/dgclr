@@ -61,7 +61,7 @@ function NearbySearchQuery() {
         const tags = getRatingListFromCourseLayouts(record);
         return (
           <Space>
-            <Link href={`/course/${record.slug}`}>
+            <Link href={`/${record.slug}`}>
               {text} <DoubleRightOutlined />
             </Link>
             <span>
@@ -91,7 +91,7 @@ function NearbySearchQuery() {
       onRow={(record) => {
         return {
           onClick: () => {
-            router.push(`/course/${record.slug}`);
+            router.push(`/${record.slug}`);
           },
         };
       }}
