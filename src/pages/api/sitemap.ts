@@ -1,9 +1,9 @@
-import { SitemapStream, streamToPromise } from "sitemap";
-import { createGzip } from "zlib";
-import type { NextApiRequest, NextApiResponse } from "next";
-import request from "graphql-request";
-import { getRequestHeaders } from "../../helpers/server-utils";
-import { GET_ALL_COURSE_SLUGS } from "../../graphql/queries";
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { createGzip } from 'zlib';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import request from 'graphql-request';
+import { getRequestHeaders } from '../../helpers/server-utils';
+import { GET_ALL_COURSE_SLUGS } from '../../graphql/queries';
 
 let sitemap: Buffer | undefined;
 
@@ -16,8 +16,8 @@ export default async function handler(
   res: NextApiResponse<Buffer>
 ) {
   // set response header
-  res.setHeader("Content-Type", "application/xml");
-  res.setHeader("Content-Encoding", "gzip");
+  res.setHeader('Content-Type', 'application/xml');
+  res.setHeader('Content-Encoding', 'gzip');
   // if we have a cached entry send it
   if (sitemap) {
     res.send(sitemap);
@@ -31,7 +31,7 @@ export default async function handler(
     requestHeaders
   );
   const smStream = new SitemapStream({
-    hostname: "https://dgclr.fi",
+    hostname: 'https://frisbeegolfrata.info',
   });
   const pipeline = smStream.pipe(createGzip());
   if (result?.courses?.length > 0) {
@@ -40,7 +40,7 @@ export default async function handler(
       const course: CourseSlug = courses[i];
       smStream.write({
         url: `/${course.slug}`,
-        changefreq: "monthly",
+        changefreq: 'monthly',
         priority: 1,
       });
     }
@@ -48,20 +48,20 @@ export default async function handler(
 
   // Add also pages
   smStream.write({
-    url: "/",
-    changefreq: "monthly",
+    url: '/',
+    changefreq: 'monthly',
     priority: 0.6,
   });
   // Add also pages
   smStream.write({
-    url: "/advanced_search",
-    changefreq: "monthly",
+    url: '/advanced_search',
+    changefreq: 'monthly',
     priority: 0.6,
   });
   // Add also pages
   smStream.write({
-    url: "/info",
-    changefreq: "monthly",
+    url: '/info',
+    changefreq: 'monthly',
     priority: 0.9,
   });
   smStream.end();
