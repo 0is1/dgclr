@@ -16,7 +16,7 @@ export default function AdvancedSearch() {
     <Layout>
       <Space direction="vertical" style={{ width: '100%' }} size="large">
         <PageHeader
-          title="DGCLR"
+          title="frisbeegolfrata.info:"
           beforeTitle={<SlidersOutlined />}
           description={t('common:sub_title')}
         >

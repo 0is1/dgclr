@@ -1,4 +1,4 @@
-import { Course } from "../types";
+import { Course } from '../types';
 
 type SearchCourseBySlug = {
   courseBySlug: Course[];
@@ -21,13 +21,20 @@ export const getCourseNameFromCourseData = (data?: Course) => {
 
 export const getCourseAddressFromCourseData = (data?: Course) => {
   if (!data?.locationInfo) {
-    return "";
+    return '';
   }
   const { address, city, zip } = data.locationInfo;
   if (!address || !city || !zip) {
-    return "";
+    return '';
   }
   return `${address}, ${zip} ${city}`;
+};
+
+export const getCourseCoordinatesFromCourseData = (data?: Course) => {
+  if (!data?.locationInfo?.location?.coordinates) {
+    return [];
+  }
+  return data.locationInfo.location.coordinates;
 };
 
 export const getLocationCoordinatesFromCourseData = (data?: Course) => {
@@ -42,11 +49,11 @@ export const getCourseLayoutImage = (
   layoutIndex: string
 ) => {
   if (!course) {
-    return "";
+    return '';
   }
   const layout = course.layouts[parseInt(layoutIndex, 10)];
   if (!layout) {
-    return "";
+    return '';
   }
   return layout.mapUrl;
 };

@@ -7,7 +7,12 @@ import useLocalStorageState from 'use-local-storage-state';
 import { useTranslation } from 'next-i18next';
 import { Course } from '../../types';
 import { getNearbyCourses } from '../../graphql/fetcher';
-import { getRatingListFromCourseLayouts } from '../../helpers/course';
+import {
+  getCourseCoordinatesFromCourseData,
+  getRatingListFromCourseLayouts,
+} from '../../helpers/course';
+import { getDistanceFromLatLonInKm } from '../../helpers/utils';
+import { useGeolocated } from 'react-geolocated';
 
 const { Text } = Typography;
 
@@ -20,6 +25,7 @@ function NearbySearchQuery() {
       maxDistance: 50,
     },
   });
+  const { coords } = useGeolocated();
   const [currentPageForQuery, setCurrentPageForQuery] = useLocalStorageState(
     `current_page_${JSON.stringify(query)}`,
     {
@@ -59,6 +65,17 @@ function NearbySearchQuery() {
       },
       render: (text: string, record: Course) => {
         const tags = getRatingListFromCourseLayouts(record);
+        let distanceInKm = 0;
+        const [long, lat] = getCourseCoordinatesFromCourseData(record);
+        if (lat && long && coords) {
+          distanceInKm = getDistanceFromLatLonInKm(
+            lat,
+            long,
+            coords.latitude,
+            coords.longitude
+          );
+        }
+
         return (
           <Space>
             <Link href={`/${record.slug}`}>
@@ -71,6 +88,11 @@ function NearbySearchQuery() {
                 </Tag>
               ))}
             </span>
+            {distanceInKm > 0 && (
+              <Text>
+                {distanceInKm.toFixed(1)} {t('common:km')}
+              </Text>
+            )}
           </Space>
         );
       },

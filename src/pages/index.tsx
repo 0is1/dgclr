@@ -17,7 +17,7 @@ export default function Home() {
     <Layout>
       <Space direction="vertical" style={{ width: '100%' }} size="large">
         <PageHeader
-          title="DGCLR"
+          title="frisbeegolfrata.info:"
           beforeTitle={<HomeOutlined />}
           description={t('common:sub_title')}
         >

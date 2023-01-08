@@ -39,7 +39,7 @@ const SingleCourse = () => {
   return (
     <Space direction="vertical" style={{ width: '100%' }} size="large">
       <PageHeader
-        title="DGCLR"
+        title="frisbeegolfrata.info:"
         description={`${course?.name}`}
         beforeTitle={<ArrowLeftOutlined onClick={() => router.back()} />}
       >

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Space, Typography, Empty, Button, Spin, Row, Col } from 'antd';
 import { useGeolocated } from 'react-geolocated';
 import { RedoOutlined } from '@ant-design/icons';
@@ -12,6 +12,7 @@ const { Text } = Typography;
 
 function NearbySearch() {
   const { t } = useTranslation(['common']);
+  const [waitForSSR, setWaitForSSR] = useState(true);
   const { coords, getPosition, isGeolocationAvailable, isGeolocationEnabled } =
     useGeolocated({
       positionOptions: {
@@ -26,6 +27,10 @@ function NearbySearch() {
     },
   });
   useEffect(() => {
+    // wait for SSR to finish
+    setWaitForSSR(false);
+  }, []);
+  useEffect(() => {
     // if coords and query are not the same, update query
     if (coords) {
       const { latitude, longitude } = coords;
@@ -38,6 +43,9 @@ function NearbySearch() {
       }
     }
   }, [coords, setQuery, query]);
+  if (waitForSSR) {
+    return null;
+  }
   if (!isGeolocationAvailable) {
     return (
       <Empty
