@@ -1,7 +1,7 @@
 // import { useTranslation } from 'next-i18next';
 import AdvancedSearchQuery from './AdvancedSearchQuery';
 import AdvancedSearchFilters from './AdvancedSearchFilters';
-import { Row } from 'antd';
+import { Col, Row } from 'antd';
 import useAdvancedQuery from '../../hooks/useAdvancedQuery';
 import { allObjectKeysAreEmpty } from '../../helpers/utils';
 
@@ -16,7 +16,7 @@ function AdvancedSearch() {
     );
   }
   return (
-    <Row gutter={[16, 16]}>
+    <Row gutter={[32, 32]}>
       <AdvancedSearchFilters />
       <AdvancedSearchQuery />
     </Row>

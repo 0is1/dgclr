@@ -1,6 +1,6 @@
 {
   "advanced_search": "Edistynyt haku",
-  "advanced_search_description": "Valinnat toimivat poissulkevasti (\"and\"-logiikka). Jos haluat etsiä metsäratoja, joiden luokitus on AAA1, sinun täytyy valita molemmat valinnat.",
+  "advanced_search_description": "Valinnat toimivat poissulkevasti (\"and\"-logiikka). Esim. jos haluat etsiä ratoja, joissa on sekä puisto- että metsäväyliä, sinun täytyy valita molemmat valinnat.",
   "change_language": "Vaihda kieli",
   "close": "Sulje",
   "course_address": "Radan osoite",
@@ -38,6 +38,7 @@
   "search_course_types": "Ratatyyppi",
   "search_course_surface_types": "Pinnanmuodot",
   "search_error": "Höh, jotain meni pieleen.",
+  "search_course_hole_average_length": "Väylien keskipituus",
   "search_no_results": "Ei hakutuloksia!",
   "show_on_map": "Näytä kartalla",
   "sub_title": "löydä uusia frisbeegolfratoja",

@@ -2,6 +2,7 @@ import { Col } from 'antd';
 import AdvancedSearchRatingSelect from './AdvancedSearchRatingSelect';
 import AdvancedSearchSurfaceShapeTypesSelect from './AdvancedSearchSurfaceShapeTypesSelect';
 import AdvancedSearchCourseTypesSelect from './AdvancedSearchCourseTypesSelect';
+import AdvancedSearchRangeSlider from './AdvancedSearchRangeSlider';
 
 function AdvancedSearchFilters() {
   return (
@@ -14,6 +15,9 @@ function AdvancedSearchFilters() {
       </Col>
       <Col md={12} xs={24}>
         <AdvancedSearchCourseTypesSelect />
+      </Col>
+      <Col md={12} xs={24}>
+        <AdvancedSearchRangeSlider />
       </Col>
     </>
   );
