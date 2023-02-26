@@ -1,5 +1,5 @@
-import { BulbTwoTone, BulbFilled } from '@ant-design/icons';
-import { Switch, Tooltip } from 'antd';
+import { BulbTwoTone, BulbOutlined } from '@ant-design/icons';
+import { Button, Tooltip } from 'antd';
 import useLocalStorageState from 'use-local-storage-state';
 import { useTranslation } from 'next-i18next';
 
@@ -18,11 +18,12 @@ const ThemeSwithcer = () => {
           ? t('common:switch_light_mode')
           : t('common:switch_dark_mode')
       }
+      placement="bottomRight"
     >
-      <Switch
-        checkedChildren={<BulbTwoTone twoToneColor="#000" />}
-        unCheckedChildren={<BulbFilled />}
-        checked={useDarkTheme}
+      <Button
+        icon={
+          useDarkTheme ? <BulbOutlined /> : <BulbTwoTone twoToneColor="#000" />
+        }
         onClick={() => {
           toggleDarkTheme(!useDarkTheme);
         }}
