@@ -11,6 +11,10 @@ type CourseSlug = {
   slug: string;
 };
 
+type CourseResult = {
+  courses: CourseSlug[];
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Buffer>
@@ -24,7 +28,7 @@ export default async function handler(
     return;
   }
   const requestHeaders = getRequestHeaders();
-  const result = await request(
+  const result: CourseResult = await request(
     `${process.env.SERVER_URL}`,
     GET_ALL_COURSE_SLUGS,
     {},
