@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { ConfigProvider, theme } from 'antd';
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import nextI18NextConfig from '../../next-i18next.config';
@@ -32,6 +33,7 @@ function App({ Component, pageProps }: AppProps) {
           }}
         >
           <Component {...pageProps} />
+          <Analytics />
         </ConfigProvider>
       </Hydrate>
     </QueryClientProvider>
