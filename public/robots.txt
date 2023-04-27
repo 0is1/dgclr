@@ -5,4 +5,4 @@ Allow: /advanced_search
 Allow: /*
 Disallow: /course
 
-Sitemap: https://dgclr.fi/sitemap.xml
+Sitemap: https://www.dgclr.fi/api/sitemap
