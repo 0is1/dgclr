@@ -102,3 +102,13 @@ export const getCourseInfo = (course: Course | undefined) => {
     ...course.locationInfo,
   };
 };
+
+export const omitHiddenLayoutsFromCourses = (courses: Course[]) => {
+  const coursesWithoutHiddenLayouts = courses.map((course) => {
+    const { layouts } = course;
+    if (!layouts?.length) return course;
+    const layoutsWithoutHidden = layouts.filter((layout) => !layout.hidden);
+    return { ...course, layouts: layoutsWithoutHidden };
+  });
+  return coursesWithoutHiddenLayouts;
+};

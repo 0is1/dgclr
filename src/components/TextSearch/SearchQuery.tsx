@@ -1,15 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
-import { Space, Table, Tag } from 'antd';
+import { Empty, Space, Table, Tag, Typography } from 'antd';
 import { useRouter } from 'next/router';
-import type { SortOrder } from 'antd/lib/table/interface';
 import Link from 'next/link';
 import useLocalStorageState from 'use-local-storage-state';
 import { useTranslation } from 'next-i18next';
 import { Course } from '../../types';
-
 import { getCoursesByName } from '../../graphql/fetcher';
 import { DoubleRightOutlined } from '@ant-design/icons';
 import { getRatingListFromCourseLayouts } from '../../helpers/course';
+
+const { Text } = Typography;
 
 function SearchQuery() {
   const { t } = useTranslation(['common']);
@@ -34,9 +34,9 @@ function SearchQuery() {
   if (isError) {
     console.log(failureReason);
     return (
-      <div>
-        <>{t('common:search_error')}</>
-      </div>
+      <Empty description="">
+        <Text type="warning">{t('common:search_error')}</Text>
+      </Empty>
     );
   }
   const columns = [
