@@ -33,6 +33,7 @@ locationInfo {
 }
 layouts {
   name
+  hidden
   mapUrl
   rating
   holes {

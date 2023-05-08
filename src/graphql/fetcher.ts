@@ -1,3 +1,4 @@
+import { omitHiddenLayoutsFromCourses } from '../helpers/course';
 import { isArrayWithLength } from '../helpers/utils';
 import {
   CourseQueryFilterInput,
@@ -20,7 +21,8 @@ export const getCoursesByName = async (query: string) => {
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchCourseByName;
-  return data;
+  const result = omitHiddenLayoutsFromCourses(data.courseByName);
+  return { courseByName: result } as SearchCourseByName;
 };
 
 export const getNearbyCourses = async (
@@ -37,7 +39,8 @@ export const getNearbyCourses = async (
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchNearbyCourses;
-  return data;
+  const result = omitHiddenLayoutsFromCourses(data.nearbyCourse);
+  return { nearbyCourse: result } as SearchNearbyCourses;
 };
 
 export const getCourseBySlug = async (slug: string) => {
@@ -46,7 +49,8 @@ export const getCourseBySlug = async (slug: string) => {
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchCourseBySlug;
-  return data;
+  const result = omitHiddenLayoutsFromCourses(data.courseBySlug);
+  return { courseBySlug: result } as SearchCourseBySlug;
 };
 
 export const getCourses = async ({
@@ -62,5 +66,6 @@ export const getCourses = async ({
   );
   const response = await fetch(url);
   const data = (await response.json()) as SearchCourses;
-  return data;
+  const result = omitHiddenLayoutsFromCourses(data.courses);
+  return { courses: result } as SearchCourses;
 };

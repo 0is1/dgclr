@@ -18,6 +18,7 @@ export type Hole = {
 export type Layout = {
   name: string;
   mapUrl: string;
+  hidden: boolean;
   holeCount: number;
   holeAverageLength: HoleAverageLength;
   rating: string;
