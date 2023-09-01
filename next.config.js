@@ -10,6 +10,7 @@ const nextConfig = {
       'frisbeegolfradat.fi',
       'malluunen-dg.vercel.app',
       'dgclr-server-course-maps-dev.s3.eu-central-1.amazonaws.com',
+      'dgclr-server-course-maps-production.s3.eu-central-1.amazonaws.com',
     ],
   },
   i18n,
