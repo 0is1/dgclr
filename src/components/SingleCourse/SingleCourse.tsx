@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ReactHtmlParser from 'html-react-parser';
@@ -11,6 +11,7 @@ import {
 import styles from '../../styles/Course.module.css';
 import {
   getCourseDataFromSearchCourseBySlug,
+  getCourseInitialNameFromSlug,
   getCourseLayoutImage,
   getTabListFromCourseLayouts,
 } from '../../helpers/course';
@@ -28,10 +29,19 @@ const SingleCourse = () => {
   const [activeLayoutIndex, setActiveLayout] = useState<string>('0');
   const { slug } = router.query;
   const { data, error, isLoading } = useGetCourseBySlug(slug as string);
+  const course = getCourseDataFromSearchCourseBySlug(data);
+  const courseName = useMemo(() => {
+    // if course is not loaded yet, return slug via getCourseInitialNameFromSlug
+    if (!course) {
+      return getCourseInitialNameFromSlug(slug as string);
+    }
+    return course.name;
+  }, [course, slug]);
+
   if (error) {
     return <p>Something went wrong</p>;
   }
-  const course = getCourseDataFromSearchCourseBySlug(data);
+
   if (!isLoading && !course) {
     return <p>Course not found</p>;
   }
@@ -39,9 +49,20 @@ const SingleCourse = () => {
   return (
     <Space direction="vertical" style={{ width: '100%' }} size="large">
       <PageHeader
-        title="frisbeegolfrata.info:"
-        description={`${course?.name}`}
-        beforeTitle={<ArrowLeftOutlined onClick={() => router.back()} />}
+        title={courseName}
+        description=""
+        beforeTitle={
+          <ArrowLeftOutlined
+            onClick={() => {
+              // if router does not have any previous page, go to home page
+              if (!router?.asPath) {
+                router.push('/');
+              } else {
+                router.back();
+              }
+            }}
+          />
+        }
       >
         <SiteMenu />
       </PageHeader>

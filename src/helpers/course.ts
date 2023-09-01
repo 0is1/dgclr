@@ -112,3 +112,10 @@ export const omitHiddenLayoutsFromCourses = (courses: Course[]) => {
   });
   return coursesWithoutHiddenLayouts;
 };
+
+export const getCourseInitialNameFromSlug = (slug: string) => {
+  // slug is in the format of "course-name-city" like "golf-club-berlin"
+  const initialName = slug.split('-').slice(0, -1).join(' ');
+  // convert first word first letter to uppercase
+  return initialName.charAt(0).toUpperCase() + initialName.slice(1);
+};
